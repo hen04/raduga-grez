@@ -43,10 +43,6 @@ $desktop: 1280px;
 	line-height: $line;
 
 	@include responsive(mobile) {
-		font-size: $size/2;
-	}
-	
-	@include responsive(tablet) {
 		font-size: $size/1.5;
 	}
 

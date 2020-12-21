@@ -8,12 +8,9 @@
 	box-sizing: border-box;
 }
 
-
-
 section {
 	min-height: 100vh;
 }
-
 
 body {
 	height: 100vh;
@@ -141,6 +138,7 @@ body {
 			position: relative;
 			z-index: 1;
 			letter-spacing: .07rem;
+			margin-top: -40px;
 		}
 	}
 }
@@ -318,6 +316,12 @@ body {
 		@include responsive(desktop) {
 			margin: 0 33px;
 		}
+		
+		&.contact-us {
+			@include responsive(desktop) {
+				display: none;
+			}
+		}
 
 		&.menu-search {
 			a {
@@ -353,16 +357,35 @@ body {
 }
 
 .header-video {
-	margin-top: -80px;
 	width: 100%;
-	max-width: 324px;
-	height: 420px;
 	object-fit: cover;
-	background-color: green;
 	margin-bottom: 45px;
+	overflow: hidden;
+
+	@include responsive(mobile) {
+		max-width: 200px;
+		height: 290px;
+		margin-top: -50px;
+	}
+
+	@include responsive(portdesktop) {
+		max-width: 324px;
+		height: 420px;
+		margin-top: -80px;
+	}
+
+	video {
+		max-width: 100%;
+
+		@include responsive(mobile) {
+			margin-top: -40px;
+		}
+
+		@include responsive(portdesktop) {
+			margin-top: -80px;
+		}
+	}
 }
-
-
 
 .cookies-info {
 	position: fixed;

@@ -31,8 +31,7 @@ h3 {
 }
 
 h1 {
-	font-size: 54px;
-	line-height: 138%;
+	@include title(54px, 138%);
 }
 
 .heading-small {
