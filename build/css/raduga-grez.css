@@ -60,6 +60,9 @@ h3 {
 h1 {
   font-size: 54px;
   line-height: 138%; }
+  @media only screen and (max-width: 767px) {
+    h1 {
+      font-size: 36px; } }
 
 .heading-small {
   font-size: 34px;
@@ -232,7 +235,8 @@ body {
       text-align: center;
       position: relative;
       z-index: 1;
-      letter-spacing: .07rem; }
+      letter-spacing: .07rem;
+      margin-top: -40px; }
 
 @media only screen and (max-width: 1279px) {
   .mobile-menu-img {
@@ -354,6 +358,9 @@ body {
   @media only screen and (min-width: 1280px) {
     .menu li {
       margin: 0 33px; } }
+  @media only screen and (min-width: 1280px) {
+    .menu li.contact-us {
+      display: none; } }
   .menu li.menu-search a {
     padding-right: 24px;
     position: relative; }
@@ -376,13 +383,28 @@ body {
         color: #E1DFD3; } }
 
 .header-video {
-  margin-top: -80px;
   width: 100%;
-  max-width: 324px;
-  height: 420px;
   object-fit: cover;
-  background-color: green;
-  margin-bottom: 45px; }
+  margin-bottom: 45px;
+  overflow: hidden; }
+  @media only screen and (max-width: 767px) {
+    .header-video {
+      max-width: 200px;
+      height: 290px;
+      margin-top: -50px; } }
+  @media only screen and (min-width: 768px) {
+    .header-video {
+      max-width: 324px;
+      height: 420px;
+      margin-top: -80px; } }
+  .header-video video {
+    max-width: 100%; }
+    @media only screen and (max-width: 767px) {
+      .header-video video {
+        margin-top: -40px; } }
+    @media only screen and (min-width: 768px) {
+      .header-video video {
+        margin-top: -80px; } }
 
 .cookies-info {
   position: fixed;
@@ -420,9 +442,6 @@ body {
     line-height: 153%;
     max-width: 480px; }
     @media only screen and (max-width: 767px) {
-      .main-about-us h2 {
-        font-size: 24px; } }
-    @media only screen and (min-width: 768px) and (max-width: 1279px) {
       .main-about-us h2 {
         font-size: 32px; } }
 
@@ -517,9 +536,6 @@ body {
   font-size: 34px;
   line-height: 164%; }
   @media only screen and (max-width: 767px) {
-    .main-catalog h3 {
-      font-size: 17px; } }
-  @media only screen and (min-width: 768px) and (max-width: 1279px) {
     .main-catalog h3 {
       font-size: 22.66667px; } }
 
@@ -705,9 +721,6 @@ body {
       margin-bottom: 30px; }
       @media only screen and (max-width: 767px) {
         .swiper-slide__text h3 {
-          font-size: 17px; } }
-      @media only screen and (min-width: 768px) and (max-width: 1279px) {
-        .swiper-slide__text h3 {
           font-size: 22.66667px; } }
     .swiper-slide__text .btn {
       color: #E1DFD3;
@@ -853,9 +866,6 @@ body {
     line-height: 153%; }
     @media only screen and (max-width: 767px) {
       .main-likes h2 {
-        font-size: 24px; } }
-    @media only screen and (min-width: 768px) and (max-width: 1279px) {
-      .main-likes h2 {
         font-size: 32px; } }
 
 @media only screen and (max-width: 1279px) {
@@ -920,9 +930,6 @@ body {
       line-height: 153%; }
       @media only screen and (max-width: 767px) {
         .main-stories__content h2 {
-          font-size: 24px; } }
-      @media only screen and (min-width: 768px) and (max-width: 1279px) {
-        .main-stories__content h2 {
           font-size: 32px; } }
     .main-stories__content img {
       margin: 30px 0; }
@@ -955,9 +962,6 @@ body {
       text-align: center;
       margin-bottom: 50px; }
       @media only screen and (max-width: 767px) {
-        .join-us__content h2 {
-          font-size: 27px; } }
-      @media only screen and (min-width: 768px) and (max-width: 1279px) {
         .join-us__content h2 {
           font-size: 36px; } }
 
