@@ -12,6 +12,10 @@ section {
 	min-height: 100vh;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	height: 100vh;
 	position: relative;
@@ -129,7 +133,7 @@ body {
 		flex-flow: column;
 		align-items: center;
 		justify-content: center;
-		height: calc(100vh - 27px);
+		height: 100vh;
 		
 		h1 {
 			color: $beige1;
@@ -138,7 +142,7 @@ body {
 			position: relative;
 			z-index: 1;
 			letter-spacing: .07rem;
-			margin-top: -40px;
+			margin-top: -10px;
 		}
 	}
 }
@@ -300,11 +304,6 @@ body {
 	}
 }
 
-
-
-
-
-
 .menu {
 	display: flex;
 	
@@ -424,7 +423,7 @@ body {
 	padding: 120px 0 0;
 	
 	@include responsive(desktop) {
-		padding: 310px 0 460px;
+		padding: 300px 0 370px;
 	}
 
 	.title-small {
@@ -433,7 +432,8 @@ body {
 
 	h2 {
 		@include title(48px, 153%);
-		max-width: 480px;
+		max-width: 520px;
+		letter-spacing: .25rem;
 	}
 }
 
@@ -441,7 +441,7 @@ body {
 	margin: 0 auto 100px;
 
 	@include responsive(desktop) {
-		margin: 0 auto 450px;
+		margin: 0 auto 460px;
 	}
 
 	.title-small {
@@ -456,8 +456,8 @@ body {
 		z-index: 9;
 
 		@include responsive(desktop) {
-			max-width: 1350px;
-			margin: 100px auto 0;
+			max-width: 1370px;
+			margin: 110px auto 0;
 		}
 	}
 
@@ -482,8 +482,8 @@ body {
 		}
 
 		@include responsive(desktop) {
-			max-width: 400px;
-			padding-top: 160px;
+			max-width: 410px;
+			padding-top: 175px;
 		}
 
 		&:last-child {
@@ -507,7 +507,7 @@ body {
 		}
 
 		@include responsive(desktop) {
-			margin: 180px 0 0 40px;
+			margin: 145px 0 0 50px;
 		}
 	}
 
@@ -531,7 +531,7 @@ body {
 
 			@include responsive(tablet) {
 				max-width: 20%;
-				transform: translate(-30%, 30%);
+				transform: translate(-60%, 30%);
 			}
 		}
 
@@ -551,7 +551,7 @@ body {
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			transform: translate(-65%, 20%);
+			transform: translate(-57%, 23%);
 
 			@include responsive(mobile) {
 				max-width: 45%;
@@ -560,7 +560,7 @@ body {
 
 			@include responsive(tablet) {
 				max-width: 25%;
-				transform: translate(30%, 30%);
+				transform: translate(40%, 30%);
 			}
 		}
 	}
@@ -570,17 +570,19 @@ body {
 
 	h3 {
 		@include title(34px, 164%);
+		letter-spacing: .15rem;
 	}
 
 	&__title {
-		max-width: 300px;
+		max-width: 320px;
+		margin-left: 10px;
 
 		@include responsive(device) {
 			margin-bottom: 20px;
 		}
 
 		@include responsive(desktop) {
-			margin-bottom: 40px;
+			margin-bottom: 30px;
 		}
 	}
 
@@ -762,19 +764,22 @@ body {
 		}
 
 		@include responsive(desktop) {
-			margin-bottom: 450px;
+			margin-bottom: 430px;
 		}
 
 		.swiper-container {
-			max-width: 1326px;
+			max-width: 1540px;
 			overflow: hidden;
 		}
 	}
 }
 
-
 .swiper-slide {
 	display: flex;
+
+	@include responsive(tablet) {
+		min-height: 640px;
+	}
 
 	&__text {
 		display: flex;
@@ -791,7 +796,7 @@ body {
 		}
 		
 		@include responsive(desktop) {
-			width: 35%;
+			width: 34%;
 			padding-right: 150px;
 		}
 
@@ -802,12 +807,19 @@ body {
 		h3 {
 			max-width: 180px;
 			@include title(34px, 164%);
-			margin-bottom: 30px;
+			margin-bottom: 40px;
+			letter-spacing: .15rem;
 		}
-		
+
+		.title-small {
+			margin-bottom: 44px;
+		}
+
 		.btn {
-			color: $beige1;
-			border-color: $beige1;
+			@include responsive(device) {
+				color: $beige1;
+				border-color: $beige1;
+			}
 		}
 	}
 	
@@ -824,7 +836,7 @@ body {
 		}
 
 		@include responsive(desktop) {
-			width: 65%;
+			width: 66%;
 		}
 
 		img {
@@ -850,7 +862,7 @@ body {
 		
 		@include responsive(desktop) {
 			position: relative;
-			width: 65%;
+			width: 66%;
 			float: right;
 			margin-top: 20px;
 		}
@@ -929,7 +941,7 @@ body {
 	position: relative;
 
 	@include responsive(mobile) {
-		padding: 200px 0 0;
+		padding: 120px 0 0;
 	}
 	
 	@include responsive(tablet) {
@@ -941,13 +953,13 @@ body {
 	}
 
 	&__title {
-
 		@include responsive(tablet) {
 			max-width: 500px;
 		}
 
 		@include responsive(desktop) {
-			max-width: 680px;
+			max-width: 710px;
+			margin-left: 10px;
 		}
 	}
 
@@ -959,33 +971,42 @@ body {
 		}
 		
 		@include responsive(desktop) {
-			margin-top: 170px;
+			margin-top: 175px;
+			max-width: 1430px;
+			margin-left: auto;
+			justify-content: space-between;
 		}
 	}
 
 	&__item {
 		display: flex;
 		flex-flow: column;
-		
+
 		@include responsive(mobile) {
 			margin-top: 40px;
 			padding-top: 40px;
 			border-top: 1px solid $light-gray;
 		}
-		
+
 		@include responsive(tablet) {
 			max-width: 400px;
 			margin: 50px auto 0;
 		}
-		
+
 		@include responsive(desktop) {
-			padding-left: 120px;
+			max-width: 390px;
 		}
-		
+
 		&:first-child {
 			@include responsive(mobile) {
 				margin-top: 0;
 				border-top-color: transparent;
+			}
+		}
+		
+		&:last-child {
+			@include responsive(desktop) {
+				margin-right: 0;
 			}
 		}
 	}
@@ -1008,13 +1029,19 @@ body {
 			display: block;
 		}
 	}
-	
+
 	&__author-info {
 		color: $light-gray;
 	}
 
 	h2 {
 		@include title(48px, 153%);
+		letter-spacing: .25rem;
+	}
+
+	&__text {
+		font-size: 1.125rem;
+		line-height: 1.75;
 	}
 }
 
@@ -1025,7 +1052,7 @@ body {
 
 	@include responsive(desktop) {
 		position: absolute;
-		right: 20%;
+		right: 20.5%;
 		top: 0;
 		transform: translate(0, -50%);
 	}
@@ -1043,17 +1070,16 @@ body {
 	}
 	
 	@include responsive(desktop) {
-		margin-left: 15%;
-		margin-top: 300px;
+		margin-left: 11%;
+		margin-top: 320px;
 	}
 }
 
 .main-likes-bottom {
 	position: absolute;
-	right: 10%;
+	right: 13%;
 	bottom: 0;
-	margin-top: -50%;
-	transform: translate(0, 50%);
+	transform: translate(0, 43%);
 	
 	@include responsive(mobile) {
 		max-width: 30%;
@@ -1077,7 +1103,7 @@ body {
 	}
 
 	@include responsive(desktop) {
-		padding: 415px 0;
+		padding: 410px 0;
 	}
 
 	&__content {
@@ -1088,8 +1114,8 @@ body {
 		align-items: center;
 		color: $beige1;
 
-		h2 {
-			@include title(48px, 153%);
+		h3 {
+			@include title(34px, 164%);
 		}
 
 		img {
@@ -1117,18 +1143,25 @@ body {
 		background-position: 50% 100%;
 		height: 460px;
 	}
-	
+
 	@include responsive(tablet) {
 		min-height: 890px;
 	}
-	
+
 	@include responsive(desktop) {
-		min-height: 1035px;
+		min-height: 1050px;
 	}
 
 	&__content {
-		margin: auto auto 120px;
-		max-width: 600px;
+		margin: auto auto 115px;
+
+		@include responsive(mobile) {
+			max-width: 340px;
+		}
+
+		@include responsive(portdesktop) {
+			max-width: 600px;
+		}
 
 		h2 {
 			@include title(54px, 138%);
@@ -1169,11 +1202,15 @@ body {
 
 .footer {
 	@include responsive(device) {
-		padding: 120px 0 60px;
+		padding: 110px 0 60px;
 	}
 
 	@include responsive(desktop) {
-		padding: 230px 0 60px;
+		padding: 210px 0 60px;
+	}
+	
+	&__top {
+		width: 100%;
 	}
 
 	&__content {
@@ -1186,14 +1223,14 @@ body {
 		flex-flow: wrap;
 		justify-content: space-between;
 	}
-	
+
 	&__mail {
 		p {
 			color: $light-gray;
 			font-size: .875rem;
 			margin-bottom: 1.6rem;
 		}
-		
+
 		a {
 			text-decoration: none;
 			position: relative;
@@ -1218,7 +1255,7 @@ body {
 			}
 		}
 	}
-	
+
 	&__menu {
 		@include responsive(mobile) {
 			width: 100%;
@@ -1226,7 +1263,7 @@ body {
 		}
 
 		@include responsive(portdesktop) {
-			width: 50%;
+			width: 49%;
 		}
 
 		nav {
@@ -1236,14 +1273,10 @@ body {
 		}
 		
 		ul {
-			width: 50%;
 			
 			@include responsive(device) {
 				margin-top: 60px;
-			}
-
-			@include responsive(desktop) {
-				width: 25%;
+				width: 50%;
 			}
 		}
 
@@ -1262,6 +1295,20 @@ body {
 			}
 		}
 	}
+
+	&__top {
+		color: $black;
+		font-size: .875rem;
+
+		@include responsive(device) {
+			margin-top: 100px;
+		}
+
+		@include responsive(desktop) {
+			margin-top: 180px;
+			cursor: pointer;
+		}
+	}
 	
 	&__copyright {
 		width: 100%;
@@ -1269,11 +1316,11 @@ body {
 		color: $black;
 		
 		@include responsive(device) {
-			margin-top: 140px;
+			margin-top: 100px;
 		}
 		
 		@include responsive(desktop) {
-			margin-top: 340px;
+			margin-top: 130px;
 		}
 	}
 }
