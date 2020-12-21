@@ -26,36 +26,58 @@ $(function() {
 		})
 	}
 
-
-	$('.js-menu').on('click', function(){
-		$("nav").animate({
-			opacity: 1,
-			left: "0"
-		}, 500, function() {
-			$('body').addClass('menu-opened');
+	function menuMobile() {
+		$('.js-menu').on('click', function(){
+			$('html').css('overflow-y', 'hidden');
+			$("nav").animate({
+				opacity: 1,
+				left: "0"
+			}, 500, function() {
+				$('body').addClass('menu-opened');
+			});
+			$('.menu-content__main').addClass('active');
 		});
-		$('.menu-content__main').addClass('active');
-	});
 
-	$('.js-menu-close').on('click', function(){
-		$("nav").animate({
-			opacity: 1,
-			left: "100%"
-		}, 250, function() {
-			$('body').removeClass('menu-opened');
+		$('.js-menu-back').on('click', function (){
+			$('.menu-content__main').addClass('active');
+			$('.menu-content__catalog').removeClass('active');
 		});
-		$('.menu-content__catalog').removeClass('active');
-	});
 
-	$('.js-menu-back').on('click', function (){
-		$('.menu-content__main').addClass('active');
-		$('.menu-content__catalog').removeClass('active');
-	});
+		$('.mobile .js-submenu').on('click', function (evt){
+			evt.preventDefault();
+			$('.menu-content__main').removeClass('active');
+			$('.menu-content__catalog').addClass('active');
+		});
 
-	$('.mobile .js-submenu').on('click', function (evt){
-		evt.preventDefault();
-		$('.menu-content__main').removeClass('active');
-		$('.menu-content__catalog').addClass('active');
+		$('.js-menu-close').on('click', function(){
+			$('html').css('overflow-y', 'initial');
+			$("nav").animate({
+				opacity: 1,
+				left: "100%"
+			}, 250, function() {
+				$('body').removeClass('menu-opened');
+			});
+			$('.menu-content__catalog').removeClass('active');
+		});
+
+	}
+
+	menuMobile();
+
+
+	const scrollToTop = $('#button-top');
+	// $(window).scroll (function () {
+	// 	if ($(this).scrollTop () > 300) {
+	// 		scrollToTop.fadeIn();
+	// 	} else {
+	// 		scrollToTop.fadeOut();
+	// 	}
+	// });
+	scrollToTop.on('click', function(){
+		$('body, html').animate({
+			scrollTop: 0
+		}, 1000);
+		return false;
 	});
 
 
