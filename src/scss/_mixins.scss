@@ -1,0 +1,53 @@
+$mobile: 375px;
+$portrait: 768px;
+$landscape: 1024px;
+$desktop: 1280px;
+
+
+@mixin responsive($media) {
+	@if $media == mobile {
+		@media only screen and (max-width: $portrait - 1) {
+			@content;
+		}
+	}
+	@else if $media == tablet {
+		@media only screen and (min-width: $portrait) and (max-width: $desktop - 1) {
+			@content;
+		}
+	}
+	@else if $media == device {
+		@media only screen and (max-width: $desktop - 1) {
+			@content;
+		}
+	}
+	@else if $media == desktop {
+		@media only screen and (min-width: $desktop) {
+			@content;
+		}
+	}
+	@else if $media == portdesktop {
+		@media only screen and (min-width: $portrait) {
+			@content;
+		}
+	}
+	@else if $media == landdesktop {
+		@media only screen and (min-width: $landscape) {
+			@content;
+		}
+	}
+}
+
+
+@mixin title($size, $line) {
+	font-size: $size;
+	line-height: $line;
+
+	@include responsive(mobile) {
+		font-size: $size/2;
+	}
+	
+	@include responsive(tablet) {
+		font-size: $size/1.5;
+	}
+
+}

@@ -1,0 +1,48 @@
+@font-face {
+	font-family: 'Pangram';
+	src: url('../fonts/Pangram-Regular.eot');
+	src: url('../fonts/Pangram-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Pangram-Regular.woff') format('woff'),
+	url('../fonts/Pangram-Regular.ttf') format('truetype'),
+	url('../fonts/Pangram-Regular.svg#Pangram') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Hatton';
+	src: url('../fonts/Hatton-Regular.eot');
+	src: url('../fonts/Hatton-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Hatton-Regular.woff') format('woff'),
+	url('../fonts/Hatton-Regular.ttf') format('truetype'),
+	url('../fonts/Hatton-Regular.svg#Hatton') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+h1,
+h2,
+h3 {
+	letter-spacing: .07rem;
+	text-transform: uppercase;
+	font-family: 'Hatton', serif;
+}
+
+h1 {
+	font-size: 54px;
+	line-height: 138%;
+}
+
+.heading-small {
+	font-size: 34px;
+	line-height: 134%;
+}
+
+.title-small {
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 24px;
+	letter-spacing: .01rem;
+}

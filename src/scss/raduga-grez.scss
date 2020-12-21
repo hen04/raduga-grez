@@ -1,0 +1,1276 @@
+@import "_reset";
+@import "_variables";
+@import "_mixins";
+@import "_typography";
+@import "_forms-elements";
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+section {
+	min-height: 100vh;
+}
+
+
+body {
+	height: 100vh;
+	position: relative;
+	min-width: 375px;
+	background-color: $beige1;
+	font: 16px/170% 'Pangram';
+	letter-spacing: .01rem;
+
+	&.menu-opened {
+		.mobile-menu-img,
+		.mobile-menu-logo {
+			@include responsive(device) {
+				opacity: 1;
+			}
+		}
+		
+		.menu-close {
+			@include responsive(device) {
+				display: block;
+				position: absolute;
+				z-index: 3;
+				width: 27px;
+				height: 26px;
+				right: 26px;
+				top: 30px;
+				background: url(../images/close-dark.svg) 0 0 no-repeat;
+			}
+		}
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 1610px;
+	margin: 0 auto;
+	padding: 0 26px;
+	box-sizing: border-box;
+}
+
+.hidden {
+	display: none;
+}
+
+.header {
+	min-height: 100vh;
+	background: #5C6240 url(../images/main-bg.jpg) 50% 0/cover no-repeat;
+
+	@include responsive(device) {
+		padding-top: 30px;
+	}
+
+	@include responsive(desktop) {
+		padding-top: 44px;
+	}
+
+	&__content {
+		width: 100%;
+		max-width: 1610px;
+		margin: 0 auto;
+		padding: 0 26px;
+		box-sizing: border-box;
+	}
+	
+	&__top {
+		display: flex;
+
+		@include responsive(device) {
+			align-items: center;
+		}
+	}
+	
+	&__logo {
+		width: 200px;
+		a {
+			display: block;
+			height: 16px;
+
+			@include responsive(device) {
+				background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
+			}
+
+			@include responsive(desktop) {
+				background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
+			}
+		}
+	}
+
+	&__menu {
+		@include responsive(device) {
+			margin-left: auto;
+		}
+		@include responsive(desktop) {
+			display: flex;
+			margin: 0 auto;
+		}
+		
+		nav {
+			@include responsive(device) {
+				display: block;
+				position: absolute;
+				right: 0;
+				left: 100%;
+				top: 0;
+				height: 100vh;
+				overflow-y: auto;
+				overflow-x: hidden;
+				background-color: #E4E3DD;
+				z-index: 2;
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		height: calc(100vh - 27px);
+		
+		h1 {
+			color: $beige1;
+			max-width: 230px;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+			letter-spacing: .07rem;
+		}
+	}
+}
+
+.mobile-menu-img {
+	@include responsive(device) {
+		opacity: 0;
+		margin: 40px 26px 0 auto;
+		transition: opacity .25s ease-in-out;
+	}
+
+	@include responsive(desktop) {
+		display: none;
+	}
+}
+
+.mobile-menu-logo {
+	@include responsive(device) {
+		opacity: 0;
+		margin: 40px 0 0 0;
+		height: 16px;
+		transition: opacity .25s ease-in-out;
+	}
+	
+	@include responsive(desktop) {
+		display: none;
+	}
+}
+
+.menu-back {
+	@include responsive(device) {
+		width: 28px;
+		height: 28px;
+		background: url(../images/arrow-dark.svg) 0 50%/contain no-repeat;
+		display: block;
+		transform: rotate(180deg);
+	}
+}
+
+.mobile-link {
+	@include responsive(device) {
+		margin: auto 0 0 26px;
+		padding-bottom: 40px;
+	}
+}
+
+.menu-btn {
+	@include responsive(device) {
+		width: 28px;
+		height: 28px;
+		background: url(../images/menu-light.svg) 50% 50% no-repeat;
+	}
+	
+	@include responsive(desktop) {
+		display: none;
+	}
+}
+
+.menu-content {
+	@include responsive(device) {
+		position: relative;
+		height: 100vh;
+	}
+	
+	&__main {
+		@include responsive(device) {
+			display: none;
+			flex-flow: column;
+			align-items: baseline;
+			height: 100vh;
+		}
+
+		&.active {
+			@include responsive(device) {
+				display: flex;
+				animation: opacity 1s;
+			}
+		}
+
+		.menu {
+			@include responsive(device) {
+				margin: 60px 26px 0;
+			}
+		}
+
+		li {
+			@include responsive(device) {
+				margin-top: 20px;
+			}
+
+			a {
+				@include responsive(device) {
+					font-family: 'Hatton', serif;
+					text-transform: uppercase;
+				}
+				
+				@include responsive(desktop) {
+					font-family: 'Pangram', sans-serif;
+				}
+			}
+		}
+	}
+
+	&__catalog {
+		display: none;
+		padding: 30px 26px 40px;
+
+		&.active {
+			display: block;
+			animation: opacity 1s;
+		}
+
+		.menu {
+			@include responsive(device) {
+				margin: 30px 0;
+			}
+		}
+
+		.menu:not(:last-child) {
+			li {
+				@include responsive(device) {
+					&:first-child {
+						padding-bottom: 5px;
+
+						&:after {
+							content: '';
+							position: absolute;
+							width: 11px;
+							height: 1px;
+							left: 0;
+							bottom: 0;
+							background-color: $black;
+						}
+					}
+				}
+			}
+		}
+
+		li {
+			@include responsive(device) {
+				font-size: 1.125rem;
+				margin-top: 5px;
+				position: relative;
+			}
+
+			a {
+				font-size: .875rem;
+			}
+		}
+	}
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+
+
+
+
+.menu {
+	display: flex;
+	
+	@include responsive(device) {
+		flex-flow: column;
+	}
+
+	li {
+		@include responsive(desktop) {
+			margin: 0 33px;
+		}
+
+		&.menu-search {
+			a {
+				padding-right: 24px;
+				position: relative;
+
+				&:after {
+					@include responsive(desktop) {
+						content: '';
+						position: absolute;
+						width: 16px;
+						height: 30px;
+						right: 0;
+						background: url(../images/icon-search.svg) 50% 50% no-repeat;
+					}
+				}
+			}
+		}
+
+		a {
+			text-decoration: none;
+
+			@include responsive(device) {
+				color: $black;
+				white-space: nowrap;
+			}
+
+			@include responsive(desktop) {
+				color: $beige1;
+			}
+		}
+	}
+}
+
+.header-video {
+	margin-top: -80px;
+	width: 100%;
+	max-width: 324px;
+	height: 420px;
+	object-fit: cover;
+	background-color: green;
+	margin-bottom: 45px;
+}
+
+
+
+.cookies-info {
+	position: fixed;
+	bottom: 100px;
+	right: 10%;
+	background-color: #464B3E;
+	padding: 34px 40px;
+	color: $beige1;
+	max-width: 406px;
+	
+	p {
+		font-size: .875rem;
+		letter-spacing: 0.01rem;
+	}
+
+	button {
+		background-color: transparent;
+		border: 0;
+		color: $beige1;
+		margin-top: 25px;
+		font-size: .875rem;
+		cursor: pointer;
+		text-decoration: underline;
+		
+		&:focus {
+			outline: none;
+		}
+	}
+	
+	&.hidden {
+		display: none;
+	}
+}
+
+.main-about-us {
+	padding: 120px 0 0;
+	
+	@include responsive(desktop) {
+		padding: 310px 0 460px;
+	}
+
+	.title-small {
+		text-align: center;
+	}
+
+	h2 {
+		@include title(48px, 153%);
+		max-width: 480px;
+	}
+}
+
+.main-modern {
+	margin: 0 auto 100px;
+
+	@include responsive(desktop) {
+		margin: 0 auto 450px;
+	}
+
+	.title-small {
+		@include responsive(device) {
+			text-align: left;
+			color: $light-gray;
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 9;
+
+		@include responsive(desktop) {
+			max-width: 1350px;
+			margin: 100px auto 0;
+		}
+	}
+
+	&__content {
+		display: flex;
+		justify-content: center;
+
+		@include responsive(device) {
+			flex-flow: column;
+		}
+
+		@include responsive(desktop) {
+			margin-top: -150px;
+		}
+	}
+
+	&__text {
+		display: flex;
+
+		@include responsive(mobile) {
+			padding-top: 15%;
+		}
+
+		@include responsive(desktop) {
+			max-width: 400px;
+			padding-top: 160px;
+		}
+
+		&:last-child {
+			align-items: center;
+		}
+
+		p {
+			padding-right: 15px;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__text-floating {
+
+		@include responsive(mobile) {
+			margin: 17% 0 0 40px;
+		}
+
+		@include responsive(tablet) {
+			margin: 40px 0 0 40%;
+		}
+
+		@include responsive(desktop) {
+			margin: 180px 0 0 40px;
+		}
+	}
+
+	&__img {
+		position: relative;
+
+		img {
+			display: block;
+		}
+
+		.main-about-top {
+			position: absolute;
+			top: 40px;
+			right: 0;
+			transform: translate(70%, 0);
+
+			@include responsive(mobile) {
+				max-width: 40%;
+				transform: translate(10%, -20%);
+			}
+
+			@include responsive(tablet) {
+				max-width: 20%;
+				transform: translate(-30%, 30%);
+			}
+		}
+
+		.main-about-content {
+			@include responsive(mobile) {
+				max-width: 80%;
+				margin: 60px auto 0;
+			}
+			
+			@include responsive(tablet) {
+				max-width: 60%;
+				margin: 60px auto 0;
+			}
+		}
+
+		.main-about-bottom {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transform: translate(-65%, 20%);
+
+			@include responsive(mobile) {
+				max-width: 45%;
+				transform: translate(0, 50%);
+			}
+
+			@include responsive(tablet) {
+				max-width: 25%;
+				transform: translate(30%, 30%);
+			}
+		}
+	}
+}
+
+.main-catalog {
+
+	h3 {
+		@include title(34px, 164%);
+	}
+
+	&__title {
+		max-width: 300px;
+
+		@include responsive(device) {
+			margin-bottom: 20px;
+		}
+
+		@include responsive(desktop) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__list {
+		overflow: hidden;
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		object-fit: cover;
+		
+		@include responsive(device) {
+			padding: 2px;
+		}
+
+		@include responsive(desktop) {
+			padding: 10px;
+		}
+	}
+	
+	&__item {
+		position: relative;
+		float: left;
+		
+		@include responsive(device) {
+			width: 50%;
+			padding-top: 50%;
+		}
+		
+		@include responsive(landdesktop) {
+			width: 25%;
+			padding-top: 25%;
+		}
+
+		&:hover {
+			&:before {
+				content: '';
+			}
+
+			.main-catalog__category,
+			.main-catalog__info {
+				opacity: 1;
+			}
+		}
+		
+		&:before {
+			background-color: rgba($green, .3);
+			position: absolute;
+			z-index: 2;
+			
+			@include responsive(device) {
+				content: '';
+				top: 2px;
+				right: 2px;
+				bottom: 2px;
+				left: 2px;
+			}
+			
+			@include responsive(desktop) {
+				content: none;
+				top: 10px;
+				right: 10px;
+				bottom: 10px;
+				left: 10px;
+			}
+		}
+
+		&:first-child {
+			@include responsive(device) {
+				width: 100%;
+				padding-top: 100%;
+			}
+
+			@include responsive(landdesktop) {
+				width: 50%;
+				padding-top: 50%;
+			}
+			
+			.main-catalog__content {
+				@include responsive(landdesktop) {
+					padding: 50px;
+				}
+			}
+		}
+
+		img {
+			max-width: 100%;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-flow: column;
+		position: absolute;
+		z-index: 3;
+
+		@include responsive(device) {
+			padding: 20px;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+
+		@include responsive(desktop) {
+			padding: 25px;
+			top: 10px;
+			right: 10px;
+			bottom: 10px;
+			left: 10px;
+		}
+	}
+	
+	&__category {
+		color: $beige-text;
+		font-size: 14px;
+		line-height: 170%;
+	}
+
+	&__info {
+		margin-top: auto;
+		color: $beige-text;
+	}
+
+	&__name {
+		@include responsive(device) {
+			font-size: 16px;
+			line-height: 130%;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		@include responsive(desktop) {
+			font-size: 18px;
+			line-height: 170%;
+		}
+	}
+
+	&__price {
+		font-size: 16px;
+		line-height: 170%;
+	}
+
+	.add-to-cart {
+		@include responsive(device) {
+			display: none;
+		}
+
+		@include responsive(desktop) {
+			font-size: 14px;
+			line-height: 170%;
+			color: $beige-text;
+			text-decoration: none;
+			display: inline-block;
+			margin-top: 20px;
+		}
+	}
+}
+
+.main-categories {
+	@include responsive(mobile) {
+		margin: 120px auto 0;
+	}
+
+	&__slider {
+		@include responsive(mobile) {
+			margin: 0 -26px;
+		}
+		
+		@include responsive(tablet) {
+			margin: 170px -26px 0;
+		}
+
+		@include responsive(desktop) {
+			margin-bottom: 450px;
+		}
+
+		.swiper-container {
+			max-width: 1326px;
+			overflow: hidden;
+		}
+	}
+}
+
+
+.swiper-slide {
+	display: flex;
+
+	&__text {
+		display: flex;
+		align-items: baseline;
+		flex-flow: column;
+		justify-content: flex-end;
+		box-sizing: border-box;
+		
+		@include responsive(device) {
+			position: absolute;
+			color: $beige-text;
+			padding: 90px 26px 0;
+			max-width: 400px;
+		}
+		
+		@include responsive(desktop) {
+			width: 35%;
+			padding-right: 150px;
+		}
+
+		a {
+			margin-top: 60px;
+		}
+
+		h3 {
+			max-width: 180px;
+			@include title(34px, 164%);
+			margin-bottom: 30px;
+		}
+		
+		.btn {
+			color: $beige1;
+			border-color: $beige1;
+		}
+	}
+	
+	&__img {
+		display: flex;
+		justify-content: flex-end;
+		
+		@include responsive(mobile) {
+			height: 600px;
+		}
+		
+		@include responsive(tablet) {
+			width: 100%;
+		}
+
+		@include responsive(desktop) {
+			width: 65%;
+		}
+
+		img {
+			@include responsive(device) {
+				width: 100%;
+			}
+
+			@include responsive(desktop) {
+				max-width: 100%;
+			}
+		}
+	}
+	
+	&__buttons {
+		height: 40px;
+		
+		@include responsive(device) {
+			position: absolute;
+			margin-top: -80px;
+			width: 100%;
+			color: $beige1;
+		}
+		
+		@include responsive(desktop) {
+			position: relative;
+			width: 65%;
+			float: right;
+			margin-top: 20px;
+		}
+		
+		.swiper-button-prev,
+		.swiper-button-next {
+			&:after {
+				@include responsive(device) {
+					background-image: url(../images/arrow-light.svg);
+				}
+			}
+		}
+		
+		.devider {
+			@include responsive(desktop) {
+				position: relative;
+				padding: 0 10px 0 8px;
+			}
+
+			&:before {
+				@include responsive(desktop) {
+					content: '';
+					position: absolute;
+					width: 2px;
+					height: 2px;
+					border-radius: 50%;
+					top: 50%;
+					margin-top: -1px;
+					background-color: $black;
+				}
+			}
+		}
+	}
+}
+
+.swiper-button-next {
+	width: 40px;
+
+	&:after {
+		width: 40px;
+		height: 18px;
+		font-size: 0;
+		background: url(../images/arrow-dark.svg) 0 0/cover no-repeat;
+	}
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+.swiper-button-prev {
+	width: 40px;
+	
+	&:after {
+		width: 40px;
+		height: 18px;
+		font-size: 0;
+		background: url(../images/arrow-dark.svg) 0 0/cover no-repeat;
+		transform: rotate(-180deg);
+	}
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+.swiper-pagination {
+	@include responsive(device) {
+		display: none;
+	}
+}
+
+
+.main-likes {
+	background-color: $beige2;
+	position: relative;
+
+	@include responsive(mobile) {
+		padding: 200px 0 0;
+	}
+	
+	@include responsive(tablet) {
+		padding: 170px 0 0;
+	}
+
+	@include responsive(desktop) {
+		padding: 350px 0 200px;
+	}
+
+	&__title {
+
+		@include responsive(tablet) {
+			max-width: 500px;
+		}
+
+		@include responsive(desktop) {
+			max-width: 680px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		
+		@include responsive(device) {
+			flex-flow: column;
+		}
+		
+		@include responsive(desktop) {
+			margin-top: 170px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-flow: column;
+		
+		@include responsive(mobile) {
+			margin-top: 40px;
+			padding-top: 40px;
+			border-top: 1px solid $light-gray;
+		}
+		
+		@include responsive(tablet) {
+			max-width: 400px;
+			margin: 50px auto 0;
+		}
+		
+		@include responsive(desktop) {
+			padding-left: 120px;
+		}
+		
+		&:first-child {
+			@include responsive(mobile) {
+				margin-top: 0;
+				border-top-color: transparent;
+			}
+		}
+	}
+
+	&__author {
+		display: flex;
+		align-items: center;
+		margin-top: 25px;
+	}
+
+	&__author-img {
+		min-width: 52px;
+		min-height: 52px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-right: 20px;
+		
+		img {
+			max-width: 100%;
+			display: block;
+		}
+	}
+	
+	&__author-info {
+		color: $light-gray;
+	}
+
+	h2 {
+		@include title(48px, 153%);
+	}
+}
+
+.main-likes-top {
+	@include responsive(device) {
+		display: none;
+	}
+
+	@include responsive(desktop) {
+		position: absolute;
+		right: 20%;
+		top: 0;
+		transform: translate(0, -50%);
+	}
+}
+
+.main-likes-content {
+	@include responsive(mobile) {
+		max-width: 50%;
+		margin: 80px 0 120px;
+	}
+	
+	@include responsive(tablet) {
+		max-width: 30%;
+		margin: 80px 0 120px 10%;
+	}
+	
+	@include responsive(desktop) {
+		margin-left: 15%;
+		margin-top: 300px;
+	}
+}
+
+.main-likes-bottom {
+	position: absolute;
+	right: 10%;
+	bottom: 0;
+	margin-top: -50%;
+	transform: translate(0, 50%);
+	
+	@include responsive(mobile) {
+		max-width: 30%;
+	}
+	
+	@include responsive(tablet) {
+		max-width: 20%;
+	}
+}
+
+
+.main-stories {
+	background-color: $dark-green;
+
+	@include responsive(mobile) {
+		padding: 130px 0 50px;
+	}
+	
+	@include responsive(tablet) {
+		padding: 90px 0 100px;
+	}
+
+	@include responsive(desktop) {
+		padding: 415px 0;
+	}
+
+	&__content {
+		max-width: 500px;
+		margin: 0 auto;
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		color: $beige1;
+
+		h2 {
+			@include title(48px, 153%);
+		}
+
+		img {
+			margin: 30px 0;
+		}
+	}
+
+	&__info {
+		max-width: 330px;
+		text-align: center;
+
+		p {
+			margin-bottom: 22px;
+		}
+	}
+}
+
+
+
+.join-us {
+	display: flex;
+	background: url(../images/join-us-bg.jpg) 50% 0/cover no-repeat;
+
+	@include responsive(mobile) {
+		background-position: 50% 100%;
+		height: 460px;
+	}
+	
+	@include responsive(tablet) {
+		min-height: 890px;
+	}
+	
+	@include responsive(desktop) {
+		min-height: 1035px;
+	}
+
+	&__content {
+		margin: auto auto 120px;
+		max-width: 600px;
+
+		h2 {
+			@include title(54px, 138%);
+			color: $beige1;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+	}
+}
+
+.join-us-form {
+	position: relative;
+	margin: 0 auto;
+
+	@include responsive(mobile) {
+		margin: 0 26px;
+	}
+
+	@include responsive(desktop) {
+		max-width: 520px;
+	}
+
+	&__info {
+		position: absolute;
+
+		span {
+			font-size: 24px;
+			margin-top: 13px;
+			display: block;
+			color: $beige1;
+			
+			&.error {
+				color: $red-error;
+			}
+		}
+	}
+}
+
+.footer {
+	@include responsive(device) {
+		padding: 120px 0 60px;
+	}
+
+	@include responsive(desktop) {
+		padding: 230px 0 60px;
+	}
+
+	&__content {
+		width: 100%;
+		max-width: 1610px;
+		margin: 0 auto;
+		padding: 0 26px;
+		box-sizing: border-box;
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-between;
+	}
+	
+	&__mail {
+		p {
+			color: $light-gray;
+			font-size: .875rem;
+			margin-bottom: 1.6rem;
+		}
+		
+		a {
+			text-decoration: none;
+			position: relative;
+			color: $black;
+
+			@include responsive(device) {
+				font-size: 21px;
+			}
+
+			@include responsive(desktop) {
+				font-size: 24px;
+			}
+			
+			&:after {
+				content: '';
+				left: 0;
+				right: 0;
+				position: absolute;
+				bottom: -5px;
+				height: 1px;
+				background-color: $black;
+			}
+		}
+	}
+	
+	&__menu {
+		@include responsive(mobile) {
+			width: 100%;
+			margin-top: 30px;
+		}
+
+		@include responsive(portdesktop) {
+			width: 50%;
+		}
+
+		nav {
+			display: flex;
+			flex-flow: wrap;
+			justify-content: space-between;
+		}
+		
+		ul {
+			width: 50%;
+			
+			@include responsive(device) {
+				margin-top: 60px;
+			}
+
+			@include responsive(desktop) {
+				width: 25%;
+			}
+		}
+
+		li {
+			color: $light-gray;
+			font-size: .875rem;
+			margin-bottom: .05rem;
+
+			&:first-child {
+				margin-bottom: 1rem;
+			}
+
+			a {
+				color: $black;
+				text-decoration: none;
+			}
+		}
+	}
+	
+	&__copyright {
+		width: 100%;
+		font-size: .875rem;
+		color: $black;
+		
+		@include responsive(device) {
+			margin-top: 140px;
+		}
+		
+		@include responsive(desktop) {
+			margin-top: 340px;
+		}
+	}
+}
+
+
+.desktop {
+	.main-catalog__category,
+	.main-catalog__info {
+		opacity: 0;
+		
+		&:hover {
+			&:before {
+				content: '';
+			}
+			
+			.main-catalog__category,
+			.main-catalog__info {
+				opacity: 1;
+			}
+		}
+		
+	}
+}

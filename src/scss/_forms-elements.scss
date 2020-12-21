@@ -1,0 +1,82 @@
+button {
+	font-family: 'Pangram';
+}
+
+.btn {
+	text-decoration: none;
+	display: inline-block;
+	transform: rotate(4deg);
+	border: 1px solid;
+	padding: 6px 20px;
+	border-radius: 50%;
+	
+	span {
+		display: block;
+		transform: rotate(-4deg);
+	}
+	
+	&--light {
+		color: $beige1;
+		border-color: $beige1;
+	}
+	
+	&--dark {
+		color: $black;
+		border-color: $black;
+	}
+}
+
+
+
+.inp-subscribe {
+	border: 0;
+	border-bottom: 2.5px solid $beige1;
+	background-color: transparent;
+	color: $beige1;
+	width: 100%;
+	box-sizing: border-box;
+	
+	@include responsive(mobile) {
+		font-size: 21px;
+		height: 40px;
+		padding: 0 60px 0 0;
+	}
+	
+	@include responsive(portdesktop) {
+		padding: 0 80px 0 0;
+		font-size: 34px;
+		height: 60px;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&::placeholder {
+		color: rgba($beige1, .5);
+	}
+}
+
+.submit-subscribe {
+	position: absolute;
+	right: 0;
+	background: url(../images/arrow.svg) 0 50%/contain no-repeat;
+	border: 0;
+	font-size: 0;
+	cursor: pointer;
+	padding: 0;
+
+	@include responsive(mobile) {
+		width: 40px;
+		height: 40px;
+	}
+
+	@include responsive(portdesktop) {
+		width: 60px;
+		height: 60px;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}

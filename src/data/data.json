@@ -1,0 +1,221 @@
+{
+	"menu": [
+		{
+			"url": "catalogue.html",
+			"isActive": true,
+			"hasSubmenu": true,
+			"class": "has-submenu js-submenu",
+			"name": "Catalogue"
+		},
+		{
+			"url": "about-us.html",
+			"isActive": true,
+			"hasSubmenu": false,
+			"class": "",
+			"name": "About us"
+		},
+		{
+			"url": "stories.html",
+			"isActive": true,
+			"hasSubmenu": false,
+			"class": "",
+			"name": "Stories"
+		},
+		{
+			"url": "stockist.html",
+			"isActive": true,
+			"hasSubmenu": false,
+			"class": "",
+			"name": "Stockist"
+		},
+		{
+			"url": "contact-us.html",
+			"isActive": true,
+			"hasSubmenu": false,
+			"class": "contact-us",
+			"name": "Contact us"
+		},
+		{
+			"url": "search.html",
+			"isActive": true,
+			"hasSubmenu": false,
+			"class": "menu-search",
+			"name": "Search"
+		}
+	],
+	"menuCatalog": [
+		{
+			"header": "Category",
+			"links": [
+				{
+					"url": "",
+					"title": "All"
+				},
+				{
+					"url": "",
+					"title": "Arch stackers"
+				},
+				{
+					"url": "",
+					"title": "Building blocks"
+				},
+				{
+					"url": "",
+					"title": "Cubes"
+				},
+				{
+					"url": "",
+					"title": "Imaginative play"
+				},
+				{
+					"url": "",
+					"title": "Stacking towers"
+				},
+				{
+					"url": "",
+					"title": "Rolling toys"
+				}
+			]
+		},
+		{
+			"header": "Collection",
+			"links": [
+				{
+					"url": "",
+					"title": "All"
+				},
+				{
+					"url": "",
+					"title": "Flowers"
+				},
+				{
+					"url": "",
+					"title": "Diversity"
+				}
+			]
+		},
+		{
+			"header": "Shop All",
+			"links": []
+		}
+	],
+	"footerMenu": [
+		{
+			"header": "About",
+			"links": [
+				{
+					"url": "",
+					"title": "About us"
+				},
+				{
+					"url": "",
+					"title": "Stories"
+				}
+			]
+		},
+		{
+			"header": "Customer Service",
+			"links": [
+				{
+					"url": "",
+					"title": "Shipping"
+				},
+				{
+					"url": "",
+					"title": "Wholesale"
+				},
+				{
+					"url": "",
+					"title": "Terms & Conditions"
+				},
+				{
+					"url": "",
+					"title": "FAQ"
+				}
+			]
+		},
+		{
+			"header": "Contact",
+			"links": [
+				{
+					"url": "",
+					"title": "Contact us"
+				},
+				{
+					"url": "",
+					"title": "Stockist"
+				}
+			]
+		},
+		{
+			"header": "Social media",
+			"outside": true,
+			"links": [
+				{
+					"url": "",
+					"title": "Instagram"
+				},
+				{
+					"url": "",
+					"title": "Facebook"
+				},
+				{
+					"url": "",
+					"title": "Pinterest"
+				}
+			]
+		}
+	],
+	"likes": [
+		{
+			"text": "“How have you found this lockdown as a new mother? My son was born in January, so it feels like I have been in a bubble for a while now.”",
+			"img": "images/content/like-1.jpg",
+			"name": "Debra P.",
+			"place": "Tokyo, Japan"
+		},
+		{
+			"text": "“After having a baby I found that simple moments with family and friends was the best medicine, especially when feeling tired and adjusting to a new rhythm.”",
+			"img": "images/content/like-2.jpg",
+			"name": "Natalia N.",
+			"place": "Moscow, Russia"
+		},
+		{
+			"text": "“Having their company or watching your child be loved and cared for by the people who are most important to you is a beautiful.”",
+			"img": "images/content/like-3.jpg",
+			"name": "Jenna K.",
+			"place": "Vienna, Austria"
+		}
+	],
+	"catalog": [
+		{
+			"category": "Rolling toys",
+			"name": "Toy car beige",
+			"price": "$50.00",
+			"img": "images/content/catalog-1.jpg"
+		},
+		{
+			"category": "Stacking towers",
+			"name": "Earth stacking tower",
+			"price": "$55.00",
+			"img": "images/content/catalog-2.jpg"
+		},
+		{
+			"category": "Magic wand butterfly",
+			"name": "Earth stacking tower",
+			"price": "$40.00",
+			"img": "images/content/catalog-3.jpg"
+		},
+		{
+			"category": "Imaginative play",
+			"name": "Earth stacking tower",
+			"price": "$150.00",
+			"img": "images/content/catalog-4.jpg"
+		},
+		{
+			"category": "Arch stackers",
+			"name": "Earth stacking tower",
+			"price": "$80.00",
+			"img": "images/content/catalog-5.jpg"
+		}
+	]
+}

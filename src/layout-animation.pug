@@ -1,0 +1,80 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title Raduga Grez
+		meta(name="description" content="")
+		meta(name="keywords" content="")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js")
+		script(src="js/lib/locomotive-scroll.min.js")
+		script(src="js/lib/swiper-bundle.min.js")
+		script(src="https://unpkg.com/current-device/umd/current-device.min.js")
+		link(rel="stylesheet" href="css/lib/swiper-bundle.min.css")
+		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css")
+		link(rel="stylesheet" href="css/raduga-grez.css")
+
+	body
+		div(data-scroll-container)
+			div(data-scroll-section)
+				header(class="header")
+					.header__content
+						.header__top
+							.header__logo
+								a(href="/")
+									img(src="images/raduga-grez.svg" alt="")
+							.header__menu
+								.menu-btn
+								nav
+									ul.menu
+										each item in menu
+											li
+												if item.class === ""
+													a(href= item.url)= item.name
+												else
+													a(href= item.url class=item.class)= item.name
+						.header__cart
+					.header__info
+						h1 Toys as art
+						.header-video
+						.header__btn
+							a(href="#" class="btn btn--light")
+								span Find your toy
+
+
+				block content
+
+
+
+				footer(class="footer")
+					.footer__content
+						.footer__mail
+							p Interested in a Raduga Grëz?
+							a(href="mailto:hello@raduga-grez.ru") hello@raduga-grez.ru
+
+						.footer__menu
+							nav
+								each item in footerMenu
+									ul.footer-menu
+										li= item.header
+										each subitem in item.links
+											li
+												if item.outside === true
+													a(href="" target="_blank")= subitem.title
+												else
+													a(href="")= subitem.title
+
+						.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
+
+					.cookies-info.hidden
+						p This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.
+						button(type="button") Accept
+
+
+
+		script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js")
+		script(src="js/raduga-grez.js")
