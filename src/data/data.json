@@ -53,6 +53,7 @@
 				},
 				{
 					"url": "",
+					"active": true,
 					"title": "Arch stackers"
 				},
 				{
@@ -216,6 +217,30 @@
 			"name": "Earth stacking tower",
 			"price": "$80.00",
 			"img": "images/content/catalog-5.jpg"
+		},
+		{
+			"category": "Rolling toys",
+			"name": "Toy car beige",
+			"price": "$50.00",
+			"img": "images/content/catalog-1.jpg"
+		},
+		{
+			"category": "Stacking towers",
+			"name": "Earth stacking tower",
+			"price": "$55.00",
+			"img": "images/content/catalog-2.jpg"
+		},
+		{
+			"category": "Magic wand butterfly",
+			"name": "Earth stacking tower",
+			"price": "$40.00",
+			"img": "images/content/catalog-3.jpg"
+		},
+		{
+			"category": "Imaginative play",
+			"name": "Earth stacking tower",
+			"price": "$150.00",
+			"img": "images/content/catalog-4.jpg"
 		}
 	]
 }

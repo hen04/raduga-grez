@@ -1,0 +1,37 @@
+extends layout
+block header
+	header(class="header")
+		include include/incl-header
+
+block content
+
+	main
+		.container
+			.catalog-page
+				.catalog-page__menu-mobile.js-catalog-menu
+					| Back to catalogue menu
+				.catalog-page__menu
+					each item in menuCatalog
+						ul.menu-catalog
+							li= item.header
+							each subitem in item.links
+								if subitem.active === true
+									li.active
+										a(href="")= subitem.title
+								else
+									li
+										a(href="")= subitem.title
+				.catalog-page__content
+					.catalog-page__title
+						h1 Arch stackers
+					.catalog
+						.catalog__list
+							each item in catalog
+								.catalog__item
+									.catalog__image
+										img(alt="" src= item.img)
+									.catalog__content
+										.catalog__info
+											.catalog__name= item.name
+											.catalog__price= item.price
+											a(href="" class="add-to-cart") Add to cart

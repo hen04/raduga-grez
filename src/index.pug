@@ -1,8 +1,21 @@
 extends layout
+block header
+	header(class="header header--index")
+		include include/incl-header
 
 block content
 
 	main
+		.main-index
+			.header__info
+				h1 Toys<br> as art
+				.header-video
+					video(autoplay="" loop="" muted="" playsinline="")
+						source(src="./images/main.mp4")
+				.header__btn
+					a(href="#" class="btn btn--light")
+						span Find your toy
+
 		.main-about-us
 			.container
 				.main-modern
@@ -22,19 +35,19 @@ block content
 								a(href="" class="btn btn--dark")
 									span Read more
 
-				.main-catalog
-					.main-catalog__title
+				.catalog.catalog--main
+					.catalog__title
 						h3 toys to spend time together
-					.main-catalog__list
+					.catalog__list
 						each item in catalog.slice(0, 5)
-							.main-catalog__item
-								.main-catalog__image
+							.catalog__item
+								.catalog__image
 									img(alt="" src= item.img)
-								.main-catalog__content
-									.main-catalog__category= item.category
-									.main-catalog__info
-										.main-catalog__name= item.name
-										.main-catalog__price= item.price
+								.catalog__content
+									.catalog__category= item.category
+									.catalog__info
+										.catalog__name= item.name
+										.catalog__price= item.price
 										a(href="" class="add-to-cart") Add to cart
 
 		.main-categories
@@ -102,13 +115,4 @@ block content
 					p Behind the scene of photoshoot our latest collection in Saint Petersburg
 				a(href="stories.html").btn.btn--light
 					span View more
-		.join-us
-			.join-us__content
-				h2 JOIN OUR NEWsLETTER
-				form
-					.join-us-form
-						input(type="text" placeholder="email" class="inp-subscribe")
-						input(type="submit" class="submit-subscribe" value="")
-						.join-us-form__info.hidden
-							span Thanks for subscribing!
-							//span.error Enter your correct email
+

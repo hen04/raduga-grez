@@ -16,72 +16,49 @@ html(lang="en")
 		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css")
 		link(rel="stylesheet" href="css/raduga-grez.css")
 
-	body
-		header(class="header")
-			.header__content
-				.header__top
-					.header__logo
-						a(href="/")
-					.header__menu
-						.menu-btn.js-menu
-						.menu-close.js-menu-close
+	body.loading1
+		.loading-screen
+			.loading-screen__svg
+				img(src="images/loading.svg")
+
+		.loading-content.hidden
+			block header
+			block content
+			.join-us
+				.join-us__content
+					h2 JOIN OUR NEWsLETTER
+					form
+						.join-us-form
+							input(type="text" placeholder="email" class="inp-subscribe")
+							input(type="submit" class="submit-subscribe" value="")
+							.join-us-form__info.d-none
+								span Thanks for subscribing!
+								//span.error Enter your correct email
+			footer(class="footer")
+				.footer__content
+					.footer__mail
+						p Interested in a Raduga Grëz?
+						a(href="mailto:hello@raduga-grez.ru") hello@raduga-grez.ru
+
+					.footer__menu
 						nav
-							.menu-content
-								.menu-content__main
-									ul.menu
-										each item in menu
-											li(class= item.class)
-												a(href= item.url)= item.name
-									img(src="images/mobile-menu-img.jpg" alt="" class="mobile-menu-img")
-									a(href="/" class="mobile-link")
-										img(src="images/raduga-grez-dark.svg" alt="" class="mobile-menu-logo")
-								.menu-content__catalog
-									.menu-back.js-menu-back
-									each item in menuCatalog
-										ul.menu
-											li= item.header
-											each subitem in item.links
-												li
-													a(href="")= subitem.title
-				.header__cart
-			.header__info
-				h1 Toys<br> as art
-				.header-video
-					video(autoplay="" loop="" muted="" playsinline="")
-						source(src="./images/main.mp4")
-				.header__btn
-					a(href="#" class="btn btn--light")
-						span Find your toy
+							each item in footerMenu
+								ul.footer-menu
+									li= item.header
+									each subitem in item.links
+										li
+											if item.outside === true
+												a(href="" target="_blank")= subitem.title
+											else
+												a(href="")= subitem.title
 
-		block content
+					#button-top.footer__top.js-top Back to Top
 
-		footer(class="footer")
-			.footer__content
-				.footer__mail
-					p Interested in a Raduga Grëz?
-					a(href="mailto:hello@raduga-grez.ru") hello@raduga-grez.ru
+					.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
 
-				.footer__menu
-					nav
-						each item in footerMenu
-							ul.footer-menu
-								li= item.header
-								each subitem in item.links
-									li
-										if item.outside === true
-											a(href="" target="_blank")= subitem.title
-										else
-											a(href="")= subitem.title
-
-				#button-top.footer__top.js-top Back to Top
-
-				.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
-
-			.cookies-info.hidden
-				p This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.
-				button(type="button") Accept
-
-
+				.cookies-info.d-none
+					p This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.
+					button(type="button") Accept
 
 		script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js")

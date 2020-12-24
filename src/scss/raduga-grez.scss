@@ -16,6 +16,23 @@ html {
 	overflow-x: hidden;
 }
 
+.loading-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $beige1;
+	z-index: 99;
+}
+
+
+
+
 body {
 	height: 100vh;
 	position: relative;
@@ -45,6 +62,10 @@ body {
 			}
 		}
 	}
+	
+	&.loading {
+		overflow: hidden;
+	}
 }
 
 .container {
@@ -55,51 +76,76 @@ body {
 	box-sizing: border-box;
 }
 
-.hidden {
+.d-none {
 	display: none;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 .header {
-	min-height: 100vh;
-	background: #5C6240 url(../images/main-bg.jpg) 50% 0/cover no-repeat;
+	display: flex;
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+	background-color: rgba($beige1, .8);
+	
+	&--index {
+		background-color: rgba(#6e6f65, .8);
+		
+		.menu li a {
+			@include responsive(desktop) {
+				color: $beige1;
+			}
+		}
 
+		.header__logo {
+			a {
+				background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
+			}
+		}
+		
+		.menu-search {
+			a {
+				&:after {
+					background: url(../images/icon-search.svg) 50% 50% no-repeat;
+				}
+			}
+		}
+	}
+	
 	@include responsive(device) {
-		padding-top: 30px;
+		padding: 30px 26px;
 	}
-
+	
 	@include responsive(desktop) {
-		padding-top: 44px;
-	}
-
-	&__content {
-		width: 100%;
-		max-width: 1610px;
-		margin: 0 auto;
-		padding: 0 26px;
+		padding: 44px 26px;
 		box-sizing: border-box;
 	}
 	
-	&__top {
+	&__content {
 		display: flex;
+		width: 100%;
 
 		@include responsive(device) {
 			align-items: center;
 		}
+
+		@include responsive(desktop) {
+			max-width: 1610px;
+			margin: 0 auto;
+			align-items: center;
+		}
 	}
-	
+
 	&__logo {
 		width: 200px;
+
 		a {
 			display: block;
 			height: 16px;
-
-			@include responsive(device) {
-				background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
-			}
-
-			@include responsive(desktop) {
-				background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
-			}
+			background: url(../images/raduga-grez-dark.svg) 0 0/contain no-repeat;
 		}
 	}
 
@@ -249,49 +295,21 @@ body {
 	&__catalog {
 		display: none;
 		padding: 30px 26px 40px;
+		
+		.menu-catalog {
+			li {
+				a {
+					color: $black;
+					text-decoration: none;
+				}
+			}
+		}
 
 		&.active {
 			display: block;
 			animation: opacity 1s;
 		}
 
-		.menu {
-			@include responsive(device) {
-				margin: 30px 0;
-			}
-		}
-
-		.menu:not(:last-child) {
-			li {
-				@include responsive(device) {
-					&:first-child {
-						padding-bottom: 5px;
-
-						&:after {
-							content: '';
-							position: absolute;
-							width: 11px;
-							height: 1px;
-							left: 0;
-							bottom: 0;
-							background-color: $black;
-						}
-					}
-				}
-			}
-		}
-
-		li {
-			@include responsive(device) {
-				font-size: 1.125rem;
-				margin-top: 5px;
-				position: relative;
-			}
-
-			a {
-				font-size: .875rem;
-			}
-		}
 	}
 }
 
@@ -322,38 +340,98 @@ body {
 			}
 		}
 
-		&.menu-search {
-			a {
-				padding-right: 24px;
-				position: relative;
-
-				&:after {
-					@include responsive(desktop) {
-						content: '';
-						position: absolute;
-						width: 16px;
-						height: 30px;
-						right: 0;
-						background: url(../images/icon-search.svg) 50% 50% no-repeat;
-					}
-				}
-			}
-		}
-
 		a {
 			text-decoration: none;
+			color: $black;
 
 			@include responsive(device) {
-				color: $black;
 				white-space: nowrap;
-			}
-
-			@include responsive(desktop) {
-				color: $beige1;
 			}
 		}
 	}
 }
+
+.menu-search {
+	a {
+		padding-right: 24px;
+		position: relative;
+		
+		&:after {
+			@include responsive(desktop) {
+				content: '';
+				position: absolute;
+				width: 16px;
+				height: 30px;
+				right: 0;
+				background: url(../images/icon-search-dark.svg) 50% 50% no-repeat;
+			}
+		}
+	}
+}
+
+.menu-catalog {
+	@include responsive(device) {
+		margin: 30px 0 0;
+	}
+	
+	@include responsive(desktop) {
+		margin: 0 0 80px;
+	}
+
+	&:not(:last-child) {
+		li {
+			position: relative;
+
+			&:first-child {
+				&:after {
+					content: '';
+					position: absolute;
+					width: 11px;
+					height: 1px;
+					left: 0;
+					bottom: -7px;
+					background-color: $black;
+				}
+			}
+		}
+	}
+	
+	li {
+		&:first-child {
+			font-size: 1.25rem;
+			margin-bottom: 15px;
+		}
+		
+		margin-bottom: .25rem;
+	}
+
+	//li {
+	//	@include responsive(device) {
+	//		margin-top: 20px;
+	//	}
+	//
+	//	a {
+	//		@include responsive(device) {
+	//			font-family: 'Hatton', serif;
+	//			text-transform: uppercase;
+	//		}
+	//
+	//		@include responsive(desktop) {
+	//			font-family: 'Pangram', sans-serif;
+	//		}
+	//	}
+	//}
+}
+
+
+
+
+
+.main-index {
+	min-height: 100vh;
+	background: #5C6240 url(../images/main-bg.jpg) 50% 0/cover no-repeat;
+}
+
 
 .header-video {
 	width: 100%;
@@ -566,7 +644,38 @@ body {
 	}
 }
 
-.main-catalog {
+.catalog {
+	&--main {
+		&:first-child {
+			@include responsive(device) {
+				width: 100%;
+				padding-top: 100%;
+			}
+			
+			@include responsive(landdesktop) {
+				width: 50%;
+				padding-top: 50%;
+			}
+			
+			.main-catalog__content {
+				@include responsive(landdesktop) {
+					padding: 50px;
+				}
+			}
+		}
+
+		.catalog__item {
+			@include responsive(device) {
+				width: 50%;
+				padding-top: 50%;
+			}
+			
+			@include responsive(landdesktop) {
+				width: 25%;
+				padding-top: 25%;
+			}
+		}
+	}
 
 	h3 {
 		@include title(34px, 164%);
@@ -617,8 +726,8 @@ body {
 		}
 		
 		@include responsive(landdesktop) {
-			width: 25%;
-			padding-top: 25%;
+			width: 33%;
+			padding-top: 33%;
 		}
 
 		&:hover {
@@ -651,24 +760,6 @@ body {
 				right: 10px;
 				bottom: 10px;
 				left: 10px;
-			}
-		}
-
-		&:first-child {
-			@include responsive(device) {
-				width: 100%;
-				padding-top: 100%;
-			}
-
-			@include responsive(landdesktop) {
-				width: 50%;
-				padding-top: 50%;
-			}
-			
-			.main-catalog__content {
-				@include responsive(landdesktop) {
-					padding: 50px;
-				}
 			}
 		}
 
@@ -1343,4 +1434,87 @@ body {
 		}
 		
 	}
+}
+
+
+.catalog-page {
+	@include responsive(device) {
+		padding: 88px 0 120px;
+	}
+
+	@include responsive(desktop) {
+		display: flex;
+		padding-top: 250px;
+		margin-bottom: 430px;
+	}
+
+	&__menu {
+		@include responsive(device) {
+			display: none;
+		}
+
+		@include responsive(desktop) {
+			min-width: 250px;
+			margin-top: 10px;
+		}
+		
+		.menu-catalog {
+			li {
+				&:first-child {
+					font-size: 18px;
+				}
+				
+				&.active {
+					a {
+						color: $black;
+					}
+				}
+			}
+
+			a {
+				text-decoration: none;
+				color: $light-gray;
+			}
+		}
+	}
+	
+	&__title {
+		@include responsive(desktop) {
+			display: none;
+		}
+
+		h1 {
+			@include responsive(device) {
+				font-size: 24px;
+				font-family: 'Pangram', sans-serif;
+				text-transform: none;
+			}
+		}
+	}
+	
+	&__content {
+		@include responsive(device) {
+			width: 100%;
+		}
+
+		@include responsive(desktop) {
+			width: calc(100% - 270px)
+		}
+		
+		.catalog__item {
+			@include responsive(device) {
+				&:nth-child(3n+1) {
+					width: 100%;
+					padding-top: 100%;
+				}
+				
+				padding-top: 65%;
+			}
+		}
+	}
+}
+
+.menu-catalog {
+	display: flex;
+	flex-flow: column;
 }

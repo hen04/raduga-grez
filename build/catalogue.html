@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raduga Grez</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js")-->
+    <!--script(src="js/lib/locomotive-scroll.min.js")-->
+    <script src="js/lib/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="css/raduga-grez.css">
+  </head>
+  <body class="loading1">
+    <div class="loading-screen">
+      <div class="loading-screen__svg"><img src="images/loading.svg"></div>
+    </div>
+    <div class="loading-content hidden">
+      <header class="header">
+        <div class="header__content">
+          <div class="header__logo"><a href="/"></a></div>
+          <div class="header__menu">
+            <div class="menu-btn js-menu"></div>
+            <div class="menu-close js-menu-close"></div>
+            <nav>
+              <div class="menu-content">
+                <div class="menu-content__main">
+                  <ul class="menu">
+                    <li class="has-submenu js-submenu"><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="about-us.html">About us</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="stockist.html">Stockist</a></li>
+                    <li class="contact-us"><a href="contact-us.html">Contact us</a></li>
+                    <li class="menu-search"><a href="search.html">Search</a></li>
+                  </ul><img class="mobile-menu-img" src="images/mobile-menu-img.jpg" alt=""><a class="mobile-link" href="/"><img class="mobile-menu-logo" src="images/raduga-grez-dark.svg" alt=""></a>
+                </div>
+                <div class="menu-content__catalog">
+                  <div class="menu-back js-menu-back"></div>
+                  <ul class="menu-catalog">
+                    <li>Category</li>
+                    <li><a href="">All</a></li>
+                    <li><a href="">Arch stackers</a></li>
+                    <li><a href="">Building blocks</a></li>
+                    <li><a href="">Cubes</a></li>
+                    <li><a href="">Imaginative play</a></li>
+                    <li><a href="">Stacking towers</a></li>
+                    <li><a href="">Rolling toys</a></li>
+                  </ul>
+                  <ul class="menu-catalog">
+                    <li>Collection</li>
+                    <li><a href="">All</a></li>
+                    <li><a href="">Flowers</a></li>
+                    <li><a href="">Diversity</a></li>
+                  </ul>
+                  <ul class="menu-catalog">
+                    <li>Shop All</li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div class="header__cart"></div>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <div class="catalog-page">
+            <div class="catalog-page__menu-mobile js-catalog-menu">Back to catalogue menu</div>
+            <div class="catalog-page__menu">
+              <ul class="menu-catalog">
+                <li>Category</li>
+                <li><a href="">All</a></li>
+                <li class="active"><a href="">Arch stackers</a></li>
+                <li><a href="">Building blocks</a></li>
+                <li><a href="">Cubes</a></li>
+                <li><a href="">Imaginative play</a></li>
+                <li><a href="">Stacking towers</a></li>
+                <li><a href="">Rolling toys</a></li>
+              </ul>
+              <ul class="menu-catalog">
+                <li>Collection</li>
+                <li><a href="">All</a></li>
+                <li><a href="">Flowers</a></li>
+                <li><a href="">Diversity</a></li>
+              </ul>
+              <ul class="menu-catalog">
+                <li>Shop All</li>
+              </ul>
+            </div>
+            <div class="catalog-page__content">
+              <div class="catalog-page__title">
+                <h1>Arch stackers</h1>
+              </div>
+              <div class="catalog">
+                <div class="catalog__list">
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Toy car beige</div>
+                        <div class="catalog__price">$50.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$55.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$40.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$150.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-5.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$80.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Toy car beige</div>
+                        <div class="catalog__price">$50.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$55.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$40.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__item">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$150.00</div><a class="add-to-cart" href="">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div class="join-us">
+        <div class="join-us__content">
+          <h2>JOIN OUR NEWsLETTER</h2>
+          <form>
+            <div class="join-us-form">
+              <input class="inp-subscribe" type="text" placeholder="email">
+              <input class="submit-subscribe" type="submit" value="">
+              <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
+                <!--span.error Enter your correct email-->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__mail">
+            <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
+          </div>
+          <div class="footer__menu">
+            <nav>
+              <ul class="footer-menu">
+                <li>About</li>
+                <li><a href="">About us</a>
+                </li>
+                <li><a href="">Stories</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Customer Service</li>
+                <li><a href="">Shipping</a>
+                </li>
+                <li><a href="">Wholesale</a>
+                </li>
+                <li><a href="">Terms &amp; Conditions</a>
+                </li>
+                <li><a href="">FAQ</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Contact</li>
+                <li><a href="">Contact us</a>
+                </li>
+                <li><a href="">Stockist</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Social media</li>
+                <li><a href="" target="_blank">Instagram</a>
+                </li>
+                <li><a href="" target="_blank">Facebook</a>
+                </li>
+                <li><a href="" target="_blank">Pinterest</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__top js-top" id="button-top">Back to Top</div>
+          <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
+        </div>
+        <div class="cookies-info d-none">
+          <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
+          <button type="button">Accept</button>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+    <script src="js/raduga-grez.js"></script>
+  </body>
+</html>

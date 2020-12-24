@@ -16,10 +16,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__top">
+  <body class="loading1">
+    <div class="loading-screen">
+      <div class="loading-screen__svg"><img src="images/loading.svg"></div>
+    </div>
+    <div class="loading-content hidden">
+      <header class="header header--index">
+        <div class="header__content">
           <div class="header__logo"><a href="/"></a></div>
           <div class="header__menu">
             <div class="menu-btn js-menu"></div>
@@ -38,7 +41,7 @@
                 </div>
                 <div class="menu-content__catalog">
                   <div class="menu-back js-menu-back"></div>
-                  <ul class="menu">
+                  <ul class="menu-catalog">
                     <li>Category</li>
                     <li><a href="">All</a></li>
                     <li><a href="">Arch stackers</a></li>
@@ -48,198 +51,200 @@
                     <li><a href="">Stacking towers</a></li>
                     <li><a href="">Rolling toys</a></li>
                   </ul>
-                  <ul class="menu">
+                  <ul class="menu-catalog">
                     <li>Collection</li>
                     <li><a href="">All</a></li>
                     <li><a href="">Flowers</a></li>
                     <li><a href="">Diversity</a></li>
                   </ul>
-                  <ul class="menu">
+                  <ul class="menu-catalog">
                     <li>Shop All</li>
                   </ul>
                 </div>
               </div>
             </nav>
           </div>
+          <div class="header__cart"></div>
         </div>
-        <div class="header__cart"></div>
-      </div>
-      <div class="header__info">
-        <h1>Toys<br> as art</h1>
-        <div class="header-video">
-          <video autoplay="" loop="" muted="" playsinline="">
-            <source src="./images/main.mp4">
-          </video>
-        </div>
-        <div class="header__btn"><a class="btn btn--light" href="#"><span>Find your toy</span></a></div>
-      </div>
-    </header>
-    <main>
-      <div class="main-about-us">
-        <div class="container">
-          <div class="main-modern">
-            <div class="title-small">about us</div>
-            <div class="main-modern__title">
-              <h2>Toys for modern families</h2>
+      </header>
+      <main>
+        <div class="main-index">
+          <div class="header__info">
+            <h1>Toys<br> as art</h1>
+            <div class="header-video">
+              <video autoplay="" loop="" muted="" playsinline="">
+                <source src="./images/main.mp4">
+              </video>
             </div>
-            <div class="main-modern__content">
-              <div class="main-modern__text">
-                <p>We create toys for mothers, who want to play with their children in an aesthetically way and not to feel bored about play.</p>
+            <div class="header__btn"><a class="btn btn--light" href="#"><span>Find your toy</span></a></div>
+          </div>
+        </div>
+        <div class="main-about-us">
+          <div class="container">
+            <div class="main-modern">
+              <div class="title-small">about us</div>
+              <div class="main-modern__title">
+                <h2>Toys for modern families</h2>
               </div>
-              <div class="main-modern__img"><img class="main-about-bottom" src="images/content/about-3.jpg" alt=""><img class="main-about-content" src="images/content/about-1.jpg" alt=""><img class="main-about-top" src="images/content/about-2.jpg" alt=""></div>
-              <div class="main-modern__text">
-                <div class="main-modern__text-floating">
-                  <p>We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.</p><a class="btn btn--dark" href=""><span>Read more</span></a>
+              <div class="main-modern__content">
+                <div class="main-modern__text">
+                  <p>We create toys for mothers, who want to play with their children in an aesthetically way and not to feel bored about play.</p>
+                </div>
+                <div class="main-modern__img"><img class="main-about-bottom" src="images/content/about-3.jpg" alt=""><img class="main-about-content" src="images/content/about-1.jpg" alt=""><img class="main-about-top" src="images/content/about-2.jpg" alt=""></div>
+                <div class="main-modern__text">
+                  <div class="main-modern__text-floating">
+                    <p>We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.</p><a class="btn btn--dark" href=""><span>Read more</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="catalog catalog--main">
+              <div class="catalog__title">
+                <h3>toys to spend time together</h3>
+              </div>
+              <div class="catalog__list">
+                <div class="catalog__item">
+                  <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
+                  <div class="catalog__content">
+                    <div class="catalog__category">Rolling toys</div>
+                    <div class="catalog__info">
+                      <div class="catalog__name">Toy car beige</div>
+                      <div class="catalog__price">$50.00</div><a class="add-to-cart" href="">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog__item">
+                  <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
+                  <div class="catalog__content">
+                    <div class="catalog__category">Stacking towers</div>
+                    <div class="catalog__info">
+                      <div class="catalog__name">Earth stacking tower</div>
+                      <div class="catalog__price">$55.00</div><a class="add-to-cart" href="">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog__item">
+                  <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
+                  <div class="catalog__content">
+                    <div class="catalog__category">Magic wand butterfly</div>
+                    <div class="catalog__info">
+                      <div class="catalog__name">Earth stacking tower</div>
+                      <div class="catalog__price">$40.00</div><a class="add-to-cart" href="">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog__item">
+                  <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
+                  <div class="catalog__content">
+                    <div class="catalog__category">Imaginative play</div>
+                    <div class="catalog__info">
+                      <div class="catalog__name">Earth stacking tower</div>
+                      <div class="catalog__price">$150.00</div><a class="add-to-cart" href="">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog__item">
+                  <div class="catalog__image"><img alt="" src="images/content/catalog-5.jpg"></div>
+                  <div class="catalog__content">
+                    <div class="catalog__category">Arch stackers</div>
+                    <div class="catalog__info">
+                      <div class="catalog__name">Earth stacking tower</div>
+                      <div class="catalog__price">$80.00</div><a class="add-to-cart" href="">Add to cart</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="main-catalog">
-            <div class="main-catalog__title">
-              <h3>toys to spend time together</h3>
-            </div>
-            <div class="main-catalog__list">
-              <div class="main-catalog__item">
-                <div class="main-catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
-                <div class="main-catalog__content">
-                  <div class="main-catalog__category">Rolling toys</div>
-                  <div class="main-catalog__info">
-                    <div class="main-catalog__name">Toy car beige</div>
-                    <div class="main-catalog__price">$50.00</div><a class="add-to-cart" href="">Add to cart</a>
+        </div>
+        <div class="main-categories">
+          <div class="container">
+            <div class="main-categories__slider">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="swiper-slide__text">
+                      <div class="title-small">categories</div>
+                      <h3>Building blocks</h3>
+                      <p>We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.</p><a class="btn btn--dark" href=""><span>Shop</span></a>
+                    </div>
+                    <div class="swiper-slide__img"><img src="images/content/slider-1.jpg" alt=""></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-slide__text">
+                      <div class="title-small">categories</div>
+                      <h3>Building blocks</h3>
+                      <p>We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.</p><a class="btn btn--dark" href=""><span>Shop</span></a>
+                    </div>
+                    <div class="swiper-slide__img"><img src="images/content/slider-1.jpg" alt=""></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-slide__text">
+                      <div class="title-small">categories</div>
+                      <h3>Building blocks</h3>
+                      <p>We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.</p><a class="btn btn--dark" href=""><span>Shop</span></a>
+                    </div>
+                    <div class="swiper-slide__img"><img src="images/content/slider-1.jpg" alt=""></div>
                   </div>
                 </div>
-              </div>
-              <div class="main-catalog__item">
-                <div class="main-catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
-                <div class="main-catalog__content">
-                  <div class="main-catalog__category">Stacking towers</div>
-                  <div class="main-catalog__info">
-                    <div class="main-catalog__name">Earth stacking tower</div>
-                    <div class="main-catalog__price">$55.00</div><a class="add-to-cart" href="">Add to cart</a>
-                  </div>
-                </div>
-              </div>
-              <div class="main-catalog__item">
-                <div class="main-catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
-                <div class="main-catalog__content">
-                  <div class="main-catalog__category">Magic wand butterfly</div>
-                  <div class="main-catalog__info">
-                    <div class="main-catalog__name">Earth stacking tower</div>
-                    <div class="main-catalog__price">$40.00</div><a class="add-to-cart" href="">Add to cart</a>
-                  </div>
-                </div>
-              </div>
-              <div class="main-catalog__item">
-                <div class="main-catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
-                <div class="main-catalog__content">
-                  <div class="main-catalog__category">Imaginative play</div>
-                  <div class="main-catalog__info">
-                    <div class="main-catalog__name">Earth stacking tower</div>
-                    <div class="main-catalog__price">$150.00</div><a class="add-to-cart" href="">Add to cart</a>
-                  </div>
-                </div>
-              </div>
-              <div class="main-catalog__item">
-                <div class="main-catalog__image"><img alt="" src="images/content/catalog-5.jpg"></div>
-                <div class="main-catalog__content">
-                  <div class="main-catalog__category">Arch stackers</div>
-                  <div class="main-catalog__info">
-                    <div class="main-catalog__name">Earth stacking tower</div>
-                    <div class="main-catalog__price">$80.00</div><a class="add-to-cart" href="">Add to cart</a>
-                  </div>
+                <div class="swiper-slide__buttons">
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="main-categories">
-        <div class="container">
-          <div class="main-categories__slider">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="swiper-slide__text">
-                    <div class="title-small">categories</div>
-                    <h3>Building blocks</h3>
-                    <p>We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.</p><a class="btn btn--dark" href=""><span>Shop</span></a>
-                  </div>
-                  <div class="swiper-slide__img"><img src="images/content/slider-1.jpg" alt=""></div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="swiper-slide__text">
-                    <div class="title-small">categories</div>
-                    <h3>Building blocks</h3>
-                    <p>We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.</p><a class="btn btn--dark" href=""><span>Shop</span></a>
-                  </div>
-                  <div class="swiper-slide__img"><img src="images/content/slider-1.jpg" alt=""></div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="swiper-slide__text">
-                    <div class="title-small">categories</div>
-                    <h3>Building blocks</h3>
-                    <p>We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.</p><a class="btn btn--dark" href=""><span>Shop</span></a>
-                  </div>
-                  <div class="swiper-slide__img"><img src="images/content/slider-1.jpg" alt=""></div>
-                </div>
-              </div>
-              <div class="swiper-slide__buttons">
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
+        <div class="main-likes">
+          <div class="container">
+            <div class="main-likes__title">
+              <h2>For what do you like RADUGA GRËZ TOYS?</h2>
             </div>
+            <div class="main-likes__list">
+              <div class="main-likes__item">
+                <div class="main-likes__text">“How have you found this lockdown as a new mother? My son was born in January, so it feels like I have been in a bubble for a while now.”</div>
+                <div class="main-likes__author">
+                  <div class="main-likes__author-img"><img src="images/content/like-1.jpg" alt=""></div>
+                  <div class="main-likes__author-info">
+                    <div class="main-likes__name">Debra P.</div>
+                    <div class="main-likes__place">Tokyo, Japan</div>
+                  </div>
+                </div>
+              </div>
+              <div class="main-likes__item">
+                <div class="main-likes__text">“After having a baby I found that simple moments with family and friends was the best medicine, especially when feeling tired and adjusting to a new rhythm.”</div>
+                <div class="main-likes__author">
+                  <div class="main-likes__author-img"><img src="images/content/like-2.jpg" alt=""></div>
+                  <div class="main-likes__author-info">
+                    <div class="main-likes__name">Natalia N.</div>
+                    <div class="main-likes__place">Moscow, Russia</div>
+                  </div>
+                </div>
+              </div>
+              <div class="main-likes__item">
+                <div class="main-likes__text">“Having their company or watching your child be loved and cared for by the people who are most important to you is a beautiful.”</div>
+                <div class="main-likes__author">
+                  <div class="main-likes__author-img"><img src="images/content/like-3.jpg" alt=""></div>
+                  <div class="main-likes__author-info">
+                    <div class="main-likes__name">Jenna K.</div>
+                    <div class="main-likes__place">Vienna, Austria</div>
+                  </div>
+                </div>
+              </div>
+            </div><img class="main-likes-top" src="images/content/stories-2.jpg" alt=""><img class="main-likes-content" src="images/content/stories-4.jpg" alt=""><img class="main-likes-bottom" src="images/content/stories-3.jpg" alt="">
           </div>
         </div>
-      </div>
-      <div class="main-likes">
-        <div class="container">
-          <div class="main-likes__title">
-            <h2>For what do you like RADUGA GRËZ TOYS?</h2>
+        <div class="main-stories">
+          <div class="main-stories__content">
+            <div class="title-small">Stories</div>
+            <h3>DASHA & UNA</h3><img src="images/content/stories-1.jpg" alt="">
+            <div class="main-stories__info">
+              <p>Behind the scene of photoshoot our latest collection in Saint Petersburg</p>
+            </div><a class="btn btn--light" href="stories.html"><span>View more</span></a>
           </div>
-          <div class="main-likes__list">
-            <div class="main-likes__item">
-              <div class="main-likes__text">“How have you found this lockdown as a new mother? My son was born in January, so it feels like I have been in a bubble for a while now.”</div>
-              <div class="main-likes__author">
-                <div class="main-likes__author-img"><img src="images/content/like-1.jpg" alt=""></div>
-                <div class="main-likes__author-info">
-                  <div class="main-likes__name">Debra P.</div>
-                  <div class="main-likes__place">Tokyo, Japan</div>
-                </div>
-              </div>
-            </div>
-            <div class="main-likes__item">
-              <div class="main-likes__text">“After having a baby I found that simple moments with family and friends was the best medicine, especially when feeling tired and adjusting to a new rhythm.”</div>
-              <div class="main-likes__author">
-                <div class="main-likes__author-img"><img src="images/content/like-2.jpg" alt=""></div>
-                <div class="main-likes__author-info">
-                  <div class="main-likes__name">Natalia N.</div>
-                  <div class="main-likes__place">Moscow, Russia</div>
-                </div>
-              </div>
-            </div>
-            <div class="main-likes__item">
-              <div class="main-likes__text">“Having their company or watching your child be loved and cared for by the people who are most important to you is a beautiful.”</div>
-              <div class="main-likes__author">
-                <div class="main-likes__author-img"><img src="images/content/like-3.jpg" alt=""></div>
-                <div class="main-likes__author-info">
-                  <div class="main-likes__name">Jenna K.</div>
-                  <div class="main-likes__place">Vienna, Austria</div>
-                </div>
-              </div>
-            </div>
-          </div><img class="main-likes-top" src="images/content/stories-2.jpg" alt=""><img class="main-likes-content" src="images/content/stories-4.jpg" alt=""><img class="main-likes-bottom" src="images/content/stories-3.jpg" alt="">
         </div>
-      </div>
-      <div class="main-stories">
-        <div class="main-stories__content">
-          <div class="title-small">Stories</div>
-          <h3>DASHA & UNA</h3><img src="images/content/stories-1.jpg" alt="">
-          <div class="main-stories__info">
-            <p>Behind the scene of photoshoot our latest collection in Saint Petersburg</p>
-          </div><a class="btn btn--light" href="stories.html"><span>View more</span></a>
-        </div>
-      </div>
+      </main>
       <div class="join-us">
         <div class="join-us__content">
           <h2>JOIN OUR NEWsLETTER</h2>
@@ -247,65 +252,65 @@
             <div class="join-us-form">
               <input class="inp-subscribe" type="text" placeholder="email">
               <input class="submit-subscribe" type="submit" value="">
-              <div class="join-us-form__info hidden"><span>Thanks for subscribing!</span>
+              <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
                 <!--span.error Enter your correct email-->
               </div>
             </div>
           </form>
         </div>
       </div>
-    </main>
-    <footer class="footer">
-      <div class="footer__content">
-        <div class="footer__mail">
-          <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__mail">
+            <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
+          </div>
+          <div class="footer__menu">
+            <nav>
+              <ul class="footer-menu">
+                <li>About</li>
+                <li><a href="">About us</a>
+                </li>
+                <li><a href="">Stories</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Customer Service</li>
+                <li><a href="">Shipping</a>
+                </li>
+                <li><a href="">Wholesale</a>
+                </li>
+                <li><a href="">Terms &amp; Conditions</a>
+                </li>
+                <li><a href="">FAQ</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Contact</li>
+                <li><a href="">Contact us</a>
+                </li>
+                <li><a href="">Stockist</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Social media</li>
+                <li><a href="" target="_blank">Instagram</a>
+                </li>
+                <li><a href="" target="_blank">Facebook</a>
+                </li>
+                <li><a href="" target="_blank">Pinterest</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__top js-top" id="button-top">Back to Top</div>
+          <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
         </div>
-        <div class="footer__menu">
-          <nav>
-            <ul class="footer-menu">
-              <li>About</li>
-              <li><a href="">About us</a>
-              </li>
-              <li><a href="">Stories</a>
-              </li>
-            </ul>
-            <ul class="footer-menu">
-              <li>Customer Service</li>
-              <li><a href="">Shipping</a>
-              </li>
-              <li><a href="">Wholesale</a>
-              </li>
-              <li><a href="">Terms &amp; Conditions</a>
-              </li>
-              <li><a href="">FAQ</a>
-              </li>
-            </ul>
-            <ul class="footer-menu">
-              <li>Contact</li>
-              <li><a href="">Contact us</a>
-              </li>
-              <li><a href="">Stockist</a>
-              </li>
-            </ul>
-            <ul class="footer-menu">
-              <li>Social media</li>
-              <li><a href="" target="_blank">Instagram</a>
-              </li>
-              <li><a href="" target="_blank">Facebook</a>
-              </li>
-              <li><a href="" target="_blank">Pinterest</a>
-              </li>
-            </ul>
-          </nav>
+        <div class="cookies-info d-none">
+          <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
+          <button type="button">Accept</button>
         </div>
-        <div class="footer__top js-top" id="button-top">Back to Top</div>
-        <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
-      </div>
-      <div class="cookies-info hidden">
-        <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
-        <button type="button">Accept</button>
-      </div>
-    </footer>
+      </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
