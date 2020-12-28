@@ -17,11 +17,11 @@ html(lang="en")
 		link(rel="stylesheet" href="css/raduga-grez.css")
 
 	body.loading1
-		.loading-screen
+		.loading-screen.hidden
 			.loading-screen__svg
 				img(src="images/loading.svg")
 
-		.loading-content.hidden
+		.loading-content.hidden1
 			block header
 			block content
 			.join-us
@@ -52,7 +52,8 @@ html(lang="en")
 											else
 												a(href="")= subitem.title
 
-					#button-top.footer__top.js-top Back to Top
+					.footer__top
+						span#button-top.js-top Back to Top
 
 					.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
 

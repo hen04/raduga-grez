@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
   <body class="loading1">
-    <div class="loading-screen">
+    <div class="loading-screen hidden">
       <div class="loading-screen__svg"><img src="images/loading.svg"></div>
     </div>
-    <div class="loading-content hidden">
+    <div class="loading-content hidden1">
       <header class="header">
         <div class="header__content">
           <div class="header__logo"><a href="/"></a></div>
@@ -179,6 +179,9 @@
                       </div>
                     </div>
                   </div>
+                  <div class="spinner">
+                    <div class="spinner-animate"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -242,7 +245,7 @@
               </ul>
             </nav>
           </div>
-          <div class="footer__top js-top" id="button-top">Back to Top</div>
+          <div class="footer__top"><span class="js-top" id="button-top">Back to Top</span></div>
           <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
         </div>
         <div class="cookies-info d-none">

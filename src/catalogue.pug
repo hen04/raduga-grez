@@ -8,8 +8,7 @@ block content
 	main
 		.container
 			.catalog-page
-				.catalog-page__menu-mobile.js-catalog-menu
-					| Back to catalogue menu
+				.catalog-page__menu-mobile.js-catalog-menu Back to catalogue menu
 				.catalog-page__menu
 					each item in menuCatalog
 						ul.menu-catalog
@@ -35,3 +34,5 @@ block content
 											.catalog__name= item.name
 											.catalog__price= item.price
 											a(href="" class="add-to-cart") Add to cart
+							.spinner
+								.spinner-animate

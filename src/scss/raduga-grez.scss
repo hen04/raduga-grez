@@ -49,6 +49,10 @@ body {
 			}
 		}
 		
+		.out {
+			transform: translateY(0);
+		}
+		
 		.menu-close {
 			@include responsive(device) {
 				display: block;
@@ -90,6 +94,11 @@ body {
 	z-index: 99;
 	width: 100%;
 	background-color: rgba($beige1, .8);
+	transition: transform .3s ease-in-out;
+	
+	&.out {
+		transform: translateY(-100%);
+	}
 	
 	&--index {
 		background-color: rgba(#6e6f65, .8);
@@ -112,6 +121,10 @@ body {
 					background: url(../images/icon-search.svg) 50% 50% no-repeat;
 				}
 			}
+		}
+		
+		.menu-btn {
+			background: url(../images/menu-light.svg) 50% 50% no-repeat;
 		}
 	}
 	
@@ -239,7 +252,7 @@ body {
 	@include responsive(device) {
 		width: 28px;
 		height: 28px;
-		background: url(../images/menu-light.svg) 50% 50% no-repeat;
+		background: url(../images/menu-dark.svg) 50% 50% no-repeat;
 	}
 	
 	@include responsive(desktop) {
@@ -646,33 +659,34 @@ body {
 
 .catalog {
 	&--main {
-		&:first-child {
-			@include responsive(device) {
-				width: 100%;
-				padding-top: 100%;
-			}
-			
-			@include responsive(landdesktop) {
-				width: 50%;
-				padding-top: 50%;
-			}
-			
-			.main-catalog__content {
-				@include responsive(landdesktop) {
-					padding: 50px;
-				}
-			}
-		}
 
 		.catalog__item {
 			@include responsive(device) {
 				width: 50%;
 				padding-top: 50%;
 			}
-			
+
 			@include responsive(landdesktop) {
 				width: 25%;
 				padding-top: 25%;
+			}
+
+			&:first-child {
+				@include responsive(device) {
+					width: 100%;
+					padding-top: 100%;
+				}
+
+				@include responsive(landdesktop) {
+					width: 50%;
+					padding-top: 50%;
+				}
+
+				.main-catalog__content {
+					@include responsive(landdesktop) {
+						padding: 50px;
+					}
+				}
 			}
 		}
 	}
@@ -715,10 +729,11 @@ body {
 			padding: 10px;
 		}
 	}
-	
+
 	&__item {
 		position: relative;
 		float: left;
+		transition: opacity .3s ease-in-out;
 		
 		@include responsive(device) {
 			width: 50%;
@@ -735,12 +750,12 @@ body {
 				content: '';
 			}
 
-			.main-catalog__category,
-			.main-catalog__info {
+			.catalog__category,
+			.catalog__info {
 				opacity: 1;
 			}
 		}
-		
+
 		&:before {
 			background-color: rgba($green, .3);
 			position: absolute;
@@ -802,6 +817,7 @@ body {
 	&__info {
 		margin-top: auto;
 		color: $beige-text;
+		opacity: 0;
 	}
 
 	&__name {
@@ -1299,10 +1315,6 @@ body {
 	@include responsive(desktop) {
 		padding: 210px 0 60px;
 	}
-	
-	&__top {
-		width: 100%;
-	}
 
 	&__content {
 		width: 100%;
@@ -1334,7 +1346,7 @@ body {
 			@include responsive(desktop) {
 				font-size: 24px;
 			}
-			
+
 			&:after {
 				content: '';
 				left: 0;
@@ -1390,6 +1402,7 @@ body {
 	&__top {
 		color: $black;
 		font-size: .875rem;
+		width: 100%;
 
 		@include responsive(device) {
 			margin-top: 100px;
@@ -1397,10 +1410,15 @@ body {
 
 		@include responsive(desktop) {
 			margin-top: 180px;
-			cursor: pointer;
+		}
+
+		span {
+			@include responsive(desktop) {
+				cursor: pointer;
+			}
 		}
 	}
-	
+
 	&__copyright {
 		width: 100%;
 		font-size: .875rem;
@@ -1418,17 +1436,18 @@ body {
 
 
 .desktop {
-	.main-catalog__category,
-	.main-catalog__info {
+	.catalog__category,
+	.catalog__info {
 		opacity: 0;
-		
+		transition: opacity .3s ease-in-out;
+
 		&:hover {
 			&:before {
 				content: '';
 			}
-			
-			.main-catalog__category,
-			.main-catalog__info {
+
+			.catalog__category,
+			.catalog__info {
 				opacity: 1;
 			}
 		}
@@ -1448,6 +1467,32 @@ body {
 		margin-bottom: 430px;
 	}
 
+	&__menu-mobile {
+		@include responsive(device) {
+			position: relative;
+			padding-left: 30px;
+			font-size: .875rem;
+			margin-bottom: 24px;
+		}
+		
+		@include responsive(desktop) {
+			display: none;
+		}
+		
+		&:before {
+			@include responsive(device) {
+				content: '';
+				position: absolute;
+				width: 21px;
+				height: 11px;
+				background: url(../images/arrow-dark.svg) 0 50%/contain no-repeat;
+				left: 0;
+				top: 25%;
+				transform: rotate(180deg);
+			}
+		}
+	}
+	
 	&__menu {
 		@include responsive(device) {
 			display: none;
@@ -1463,7 +1508,7 @@ body {
 				&:first-child {
 					font-size: 18px;
 				}
-				
+
 				&.active {
 					a {
 						color: $black;
@@ -1474,11 +1519,20 @@ body {
 			a {
 				text-decoration: none;
 				color: $light-gray;
+				transition: color .3s ease-in-out;
+
+				&:hover {
+					color: $black;
+				}
 			}
 		}
 	}
 	
 	&__title {
+		@include responsive(device) {
+			margin-bottom: 1rem;
+		}
+
 		@include responsive(desktop) {
 			display: none;
 		}
@@ -1502,13 +1556,18 @@ body {
 		}
 		
 		.catalog__item {
-			@include responsive(device) {
+			@include responsive(mobile) {
 				&:nth-child(3n+1) {
 					width: 100%;
 					padding-top: 100%;
 				}
-				
+
 				padding-top: 65%;
+			}
+
+			@include responsive(tablet) {
+				width: 50%;
+				padding-top: 50%;
 			}
 		}
 	}
@@ -1517,4 +1576,389 @@ body {
 .menu-catalog {
 	display: flex;
 	flex-flow: column;
+}
+
+.spinner {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.spinner-animate,
+.spinner-animate:after {
+	border-radius: 50%;
+	width: 42px;
+	height: 42px;
+}
+
+.spinner-animate {
+	margin-top: 80px;
+	font-size: 3px;
+	position: relative;
+	border: 1.1em solid $black;
+	border-bottom: 1.1em solid #C4BFA6;
+	transform: translateZ(0);
+	animation: animate 1.5s infinite linear;
+}
+
+@keyframes animate {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.catalog-item {
+	
+	@include responsive(desktop) {
+		display: flex;
+		flex-flow: column wrap;
+		padding-top: 115px;
+		margin-bottom: 430px;
+	}
+	
+	&__about {
+		width: 100%;
+		
+		@include responsive(device) {
+			padding-top: 88px;
+		}
+	}
+	
+	&__details {
+		width: 100%;
+		padding: 360px 0;
+	}
+	
+	&__description {
+		display: flex;
+		width: 100%;
+	}
+	
+	&__faq {
+		padding: 360px 0 460px;
+	}
+	
+	&__other-toys {
+		background-color: $dark-green;
+		padding: 360px 0;
+		width: 100%;
+		
+		h2 {
+			color: $beige1;
+		}
+	}
+	
+	&__quantity {
+		background-color: #B8B393;
+		height: 60px;
+		margin-left: 9px;
+		min-width: 155px;
+	}
+}
+
+.quantity {
+	display: flex;
+	justify-content: space-between;
+	
+	&__minus {
+		width: 60px;
+		height: 60px;
+		background: url(../images/minus.svg) 50% 50% no-repeat;
+	}
+	
+	&__count {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: .875rem;
+	}
+	
+	&__plus {
+		width: 60px;
+		height: 60px;
+		background: url(../images/plus.svg) 50% 50% no-repeat;
+	}
+}
+
+.about-goods {
+
+	@include responsive(device) {
+		display: flex;
+		flex-flow: column;
+	}
+
+	&__top {
+		@include responsive(desktop) {
+			float: right;
+			min-height: 200px;
+			width: 50%;
+			padding: 0 5%;
+			box-sizing: border-box;
+			max-width: 686px;
+		}
+	}
+	
+	&__slider {
+		@include responsive(device) {
+			width: 100%;
+		}
+		
+		@include responsive(desktop) {
+			width: 50%;
+			float: left;
+		}
+		
+		img {
+			max-width: 100%;
+		}
+	}
+	
+	&__title {
+		@include responsive(desktop) {
+			margin-top: 120px;
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+		}
+		
+		.share {
+			@include responsive(desktop) {
+				margin: 5px 0 auto;
+				color: $light-gray;
+				display: flex;
+			}
+			
+			span {
+				display: block;
+				width: 24px;
+				height: 24px;
+				background: url(../images/plus.svg) 50% 60% no-repeat;
+			}
+		}
+	}
+
+	h1 {
+		@include title(36px, 164%)
+	}
+
+	&__info {
+		@include responsive(device) {
+			width: 100%;
+		}
+
+		@include responsive(desktop) {
+			width: 50%;
+			padding-left: 5%;
+			max-width: 686px;
+			padding-top: 50px;
+			float: right;
+		}
+		
+	}
+
+	&__description {
+		max-width: 455px;
+		margin: 45px 0 55px;
+	}
+	
+	&__add-info {
+		display: flex;
+		
+	}
+}
+
+.faq {
+	display: flex;
+
+	&__title {
+		width: 33%;
+	}
+
+	&__questions {
+		width: 67%;
+	}
+}
+
+.breadcrumbs {
+	display: flex;
+	
+	li {
+		&:not(:first-child) {
+			position: relative;
+			margin-left: 9px;
+			padding-left: 9px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				margin-left: -1px;
+				margin-top: -2px;
+				width: 3px;
+				height: 3px;
+				border-radius: 50%;
+				background-color: $black;
+			}
+		}
+	}
+	
+	a {
+		color: $light-gray;
+		font-size: .875rem;
+		text-decoration: none;
+	}
+}
+
+.catalog-details {
+	display: flex;
+	
+	@include responsive(device) {
+		flex-flow: column;
+	}
+
+	&__heading {
+		@include responsive(device) {
+			width: 100%;
+		}
+		
+		@include responsive(desktop) {
+			width: 33%;
+		}
+	}
+	
+	&__content {
+		@include responsive(device) {
+			width: 100%;
+		}
+
+		@include responsive(desktop) {
+			width: 67%;
+		}
+	}
+}
+
+.goods-description {
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+	
+	@include responsive(device) {
+		flex-flow: column;
+		width: 100%;
+	}
+
+	&__img {
+		@include responsive(device) {
+			width: 100%;
+		}
+		
+		@include responsive(desktop) {
+			width: 50%;
+			display: flex;
+			align-items: baseline;
+		}
+		
+		img {
+			max-width: 100%;
+		}
+	}
+	
+	&__info {
+		background-color: #D4D2C3;
+
+		@include responsive(device) {
+			width: 100%;
+		}
+
+		@include responsive(desktop) {
+			width: 50%;
+			display: flex;
+			justify-content: center;
+		}
+	}
+	
+	&__info-floating {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		max-width: 568px;
+		
+		h2 {
+			margin-bottom: 30px;
+		}
+		
+		p {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.other-toys {
+	&__slider {
+		.catalog__item {
+			width: 100%;
+			padding-top: 100%;
+		}
+	}
+}
+
+.accordion {
+
+}
+
+.section {
+	border-bottom: 1px solid $light-gray;
+
+	.section-content {
+		display: none;
+	}
+
+	&:first-child {
+		.section-content {
+			display: block;
+		}
+	}
+
+	&.active {
+		border-bottom: 1px solid $light-gray;
+
+		.section-title {
+			color: $light-gray;
+			
+			&:after {
+				background: url(../images/minus.svg) 50% 50% no-repeat;
+			}
+		}
+	}
+}
+
+.section-title {
+	font-size: 21px;
+	padding: 28px 0;
+	display: block;
+	text-decoration: none;
+	color: $black;
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		right: 0;
+		top: 50%;
+		margin-top: -6px;
+		background: url(../images/plus.svg) 50% 50% no-repeat;
+	}
+}
+
+.section-content {
+	display: none;
+	padding-bottom: 20px;
 }
