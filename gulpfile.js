@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
+//const autoprefixer = require('gulp-autoprefixer');
 
 const pug = require('gulp-pug');
 const data = require('gulp-data');
@@ -38,6 +39,7 @@ gulp.task('pug', function (done) {
 gulp.task('style', function(done) {
 	gulp.src(["src/sass/*.sass", "src/scss/*.scss"])
 		.pipe(sourcemaps.init())
+		//.pipe(autoprefixer())
 		.pipe(sass())
 		.pipe(sourcemaps.write('/maps'))
 		.pipe(gulp.dest("build/css"))

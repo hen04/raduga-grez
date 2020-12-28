@@ -1,0 +1,124 @@
+extends layout
+block header
+	header(class="header")
+		include include/incl-header
+
+block content
+
+	main
+		.catalog-item
+			.catalog-item__about
+				.about-goods
+					.about-goods__top
+						ul.breadcrumbs
+							li
+								a(href="") All
+							li
+								a(href="") Building blocks
+						.about-goods__title
+							h1 Shapes
+
+							.share Share
+								span
+						.about-goods__price $50.00
+					.about-goods__slider
+						img(src="../images/content/slider-2.jpg")
+					.about-goods__info
+						.about-goods__description
+							p Toys as art. Each game will be aesthetic. Do not limit imagination. Timeless toy. Modern block inspired by art and architecture. Made in colors which perfect to kids rooms. Terracota, clay, olive, mustard, pink and white.
+
+						.about-goods__add-info
+							button.btn-add Add to cart
+							.catalog-item__quantity
+								.quantity
+									.quantity__minus
+									.quantity__count 2
+									.quantity__plus
+
+			.catalog-item__details
+				.container
+					.catalog-details
+						.catalog-details__heading
+							h2 Product<br> details
+						.catalog-details__content
+							h5 Materials
+							p Made in Russia manually by third-generation carpenters. Made from solid wood and non toxic waterbased paint. Wood purchased from a responsible supplier.
+							h5 Dimensions
+							p The blocks are packed in a cotton pouch for storage. The bag is sewn in our studio by hand from Belarusian flax.
+							h5 Production
+							p The shades may differ from the shades on the screen. Tree-specific spots or streaks of wood are possible. Details and size may vary slightly as this is handmade.
+							h5 Features
+							p I made these blocks because women's bodies are full of beauty and power as much as all treasures made by nature.
+
+			.catalog-item__description
+				.goods-description
+					.goods-description__img
+						img(src="../images/content/catalog-item.jpg" alt="")
+					.goods-description__info
+						.goods-description__info-floating
+							h2 How to use?
+							p After a year, your baby's imaginative thinking is connected - what if you use discs as building material? And if you insert it into the holes of Rainbow Dwarfs - what does it look like? Maybe the Dwarves have sailed somewhere on fairytale boats... Here the creativity is already turned on, and imagination.
+							p - And also disks-hearts can be used as a stencil while drawing
+							p - To string them on a ribbon or a lanyard
+							p - To try to put them on each other, to sort them according to the sizes with closed eyes
+							p In general, the toy is simple in appearance, and the potential for the development of the child inexhaustible.
+
+
+			.catalog-item__faq
+				.container
+					.faq
+						.faq__title
+							h2 faq
+						.faq__questions
+							.accordion
+								.section.active
+									a(class="section-title" href="#accordion-1") Who, how and where makes the toys?
+									div(id="accordion-1" class="section-content open")
+										p We make toys from the wood which grows in our region. Our carpenters are working in the third generation. They used to make matryoshka dolls before, and now they work with us. All materials for the toys we buy in Russia, except for the German paint. The cotton bags for toys packing are sewn by mothers of many children, who are on their maternity leave and work from home.
+								.section
+									a(class="section-title" href="#accordion-2") Are the toys safe to play?
+									div(id="accordion-2" class="section-content")
+										p We use only solid wood and non-toxic water-based eco paint. The paint is approved for the age +0. We recommend children under three years old to play under parents supervision, as they may bite small particles of the wood.
+								.section
+									a(class="section-title" href="#accordion-3") Do the toys have a smell?
+									div(id="accordion-3" class="section-content")
+										p Our paint doesn’t smell at all. Linseed oil which we use for natural toys smells like linseed oil. The toys have a very delicate and pleasant natural smell of wood or oil.
+								.section
+									a(class="section-title" href="#accordion-4") Why aren’t your toys smooth?
+									div(id="accordion-4" class="section-content")
+										p Our toys are tactile. We never cover them with lacque, as it may contain harmful composition. After the surface is lacque, you can’t feel the texture of the wood. Our toys are velvety in touch, this helps to develop fine motor skills and to satisfy a child's tactile hunger. They are very comfortable and safe to play and leave no splinters on little hands.
+								.section
+									a(class="section-title" href="#accordion-5") What is the toys’ duration period?
+									div(id="accordion-5" class="section-content")
+										p If you take proper care of them, you will be able to present them to your grandchildren. As the toys are made of solid wood, keep them away from heating batteries or humidifiers. They are perfect for playing, but you should never use stackers or building sets as teething toys for your children. The toys are safe, but it is possible to bite small particles of the wood. Their solid parts (blocks, stacker rings etc.) are very durable, but the glued smaller details (a kettle lid, tomato tops etc.) are more fragile. Though we use the strongest of all non-toxic eco glues, we don’t recommend you to throw the toys. Their fragility is a good way to teach a child to be careful with toys, clothes and the world around.
+								.section
+									a(class="section-title" href="#accordion-6") How to clean the toys?
+									div(id="accordion-6" class="section-content")
+										p Wood is self-disinfecting and we cover the toys with paint or oil which protect them from dirt. You can use dry or wet cloth for cleaning, but do it gently, without rubbing and detergents.
+								.section
+									a(class="section-title" href="#accordion-7") How can wood manufacturing be eco-friendly, if trees are cut for it?
+									div(id="accordion-7" class="section-content")
+										p We buy wood from responsible suppliers. They grow forests for logging themselves, and after they cut trees they plant new ones. We don’t buy wood from private traders who damage forests. We are also against wood wasting. We use wood with its natural marks, because they are beautiful. Wood can’t be homogeneous like plastic. It has its marks and we never throw such wood away.
+
+
+			.catalog-item__other-toys
+				.container
+					.other-toys
+						h2 Other<br> fine toys
+						.other-toys__slider
+							.swiper-container.swiper-slider
+								.swiper-wrapper
+									each item in catalog
+										.swiper-slide
+											.catalog__item
+												.catalog__image
+													img(alt="" src= item.img)
+												.catalog__content
+													.catalog__info
+														.catalog__name= item.name
+														.catalog__price= item.price
+														a(href="" class="add-to-cart") Add to cart
+								.swiper-pagination
+
+
+
