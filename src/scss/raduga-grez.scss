@@ -93,7 +93,7 @@ body {
 	position: fixed;
 	z-index: 99;
 	width: 100%;
-	background-color: rgba($beige1, .8);
+	background-color: $beige1;
 	transition: transform .3s ease-in-out;
 	
 	&.out {
@@ -101,7 +101,7 @@ body {
 	}
 	
 	&--index {
-		background-color: rgba(#6e6f65, .8);
+		background-color: $dark-green;
 		
 		.menu li a {
 			@include responsive(desktop) {
@@ -698,13 +698,13 @@ body {
 
 	&__title {
 		max-width: 320px;
-		margin-left: 10px;
-
+		
 		@include responsive(device) {
 			margin-bottom: 20px;
 		}
-
+		
 		@include responsive(desktop) {
+			margin-left: 10px;
 			margin-bottom: 30px;
 		}
 	}
@@ -792,7 +792,7 @@ body {
 		z-index: 3;
 
 		@include responsive(device) {
-			padding: 20px;
+			padding: 15px;
 			top: 0;
 			right: 0;
 			bottom: 0;
@@ -817,7 +817,6 @@ body {
 	&__info {
 		margin-top: auto;
 		color: $beige-text;
-		opacity: 0;
 	}
 
 	&__name {
