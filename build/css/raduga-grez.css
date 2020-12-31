@@ -176,7 +176,6 @@ body {
   height: 100vh;
   position: relative;
   min-width: 360px;
-  border: 1px solid #000;
   background-color: #E1DFD3;
   font: 16px/170% 'Pangram';
   letter-spacing: .01rem; }
@@ -220,8 +219,10 @@ body {
 .header {
   display: flex;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 99;
-  width: 100%;
   background-color: #E1DFD3;
   transition: transform .3s ease-in-out; }
   .header.out {
@@ -350,7 +351,7 @@ body {
     flex-flow: column;
     align-items: baseline;
     top: 0;
-    bottom: 0; } }
+    height: 100vh; } }
 
 @media only screen and (max-width: 1279px) {
   .menu-content__main.active {
