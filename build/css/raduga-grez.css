@@ -175,7 +175,8 @@ html {
 body {
   height: 100vh;
   position: relative;
-  min-width: 375px;
+  min-width: 360px;
+  border: 1px solid #000;
   background-color: #E1DFD3;
   font: 16px/170% 'Pangram';
   letter-spacing: .01rem; }
