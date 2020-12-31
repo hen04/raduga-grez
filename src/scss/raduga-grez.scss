@@ -49,6 +49,12 @@ body {
 			}
 		}
 		
+		.header {
+			@include responsive(device) {
+				height: 100%;
+			}
+		}
+		
 		.out {
 			transform: translateY(0);
 		}
@@ -187,7 +193,7 @@ body {
 				right: 0;
 				left: 100%;
 				top: 0;
-				height: 100vh;
+				bottom: 0;
 				overflow-y: auto;
 				overflow-x: hidden;
 				background-color: #E4E3DD;
@@ -252,7 +258,7 @@ body {
 .mobile-link {
 	@include responsive(device) {
 		margin: auto 0 0 26px;
-		padding-bottom: 100px;
+		padding-bottom: 80px;
 	}
 }
 
