@@ -183,6 +183,9 @@ body {
     body.menu-opened .mobile-menu-img,
     body.menu-opened .mobile-menu-logo {
       opacity: 1; } }
+  @media only screen and (max-width: 1279px) {
+    body.menu-opened .header {
+      height: 100%; } }
   body.menu-opened .out {
     transform: translateY(0); }
   @media only screen and (max-width: 1279px) {
@@ -276,7 +279,7 @@ body {
       right: 0;
       left: 100%;
       top: 0;
-      height: 100vh;
+      bottom: 0;
       overflow-y: auto;
       overflow-x: hidden;
       background-color: #E4E3DD;
@@ -327,7 +330,7 @@ body {
 @media only screen and (max-width: 1279px) {
   .mobile-link {
     margin: auto 0 0 26px;
-    padding-bottom: 100px; } }
+    padding-bottom: 80px; } }
 
 @media only screen and (max-width: 1279px) {
   .menu-btn {
