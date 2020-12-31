@@ -195,6 +195,11 @@ body {
       right: 26px;
       top: 30px;
       background: url(../images/close-dark.svg) 0 0 no-repeat; } }
+  body.menu-opened main,
+  body.menu-opened footer,
+  body.menu-opened .join-us {
+    opacity: 0;
+    height: 0; }
   body.loading {
     overflow: hidden; }
 
@@ -343,7 +348,8 @@ body {
     display: none;
     flex-flow: column;
     align-items: baseline;
-    height: 100vh; } }
+    top: 0;
+    bottom: 0; } }
 
 @media only screen and (max-width: 1279px) {
   .menu-content__main.active {
@@ -489,6 +495,11 @@ body {
       outline: none; }
   .cookies-info.hidden {
     display: none; }
+
+main,
+footer,
+.join-us {
+  transition: opacity .3s ease-in-out; }
 
 .main-about-us {
   padding: 120px 0 0; }

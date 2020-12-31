@@ -65,6 +65,13 @@ body {
 				background: url(../images/close-dark.svg) 0 0 no-repeat;
 			}
 		}
+		
+		main,
+		footer,
+		.join-us {
+			opacity: 0;
+			height: 0;
+		}
 	}
 	
 	&.loading {
@@ -271,7 +278,8 @@ body {
 			display: none;
 			flex-flow: column;
 			align-items: baseline;
-			height: 100vh;
+			top: 0;
+			bottom: 0;
 		}
 
 		&.active {
@@ -509,6 +517,13 @@ body {
 		display: none;
 	}
 }
+
+main,
+footer,
+.join-us {
+	transition: opacity .3s ease-in-out;
+}
+
 
 .main-about-us {
 	padding: 120px 0 0;
