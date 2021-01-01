@@ -48,17 +48,11 @@ body {
 				opacity: 1;
 			}
 		}
-		
-		.header {
-			@include responsive(device) {
-				height: 100%;
-			}
-		}
-		
+
 		.out {
 			transform: translateY(0);
 		}
-		
+
 		.menu-close {
 			@include responsive(device) {
 				display: block;
@@ -71,7 +65,7 @@ body {
 				background: url(../images/close-dark.svg) 0 0 no-repeat;
 			}
 		}
-		
+
 		main,
 		footer,
 		.join-us {
@@ -101,6 +95,47 @@ body {
 	visibility: hidden;
 }
 
+.header-wrapper {
+	transition: transform .3s ease-in-out;
+
+	&.out {
+		.header,
+		.menu-content {
+			transform: translateY(-100%);
+		}
+	}
+	
+	&--index {
+		.header {
+			background-color: $dark-green;
+
+			.header__logo {
+				a {
+					background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
+				}
+			}
+
+			.menu-search {
+				a {
+					&:after {
+						background: url(../images/icon-search.svg) 50% 50% no-repeat;
+					}
+				}
+			}
+			
+			.menu-btn {
+				background: url(../images/menu-light.svg) 50% 50% no-repeat;
+			}
+		}
+
+		.menu li a {
+			@include responsive(desktop) {
+				color: $beige1;
+			}
+		}
+	}
+}
+
 .header {
 	display: flex;
 	position: fixed;
@@ -110,39 +145,7 @@ body {
 	z-index: 99;
 	background-color: $beige1;
 	transition: transform .3s ease-in-out;
-	
-	&.out {
-		transform: translateY(-100%);
-	}
-	
-	&--index {
-		background-color: $dark-green;
-		
-		.menu li a {
-			@include responsive(desktop) {
-				color: $beige1;
-			}
-		}
 
-		.header__logo {
-			a {
-				background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
-			}
-		}
-		
-		.menu-search {
-			a {
-				&:after {
-					background: url(../images/icon-search.svg) 50% 50% no-repeat;
-				}
-			}
-		}
-		
-		.menu-btn {
-			background: url(../images/menu-light.svg) 50% 50% no-repeat;
-		}
-	}
-	
 	@include responsive(device) {
 		padding: 30px 26px;
 	}
@@ -169,12 +172,21 @@ body {
 
 	&__logo {
 		width: 200px;
+		display: flex;
+		align-items: center;
 
 		a {
 			display: block;
+			width: 100%;
 			height: 16px;
 			background: url(../images/raduga-grez-dark.svg) 0 0/contain no-repeat;
 		}
+	}
+	
+	&__cart {
+		margin-left: auto;
+		display: flex;
+		align-items: center;
 	}
 
 	&__menu {
@@ -258,7 +270,7 @@ body {
 .mobile-link {
 	@include responsive(device) {
 		margin: auto 0 0 26px;
-		padding-bottom: 80px;
+		padding-bottom: 40px;
 	}
 }
 
@@ -275,25 +287,40 @@ body {
 }
 
 .menu-content {
+	position: fixed;
+	z-index: 100;
+	transition: transform .3s ease-in-out;
+
 	@include responsive(device) {
-		position: relative;
-		height: 100vh;
+		display: flex;
+		flex-flow: column;
+		height: 100%;
+		background-color: $beige1;
+		left: 100%;
+		right: 0;
+		opacity: 0;
 	}
-	
+
+	@include responsive(desktop) {
+		left: 50%;
+		margin-left: -25%;
+		top: 0;
+		height: 115px;
+	}
+
 	&__main {
 		@include responsive(device) {
-			display: none;
+			display: flex;
 			flex-flow: column;
 			align-items: baseline;
 			top: 0;
-			height: 100vh;
+			animation: opacity 1s;
 		}
-
-		&.active {
-			@include responsive(device) {
-				display: flex;
-				animation: opacity 1s;
-			}
+		
+		@include responsive(desktop) {
+			display: flex;
+			align-items: center;
+			height: 100%;
 		}
 
 		.menu {
@@ -308,6 +335,8 @@ body {
 			}
 
 			a {
+				white-space: nowrap;
+
 				@include responsive(device) {
 					font-family: 'Hatton', serif;
 					text-transform: uppercase;
