@@ -51,7 +51,7 @@ $(function() {
 		$('.js-menu').on('click', function(){
 			$('.header').removeClass('out');
 			$('html').css('overflow-y', 'hidden');
-			$("nav").animate({
+			$('.menu-content').animate({
 				opacity: 1,
 				left: "0"
 			}, 500, function() {
@@ -73,7 +73,7 @@ $(function() {
 
 		$('.js-menu-close').on('click', function(){
 			$('html').css('overflow-y', 'initial');
-			$("nav").animate({
+			$('.menu-content').animate({
 				opacity: 1,
 				left: "100%"
 			}, 250, function() {
@@ -118,9 +118,9 @@ $(function() {
 			var currentTop = $(window).scrollTop();
 
 			if (currentTop < this.previousTop) {
-				$(".header").removeClass('out');
+				$('.header-wrapper').removeClass('out');
 			} else {
-				$(".header").addClass('out');
+				$('.header-wrapper').addClass('out');
 			}
 			this.previousTop = currentTop;
 		});
