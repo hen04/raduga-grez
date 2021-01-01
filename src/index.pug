@@ -1,29 +1,7 @@
 extends layout
 block header
 	.header-wrapper.header-wrapper--index
-		header(class="header")
-			.header__logo
-				a(href="/")
-			.header__cart
-			.menu-btn.js-menu
-		.menu-content
-			.menu-close.js-menu-close
-			.menu-content__main
-				ul.menu
-					each item in menu
-						li(class= item.class)
-							a(href= item.url)= item.name
-			img(src="images/mobile-menu-img.jpg" alt="" class="mobile-menu-img")
-			a(href="/" class="mobile-link")
-				img(src="images/raduga-grez-dark.svg" alt="" class="mobile-menu-logo")
-			.menu-content__catalog
-				.menu-back.js-menu-back
-					each item in menuCatalog
-						ul.menu-catalog
-							li= item.header
-							each subitem in item.links
-								li
-									a(href="")= subitem.title
+		include include/incl-header
 
 block content
 
