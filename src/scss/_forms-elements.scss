@@ -83,9 +83,16 @@ button {
 
 .btn-add {
 	font-size: 14px;
-	padding: 20px 90px;
 	background-color: $black;
 	border: 0;
 	color: #F1F1ED;
 	cursor: pointer;
+	
+	@include responsive(device) {
+		padding: 1rem 56px;
+	}
+	
+	@include responsive(desktop) {
+		padding: 20px 90px;
+	}
 }

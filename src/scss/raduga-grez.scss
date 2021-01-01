@@ -171,7 +171,7 @@ body {
 		a {
 			display: block;
 			width: 100%;
-			height: 16px;
+			height: 14px;
 			background: url(../images/raduga-grez-dark.svg) 0 0/contain no-repeat;
 		}
 	}
@@ -933,6 +933,12 @@ footer,
 			max-width: 1540px;
 			overflow: hidden;
 		}
+		
+		.swiper-pagination {
+			@include responsive(device) {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -1091,11 +1097,6 @@ footer,
 	}
 }
 
-.swiper-pagination {
-	@include responsive(device) {
-		display: none;
-	}
-}
 
 
 .main-likes {
@@ -1686,7 +1687,15 @@ footer,
 	
 	&__details {
 		width: 100%;
-		padding: 360px 0;
+		
+		@include responsive(device) {
+			padding: 100px 0 120px;
+		}
+		
+		@include responsive(desktop) {
+			padding: 360px 0;
+		}
+		
 	}
 	
 	&__description {
@@ -1695,14 +1704,28 @@ footer,
 	}
 	
 	&__faq {
-		padding: 360px 0 460px;
+		
+		@include responsive(device) {
+			padding: 120px 0;
+		}
+		
+		@include responsive(desktop) {
+			padding: 360px 0 460px;
+		}
 	}
 	
 	&__other-toys {
 		background-color: $dark-green;
-		padding: 360px 0;
 		width: 100%;
-		
+
+		@include responsive(device) {
+			padding: 120px 0;
+		}
+
+		@include responsive(desktop) {
+			padding: 360px 0;
+		}
+
 		h2 {
 			color: $beige1;
 		}
@@ -1710,20 +1733,39 @@ footer,
 	
 	&__quantity {
 		background-color: #B8B393;
-		height: 60px;
 		margin-left: 9px;
-		min-width: 155px;
+		
+		@include responsive(device) {
+			min-width: 120px;
+		}
+		
+		@include responsive(desktop) {
+			height: 60px;
+			min-width: 155px;
+		}
 	}
 }
 
 .quantity {
 	display: flex;
-	justify-content: space-between;
-	
+
+	@include responsive(device) {
+		justify-content: center;
+	}
+
+	@include responsive(desktop) {
+		justify-content: space-between;
+	}
+
 	&__minus {
-		width: 60px;
-		height: 60px;
 		background: url(../images/minus.svg) 50% 50% no-repeat;
+		width: 30px;
+		height: 50px;
+
+		@include responsive(desktop) {
+			width: 60px;
+			height: 60px;
+		}
 	}
 	
 	&__count {
@@ -1731,12 +1773,24 @@ footer,
 		align-items: center;
 		justify-content: center;
 		font-size: .875rem;
+		
+		@include responsive(device) {
+			width: 40px;
+		}
 	}
 	
 	&__plus {
-		width: 60px;
-		height: 60px;
 		background: url(../images/plus.svg) 50% 50% no-repeat;
+		
+		@include responsive(device) {
+			width: 30px;
+			height: 50px;
+		}
+		
+		@include responsive(desktop) {
+			width: 60px;
+			height: 60px;
+		}
 	}
 }
 
@@ -1748,6 +1802,12 @@ footer,
 	}
 
 	&__top {
+		@include responsive(device) {
+			padding: 0 26px;
+			display: flex;
+			flex-flow: wrap;
+		}
+
 		@include responsive(desktop) {
 			float: right;
 			min-height: 200px;
@@ -1761,6 +1821,8 @@ footer,
 	&__slider {
 		@include responsive(device) {
 			width: 100%;
+			max-width: 716px;
+			margin: 20px auto 0;
 		}
 		
 		@include responsive(desktop) {
@@ -1774,6 +1836,10 @@ footer,
 	}
 	
 	&__title {
+		@include responsive(device) {
+			width: 80%;
+		}
+
 		@include responsive(desktop) {
 			margin-top: 120px;
 			display: flex;
@@ -1781,19 +1847,13 @@ footer,
 			align-items: baseline;
 		}
 		
-		.share {
-			@include responsive(desktop) {
-				margin: 5px 0 auto;
-				color: $light-gray;
-				display: flex;
-			}
-			
-			span {
-				display: block;
-				width: 24px;
-				height: 24px;
-				background: url(../images/plus.svg) 50% 60% no-repeat;
-			}
+	}
+	
+	&__price {
+		@include responsive(device) {
+			width: 20%;
+			margin-left: auto;
+			padding-top: .5rem;
 		}
 	}
 
@@ -1804,6 +1864,10 @@ footer,
 	&__info {
 		@include responsive(device) {
 			width: 100%;
+			padding: 0 26px;
+			box-sizing: border-box;
+			max-width: 768px;
+			margin: 0 auto;
 		}
 
 		@include responsive(desktop) {
@@ -1817,29 +1881,94 @@ footer,
 	}
 
 	&__description {
-		max-width: 455px;
+		max-width: 500px;
 		margin: 45px 0 55px;
 	}
 	
 	&__add-info {
 		display: flex;
+	}
+}
+
+.share {
+
+	@include responsive(desktop) {
+		margin: 5px 0 auto;
+		color: $light-gray;
+		display: flex;
+	}
+
+	&--mobile {
+		@include responsive(device) {
+			margin-top: 40px;
+			display: flex;
+			align-items: center;
+		}
 		
+		@include responsive(desktop) {
+			display: none;
+		}
+	}
+	
+	&--desktop {
+		@include responsive(device) {
+			display: none;
+		}
+		
+	}
+
+	span {
+		display: block;
+		background: url(../images/plus.svg) 50% 60%/contain no-repeat;
+		
+		@include responsive(device) {
+			width: 12px;
+			height: 12px;
+			margin-left: 12px;
+		}
+
+		@include responsive(desktop) {
+			width: 24px;
+			height: 24px;
+		}
 	}
 }
 
 .faq {
 	display: flex;
+	
+	@include responsive(device) {
+		flex-flow: column;
+	}
 
 	&__title {
-		width: 33%;
+
+		@include responsive(device) {
+			width: 100%;
+		}
+
+		@include responsive(desktop) {
+			width: 33%;
+		}
 	}
 
 	&__questions {
-		width: 67%;
+
+		@include responsive(device) {
+			width: 100%;
+		}
+
+		@include responsive(desktop) {
+			width: 67%;
+		}
 	}
 }
 
 .breadcrumbs {
+	@include responsive(device) {
+		width: 100%;
+	}
+	
 	display: flex;
 	
 	li {
@@ -1890,11 +2019,17 @@ footer,
 	&__content {
 		@include responsive(device) {
 			width: 100%;
+			margin-top: 45px;
 		}
 
 		@include responsive(desktop) {
 			width: 67%;
 		}
+	}
+	
+	h5 {
+		color: $light-gray;
+		margin: 2rem 0 1rem;
 	}
 }
 
@@ -1921,6 +2056,7 @@ footer,
 		
 		img {
 			max-width: 100%;
+			display: block;
 		}
 	}
 	
@@ -1929,6 +2065,7 @@ footer,
 
 		@include responsive(device) {
 			width: 100%;
+			padding: 120px 26px;
 		}
 
 		@include responsive(desktop) {
@@ -1944,6 +2081,10 @@ footer,
 		justify-content: center;
 		max-width: 568px;
 		
+		@include responsive(tablet) {
+			margin: 0 auto;
+		}
+		
 		h2 {
 			margin-bottom: 30px;
 		}
@@ -1956,9 +2097,35 @@ footer,
 
 .other-toys {
 	&__slider {
+		@include responsive(device) {
+			margin-top: 40px;
+		}
+		
 		.catalog__item {
 			width: 100%;
 			padding-top: 100%;
+		}
+		
+		.swiper-container {
+			padding-bottom: 60px;
+		}
+		
+		.swiper-pagination {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.swiper-pagination-bullet {
+			width: 4px;
+			height: 4px;
+			background-color: rgba($beige1, .5);
+		}
+		
+		.swiper-pagination-bullet-active {
+			width: 8px;
+			height: 8px;
+			background-color: $beige1;
 		}
 	}
 }
@@ -1994,12 +2161,20 @@ footer,
 }
 
 .section-title {
-	font-size: 21px;
 	padding: 28px 0;
 	display: block;
 	text-decoration: none;
 	color: $black;
 	position: relative;
+
+	@include responsive(device) {
+		font-size: 18px;
+		padding-right: 50px;
+	}
+
+	@include responsive(desktop) {
+		font-size: 21px;
+	}
 
 	&:after {
 		content: '';
@@ -2007,8 +2182,8 @@ footer,
 		width: 12px;
 		height: 12px;
 		right: 0;
-		top: 50%;
-		margin-top: -6px;
+		top: 0;
+		margin-top: 35px;
 		background: url(../images/plus.svg) 50% 50% no-repeat;
 	}
 }
