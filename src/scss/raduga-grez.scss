@@ -56,13 +56,6 @@ body {
 		.menu-close {
 			@include responsive(device) {
 				display: block;
-				position: absolute;
-				z-index: 3;
-				width: 27px;
-				height: 26px;
-				right: 26px;
-				top: 30px;
-				background: url(../images/close-dark.svg) 0 0 no-repeat;
 			}
 		}
 
@@ -236,7 +229,7 @@ body {
 .mobile-menu-img {
 	@include responsive(device) {
 		opacity: 0;
-		margin: 40px 26px 0 auto;
+		margin: 40px 0 0 auto;
 		transition: opacity .25s ease-in-out;
 	}
 
@@ -257,6 +250,18 @@ body {
 	}
 }
 
+.menu-close {
+	@include responsive(device) {
+		z-index: 3;
+		width: 27px;
+		height: 26px;
+		right: 26px;
+		top: 30px;
+		margin-left: auto;
+		background: url(../images/close-dark.svg) 0 0 no-repeat;
+	}
+}
+
 .menu-back {
 	@include responsive(device) {
 		width: 28px;
@@ -269,8 +274,7 @@ body {
 
 .mobile-link {
 	@include responsive(device) {
-		margin: auto 0 0 26px;
-		padding-bottom: 40px;
+		margin: auto 0 0;
 	}
 }
 
@@ -299,6 +303,7 @@ body {
 		left: 100%;
 		right: 0;
 		opacity: 0;
+		padding: 30px 26px 40px;
 	}
 
 	@include responsive(desktop) {
@@ -324,12 +329,6 @@ body {
 			height: 100%;
 		}
 
-		.menu {
-			@include responsive(device) {
-				margin: 60px 26px 0;
-			}
-		}
-
 		li {
 			@include responsive(device) {
 				margin-top: 20px;
@@ -352,7 +351,6 @@ body {
 
 	&__catalog {
 		display: none;
-		padding: 30px 26px 40px;
 		height: 100%;
 		width: 100%;
 		background-color: $beige1;
@@ -389,6 +387,8 @@ body {
 	
 	@include responsive(device) {
 		flex-flow: column;
+		width: 100%;
+		margin-top: 10px;
 	}
 
 	li {
@@ -433,7 +433,7 @@ body {
 
 .menu-catalog {
 	@include responsive(device) {
-		margin: 30px 0 0;
+		margin: 25px 0 10px;
 	}
 	
 	@include responsive(desktop) {

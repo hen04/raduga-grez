@@ -187,14 +187,7 @@ body {
     transform: translateY(0); }
   @media only screen and (max-width: 1279px) {
     body.menu-opened .menu-close {
-      display: block;
-      position: absolute;
-      z-index: 3;
-      width: 27px;
-      height: 26px;
-      right: 26px;
-      top: 30px;
-      background: url(../images/close-dark.svg) 0 0 no-repeat; } }
+      display: block; } }
   body.menu-opened main,
   body.menu-opened footer,
   body.menu-opened .join-us {
@@ -310,7 +303,7 @@ body {
 @media only screen and (max-width: 1279px) {
   .mobile-menu-img {
     opacity: 0;
-    margin: 40px 26px 0 auto;
+    margin: 40px 0 0 auto;
     transition: opacity .25s ease-in-out; } }
 
 @media only screen and (min-width: 1280px) {
@@ -328,6 +321,16 @@ body {
     display: none; } }
 
 @media only screen and (max-width: 1279px) {
+  .menu-close {
+    z-index: 3;
+    width: 27px;
+    height: 26px;
+    right: 26px;
+    top: 30px;
+    margin-left: auto;
+    background: url(../images/close-dark.svg) 0 0 no-repeat; } }
+
+@media only screen and (max-width: 1279px) {
   .menu-back {
     width: 28px;
     height: 28px;
@@ -337,8 +340,7 @@ body {
 
 @media only screen and (max-width: 1279px) {
   .mobile-link {
-    margin: auto 0 0 26px;
-    padding-bottom: 40px; } }
+    margin: auto 0 0; } }
 
 @media only screen and (max-width: 1279px) {
   .menu-btn {
@@ -362,7 +364,8 @@ body {
       background-color: #E1DFD3;
       left: 100%;
       right: 0;
-      opacity: 0; } }
+      opacity: 0;
+      padding: 30px 26px 40px; } }
   @media only screen and (min-width: 1280px) {
     .menu-content {
       left: 50%;
@@ -383,9 +386,6 @@ body {
       align-items: center;
       height: 100%; } }
   @media only screen and (max-width: 1279px) {
-    .menu-content__main .menu {
-      margin: 60px 26px 0; } }
-  @media only screen and (max-width: 1279px) {
     .menu-content__main li {
       margin-top: 20px; } }
   .menu-content__main li a {
@@ -399,7 +399,6 @@ body {
         font-family: 'Pangram', sans-serif; } }
   .menu-content__catalog {
     display: none;
-    padding: 30px 26px 40px;
     height: 100%;
     width: 100%;
     background-color: #E1DFD3;
@@ -421,7 +420,9 @@ body {
   display: flex; }
   @media only screen and (max-width: 1279px) {
     .menu {
-      flex-flow: column; } }
+      flex-flow: column;
+      width: 100%;
+      margin-top: 10px; } }
   @media only screen and (min-width: 1280px) {
     .menu li {
       margin: 0 33px; } }
@@ -449,7 +450,7 @@ body {
 
 @media only screen and (max-width: 1279px) {
   .menu-catalog {
-    margin: 30px 0 0; } }
+    margin: 25px 0 10px; } }
 
 @media only screen and (min-width: 1280px) {
   .menu-catalog {

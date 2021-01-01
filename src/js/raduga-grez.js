@@ -90,7 +90,7 @@ $(function() {
 	$('.js-catalog-menu').on('click', function(){
 		$('html').css('overflow-y', 'hidden');
 		$('.menu-content__menu').removeClass('active').addClass('test');
-		$("nav").animate({
+		$('.menu-content').animate({
 			opacity: 1,
 			left: "0"
 		}, 500, function() {
@@ -99,8 +99,6 @@ $(function() {
 		$('.menu-content__main').removeClass('active');
 		$('.menu-content__catalog').addClass('active');
 	});
-
-
 
 	const scrollToTop = $('#button-top');
 	scrollToTop.on('click', function(){
@@ -142,12 +140,3 @@ $(function() {
 		$('.accordion .section-content').removeClass('open').slideUp(350);
 	}
 });
-
-// $(window).on('load', function () {
-// 	setTimeout(function () {
-// 		$('body').removeClass('loading');
-// 		$('.loading-screen').addClass('hidden');
-// 		$('.loading-content').removeClass('hidden');
-// 	}, 2000);
-// });
-
