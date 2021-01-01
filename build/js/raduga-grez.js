@@ -37,6 +37,18 @@ var swiperSlider = new Swiper('.swiper-slider', {
 
 
 
+var about = new Swiper('.js-slider-about', {
+	slidesPerView: 1,
+	spaceBetween: 0,
+	loop: true,
+	loopFillGroupWithBlank: true,
+	autoplay: {
+		delay: 2500,
+		disableOnInteraction: false,
+	}
+});
+
+
 
 $(function() {
 
