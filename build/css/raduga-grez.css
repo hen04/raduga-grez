@@ -231,13 +231,16 @@ body {
     background-color: #464B3E; }
     .header-wrapper--index .header .header__logo a {
       background: url(../images/raduga-grez.svg) 0 0/contain no-repeat; }
-    .header-wrapper--index .header .menu-search a:after {
-      background: url(../images/icon-search.svg) 50% 50% no-repeat; }
     .header-wrapper--index .header .menu-btn {
       background: url(../images/menu-light.svg) 50% 50% no-repeat; }
   @media only screen and (min-width: 1280px) {
     .header-wrapper--index .menu li a {
       color: #E1DFD3; } }
+  .header-wrapper--index .menu-search a:after {
+    background: url(../images/icon-search.svg) 50% 50% no-repeat; }
+  .header-wrapper--index .header__cart {
+    background-color: #E1DFD3;
+    color: #292929; }
 
 .header {
   display: flex;
@@ -267,7 +270,7 @@ body {
         margin: 0 auto;
         align-items: center; } }
   .header__logo {
-    width: 200px;
+    width: 140px;
     display: flex;
     align-items: center; }
     .header__logo a {
@@ -278,7 +281,19 @@ body {
   .header__cart {
     margin-left: auto;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    padding: .25rem;
+    box-sizing: border-box;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 13px;
+    color: #E1DFD3;
+    background-color: #292929; }
+    @media only screen and (max-width: 1279px) {
+      .header__cart {
+        margin-right: 20px; } }
   @media only screen and (max-width: 1279px) {
     .header__menu {
       margin-left: auto; } }
@@ -381,10 +396,12 @@ body {
       padding: 30px 26px 40px; } }
   @media only screen and (min-width: 1280px) {
     .menu-content {
-      left: 50%;
-      margin-left: -25%;
       top: 0;
-      height: 115px; } }
+      height: 118px;
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      margin: 0 25%; } }
   @media only screen and (max-width: 1279px) {
     .menu-content__main {
       display: flex;
@@ -457,7 +474,7 @@ body {
       content: '';
       position: absolute;
       width: 16px;
-      height: 30px;
+      height: 28px;
       right: 0;
       background: url(../images/icon-search-dark.svg) 50% 50% no-repeat; } }
 
@@ -720,7 +737,8 @@ footer,
   .catalog__item:hover:before {
     content: ''; }
   .catalog__item:hover .catalog__category,
-  .catalog__item:hover .catalog__info {
+  .catalog__item:hover .catalog__info,
+  .catalog__item:hover .add-to-cart {
     opacity: 1; }
   .catalog__item:before {
     background-color: rgba(92, 98, 64, 0.3);
@@ -773,6 +791,9 @@ footer,
 .catalog__info {
   margin-top: auto;
   color: #EFEDE1; }
+  @media only screen and (min-width: 1280px) {
+    .catalog__info {
+      margin-bottom: 40px; } }
 
 @media only screen and (max-width: 1279px) {
   .catalog__name {
@@ -802,7 +823,12 @@ footer,
     color: #EFEDE1;
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px; } }
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity .3s ease-in-out; } }
 
 @media only screen and (max-width: 767px) {
   .main-categories {
@@ -917,26 +943,21 @@ footer,
         margin-top: -1px;
         background-color: #292929; } }
 
+.swiper-button-prev,
 .swiper-button-next {
   width: 40px; }
+  .swiper-button-prev:after,
   .swiper-button-next:after {
     width: 40px;
-    height: 18px;
+    height: 20px;
     font-size: 0;
-    background: url(../images/arrow-dark.svg) 0 0/cover no-repeat; }
+    background: url(../images/arrow-dark.svg) 0 0/contain no-repeat; }
+  .swiper-button-prev:focus,
   .swiper-button-next:focus {
     outline: none; }
 
-.swiper-button-prev {
-  width: 40px; }
-  .swiper-button-prev:after {
-    width: 40px;
-    height: 18px;
-    font-size: 0;
-    background: url(../images/arrow-dark.svg) 0 0/cover no-repeat;
-    transform: rotate(-180deg); }
-  .swiper-button-prev:focus {
-    outline: none; }
+.swiper-button-prev:after {
+  transform: rotate(-180deg); }
 
 .main-likes {
   background-color: #D4D2C3;
@@ -1500,7 +1521,7 @@ footer,
   .about-goods__slider .swiper-button-next,
   .about-goods__slider .swiper-button-prev {
     margin-top: auto;
-    bottom: 10px; } }
+    bottom: 20px; } }
 
 @media only screen and (max-width: 1279px) {
   .about-goods__slider .swiper-button-next:after,
