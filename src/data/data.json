@@ -242,5 +242,35 @@
 			"price": "$150.00",
 			"img": "images/content/catalog-4.jpg"
 		}
+	],
+	"accordion": [
+		{
+			"question": "Who, how and where makes the toys?",
+			"answer": "We make toys from the wood which grows in our region. Our carpenters are working in the third generation. They used to make matryoshka dolls before, and now they work with us. All materials for the toys we buy in Russia, except for the German paint. The cotton bags for toys packing are sewn by mothers of many children, who are on their maternity leave and work from home."
+		},
+		{
+			"question": "Are the toys safe to play?",
+			"answer": "We use only solid wood and non-toxic water-based eco paint. The paint is approved for the age +0. We recommend children under three years old to play under parents supervision, as they may bite small particles of the wood."
+		},
+		{
+			"question": "Do the toys have a smell?",
+			"answer": "Our paint doesn’t smell at all. Linseed oil which we use for natural toys smells like linseed oil. The toys have a very delicate and pleasant natural smell of wood or oil."
+		},
+		{
+			"question": "Why aren’t your toys smooth?",
+			"answer": "Our toys are tactile. We never cover them with lacque, as it may contain harmful composition. After the surface is lacque, you can’t feel the texture of the wood. Our toys are velvety in touch, this helps to develop fine motor skills and to satisfy a child's tactile hunger. They are very comfortable and safe to play and leave no splinters on little hands."
+		},
+		{
+			"question": "What is the toys’ duration period?",
+			"answer": "If you take proper care of them, you will be able to present them to your grandchildren. As the toys are made of solid wood, keep them away from heating batteries or humidifiers. They are perfect for playing, but you should never use stackers or building sets as teething toys for your children. The toys are safe, but it is possible to bite small particles of the wood. Their solid parts (blocks, stacker rings etc.) are very durable, but the glued smaller details (a kettle lid, tomato tops etc.) are more fragile. Though we use the strongest of all non-toxic eco glues, we don’t recommend you to throw the toys. Their fragility is a good way to teach a child to be careful with toys, clothes and the world around."
+		},
+		{
+			"question": "How to clean the toys?",
+			"answer": "Wood is self-disinfecting and we cover the toys with paint or oil which protect them from dirt. You can use dry or wet cloth for cleaning, but do it gently, without rubbing and detergents."
+		},
+		{
+			"question": "How can wood manufacturing be eco-friendly, if trees are cut for it?",
+			"answer": "We buy wood from responsible suppliers. They grow forests for logging themselves, and after they cut trees they plant new ones. We don’t buy wood from private traders who damage forests. We are also against wood wasting. We use wood with its natural marks, because they are beautiful. Wood can’t be homogeneous like plastic. It has its marks and we never throw such wood away."
+		}
 	]
 }
