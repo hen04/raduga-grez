@@ -18,8 +18,10 @@ block content
 						.about-goods__title
 							h1 Apartment building blocks set colored
 
-							.share.share--desktop Share
-								span
+							.share.share--desktop.js-share Share
+								span.icon
+								.share__buttons
+									.ya-share2(data-curtain data-lang="en" data-direction="vertical" data-color-scheme="whiteblack" data-services="facebook,twitter")
 						.about-goods__price $50.00
 					.about-goods__slider
 						.swiper-container.js-slider-about
@@ -30,6 +32,8 @@ block content
 									img(src="../images/content/slider-3.jpg")
 								.swiper-slide
 									img(src="../images/content/slider-4.jpg")
+							.swiper-button-next
+							.swiper-button-prev
 
 					.about-goods__info
 						.about-goods__description
@@ -39,12 +43,14 @@ block content
 							button.btn-add Add to cart
 							.catalog-item__quantity
 								.quantity
-									.quantity__minus
+									button.quantity__minus
 									.quantity__count 2
-									.quantity__plus
+									button.quantity__plus
 
-						.share.share--mobile Share
-							span
+						.share.share--mobile.js-share Share
+							span.icon
+							.share__buttons
+								.ya-share2(data-curtain data-lang="en" data-direction="vertical" data-color-scheme="whiteblack" data-services="facebook,twitter")
 			.catalog-item__details
 				.container
 					.catalog-details
@@ -81,34 +87,17 @@ block content
 							h2 faq
 						.faq__questions
 							.accordion
-								.section.active
-									a(class="section-title" href="#accordion-1") Who, how and where makes the toys?
-									div(id="accordion-1" class="section-content open")
-										p We make toys from the wood which grows in our region. Our carpenters are working in the third generation. They used to make matryoshka dolls before, and now they work with us. All materials for the toys we buy in Russia, except for the German paint. The cotton bags for toys packing are sewn by mothers of many children, who are on their maternity leave and work from home.
-								.section
-									a(class="section-title" href="#accordion-2") Are the toys safe to play?
-									div(id="accordion-2" class="section-content")
-										p We use only solid wood and non-toxic water-based eco paint. The paint is approved for the age +0. We recommend children under three years old to play under parents supervision, as they may bite small particles of the wood.
-								.section
-									a(class="section-title" href="#accordion-3") Do the toys have a smell?
-									div(id="accordion-3" class="section-content")
-										p Our paint doesn’t smell at all. Linseed oil which we use for natural toys smells like linseed oil. The toys have a very delicate and pleasant natural smell of wood or oil.
-								.section
-									a(class="section-title" href="#accordion-4") Why aren’t your toys smooth?
-									div(id="accordion-4" class="section-content")
-										p Our toys are tactile. We never cover them with lacque, as it may contain harmful composition. After the surface is lacque, you can’t feel the texture of the wood. Our toys are velvety in touch, this helps to develop fine motor skills and to satisfy a child's tactile hunger. They are very comfortable and safe to play and leave no splinters on little hands.
-								.section
-									a(class="section-title" href="#accordion-5") What is the toys’ duration period?
-									div(id="accordion-5" class="section-content")
-										p If you take proper care of them, you will be able to present them to your grandchildren. As the toys are made of solid wood, keep them away from heating batteries or humidifiers. They are perfect for playing, but you should never use stackers or building sets as teething toys for your children. The toys are safe, but it is possible to bite small particles of the wood. Their solid parts (blocks, stacker rings etc.) are very durable, but the glued smaller details (a kettle lid, tomato tops etc.) are more fragile. Though we use the strongest of all non-toxic eco glues, we don’t recommend you to throw the toys. Their fragility is a good way to teach a child to be careful with toys, clothes and the world around.
-								.section
-									a(class="section-title" href="#accordion-6") How to clean the toys?
-									div(id="accordion-6" class="section-content")
-										p Wood is self-disinfecting and we cover the toys with paint or oil which protect them from dirt. You can use dry or wet cloth for cleaning, but do it gently, without rubbing and detergents.
-								.section
-									a(class="section-title" href="#accordion-7") How can wood manufacturing be eco-friendly, if trees are cut for it?
-									div(id="accordion-7" class="section-content")
-										p We buy wood from responsible suppliers. They grow forests for logging themselves, and after they cut trees they plant new ones. We don’t buy wood from private traders who damage forests. We are also against wood wasting. We use wood with its natural marks, because they are beautiful. Wood can’t be homogeneous like plastic. It has its marks and we never throw such wood away.
+								each item, index in accordion
+									if index === 0
+										.section.active
+											a(class="section-title" href="#accordion-" + index)= item.question
+											div(id="accordion-" + index class="section-content opened")
+												p= item.answer
+									else
+										.section
+											a(class="section-title" href="#accordion-"+index )= item.question
+											div(id="accordion-"+index class="section-content")
+												p= item.answer
 
 
 			.catalog-item__other-toys
@@ -124,6 +113,7 @@ block content
 												.catalog__image
 													img(alt="" src= item.img)
 												.catalog__content
+													.catalog__category= item.category
 													.catalog__info
 														.catalog__name= item.name
 														.catalog__price= item.price

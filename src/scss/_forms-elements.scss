@@ -87,6 +87,7 @@ button {
 	border: 0;
 	color: #F1F1ED;
 	cursor: pointer;
+	transition: background-color .3s ease-in-out;
 	
 	@include responsive(device) {
 		padding: 1rem 56px;
@@ -94,5 +95,18 @@ button {
 	
 	@include responsive(desktop) {
 		padding: 20px 90px;
+	}
+
+	&:hover {
+		background-color: $btn-hover;
+	}
+
+	&:focus {
+		outline: none;
+		border-radius: 0;
+	}
+	
+	&:disabled {
+		background-color: rgba($black, .5);
 	}
 }

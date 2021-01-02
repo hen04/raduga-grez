@@ -1,6 +1,6 @@
 "use strict";
 
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.js-main-categories', {
 	pagination: {
 		el: '.swiper-pagination',
 		type: 'fraction',
@@ -42,9 +42,13 @@ var about = new Swiper('.js-slider-about', {
 	spaceBetween: 0,
 	loop: true,
 	loopFillGroupWithBlank: true,
-	autoplay: {
-		delay: 2500,
-		disableOnInteraction: false,
+	breakpoints: {
+		1024: {
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+			}
+		}
 	}
 });
 
@@ -151,4 +155,13 @@ $(function() {
 		$('.accordion .section').removeClass('active');
 		$('.accordion .section-content').removeClass('open').slideUp(350);
 	}
+
+	$('.js-share').on('click', function (){
+		$(this).toggleClass('active');
+		$(this).find('.share__buttons').toggleClass('opened');
+
+	});
+
+
+
 });
