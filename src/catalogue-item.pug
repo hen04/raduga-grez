@@ -110,14 +110,15 @@ block content
 									each item in catalog
 										.swiper-slide
 											.catalog__item
-												.catalog__image
-													img(alt="" src= item.img)
-												.catalog__content
-													.catalog__category= item.category
-													.catalog__info
-														.catalog__name= item.name
-														.catalog__price= item.price
-														a(href="" class="add-to-cart") Add to cart
+												a(href="catalogue-item.html")
+													.catalog__image
+														img(alt="" src= item.img)
+													.catalog__content
+														.catalog__category= item.category
+														.catalog__info
+															.catalog__name= item.name
+															.catalog__price= item.price
+												a(href="#" class="add-to-cart") Add to cart
 								.swiper-pagination
 
 
