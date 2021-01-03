@@ -27,11 +27,11 @@ block content
 						.swiper-container.js-slider-about
 							.swiper-wrapper
 								.swiper-slide
-									img(src="../images/content/slider-2.jpg")
+									img(src="images/content/slider-2.jpg")
 								.swiper-slide
-									img(src="../images/content/slider-3.jpg")
+									img(src="images/content/slider-3.jpg")
 								.swiper-slide
-									img(src="../images/content/slider-4.jpg")
+									img(src="images/content/slider-4.jpg")
 							.swiper-button-next
 							.swiper-button-prev
 
@@ -40,11 +40,11 @@ block content
 							p Toys as art. Each game will be aesthetic. Do not limit imagination. Timeless toy. Modern block inspired by art and architecture. Made in colors which perfect to kids rooms. Terracota, clay, olive, mustard, pink and white.
 
 						.about-goods__add-info
-							button.btn-add Add to cart
+							button.btn Add to cart
 							.catalog-item__quantity
 								.quantity
 									button.quantity__minus
-									.quantity__count 2
+									input(type="text" placeholder="1" value="1").quantity__count
 									button.quantity__plus
 
 						.share.share--mobile.js-share Share
@@ -69,7 +69,7 @@ block content
 			.catalog-item__description
 				.goods-description
 					.goods-description__img
-						img(src="../images/content/catalog-item.jpg" alt="")
+						img(src="images/content/catalog-item.jpg" alt="")
 					.goods-description__info
 						.goods-description__info-floating
 							h2 How to use?
@@ -108,7 +108,7 @@ block content
 							.swiper-container.swiper-slider
 								.swiper-wrapper
 									each item in catalog
-										.swiper-slide
+										.swiper-slide.catalog
 											.catalog__item
 												a(href="catalogue-item.html")
 													.catalog__image

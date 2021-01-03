@@ -30,7 +30,16 @@ html {
 	z-index: 99;
 }
 
-
+.overlay {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba($dark-green, .5);
+	display: none;
+}
 
 
 body {
@@ -41,6 +50,14 @@ body {
 	font: 16px/170% 'Pangram';
 	letter-spacing: .01rem;
 
+	&.cart-sm-opened {
+		position: relative;
+
+		.overlay {
+			display: block;
+		}
+	}
+	
 	&.menu-opened {
 		.mobile-menu-img,
 		.mobile-menu-logo {
@@ -53,7 +70,7 @@ body {
 			transform: translateY(0);
 		}
 
-		.menu-close {
+		.close-btn {
 			@include responsive(device) {
 				display: block;
 			}
@@ -128,8 +145,10 @@ body {
 		}
 
 		.header__cart {
-			background-color: $beige1;
-			color: $black;
+			span {
+				background-color: $beige1;
+				color: $black;
+			}
 		}
 	}
 }
@@ -149,7 +168,7 @@ body {
 	}
 	
 	@include responsive(desktop) {
-		padding: 44px 26px;
+		padding: 40px 26px;
 		box-sizing: border-box;
 	}
 	
@@ -183,20 +202,24 @@ body {
 	
 	&__cart {
 		margin-left: auto;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 30px;
-		padding: .25rem;
-		box-sizing: border-box;
-		height: 30px;
-		border-radius: 50%;
-		font-size: 13px;
-		color: $beige1;
-		background-color: $black;
-		
+
 		@include responsive(device) {
 			margin-right: 20px;
+		}
+		
+		span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 30px;
+			padding: .25rem;
+			box-sizing: border-box;
+			height: 30px;
+			border-radius: 50%;
+			font-size: 13px;
+			color: $beige1;
+			background-color: $black;
+			cursor: pointer;
 		}
 	}
 
@@ -231,6 +254,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		height: 100vh;
+		padding-top: 90px;
 		
 		h1 {
 			color: $beige1;
@@ -268,17 +292,14 @@ body {
 	}
 }
 
-.menu-close {
-	@include responsive(device) {
-		z-index: 3;
-		width: 27px;
-		height: 26px;
-		right: 26px;
-		top: 30px;
-		margin-left: auto;
-		background: url(../images/close-dark.svg) 0 0 no-repeat;
-	}
+.close-btn {
+	width: 27px;
+	height: 26px;
+	background: url(../images/close-dark.svg) 0 0 no-repeat;
+	cursor: pointer;
 }
+
+
 
 .menu-back {
 	@include responsive(device) {
@@ -326,11 +347,24 @@ body {
 
 	@include responsive(desktop) {
 		top: 0;
-		height: 118px;
+		height: 110px;
 		display: flex;
 		justify-content: center;
 		width: 50%;
 		margin: 0 25%;
+	}
+	
+	.close-btn {
+		@include responsive(device) {
+			z-index: 3;
+			right: 26px;
+			top: 30px;
+			margin-left: auto;
+		}
+		
+		@include responsive(desktop) {
+			display: none;
+		}
 	}
 
 	&__main {
@@ -1747,59 +1781,99 @@ footer,
 
 .quantity {
 	display: flex;
-
-	@include responsive(device) {
-		justify-content: center;
-	}
+	justify-content: center;
+	align-items: flex-start;
 
 	@include responsive(desktop) {
-		justify-content: space-between;
+		width: 160px;
 	}
 
 	&__minus {
-		background: url(../images/minus.svg) 50% 50% no-repeat;
-		width: 30px;
-		height: 50px;
-
-		@include responsive(desktop) {
-			width: 60px;
-			height: 60px;
+		
+		&:before {
+			background: url(../images/minus.svg) 50% 50%/contain no-repeat;
 		}
 	}
-	
+
 	&__count {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		font-size: .875rem;
 		width: 40px;
+		height: 60px;
+		text-align: center;
+		background-color: #B8B393;
+		border: 0;
+		padding: 0 3px;
+		font-family: 'Pangram', sans-serif;
+
+		&:focus {
+			outline: none;
+		}
 	}
 	
 	&__plus {
-		background: url(../images/plus.svg) 50% 50% no-repeat;
-		
-		@include responsive(device) {
-			width: 30px;
-			height: 50px;
-		}
-		
-		@include responsive(desktop) {
-			width: 60px;
-			height: 60px;
+
+		&:before {
+			background: url(../images/plus.svg) 50% 50%/contain no-repeat;
 		}
 	}
-	
+
 	button {
 		border-radius: 0;
 		border: 0;
 		cursor: pointer;
+		background-color: transparent;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
 		
+		&:before {
+			content: '';
+			position: absolute;
+			width: 12px;
+			height: 12px;
+		}
+
+		@include responsive(device) {
+			height: 50px;
+		}
+
+		@include responsive(desktop) {
+			height: 60px;
+		}
+
 		&:focus {
 			outline: none;
 		}
-		
+
 		&:active {
 			margin-top: 1px;
+		}
+	}
+	
+	&--sm {
+		align-items: center;
+		width: auto;
+		margin-left: 14px;
+
+		button {
+			width: 24px;
+			height: 24px;
+
+			&:before {
+				width: 8px;
+				height: 8px;
+			}
+		}
+		
+		input {
+			height: 24px;
+			width: 30px;
+			background-color: transparent;
 		}
 	}
 }
@@ -2307,4 +2381,123 @@ footer,
 .section-content {
 	display: none;
 	padding-bottom: 20px;
+}
+
+.cart-sm {
+	@include responsive(desktop) {
+		position: fixed;
+		width: 536px;
+		right: -536px;
+		top: 0;
+		bottom: 0;
+		z-index: 101;
+		background-color: $beige1;
+		padding: 50px 40px;
+		display: flex;
+		flex-flow: column;
+	}
+	
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		
+		h4 {
+			font-size: 24px;
+		}
+	}
+	
+	&__list {
+		border-top: 1px solid rgba($black, .5);
+		padding-top: 32px;
+		margin-top: 28px;
+		overflow-y: auto;
+		height: calc(100% - 150px);
+	}
+	
+	&__item {
+		display: flex;
+		padding-bottom: 32px;
+		border-bottom: 1px solid rgba($black, .5);
+		margin-bottom: 32px;
+	}
+
+	&__img {
+		min-width: 140px;
+		width: 140px;
+
+		img {
+			max-width: 100%;
+			display: block;
+		}
+	}
+
+	&__content {
+		padding-left: 22px;
+		display: flex;
+		flex-flow: column;
+		height: auto;
+		flex-grow: 1;
+	}
+
+	&__name-price {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+	}
+	
+	&__name {
+		padding-right: 20px;
+		color: $black;
+		text-decoration: none;
+	}
+	
+	&__price {
+		font-size: .875rem;
+	}
+	
+	&__quantity {
+		display: flex;
+		align-items: center;
+		
+		span {
+			font-size: .875rem;
+		}
+	}
+	
+	&__remove {
+		margin: auto 0 20px;
+
+		button {
+			color: $light-gray;
+			cursor: pointer;
+			background-color: transparent;
+			padding: 0;
+			border: 0;
+			font-size: .875rem;
+			transition: .3s ease-in-out;
+
+			&:hover {
+				color: $light-gray-hover;
+			}
+			
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+	&__total {
+		max-width: 250px;
+		margin-left: auto;
+
+		.btn {
+			padding: 20px 50px;
+		}
+	}
+
+	&__total-price {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 32px;
+	}
 }

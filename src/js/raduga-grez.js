@@ -90,7 +90,7 @@ $(function() {
 		$('.js-menu-close').on('click', function(){
 			$('html').css('overflow-y', 'initial');
 			$('.menu-content').animate({
-				opacity: 1,
+				opacity: 0,
 				left: "100%"
 			}, 250, function() {
 				$('body').removeClass('menu-opened');
@@ -105,7 +105,7 @@ $(function() {
 
 	$('.js-catalog-menu').on('click', function(){
 		$('html').css('overflow-y', 'hidden');
-		$('.menu-content__menu').removeClass('active').addClass('test');
+		//$('.menu-content__menu').removeClass('active').addClass('test');
 		$('.menu-content').animate({
 			opacity: 1,
 			left: "0"
@@ -160,6 +160,23 @@ $(function() {
 		$(this).toggleClass('active');
 		$(this).find('.share__buttons').toggleClass('opened');
 
+	});
+
+	$('.js-cart-sm').on('click', function (){
+		$('body').addClass('cart-sm-opened');
+		$('.cart-sm').animate({
+			opacity: 1,
+			right: 0
+		}, 500);
+	});
+
+	$('.js-cart-sm-close, .overlay').on('click', function (){
+		$('.cart-sm').animate({
+			opacity: 1,
+			right: '-536px'
+		}, 500, function() {
+			$('body').removeClass('cart-sm-opened');
+		});
 	});
 
 
