@@ -2,7 +2,7 @@ button {
 	font-family: 'Pangram';
 }
 
-.btn {
+.btn-outline {
 	text-decoration: none;
 	display: inline-block;
 	transform: rotate(4deg);
@@ -81,7 +81,7 @@ button {
 	}
 }
 
-.btn-add {
+.btn {
 	font-size: 14px;
 	background-color: $black;
 	border: 0;

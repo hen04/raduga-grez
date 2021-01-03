@@ -24,11 +24,11 @@
       <div class="header-wrapper">
         <header class="header">
           <div class="header__logo"><a href="index.html"></a></div>
-          <div class="header__cart">99</div>
+          <div class="header__cart"><span class="js-cart-sm">99</span></div>
           <div class="menu-btn js-menu"></div>
         </header>
         <div class="menu-content">
-          <div class="menu-close js-menu-close"></div>
+          <div class="close-btn js-menu-close"></div>
           <div class="menu-content__main">
             <ul class="menu">
               <li class="has-submenu js-submenu"><a href="catalogue.html">Catalogue</a></li>
@@ -62,6 +62,54 @@
             </ul>
           </div>
         </div>
+        <div class="cart-sm">
+          <div class="cart-sm__header">
+            <h4>Your Cart (2)</h4>
+            <div class="close-btn js-cart-sm-close"></div>
+          </div>
+          <div class="cart-sm__list">
+            <div class="cart-sm__item">
+              <div class="cart-sm__img"><a href="catalogue-item.html"><img src="../images/content/cart-1.jpg" alt=""></a></div>
+              <div class="cart-sm__content">
+                <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
+                  <div class="cart-sm__price">$50.00</div>
+                </div>
+                <div class="cart-sm__quantity"><span>Qty:</span>
+                  <div class="quantity quantity--sm">
+                    <button class="quantity__minus"></button>
+                    <input class="quantity__count" type="text" placeholder="1" value="1">
+                    <button class="quantity__plus"></button>
+                  </div>
+                </div>
+                <div class="cart-sm__remove">
+                  <button>Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart-sm__item">
+              <div class="cart-sm__img"><a href="catalogue-item.html"><img src="../images/content/cart-2.jpg" alt=""></a></div>
+              <div class="cart-sm__content">
+                <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment building blocks set colored</a>
+                  <div class="cart-sm__price">$45.00</div>
+                </div>
+                <div class="cart-sm__quantity"><span>Qty:</span>
+                  <div class="quantity quantity--sm">
+                    <button class="quantity__minus"></button>
+                    <input class="quantity__count" type="text" placeholder="1" value="1">
+                    <button class="quantity__plus"></button>
+                  </div>
+                </div>
+                <div class="cart-sm__remove">
+                  <button>Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-sm__total">
+            <div class="cart-sm__total-price"><span>Subtotal</span><span>$95.00</span></div>
+            <button class="btn">Proceed to checkout</button>
+          </div>
+        </div>
       </div>
       <main>
         <div class="catalog-item">
@@ -85,9 +133,9 @@
               <div class="about-goods__slider">
                 <div class="swiper-container js-slider-about">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="../images/content/slider-2.jpg"></div>
-                    <div class="swiper-slide"><img src="../images/content/slider-3.jpg"></div>
-                    <div class="swiper-slide"><img src="../images/content/slider-4.jpg"></div>
+                    <div class="swiper-slide"><img src="images/content/slider-2.jpg"></div>
+                    <div class="swiper-slide"><img src="images/content/slider-3.jpg"></div>
+                    <div class="swiper-slide"><img src="images/content/slider-4.jpg"></div>
                   </div>
                   <div class="swiper-button-next"></div>
                   <div class="swiper-button-prev"></div>
@@ -98,11 +146,11 @@
                   <p>Toys as art. Each game will be aesthetic. Do not limit imagination. Timeless toy. Modern block inspired by art and architecture. Made in colors which perfect to kids rooms. Terracota, clay, olive, mustard, pink and white.</p>
                 </div>
                 <div class="about-goods__add-info">
-                  <button class="btn-add">Add to cart</button>
+                  <button class="btn">Add to cart</button>
                   <div class="catalog-item__quantity">
                     <div class="quantity">
                       <button class="quantity__minus"></button>
-                      <div class="quantity__count">2</div>
+                      <input class="quantity__count" type="text" placeholder="1" value="1">
                       <button class="quantity__plus"></button>
                     </div>
                   </div>
@@ -136,7 +184,7 @@
           </div>
           <div class="catalog-item__description">
             <div class="goods-description">
-              <div class="goods-description__img"><img src="../images/content/catalog-item.jpg" alt=""></div>
+              <div class="goods-description__img"><img src="images/content/catalog-item.jpg" alt=""></div>
               <div class="goods-description__info">
                 <div class="goods-description__info-floating">
                   <h2>How to use?</h2>
@@ -204,7 +252,7 @@
                 <div class="other-toys__slider">
                   <div class="swiper-container swiper-slider">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
                             <div class="catalog__content">
@@ -215,7 +263,7 @@
                               </div>
                             </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
                       </div>
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
                             <div class="catalog__content">
@@ -226,7 +274,7 @@
                               </div>
                             </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
                       </div>
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
                             <div class="catalog__content">
@@ -237,7 +285,7 @@
                               </div>
                             </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
                       </div>
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
                             <div class="catalog__content">
@@ -248,7 +296,7 @@
                               </div>
                             </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
                       </div>
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-5.jpg"></div>
                             <div class="catalog__content">
@@ -259,7 +307,7 @@
                               </div>
                             </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
                       </div>
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
                             <div class="catalog__content">
@@ -270,7 +318,7 @@
                               </div>
                             </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
                       </div>
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
                             <div class="catalog__content">
@@ -281,7 +329,7 @@
                               </div>
                             </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
                       </div>
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
                             <div class="catalog__content">
@@ -292,7 +340,7 @@
                               </div>
                             </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
                       </div>
-                      <div class="swiper-slide">
+                      <div class="swiper-slide catalog">
                         <div class="catalog__item"><a href="catalogue-item.html">
                             <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
                             <div class="catalog__content">
@@ -378,6 +426,7 @@
         </div>
       </footer>
     </div>
+    <div class="overlay"></div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
