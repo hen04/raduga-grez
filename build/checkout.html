@@ -32,40 +32,44 @@
                 <div class="tabs__content">
                   <div class="tabs__item tabs__item--contact active">
                     <form>
-                      <h4>Contact information</h4>
-                      <div class="input-field error">
-                        <label class="label-text">Email or mobile number</label>
-                        <input class="inp-text" type="text"><span class="error-text">Invalid email format</span>
-                      </div>
-                      <div class="input-field">
-                        <input class="inp-checkbox" type="checkbox" id="offers">
-                        <label class="label-checkbox" for="offers">Keep me up to date on news and exclusive offers</label>
-                      </div>
-                      <h4>Shipping address</h4>
-                      <div class="input-field success">
-                        <label class="label-text">Full name*</label>
-                        <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
-                      </div>
-                      <div class="input-field error">
-                        <label class="label-text">Address*</label>
-                        <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
-                      </div>
-                      <div class="input-field">
-                        <label class="label-text">Appartament, suit, etc. (optional)</label>
-                        <input class="inp-text" type="text">
-                      </div>
-                      <div class="input-field">
-                        <label class="label-text">City*</label>
-                        <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
-                      </div>
-                      <div class="input-field-wrapper">
+                      <div class="tabs__section">
+                        <h4>Contact information</h4>
+                        <div class="input-field error">
+                          <label class="label-text">Email or mobile number</label>
+                          <input class="inp-text" type="text"><span class="error-text">Invalid email format</span>
+                        </div>
                         <div class="input-field">
-                          <label class="label-text">Country/Region</label>
+                          <input class="inp-checkbox" type="checkbox" id="offers">
+                          <label class="label-checkbox" for="offers">Keep me up to date on news and exclusive offers</label>
+                        </div>
+                      </div>
+                      <div class="tabs__section">
+                        <h4>Shipping address</h4>
+                        <div class="input-field success">
+                          <label class="label-text">Full name*</label>
+                          <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                        </div>
+                        <div class="input-field error">
+                          <label class="label-text">Address*</label>
                           <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
                         </div>
                         <div class="input-field">
-                          <label class="label-text">Postal code/ZIP</label>
+                          <label class="label-text">Appartament, suit, etc. (optional)</label>
+                          <input class="inp-text" type="text">
+                        </div>
+                        <div class="input-field">
+                          <label class="label-text">City*</label>
                           <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                        </div>
+                        <div class="input-field-wrapper">
+                          <div class="input-field">
+                            <label class="label-text">Country/Region</label>
+                            <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                          </div>
+                          <div class="input-field">
+                            <label class="label-text">Postal code/ZIP</label>
+                            <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                          </div>
                         </div>
                       </div>
                       <div class="form-buttons"><a class="back">Back</a>
@@ -90,15 +94,19 @@
                         </div>
                       </div>
                     </div>
-                    <h4>Payment</h4>
-                    <p>Пока не понятно, как будет происходить оплата</p>
-                    <h4>Remember me</h4>
-                    <div class="input-field">
-                      <input class="inp-checkbox" type="checkbox" id="save-info">
-                      <label class="label-checkbox" for="save-info">Save this information for next time</label>
+                    <div class="tabs__section">
+                      <h4>Payment</h4>
+                      <p>Пока не понятно, как будет происходить оплата</p>
                     </div>
-                    <div class="form-buttons"><a class="back">Back</a>
-                      <button class="btn">Pay now</button>
+                    <div class="tabs__section">
+                      <h4>Remember me</h4>
+                      <div class="input-field">
+                        <input class="inp-checkbox" type="checkbox" id="save-info">
+                        <label class="label-checkbox" for="save-info">Save this information for next time</label>
+                      </div>
+                      <div class="form-buttons"><a class="back">Back</a>
+                        <button class="btn">Pay now</button>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -2677,6 +2677,15 @@ footer,
 	&__content {
 		position: relative;
 	}
+
+	&__section {
+		margin-top: 30px;
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
 	&__item {
 		position: absolute;
 		top: 0;
@@ -2687,7 +2696,7 @@ footer,
 		h4 {
 			font-family: 'Pangram', sans-serif;
 			font-size: 21px;
-			margin: 20px 0;
+			margin: 0 0 20px;
 		}
 
 		&.active {
@@ -2733,6 +2742,10 @@ footer,
 	padding-bottom: 20px;
 	max-width: 755px;
 	width: 100%;
+	
+	&:last-child {
+		padding-bottom: 0;
+	}
 	
 	.inp-text {
 		height: 50px;
