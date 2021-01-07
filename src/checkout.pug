@@ -1,0 +1,112 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title Raduga Grez
+		meta(name="description" content="")
+		meta(name="keywords" content="")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+		script(src="https://unpkg.com/current-device/umd/current-device.min.js")
+		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css")
+		link(rel="stylesheet" href="css/raduga-grez.css")
+
+	body.loading1
+		.loading-screen.hidden
+			.loading-screen__svg
+				img(src="images/loading.svg")
+
+		.loading-content.hidden1
+			.checkout
+				.checkout__info
+					.chekout-info
+						.checkout-info__logo
+							a(href="index.html")
+								img(src="images/raduga-grez-dark.svg" alt="")
+						.checkout-info__tabs
+							.tabs.js-tabs
+								.tabs__menu
+									ul
+										li.active Information
+										li Payment
+								.tabs__content
+									.tabs__item.tabs__item--contact.active
+										form
+											h4 Contact information
+											.input-field.error
+												label.label-text Email or mobile number
+												input(type="text" class="inp-text")
+												span.error-text Invalid email format
+											.input-field
+												input(type="checkbox" id="offers" class="inp-checkbox")
+												label(for="offers" class="label-checkbox") Keep me up to date on news and exclusive offers
+
+											h4 Shipping address
+											.input-field.success
+												label.label-text Full name*
+												input(type="text" class="inp-text" required)
+												span.error-text This field is required
+											.input-field.error
+												label.label-text Address*
+												input(type="text" class="inp-text" required)
+												span.error-text This field is required
+											.input-field
+												label.label-text Appartament, suit, etc. (optional)
+												input(type="text" class="inp-text")
+											.input-field
+												label.label-text City*
+												input(type="text" class="inp-text" required)
+												span.error-text This field is required
+											.input-field-wrapper
+												.input-field
+													label.label-text Country/Region
+													input(type="text" class="inp-text" required)
+													span.error-text This field is required
+												.input-field
+													label.label-text Postal code/ZIP
+													input(type="text" class="inp-text" required)
+													span.error-text This field is required
+
+											.form-buttons
+												a(class="back") Back
+												button(class="btn" disabled) Continue to Payment
+									.tabs__item.tabs__item--payment
+										.user-info
+											.user-info__item
+												.user-info__title Contact:
+												.user-info__result laireclair@gmail.com
+												.user-info__button
+													button Edit
+											.user-info__item
+												.user-info__title Ship to:
+												.user-info__result Very Khoruzhey street 34-11, Minsk, 162538, Belarus
+												.user-info__button
+													button Edit
+										h4 Payment
+										p Пока не понятно, как будет происходить оплата
+										h4 Remember me
+										.input-field
+											input(type="checkbox" id="save-info" class="inp-checkbox")
+											label(for="save-info" class="label-checkbox") Save this information for next time
+										.form-buttons
+											a(class="back") Back
+											button(class="btn") Pay now
+
+
+					.checkout-footer
+						nav
+							ul
+								li
+									a(href="#") Shipping
+								li
+									a(href="#") Terms & Conditions
+				.checkout__summary
+					.cart-sm.cart-sm--checkout
+						block page
+							- var page = "checkout";
+							include include/incl-cart-sm
+
+
+		script(src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js")
+		script(src="js/raduga-grez.js")
