@@ -86,8 +86,12 @@ button {
 	background-color: $black;
 	border: 0;
 	color: #F1F1ED;
-	cursor: pointer;
 	transition: background-color .3s ease-in-out;
+	cursor: pointer;
+	
+	&:not(disabled) {
+		cursor: default;
+	}
 	
 	@include responsive(device) {
 		padding: 1rem 56px;

@@ -1,56 +1,62 @@
 "use strict";
 
-var swiper = new Swiper('.js-main-categories', {
-	pagination: {
-		el: '.swiper-pagination',
-		type: 'fraction',
-		renderFraction: function (currentClass, totalClass) {
-			return '<span class="' + currentClass + '"></span>' +
-				' <span class="devider"></span> ' + '<span class="' + totalClass + '"></span>';
-		}
-	},
-
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-});
-
-var swiperSlider = new Swiper('.swiper-slider', {
-	slidesPerView: 1,
-	spaceBetween: 15,
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true,
-	},
-	breakpoints: {
-		768: {
-			slidesPerView: 2,
-			spaceBetween: 15,
+if ( $('.js-main-categories').length ) {
+	var swiper = new Swiper('.js-main-categories', {
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'fraction',
+			renderFraction: function (currentClass, totalClass) {
+				return '<span class="' + currentClass + '"></span>' +
+					' <span class="devider"></span> ' + '<span class="' + totalClass + '"></span>';
+			}
 		},
-		1024: {
-			slidesPerView: 3,
-			spaceBetween: 15,
-		}
-	}
-});
 
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+}
 
-
-var about = new Swiper('.js-slider-about', {
-	slidesPerView: 1,
-	spaceBetween: 0,
-	loop: true,
-	loopFillGroupWithBlank: true,
-	breakpoints: {
-		1024: {
-			autoplay: {
-				delay: 2500,
-				disableOnInteraction: false,
+if ( $('.swiper-slider').length ) {
+	var swiperSlider = new Swiper('.swiper-slider', {
+		slidesPerView: 1,
+		spaceBetween: 15,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 15,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 15,
 			}
 		}
-	}
-});
+	});
+}
+
+if ( $('.js-slider-about').length ) {
+	var about = new Swiper('.js-slider-about', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: true,
+		loopFillGroupWithBlank: true,
+		breakpoints: {
+			1024: {
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+				}
+			}
+		}
+	});
+}
+
+
 
 
 
@@ -170,15 +176,49 @@ $(function() {
 		}, 500);
 	});
 
+	const cartWidth = $('.cart-sm').outerWidth();
+
 	$('.js-cart-sm-close, .overlay').on('click', function (){
 		$('.cart-sm').animate({
 			opacity: 1,
-			right: '-536px'
+			right: '-' + cartWidth
 		}, 500, function() {
 			$('body').removeClass('cart-sm-opened');
 		});
 	});
 
+	$('.js-tabs li').on('click', function (){
+		$('li').removeClass('active');
+		$(this).addClass('active');
+		$(this).parents().find('.tabs__item').toggleClass('active');
+	});
+
+
+	let input = $(".input-field .inp-text");
+
+	input.val("");
+	input.focus(function() {
+		$(this).closest('form').find(".input-field.focused").removeClass("focused");
+		$(this).closest('.input-field').addClass('focused').removeClass('error');
+	});
+	input.blur(function() {
+		var val = $(this).val(),
+			ig = $(this).closest('.input-field'),
+			label = ig.find('label');
+		ig.removeClass('focused');
+		if (val !== "") {
+			label.addClass('focused');
+		} else {
+			label.removeClass('focused');
+		}
+	});
+
+
+	if ($('.js-simple-scroll').length) {
+		var el = document.querySelector('.js-simple-scroll');
+		SimpleScrollbar.initEl(el);
+	}
 
 
 });
+

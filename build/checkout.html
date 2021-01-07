@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raduga Grez</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css">
+    <link rel="stylesheet" href="css/raduga-grez.css">
+  </head>
+  <body class="loading1">
+    <div class="loading-screen hidden">
+      <div class="loading-screen__svg"><img src="images/loading.svg"></div>
+    </div>
+    <div class="loading-content hidden1">
+      <div class="checkout">
+        <div class="checkout__info">
+          <div class="chekout-info">
+            <div class="checkout-info__logo"><a href="index.html"><img src="images/raduga-grez-dark.svg" alt=""></a></div>
+            <div class="checkout-info__tabs">
+              <div class="tabs js-tabs">
+                <div class="tabs__menu">
+                  <ul>
+                    <li class="active">Information</li>
+                    <li>Payment</li>
+                  </ul>
+                </div>
+                <div class="tabs__content">
+                  <div class="tabs__item tabs__item--contact active">
+                    <form>
+                      <h4>Contact information</h4>
+                      <div class="input-field error">
+                        <label class="label-text">Email or mobile number</label>
+                        <input class="inp-text" type="text"><span class="error-text">Invalid email format</span>
+                      </div>
+                      <div class="input-field">
+                        <input class="inp-checkbox" type="checkbox" id="offers">
+                        <label class="label-checkbox" for="offers">Keep me up to date on news and exclusive offers</label>
+                      </div>
+                      <h4>Shipping address</h4>
+                      <div class="input-field success">
+                        <label class="label-text">Full name*</label>
+                        <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                      </div>
+                      <div class="input-field error">
+                        <label class="label-text">Address*</label>
+                        <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                      </div>
+                      <div class="input-field">
+                        <label class="label-text">Appartament, suit, etc. (optional)</label>
+                        <input class="inp-text" type="text">
+                      </div>
+                      <div class="input-field">
+                        <label class="label-text">City*</label>
+                        <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                      </div>
+                      <div class="input-field-wrapper">
+                        <div class="input-field">
+                          <label class="label-text">Country/Region</label>
+                          <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                        </div>
+                        <div class="input-field">
+                          <label class="label-text">Postal code/ZIP</label>
+                          <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
+                        </div>
+                      </div>
+                      <div class="form-buttons"><a class="back">Back</a>
+                        <button class="btn" disabled>Continue to Payment</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tabs__item tabs__item--payment">
+                    <div class="user-info">
+                      <div class="user-info__item">
+                        <div class="user-info__title">Contact:</div>
+                        <div class="user-info__result">laireclair@gmail.com</div>
+                        <div class="user-info__button">
+                          <button>Edit</button>
+                        </div>
+                      </div>
+                      <div class="user-info__item">
+                        <div class="user-info__title">Ship to:</div>
+                        <div class="user-info__result">Very Khoruzhey street 34-11, Minsk, 162538, Belarus</div>
+                        <div class="user-info__button">
+                          <button>Edit</button>
+                        </div>
+                      </div>
+                    </div>
+                    <h4>Payment</h4>
+                    <p>Пока не понятно, как будет происходить оплата</p>
+                    <h4>Remember me</h4>
+                    <div class="input-field">
+                      <input class="inp-checkbox" type="checkbox" id="save-info">
+                      <label class="label-checkbox" for="save-info">Save this information for next time</label>
+                    </div>
+                    <div class="form-buttons"><a class="back">Back</a>
+                      <button class="btn">Pay now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="checkout-footer">
+            <nav>
+              <ul>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="checkout__summary">
+          <div class="cart-sm cart-sm--checkout">
+            <div class="cart-sm__header">
+              <h4>Your Cart (2)</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js"></script>
+    <script src="js/raduga-grez.js"></script>
+  </body>
+</html>

@@ -24,30 +24,5 @@ header(class="header")
 						a(href="catalogue.html")= subitem.title
 
 .cart-sm
-	.cart-sm__header
-		h4 Your Cart (2)
-		.close-btn.js-cart-sm-close
-	.cart-sm__list
-		each item in cartSm.slice(0,2)
-			.cart-sm__item
-				.cart-sm__img
-					a(href="catalogue-item.html")
-						img(src= item.img alt="")
-				.cart-sm__content
-					.cart-sm__name-price
-						a(href="catalogue-item.html").cart-sm__name= item.name
-						.cart-sm__price= item.price
-					.cart-sm__quantity
-						span Qty:
-						.quantity.quantity--sm
-							button.quantity__minus
-							input(type="text" placeholder="1" value="1").quantity__count
-							button.quantity__plus
-					.cart-sm__remove
-						button Remove
-
-	.cart-sm__total
-		.cart-sm__total-price
-			span Subtotal
-			span $95.00
-		button.btn Proceed to checkout
+	block cart
+		include incl-cart-sm
