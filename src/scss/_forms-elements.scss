@@ -89,7 +89,7 @@ button {
 	transition: background-color .3s ease-in-out;
 	cursor: pointer;
 	
-	&:not(disabled) {
+	&:disabled {
 		cursor: default;
 	}
 	

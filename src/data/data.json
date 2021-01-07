@@ -275,22 +275,22 @@
 	],
 	"cartSm": [
 		{
-			"img": "../images/content/cart-1.jpg",
+			"img": "images/content/cart-1.jpg",
 			"name": "Sand small",
 			"price": "$50.00"
 		},
 		{
-			"img": "../images/content/cart-2.jpg",
+			"img": "images/content/cart-2.jpg",
 			"name": "Apartment building blocks set colored",
 			"price": "$45.00"
 		},
 		{
-			"img": "../images/content/cart-3.jpg",
+			"img": "images/content/cart-3.jpg",
 			"name": "Apartment",
 			"price": "$45.00"
 		},
 		{
-			"img": "../images/content/cart-1.jpg",
+			"img": "images/content/cart-1.jpg",
 			"name": "Sand small",
 			"price": "$50.00"
 		}

@@ -149,7 +149,7 @@ button {
   color: #F1F1ED;
   transition: background-color .3s ease-in-out;
   cursor: pointer; }
-  .btn:not(disabled) {
+  .btn:disabled {
     cursor: default; }
   @media only screen and (max-width: 1279px) {
     .btn {
@@ -2090,6 +2090,11 @@ footer,
 .tabs__content {
   position: relative; }
 
+.tabs__section {
+  margin-top: 30px; }
+  .tabs__section:first-child {
+    margin-top: 0; }
+
 .tabs__item {
   position: absolute;
   top: 0;
@@ -2099,7 +2104,7 @@ footer,
   .tabs__item h4 {
     font-family: 'Pangram', sans-serif;
     font-size: 21px;
-    margin: 20px 0; }
+    margin: 0 0 20px; }
   .tabs__item.active {
     opacity: 1;
     position: relative; }
@@ -2131,6 +2136,8 @@ footer,
   padding-bottom: 20px;
   max-width: 755px;
   width: 100%; }
+  .input-field:last-child {
+    padding-bottom: 0; }
   .input-field .inp-text {
     height: 50px;
     width: 100%;
