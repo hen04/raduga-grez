@@ -1,10 +1,39 @@
 block cart
 	if page === "checkout"
 		.cart-sm__header
-			h4 Your Cart (2)
+			h4 Your Cart (4)
+		.cart-sm__list
+			each item in cartSm
+				.cart-sm__item
+					.cart-sm__img
+						a(href="catalogue-item.html")
+							img(src= item.img alt="")
+					.cart-sm__content
+						.cart-sm__name-price
+							a(href="catalogue-item.html").cart-sm__name= item.name
+							.cart-sm__price= item.price
+						.cart-sm__quantity
+							span Qty:
+							.quantity.quantity--sm
+								button.quantity__minus
+								input(type="text" placeholder="1" value="1").quantity__count
+								button.quantity__plus
+		a.cart-sm__promocode.js-fancybox(href='#hidden-content')
+			span Apply promocode
+
+		.cart-sm__total
+			.cart-sm__total-price
+				span Subtotal
+				span $95.00
+			.cart-sm__total-price
+				span Shipping
+				span Calculated at next step
+			.cart-sm__total-price.cart-sm__total-price--big
+				span Total
+				span $95.00
 	else
 		.cart-sm__header
-			h4 Your Cart (2)
+			h4 Your Cart (4)
 			.close-btn.js-cart-sm-close
 		.cart-sm__list.js-simple-scroll
 				each item in cartSm

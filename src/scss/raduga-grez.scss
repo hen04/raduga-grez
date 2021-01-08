@@ -2404,8 +2404,17 @@ footer,
 		@include responsive(desktop) {
 			right: 0;
 			width: auto;
-			height: 100vh;
 			position: relative;
+			min-height: 100vh;
+		}
+	}
+	
+	&--mini {
+		.cart-sm__total {
+			@include responsive(desktop) {
+				max-width: 250px;
+				margin-left: auto;
+			}
 		}
 	}
 	
@@ -2427,7 +2436,7 @@ footer,
 	&__list {
 		border-top: 1px solid rgba($black, .5);
 		border-bottom: 1px solid rgba($black, .5);
-		padding-top: 32px;
+		padding: 32px 0;
 		margin-top: 28px;
 		
 		@include responsive(device) {
@@ -2435,7 +2444,7 @@ footer,
 		}
 
 		@include responsive(desktop) {
-			height: calc(100% - 240px);
+			height: calc(100% - 208px);
 		}
 	}
 	
@@ -2458,6 +2467,7 @@ footer,
 		&:last-child {
 			margin-bottom: 0;
 			border-bottom: 0;
+			padding-bottom: 0;
 		}
 	}
 
@@ -2543,11 +2553,6 @@ footer,
 		padding-top: 32px;
 		margin-top: auto;
 
-		@include responsive(desktop) {
-			max-width: 250px;
-			margin-left: auto;
-		}
-
 		.btn {
 			display: block;
 			text-decoration: none;
@@ -2555,9 +2560,11 @@ footer,
 			@include responsive(device) {
 				padding: 13px 50px;
 				text-align: center;
+				margin-top: 24px;
 			}
 			@include responsive(desktop) {
 				padding: 20px 50px;
+				margin-top: 32px;
 			}
 		}
 	}
@@ -2566,12 +2573,35 @@ footer,
 		display: flex;
 		justify-content: space-between;
 
-		@include responsive(device) {
-			margin-bottom: 24px;
+		&--big {
+			font-size: 21px;
+			border-top: 1px solid rgba($black, .5);
+			padding-top: 24px;
+			margin-top: 24px;
 		}
-
-		@include responsive(desktop) {
-			margin-bottom: 32px;
+	}
+	
+	&__promocode {
+		font-size: .875rem;
+		padding: 24px 0;
+		border-bottom: 1px solid rgba($black, .5);
+		cursor: pointer;
+		position: relative;
+		text-decoration: none;
+		
+		span {
+			color: $black;
+		}
+		
+		&:after {
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: url(../images/plus.svg) 0 0/contain no-repeat;
+			right: 0;
+			top: 50%;
+			margin-top: -5px;
 		}
 	}
 }
@@ -2583,19 +2613,24 @@ footer,
 
 .checkout {
 	display: flex;
-	height: 100vh;
 	background-color: #F1F1ED;
+	min-height: 100vh;
 
 	&__info {
-		width: 67%;
-		padding: 50px 150px 40px 150px;
-		display: flex;
-		flex-flow: column;
+		
+		@include responsive(desktop) {
+			width: 67%;
+			padding: 50px 150px 40px 150px;
+			display: flex;
+			flex-flow: column;
+		}
 	}
 
 	&__summary {
-		width: 33%;
-		background-color: #E5E3D9;
+		@include responsive(desktop) {
+			width: 33%;
+			background-color: #E5E3D9;
+		}
 	}
 }
 
@@ -2702,6 +2737,7 @@ footer,
 		&.active {
 			opacity: 1;
 			position: relative;
+			z-index: 1;
 		}
 	}
 	
@@ -2851,7 +2887,8 @@ footer,
 		height: 11px;
 		background: url(../images/inp-checkbox.svg) 0 0 no-repeat;
 		left: 0;
-		top: 5px;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 }
 
@@ -2884,6 +2921,72 @@ footer,
 			padding: 0;
 			background-color: transparent;
 			cursor: pointer;
+		}
+	}
+}
+
+.fancybox-bg {
+	background-color: rgba($dark-green, .5);
+}
+
+.fancybox-content {
+	width: 480px;
+	height: 350px;
+	background-color: $beige1;
+	
+	h4 {
+		font-size: 21px;
+	}
+}
+
+.apply-promocode {
+	.input-field {
+		margin-top: 45px;
+
+		&.success,
+		&.error {
+			&:after {
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		&.success {
+			.inp-promocode {
+				border-bottom-color: $success;
+			}
+		}
+
+		&.error {
+			.inp-promocode {
+				border-bottom-color: $red-error;
+			}
+		}
+	}
+
+	.btn {
+		width: 100%;
+		margin-top: 60px;
+	}
+	
+	.fancybox-close-small {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			background: url(../images/close-dark.svg) 0 0/contain no-repeat;
+		}
+
+		svg {
+			display: none;
 		}
 	}
 }

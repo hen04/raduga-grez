@@ -9,7 +9,8 @@ html(lang="en")
 		meta(name="keywords" content="")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
 		script(src="https://unpkg.com/current-device/umd/current-device.min.js")
-		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css")
+		script(src="js/lib/jquery.fancybox.min.js")
+		link(rel="stylesheet" href="css/lib/jquery.fancybox.min.css")
 		link(rel="stylesheet" href="css/raduga-grez.css")
 
 	body.loading1
@@ -84,6 +85,21 @@ html(lang="en")
 												.user-info__button
 													button Edit
 										.tabs__section
+											h4 Shipping Method
+											.user-info
+												.user-info__item
+													.user-info__result
+														.input-field
+															input(type="radio" name="post" id="dhl" class="inp-checkbox")
+															label(for="dhl" class="label-checkbox") DHL Express
+													.user-info__price $70.00
+												.user-info__item
+													.user-info__result
+														.input-field
+															input(type="radio" name="post" id="post" class="inp-checkbox")
+															label(for="post" class="label-checkbox") Post of Russia
+													.user-info__price $15.00
+										.tabs__section
 											h4 Payment
 											p Пока не понятно, как будет происходить оплата
 										.tabs__section
@@ -110,5 +126,14 @@ html(lang="en")
 							include include/incl-cart-sm
 
 
-		script(src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js")
+
+			div(style="display: none;" id="hidden-content" class="apply-promocode")
+				h4 Apply a promocode
+				form(action="#")
+					.input-field.error
+						input(type="text" class="inp-promocode" value="128734628763" placeholder="Promocode")
+						span.error-text Your promo code is invalid, please check and try again.
+					button(type="submit" class="btn") Apply
+
+
 		script(src="js/raduga-grez.js")

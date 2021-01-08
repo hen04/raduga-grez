@@ -194,6 +194,8 @@ $(function() {
 	});
 
 
+
+	// https://codepen.io/pablopo/pen/KrBmad
 	let input = $(".input-field .inp-text");
 
 	input.val("");
@@ -218,6 +220,8 @@ $(function() {
 		var el = document.querySelector('.js-simple-scroll');
 		SimpleScrollbar.initEl(el);
 	}
+
+	$(".js-fancybox").fancybox();
 
 
 });
