@@ -2401,12 +2401,20 @@ footer,
 	}
 	
 	&--checkout {
+		@include responsive(device) {
+			//position: absolute;
+			position: static;
+			right: 0;
+			width: 100%;
+		}
+		
 		@include responsive(desktop) {
 			right: 0;
 			width: auto;
 			position: relative;
 			min-height: 100vh;
 		}
+		
 	}
 	
 	&--mini {
@@ -2611,32 +2619,175 @@ footer,
 	background-color: rgba($black, .2);
 }
 
+.checkout-g {
+	display: grid;
+	background-color: #F1F1ED;
+	
+	@include responsive(device) {
+		min-height: 100vh;
+		grid-template-areas:
+		"logo"
+		"summary-btn"
+		"summary"
+		"tabs"
+		"footer";
+		grid-template-rows: 80px 60px auto 1fr 75px;
+		grid-template-columns: 100%;
+	}
+
+	@include responsive(desktop) {
+		grid-template-areas:
+		"logo summary"
+		"tabs summary"
+		"footer summary";
+		grid-template-rows: 50px 1fr 40px;
+		grid-template-columns: 67% 33%;
+	}
+
+	&__logo {
+		grid-area: logo;
+	}
+
+	&__summary-btn {
+		@include responsive(device) {
+			grid-area: summary-btn;
+		}
+		@include responsive(desktop) {
+			display: none;
+		}
+	}
+
+	&__summary {
+		@include responsive(device) {
+			grid-area: summary;
+			display: none;
+		}
+	}
+	
+	&__summary-wrapper {
+		@include responsive(desktop) {
+			grid-area: summary;
+			background-color: #E5E3D9;
+			min-height: 100vh;
+		}
+	}
+	
+	&__tabs {
+		grid-area: tabs;
+	}
+	
+	&__footer {
+		grid-area: footer;
+	}
+}
+
+
+
 .checkout {
-	display: flex;
 	background-color: #F1F1ED;
 	min-height: 100vh;
+	
+	@include responsive(device) {
+		flex-flow: column;
+		flex-flow: wrap;
+		display: flex;
+	}
+	
+	@include responsive(desktop) {
+		overflow: hidden;
+	}
 
-	&__info {
-		
+	&__logo {
+		@include responsive(device) {
+			padding: 35px 26px;
+			order: 1;
+		}
 		@include responsive(desktop) {
 			width: 67%;
-			padding: 50px 150px 40px 150px;
+			padding: 50px 150px 0 150px;
+			float: left;
+		}
+	}
+	
+	&__btn {
+		border-top: 1px solid rgba($black, .5);
+		border-bottom: 1px solid rgba($black, .5);
+		padding: 16px 0;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 32px;
+		
+		@include responsive(desktop) {
+			display: none;
+		}
+		
+		.summary-text {
+			font-size: .875rem;
+			margin-left: 26px;
+			position: relative;
+			padding-right: 26px;
+			
+			&:after {
+				content: '';
+				position: absolute;
+				width: 12px;
+				height: 6px;
+				background: url(../images/arrow-bottom.svg) 0 0/contain no-repeat;
+				right: 0;
+				top: 50%;
+				margin-top: -3px;
+			}
+		}
+		
+		.summary-price {
+			margin-right: 26px;
+		}
+	}
+	
+	&__info {
+		@include responsive(device) {
+			padding: 0 26px 35px;
+			order: 3;
+		}
+		@include responsive(desktop) {
+			width: 67%;
+			padding: 40px 150px 40px 150px;
+			float: left;
 			display: flex;
 			flex-flow: column;
 		}
 	}
 
 	&__summary {
+		@include responsive(device) {
+			display: none;
+			position: relative;
+		}
+	}
+	
+	&__summary-wrapper {
+		@include responsive(device) {
+			order: 2;
+			position: relative;
+		}
+		
 		@include responsive(desktop) {
 			width: 33%;
 			background-color: #E5E3D9;
+			float: right;
 		}
 	}
 }
 
 .checkout-info {
-	width: 100%;
-	max-width: 755px;
+	@include responsive(device) {
+		padding: 35px 26px;
+	}
+
+	@include responsive(desktop) {
+		width: 100%;
+		max-width: 755px;
+	}
 	
 	&__logo {
 		margin-bottom: 40px;
@@ -2745,15 +2896,30 @@ footer,
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: 35px;
 		max-width: 755px;
 		width: 100%;
+
+		@include responsive(device) {
+			margin-top: 15px;
+			margin-bottom: 100px;
+		}
+
+		@include responsive(desktop) {
+			margin-top: 35px;
+		}
 		
 		.back {
 			cursor: pointer;
+			
+			@include responsive(device) {
+				display: none;
+			}
 		}
-		
+
 		.btn {
+			@include responsive(device) {
+				width: 100%;
+			}
 			@include responsive(desktop) {
 				padding: 20px 50px;
 				min-width: 250px;
@@ -2775,10 +2941,10 @@ footer,
 
 .input-field {
 	position: relative;
-	padding-bottom: 20px;
 	max-width: 755px;
 	width: 100%;
-	
+	padding-bottom: 20px;
+
 	&:last-child {
 		padding-bottom: 0;
 	}
@@ -2879,6 +3045,12 @@ footer,
 	position: relative;
 	color: $black !important;
 	padding-left: 20px;
+	display: block;
+	
+	@include responsive(device) {
+		font-size: .875rem;
+		line-height: 1.3;
+	}
 	
 	&:before {
 		content: '';
@@ -2887,16 +3059,17 @@ footer,
 		height: 11px;
 		background: url(../images/inp-checkbox.svg) 0 0 no-repeat;
 		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
+		top: 4px;
 	}
 }
 
 .user-info {
 	margin-bottom: 40px;
+
 	&__item {
 		background-color: $beige1;
 		display: flex;
+		align-items: center;
 		margin-bottom: 10px;
 		padding: 12px 20px;
 	}

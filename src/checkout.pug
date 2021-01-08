@@ -19,12 +19,30 @@ html(lang="en")
 				img(src="images/loading.svg")
 
 		.loading-content.hidden1
-			.checkout
+			.checkout-g
+				.checkout-g__logo logo
+				.checkout-g__summary-wrapper
+					.checkout-g__summary-btn button
+					.checkout-g__summary summary
+				.checkout-g__tabs
+					.tabs tabs
+				.checkout-g__footer footer
+
+			//.checkout
+				.checkout__logo
+					a(href="index.html")
+						img(src="images/raduga-grez-dark.svg" alt="")
+				.checkout__summary-wrapper
+					.checkout__btn
+						span.summary-text Show order summary
+						span.summary-price $95.00
+					.checkout__summary
+						.cart-sm.cart-sm--checkout
+							block page
+								- var page = "checkout";
+								include include/incl-cart-sm
 				.checkout__info
 					.chekout-info
-						.checkout-info__logo
-							a(href="index.html")
-								img(src="images/raduga-grez-dark.svg" alt="")
 						.checkout-info__tabs
 							.tabs.js-tabs
 								.tabs__menu
@@ -119,11 +137,7 @@ html(lang="en")
 									a(href="#") Shipping
 								li
 									a(href="#") Terms & Conditions
-				.checkout__summary
-					.cart-sm.cart-sm--checkout
-						block page
-							- var page = "checkout";
-							include include/incl-cart-sm
+
 
 
 

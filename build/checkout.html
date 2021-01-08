@@ -18,209 +18,131 @@
       <div class="loading-screen__svg"><img src="images/loading.svg"></div>
     </div>
     <div class="loading-content hidden1">
-      <div class="checkout">
-        <div class="checkout__info">
-          <div class="chekout-info">
-            <div class="checkout-info__logo"><a href="index.html"><img src="images/raduga-grez-dark.svg" alt=""></a></div>
-            <div class="checkout-info__tabs">
-              <div class="tabs js-tabs">
-                <div class="tabs__menu">
-                  <ul>
-                    <li class="active">Information</li>
-                    <li>Payment</li>
-                  </ul>
-                </div>
-                <div class="tabs__content">
-                  <div class="tabs__item tabs__item--contact active">
-                    <form>
-                      <div class="tabs__section">
-                        <h4>Contact information</h4>
-                        <div class="input-field error">
-                          <label class="label-text">Email or mobile number</label>
-                          <input class="inp-text" type="text"><span class="error-text">Invalid email format</span>
-                        </div>
-                        <div class="input-field">
-                          <input class="inp-checkbox" type="checkbox" id="offers">
-                          <label class="label-checkbox" for="offers">Keep me up to date on news and exclusive offers</label>
-                        </div>
-                      </div>
-                      <div class="tabs__section">
-                        <h4>Shipping address</h4>
-                        <div class="input-field success">
-                          <label class="label-text">Full name*</label>
-                          <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
-                        </div>
-                        <div class="input-field error">
-                          <label class="label-text">Address*</label>
-                          <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
-                        </div>
-                        <div class="input-field">
-                          <label class="label-text">Appartament, suit, etc. (optional)</label>
-                          <input class="inp-text" type="text">
-                        </div>
-                        <div class="input-field">
-                          <label class="label-text">City*</label>
-                          <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
-                        </div>
-                        <div class="input-field-wrapper">
-                          <div class="input-field">
-                            <label class="label-text">Country/Region</label>
-                            <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
-                          </div>
-                          <div class="input-field">
-                            <label class="label-text">Postal code/ZIP</label>
-                            <input class="inp-text" type="text" required><span class="error-text">This field is required</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-buttons"><a class="back">Back</a>
-                        <button class="btn" disabled>Continue to Payment</button>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="tabs__item tabs__item--payment">
-                    <div class="user-info">
-                      <div class="user-info__item">
-                        <div class="user-info__title">Contact:</div>
-                        <div class="user-info__result">laireclair@gmail.com</div>
-                        <div class="user-info__button">
-                          <button>Edit</button>
-                        </div>
-                      </div>
-                      <div class="user-info__item">
-                        <div class="user-info__title">Ship to:</div>
-                        <div class="user-info__result">Very Khoruzhey street 34-11, Minsk, 162538, Belarus</div>
-                        <div class="user-info__button">
-                          <button>Edit</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tabs__section">
-                      <h4>Shipping Method</h4>
-                      <div class="user-info">
-                        <div class="user-info__item">
-                          <div class="user-info__result">
-                            <div class="input-field">
-                              <input class="inp-checkbox" type="radio" name="post" id="dhl">
-                              <label class="label-checkbox" for="dhl">DHL Express</label>
-                            </div>
-                          </div>
-                          <div class="user-info__price">$70.00</div>
-                        </div>
-                        <div class="user-info__item">
-                          <div class="user-info__result">
-                            <div class="input-field">
-                              <input class="inp-checkbox" type="radio" name="post" id="post">
-                              <label class="label-checkbox" for="post">Post of Russia</label>
-                            </div>
-                          </div>
-                          <div class="user-info__price">$15.00</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tabs__section">
-                      <h4>Payment</h4>
-                      <p>Пока не понятно, как будет происходить оплата</p>
-                    </div>
-                    <div class="tabs__section">
-                      <h4>Remember me</h4>
-                      <div class="input-field">
-                        <input class="inp-checkbox" type="checkbox" id="save-info">
-                        <label class="label-checkbox" for="save-info">Save this information for next time</label>
-                      </div>
-                      <div class="form-buttons"><a class="back">Back</a>
-                        <button class="btn">Pay now</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="checkout-footer">
-            <nav>
-              <ul>
-                <li><a href="#">Shipping</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-              </ul>
-            </nav>
-          </div>
+      <div class="checkout-g">
+        <div class="checkout-g__logo">logo</div>
+        <div class="checkout-g__summary-wrapper">
+          <div class="checkout-g__summary-btn">button</div>
+          <div class="checkout-g__summary">summary</div>
         </div>
-        <div class="checkout__summary">
-          <div class="cart-sm cart-sm--checkout">
-            <div class="cart-sm__header">
-              <h4>Your Cart (4)</h4>
-            </div>
-            <div class="cart-sm__list">
-              <div class="cart-sm__item">
-                <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
-                <div class="cart-sm__content">
-                  <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
-                    <div class="cart-sm__price">$50.00</div>
-                  </div>
-                  <div class="cart-sm__quantity"><span>Qty:</span>
-                    <div class="quantity quantity--sm">
-                      <button class="quantity__minus"></button>
-                      <input class="quantity__count" type="text" placeholder="1" value="1">
-                      <button class="quantity__plus"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="cart-sm__item">
-                <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-2.jpg" alt=""></a></div>
-                <div class="cart-sm__content">
-                  <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment building blocks set colored</a>
-                    <div class="cart-sm__price">$45.00</div>
-                  </div>
-                  <div class="cart-sm__quantity"><span>Qty:</span>
-                    <div class="quantity quantity--sm">
-                      <button class="quantity__minus"></button>
-                      <input class="quantity__count" type="text" placeholder="1" value="1">
-                      <button class="quantity__plus"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="cart-sm__item">
-                <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-3.jpg" alt=""></a></div>
-                <div class="cart-sm__content">
-                  <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment</a>
-                    <div class="cart-sm__price">$45.00</div>
-                  </div>
-                  <div class="cart-sm__quantity"><span>Qty:</span>
-                    <div class="quantity quantity--sm">
-                      <button class="quantity__minus"></button>
-                      <input class="quantity__count" type="text" placeholder="1" value="1">
-                      <button class="quantity__plus"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="cart-sm__item">
-                <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
-                <div class="cart-sm__content">
-                  <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
-                    <div class="cart-sm__price">$50.00</div>
-                  </div>
-                  <div class="cart-sm__quantity"><span>Qty:</span>
-                    <div class="quantity quantity--sm">
-                      <button class="quantity__minus"></button>
-                      <input class="quantity__count" type="text" placeholder="1" value="1">
-                      <button class="quantity__plus"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><a class="cart-sm__promocode js-fancybox" href="#hidden-content"><span>Apply promocode</span></a>
-            <div class="cart-sm__total">
-              <div class="cart-sm__total-price"><span>Subtotal</span><span>$95.00</span></div>
-              <div class="cart-sm__total-price"><span>Shipping</span><span>Calculated at next step</span></div>
-              <div class="cart-sm__total-price cart-sm__total-price--big"><span>Total</span><span>$95.00</span></div>
-            </div>
-          </div>
+        <div class="checkout-g__tabs">
+          <div class="tabs">tabs</div>
         </div>
+        <div class="checkout-g__footer">footer</div>
       </div>
+      <!--.checkout
+      .checkout__logo
+      	a(href="index.html")
+      		img(src="images/raduga-grez-dark.svg" alt="")
+      .checkout__summary-wrapper
+      	.checkout__btn
+      		span.summary-text Show order summary
+      		span.summary-price $95.00
+      	.checkout__summary
+      		.cart-sm.cart-sm--checkout
+      			block page
+      				- var page = "checkout";
+      				include include/incl-cart-sm
+      .checkout__info
+      	.chekout-info
+      		.checkout-info__tabs
+      			.tabs.js-tabs
+      				.tabs__menu
+      					ul
+      						li.active Information
+      						li Payment
+      				.tabs__content
+      					.tabs__item.tabs__item--contact.active
+      						form
+      							.tabs__section
+      								h4 Contact information
+      								.input-field.error
+      									label.label-text Email or mobile number
+      									input(type="text" class="inp-text")
+      									span.error-text Invalid email format
+      								.input-field
+      									input(type="checkbox" id="offers" class="inp-checkbox")
+      									label(for="offers" class="label-checkbox") Keep me up to date on news and exclusive offers
+      							.tabs__section
+      								h4 Shipping address
+      								.input-field.success
+      									label.label-text Full name*
+      									input(type="text" class="inp-text" required)
+      									span.error-text This field is required
+      								.input-field.error
+      									label.label-text Address*
+      									input(type="text" class="inp-text" required)
+      									span.error-text This field is required
+      								.input-field
+      									label.label-text Appartament, suit, etc. (optional)
+      									input(type="text" class="inp-text")
+      								.input-field
+      									label.label-text City*
+      									input(type="text" class="inp-text" required)
+      									span.error-text This field is required
+      								.input-field-wrapper
+      									.input-field
+      										label.label-text Country/Region
+      										input(type="text" class="inp-text" required)
+      										span.error-text This field is required
+      									.input-field
+      										label.label-text Postal code/ZIP
+      										input(type="text" class="inp-text" required)
+      										span.error-text This field is required
+      							.form-buttons
+      								a(class="back") Back
+      								button(class="btn" disabled) Continue to Payment
+      					.tabs__item.tabs__item--payment
+      						.user-info
+      							.user-info__item
+      								.user-info__title Contact:
+      								.user-info__result laireclair@gmail.com
+      								.user-info__button
+      									button Edit
+      							.user-info__item
+      								.user-info__title Ship to:
+      								.user-info__result Very Khoruzhey street 34-11, Minsk, 162538, Belarus
+      								.user-info__button
+      									button Edit
+      						.tabs__section
+      							h4 Shipping Method
+      							.user-info
+      								.user-info__item
+      									.user-info__result
+      										.input-field
+      											input(type="radio" name="post" id="dhl" class="inp-checkbox")
+      											label(for="dhl" class="label-checkbox") DHL Express
+      									.user-info__price $70.00
+      								.user-info__item
+      									.user-info__result
+      										.input-field
+      											input(type="radio" name="post" id="post" class="inp-checkbox")
+      											label(for="post" class="label-checkbox") Post of Russia
+      									.user-info__price $15.00
+      						.tabs__section
+      							h4 Payment
+      							p Пока не понятно, как будет происходить оплата
+      						.tabs__section
+      							h4 Remember me
+      							.input-field
+      								input(type="checkbox" id="save-info" class="inp-checkbox")
+      								label(for="save-info" class="label-checkbox") Save this information for next time
+      							.form-buttons
+      								a(class="back") Back
+      								button(class="btn") Pay now
+      
+      
+      	.checkout-footer
+      		nav
+      			ul
+      				li
+      					a(href="#") Shipping
+      				li
+      					a(href="#") Terms & Conditions
+      
+      
+      
+      
+      -->
       <div class="apply-promocode" style="display: none;" id="hidden-content">
         <h4>Apply a promocode</h4>
         <form action="#">
