@@ -436,6 +436,16 @@ body {
 	}
 }
 
+@keyframes slideDown {
+	from {
+		height: 0;
+	}
+	to {
+		height: auto;
+	}
+}
+
+
 .menu {
 	display: flex;
 	
@@ -1541,7 +1551,11 @@ footer,
 				opacity: 1;
 			}
 		}
-		
+	}
+	.checkout__summary {
+		@include responsive(desktop) {
+			display: block !important;
+		}
 	}
 }
 
@@ -2619,10 +2633,10 @@ footer,
 	background-color: rgba($black, .2);
 }
 
-.checkout-g {
+.checkout {
 	display: grid;
 	background-color: #F1F1ED;
-	
+
 	@include responsive(device) {
 		min-height: 100vh;
 		grid-template-areas:
@@ -2640,20 +2654,71 @@ footer,
 		"logo summary"
 		"tabs summary"
 		"footer summary";
-		grid-template-rows: 50px 1fr 40px;
+		grid-template-rows: 80px 1fr 80px;
 		grid-template-columns: 67% 33%;
+	}
+	
+	&.summary-opened {
+		@include responsive(device) {
+			grid-template-areas:
+			"logo"
+			"summary"
+			"tabs"
+			"footer";
+			grid-template-rows: 80px auto 1fr 75px;
+		}
+		
+		.checkout-g__summary {
+			display: block;
+		}
 	}
 
 	&__logo {
 		grid-area: logo;
+
+		@include responsive(device) {
+			padding: 26px;
+		}
+
+		@include responsive(desktop) {
+			padding: 50px 150px 0 150px;
+		}
 	}
 
 	&__summary-btn {
 		@include responsive(device) {
 			grid-area: summary-btn;
+			display: flex;
+			justify-content: space-between;
+			border-top: 1px solid rgba($light-gray, .25);
+			border-bottom: 1px solid rgba($light-gray, .25);
+			padding: 16px 26px 15px;
 		}
 		@include responsive(desktop) {
 			display: none;
+		}
+
+		.summary-text {
+			padding-right: 20px;
+			position: relative;
+			cursor: pointer;
+
+			&:after {
+				content: '';
+				position: absolute;
+				right: 0;
+				width: 14px;
+				height: 7px;
+				top: 50%;
+				transform: translateY(-50%);
+				background: url(../images/arrow-bottom.svg) 0 0/contain no-repeat;
+			}
+			
+			&.opened {
+				&:after {
+					transform: rotate(180deg) translateY(50%);
+				}
+			}
 		}
 	}
 
@@ -2674,190 +2739,49 @@ footer,
 	
 	&__tabs {
 		grid-area: tabs;
+		
+		@include responsive(device) {
+			padding: 0 26px;
+			margin-top: 32px;
+		}
+		
+		@include responsive(desktop) {
+			padding: 40px 150px 0;
+		}
 	}
 	
 	&__footer {
 		grid-area: footer;
-	}
-}
+		padding-bottom: 40px;
+		border-top: 1px solid rgba($black, .7);
 
-
-
-.checkout {
-	background-color: #F1F1ED;
-	min-height: 100vh;
-	
-	@include responsive(device) {
-		flex-flow: column;
-		flex-flow: wrap;
-		display: flex;
-	}
-	
-	@include responsive(desktop) {
-		overflow: hidden;
-	}
-
-	&__logo {
 		@include responsive(device) {
-			padding: 35px 26px;
-			order: 1;
+			margin: 0 26px;
 		}
-		@include responsive(desktop) {
-			width: 67%;
-			padding: 50px 150px 0 150px;
-			float: left;
-		}
-	}
-	
-	&__btn {
-		border-top: 1px solid rgba($black, .5);
-		border-bottom: 1px solid rgba($black, .5);
-		padding: 16px 0;
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 32px;
-		
-		@include responsive(desktop) {
-			display: none;
-		}
-		
-		.summary-text {
-			font-size: .875rem;
-			margin-left: 26px;
-			position: relative;
-			padding-right: 26px;
-			
-			&:after {
-				content: '';
-				position: absolute;
-				width: 12px;
-				height: 6px;
-				background: url(../images/arrow-bottom.svg) 0 0/contain no-repeat;
-				right: 0;
-				top: 50%;
-				margin-top: -3px;
-			}
-		}
-		
-		.summary-price {
-			margin-right: 26px;
-		}
-	}
-	
-	&__info {
-		@include responsive(device) {
-			padding: 0 26px 35px;
-			order: 3;
-		}
-		@include responsive(desktop) {
-			width: 67%;
-			padding: 40px 150px 40px 150px;
-			float: left;
-			display: flex;
-			flex-flow: column;
-		}
-	}
 
-	&__summary {
-		@include responsive(device) {
-			display: none;
-			position: relative;
-		}
-	}
-	
-	&__summary-wrapper {
-		@include responsive(device) {
-			order: 2;
-			position: relative;
-		}
-		
 		@include responsive(desktop) {
-			width: 33%;
-			background-color: #E5E3D9;
-			float: right;
+			margin: auto 150px 0;
 		}
-	}
-}
 
-.checkout-info {
-	@include responsive(device) {
-		padding: 35px 26px;
-	}
-
-	@include responsive(desktop) {
-		width: 100%;
-		max-width: 755px;
-	}
-	
-	&__logo {
-		margin-bottom: 40px;
-	}
-	
-	&__tabs {
-		position: relative;
-		
 		ul {
 			display: flex;
-			margin-bottom: 30px;
+			margin-top: 10px;
 		}
 
 		li {
-			font-size: .875rem;
+			margin-right: 20px;
+		}
 
-			&:not(:first-child) {
-				position: relative;
-				margin-left: 9px;
-				padding-left: 9px;
-				
-				&:before {
-					content: '';
-					position: absolute;
-					top: 50%;
-					left: 0;
-					margin-left: -1px;
-					margin-top: -2px;
-					width: 3px;
-					height: 3px;
-					border-radius: 50%;
-					background-color: $black;
-				}
-			}
-			
-			&:not(.active) {
-				color: $light-gray;
-				cursor: pointer;
-			}
+		a {
+			font-size: .875rem;
+			color: rgba($black, .5);
+			text-decoration: none;
 		}
 	}
-
-	&__contact {
-		position: absolute;
-	}
-
-	&__payment {
-		position: absolute;
-	}
+	
+	
 }
 
-.checkout-footer {
-	margin-top: auto;
-	border-top: 1px solid rgba($black, .7);
-	
-	ul {
-		display: flex;
-		margin-top: 10px;
-	}
-	
-	li {
-		margin-right: 20px;
-	}
-	
-	a {
-		font-size: .875rem;
-		color: rgba($black, .5);
-		text-decoration: none;
-	}
-}
 
 .tabs {
 	&__content {
@@ -2896,15 +2820,15 @@ footer,
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		max-width: 755px;
 		width: 100%;
 
 		@include responsive(device) {
 			margin-top: 15px;
 			margin-bottom: 100px;
 		}
-
+		
 		@include responsive(desktop) {
+			max-width: 755px;
 			margin-top: 35px;
 		}
 		
@@ -2927,13 +2851,51 @@ footer,
 			}
 		}
 	}
+	
+	&__menu {
+		ul {
+			display: flex;
+			margin-bottom: 30px;
+		}
+		
+		li {
+			font-size: .875rem;
+			
+			&:not(:first-child) {
+				position: relative;
+				margin-left: 9px;
+				padding-left: 9px;
+				
+				&:before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 0;
+					margin-left: -1px;
+					margin-top: -2px;
+					width: 3px;
+					height: 3px;
+					border-radius: 50%;
+					background-color: $black;
+				}
+			}
+			
+			&:not(.active) {
+				color: $light-gray;
+				cursor: pointer;
+			}
+		}
+	}
 }
 
 .input-field-wrapper {
 	display: flex;
 	justify-content: space-between;
-	max-width: 755px;
-	
+
+	@include responsive(desktop) {
+		max-width: 755px;
+	}
+
 	.input-field {
 		width: 48%;
 	}
@@ -2941,9 +2903,12 @@ footer,
 
 .input-field {
 	position: relative;
-	max-width: 755px;
 	width: 100%;
 	padding-bottom: 20px;
+	
+	@include responsive(desktop) {
+		max-width: 755px;
+	}
 
 	&:last-child {
 		padding-bottom: 0;
@@ -2992,7 +2957,6 @@ footer,
 		position: absolute;
 		width: 100%;
 		left: 0;
-		bottom: 5px;
 	}
 
 	&.error,
@@ -3059,7 +3023,14 @@ footer,
 		height: 11px;
 		background: url(../images/inp-checkbox.svg) 0 0 no-repeat;
 		left: 0;
-		top: 4px;
+		
+		@include responsive(device) {
+			top: 4px;
+		}
+		
+		@include responsive(desktop) {
+			top: 8px;
+		}
 	}
 }
 
@@ -3075,15 +3046,28 @@ footer,
 	}
 	
 	&__title {
-		width: 60px;
-		margin-right: 40px;
+		min-width: 60px;
 		color: rgba($black, .35);
 		font-size: .875rem;
+
+		@include responsive(device) {
+			margin-right: 10px;
+		}
+
+		@include responsive(desktop) {
+			margin-right: 40px;
+		}
 	}
 	
 	&__result {
 		flex-grow: 1;
 		font-size: .875rem;
+
+		@include responsive(device) {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
 	}
 	
 	&__button {

@@ -215,13 +215,28 @@ $(function() {
 		}
 	});
 
-
 	if ($('.js-simple-scroll').length) {
 		var el = document.querySelector('.js-simple-scroll');
 		SimpleScrollbar.initEl(el);
 	}
 
 	$(".js-fancybox").fancybox();
+
+	const checkout = $('.checkout');
+	$('.js-mobile-summary').on('click', function () {
+
+		if ( checkout.hasClass('summary-opened') ) {
+			$('.checkout__summary').slideUp(1000);
+			setTimeout(function(){
+				checkout.removeClass('summary-opened');
+				$('.summary-text').removeClass('opened');
+			}, 1000);
+		} else {
+			$('.checkout__summary').slideDown(1000);
+			checkout.addClass('summary-opened');
+			$('.summary-text').addClass('opened');
+		}
+	});
 
 
 });

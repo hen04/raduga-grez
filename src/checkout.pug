@@ -19,21 +19,12 @@ html(lang="en")
 				img(src="images/loading.svg")
 
 		.loading-content.hidden1
-			.checkout-g
-				.checkout-g__logo logo
-				.checkout-g__summary-wrapper
-					.checkout-g__summary-btn button
-					.checkout-g__summary summary
-				.checkout-g__tabs
-					.tabs tabs
-				.checkout-g__footer footer
-
-			//.checkout
+			.checkout
 				.checkout__logo
 					a(href="index.html")
 						img(src="images/raduga-grez-dark.svg" alt="")
 				.checkout__summary-wrapper
-					.checkout__btn
+					.checkout__summary-btn.js-mobile-summary
 						span.summary-text Show order summary
 						span.summary-price $95.00
 					.checkout__summary
@@ -41,103 +32,98 @@ html(lang="en")
 							block page
 								- var page = "checkout";
 								include include/incl-cart-sm
-				.checkout__info
-					.chekout-info
-						.checkout-info__tabs
-							.tabs.js-tabs
-								.tabs__menu
-									ul
-										li.active Information
-										li Payment
-								.tabs__content
-									.tabs__item.tabs__item--contact.active
-										form
-											.tabs__section
-												h4 Contact information
-												.input-field.error
-													label.label-text Email or mobile number
-													input(type="text" class="inp-text")
-													span.error-text Invalid email format
-												.input-field
-													input(type="checkbox" id="offers" class="inp-checkbox")
-													label(for="offers" class="label-checkbox") Keep me up to date on news and exclusive offers
-											.tabs__section
-												h4 Shipping address
-												.input-field.success
-													label.label-text Full name*
-													input(type="text" class="inp-text" required)
-													span.error-text This field is required
-												.input-field.error
-													label.label-text Address*
-													input(type="text" class="inp-text" required)
-													span.error-text This field is required
-												.input-field
-													label.label-text Appartament, suit, etc. (optional)
-													input(type="text" class="inp-text")
-												.input-field
-													label.label-text City*
-													input(type="text" class="inp-text" required)
-													span.error-text This field is required
-												.input-field-wrapper
-													.input-field
-														label.label-text Country/Region
-														input(type="text" class="inp-text" required)
-														span.error-text This field is required
-													.input-field
-														label.label-text Postal code/ZIP
-														input(type="text" class="inp-text" required)
-														span.error-text This field is required
-											.form-buttons
-												a(class="back") Back
-												button(class="btn" disabled) Continue to Payment
-									.tabs__item.tabs__item--payment
-										.user-info
-											.user-info__item
-												.user-info__title Contact:
-												.user-info__result laireclair@gmail.com
-												.user-info__button
-													button Edit
-											.user-info__item
-												.user-info__title Ship to:
-												.user-info__result Very Khoruzhey street 34-11, Minsk, 162538, Belarus
-												.user-info__button
-													button Edit
-										.tabs__section
-											h4 Shipping Method
-											.user-info
-												.user-info__item
-													.user-info__result
-														.input-field
-															input(type="radio" name="post" id="dhl" class="inp-checkbox")
-															label(for="dhl" class="label-checkbox") DHL Express
-													.user-info__price $70.00
-												.user-info__item
-													.user-info__result
-														.input-field
-															input(type="radio" name="post" id="post" class="inp-checkbox")
-															label(for="post" class="label-checkbox") Post of Russia
-													.user-info__price $15.00
-										.tabs__section
-											h4 Payment
-											p Пока не понятно, как будет происходить оплата
-										.tabs__section
-											h4 Remember me
-											.input-field
-												input(type="checkbox" id="save-info" class="inp-checkbox")
-												label(for="save-info" class="label-checkbox") Save this information for next time
-											.form-buttons
-												a(class="back") Back
-												button(class="btn") Pay now
-
-
-					.checkout-footer
-						nav
+				.checkout__tabs
+					.tabs.js-tabs
+						.tabs__menu
 							ul
-								li
-									a(href="#") Shipping
-								li
-									a(href="#") Terms & Conditions
-
+								li.active Information
+								li Payment
+						.tabs__content
+							.tabs__item.tabs__item--contact.active
+								form
+									.tabs__section
+										h4 Contact information
+										.input-field.error
+											label.label-text Email or mobile number
+											input(type="text" class="inp-text")
+											span.error-text Invalid email format
+										.input-field
+											input(type="checkbox" id="offers" class="inp-checkbox")
+											label(for="offers" class="label-checkbox") Keep me up to date on news and exclusive offers
+									.tabs__section
+										h4 Shipping address
+										.input-field.success
+											label.label-text Full name*
+											input(type="text" class="inp-text" required)
+											span.error-text This field is required
+										.input-field.error
+											label.label-text Address*
+											input(type="text" class="inp-text" required)
+											span.error-text This field is required
+										.input-field
+											label.label-text Appartament, suit, etc. (optional)
+											input(type="text" class="inp-text")
+										.input-field
+											label.label-text City*
+											input(type="text" class="inp-text" required)
+											span.error-text This field is required
+										.input-field-wrapper
+											.input-field
+												label.label-text Country/Region
+												input(type="text" class="inp-text" required)
+												span.error-text This field is required
+											.input-field
+												label.label-text Postal code/ZIP
+												input(type="text" class="inp-text" required)
+												span.error-text This field is required
+									.form-buttons
+										a(class="back") Back
+										button(class="btn" disabled) Continue to Payment
+							.tabs__item.tabs__item--payment
+								.user-info
+									.user-info__item
+										.user-info__title Contact:
+										.user-info__result laireclair@gmail.com
+										.user-info__button
+											button Edit
+									.user-info__item
+										.user-info__title Ship to:
+										.user-info__result Very Khoruzhey street 34-11, Minsk, 162538, Belarus
+										.user-info__button
+											button Edit
+								.tabs__section
+									h4 Shipping Method
+									.user-info
+										.user-info__item
+											.user-info__result
+												.input-field
+													input(type="radio" name="post" id="dhl" class="inp-checkbox")
+													label(for="dhl" class="label-checkbox") DHL Express
+											.user-info__price $70.00
+										.user-info__item
+											.user-info__result
+												.input-field
+													input(type="radio" name="post" id="post" class="inp-checkbox")
+													label(for="post" class="label-checkbox") Post of Russia
+											.user-info__price $15.00
+								.tabs__section
+									h4 Payment
+									p Пока не понятно, как будет происходить оплата
+								.tabs__section
+									h4 Remember me
+									.input-field
+										input(type="checkbox" id="save-info" class="inp-checkbox")
+										label(for="save-info" class="label-checkbox") Save this information for next time
+									.form-buttons
+										a(class="back") Back
+										button(class="btn") Pay now
+				.checkout__footer
+					nav
+						ul
+							li
+								a(href="#") Shipping
+							li
+								a(href="#") Terms & Conditions
 
 
 
