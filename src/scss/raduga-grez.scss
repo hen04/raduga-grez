@@ -27,7 +27,37 @@ html {
 	align-items: center;
 	justify-content: center;
 	background-color: $beige1;
-	z-index: 99;
+	z-index: 100;
+	
+	&__svg {
+		width: 210px;
+		height: 90px;
+		position: relative;
+	}
+	
+	.loading-overlay {
+		position: absolute;
+		background-color: rgba($beige1, .75);
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		animation: loading 5s .5s forwards;
+	}
+}
+
+@keyframes loading {
+	0% {
+		bottom: 0;
+	}
+	40% {
+		bottom: 90px;
+	}
+	80% {
+		bottom: 40px;
+	}
+	100% {
+		bottom: 90px;
+	}
 }
 
 .overlay {
@@ -573,12 +603,23 @@ body {
 
 .cookies-info {
 	position: fixed;
-	bottom: 100px;
-	right: 10%;
+	z-index: 9;
 	background-color: #464B3E;
 	padding: 34px 40px;
 	color: $beige1;
-	max-width: 406px;
+	
+	@include responsive(device) {
+		bottom: 40px;
+		max-width: 324px;
+		left: 50%;
+		margin-left: -162px;
+	}
+	
+	@include responsive(desktop) {
+		max-width: 406px;
+		bottom: 80px;
+		right: 7%;
+	}
 	
 	p {
 		font-size: .875rem;
@@ -592,7 +633,9 @@ body {
 		margin-top: 25px;
 		font-size: .875rem;
 		cursor: pointer;
-		text-decoration: underline;
+		position: relative;
+		padding: 0;
+		@include links();
 		
 		&:focus {
 			outline: none;
@@ -708,6 +751,7 @@ footer,
 
 		img {
 			display: block;
+			max-width: 100%;
 		}
 
 		.main-about-top {
@@ -715,6 +759,7 @@ footer,
 			top: 40px;
 			right: 0;
 			transform: translate(70%, 0);
+			z-index: 1;
 
 			@include responsive(mobile) {
 				max-width: 40%;
@@ -737,6 +782,10 @@ footer,
 				max-width: 60%;
 				margin: 60px auto 0;
 			}
+			
+			img {
+				max-width: 100%;
+			}
 		}
 
 		.main-about-bottom {
@@ -744,6 +793,7 @@ footer,
 			bottom: 0;
 			left: 0;
 			transform: translate(-57%, 23%);
+			z-index: 1;
 
 			@include responsive(mobile) {
 				max-width: 45%;
@@ -962,6 +1012,7 @@ footer,
 			z-index: 3;
 			opacity: 0;
 			transition: opacity .3s ease-in-out;
+			@include links();
 		}
 	}
 }
@@ -1061,9 +1112,6 @@ footer,
 				}
 
 				img {
-					@include responsive(device) {
-						width: 100%;
-					}
 
 					@include responsive(desktop) {
 						max-width: 100%;
@@ -1148,11 +1196,11 @@ footer,
 	position: relative;
 
 	@include responsive(mobile) {
-		padding: 120px 0 0;
+		padding: 120px 0;
 	}
 	
 	@include responsive(tablet) {
-		padding: 170px 0 0;
+		padding: 170px 0;
 	}
 
 	@include responsive(desktop) {
@@ -1280,6 +1328,10 @@ footer,
 		margin-left: 11%;
 		margin-top: 320px;
 	}
+	
+	img {
+		max-width: 100%;
+	}
 }
 
 .main-likes-bottom {
@@ -1294,6 +1346,10 @@ footer,
 	
 	@include responsive(tablet) {
 		max-width: 20%;
+	}
+	
+	img {
+		max-width: 100%;
 	}
 }
 
@@ -1523,6 +1579,7 @@ footer,
 		width: 100%;
 		font-size: .875rem;
 		color: $black;
+		opacity: 1 !important;
 		
 		@include responsive(device) {
 			margin-top: 100px;
@@ -1803,7 +1860,6 @@ footer,
 	}
 
 	&__minus {
-		
 		&:before {
 			background: url(../images/minus.svg) 50% 50%/contain no-repeat;
 		}
@@ -1815,12 +1871,19 @@ footer,
 		justify-content: center;
 		font-size: .875rem;
 		width: 40px;
-		height: 60px;
 		text-align: center;
 		background-color: #B8B393;
 		border: 0;
 		padding: 0 3px;
 		font-family: 'Pangram', sans-serif;
+
+		@include responsive(device) {
+			height: 50px;
+		}
+
+		@include responsive(desktop) {
+			height: 60px;
+		}
 
 		&:focus {
 			outline: none;

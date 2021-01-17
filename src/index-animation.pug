@@ -1,8 +1,21 @@
 extends layout-animation
+block header
+	.header-wrapper.header-wrapper--index
+		include include/incl-header
 
 block content
 
 	main
+		.main-index
+			.header__info
+				h1 Toys<br> as art
+				.header-video
+					video(autoplay="" loop="" muted="" playsinline="")
+						source(src="./images/main.mp4")
+				.header__btn
+					a(href="#" class="btn-outline btn-outline--light")
+						span Find your toy
+
 		.main-about-us
 			.container
 				.main-modern
@@ -13,99 +26,103 @@ block content
 						.main-modern__text
 							p We create toys for mothers, who want to play with their children in an aesthetically way and not to feel bored about play.
 						.main-modern__img
-							img(src="images/content/about-3.jpg" alt="" class="main-about-bottom")
-							img(src="images/content/about-1.jpg" alt="" class="main-about-content")
-							img(src="images/content/about-2.jpg" alt="" class="main-about-top")
+							.main-about-bottom
+								img(src="images/content/about-3.jpg" alt="")
+							.main-about-top
+								img(src="images/content/about-2.jpg" alt="" data-scroll data-scroll-speed="1.4")
+							.main-about-content
+								img(src="images/content/about-1.jpg" alt="")
 						.main-modern__text
 							.main-modern__text-floating
 								p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
 								a(href="" class="btn-outline btn-outline--dark")
 									span Read more
 
-				.main-catalog
-					.main-catalog__title
+				.catalog.catalog--main
+					.catalog__title
 						h3 toys to spend time together
-					.main-catalog__list
+					.catalog__list
 						each item in catalog.slice(0, 5)
-							.main-catalog__item(style='background-image: url(' + item.img + ')')
-								.main-catalog__category= item.category
-								.main-catalog__info
-									.main-catalog__name= item.name
-									.main-catalog__price= item.price
-									a(href="" class="add-to-cart") Add to cart
+							.catalog__item
+								a(href="catalogue-item.html")
+									.catalog__image
+										img(alt="" src= item.img)
+									.catalog__content
+										.catalog__category= item.category
+										.catalog__info
+											.catalog__name= item.name
+											.catalog__price= item.price
+								a(href="" class="add-to-cart") Add to cart
 
 		.main-categories
-				.container
-					.main-categories__slider
-						.swiper-container
-							.swiper-wrapper
-								.swiper-slide
-									.swiper-slide__text
-										.title-small categories
-										h3 Building blocks
-										p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+			.container
+				.main-categories__slider
+					.swiper-container.js-main-categories
+						.swiper-wrapper
+							.swiper-slide
+								.swiper-slide__text
+									.title-small categories
+									h3 Building blocks
+									p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+									div
 										a(href="" class="btn-outline btn-outline--dark")
 											span Shop
-									.swiper-slide__img
-										img(src="images/content/slider-1.jpg" alt="")
-								.swiper-slide
-									.swiper-slide__text
-										.title-small categories
-										h3 Building blocks
-										p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+								.swiper-slide__img
+									img(src="images/content/slider-1.jpg" alt="")
+							.swiper-slide
+								.swiper-slide__text
+									.title-small categories
+									h3 Building blocks
+									p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+									p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+									div
 										a(href="" class="btn-outline btn-outline--dark")
 											span Shop
-									.swiper-slide__img
-										img(src="images/content/slider-1.jpg" alt="")
-								.swiper-slide
-									.swiper-slide__text
-										.title-small categories
-										h3 Building blocks
-										p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+								.swiper-slide__img
+									img(src="images/content/slider-1.jpg" alt="")
+							.swiper-slide
+								.swiper-slide__text
+									.title-small categories
+									h3 Building blocks
+									p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+									div
 										a(href="" class="btn-outline btn-outline--dark")
 											span Shop
-									.swiper-slide__img
-										img(src="images/content/slider-1.jpg" alt="")
-							.swiper-slide__buttons
-								.swiper-pagination
-								.swiper-button-prev
-								.swiper-button-next
+								.swiper-slide__img
+									img(src="images/content/slider-1.jpg" alt="")
+						.swiper-slide__buttons
+							.swiper-pagination
+							.swiper-button-prev
+							.swiper-button-next
 
 		.main-likes
-				.container
-					.main-likes__title
-						h2 For what do you like RADUGA GRËZ TOYS?
-					.main-likes__list
-						each item in likes
-							.main-likes__item
-								.main-likes__text= item.text
-								.main-likes__author
-									.main-likes__author-img
-										img(src= item.img alt="")
-									.main-likes__author-info
-										.main-likes__name= item.name
-										.main-likes__place= item.place
+			.container
+				.main-likes__title
+					h2 For what do you like RADUGA GRËZ TOYS?
+				.main-likes__list
+					each item in likes
+						.main-likes__item
+							.main-likes__text= item.text
+							.main-likes__author
+								.main-likes__author-img
+									img(src= item.img alt="")
+								.main-likes__author-info
+									.main-likes__name= item.name
+									.main-likes__place= item.place
 
-					img(src="images/content/stories-2.jpg" alt="" class="main-likes-top")
-					img(src="images/content/stories-4.jpg" alt="" class="main-likes-content")
-					img(src="images/content/stories-3.jpg" alt="" class="main-likes-bottom")
+			.main-likes-top
+				img(src="images/content/stories-2.jpg" alt="" data-scroll data-scroll-speed="1.4")
+			.main-likes-content
+				img(src="images/content/stories-4.jpg" alt="")
+			.main-likes-bottom
+				img(src="images/content/stories-3.jpg" alt="")
 
 		.main-stories
 			.main-stories__content
 				.title-small Stories
-				h2 DASHA & UNA
+				h3 DASHA & UNA
 				img(src="images/content/stories-1.jpg" alt="")
 				.main-stories__info
 					p Behind the scene of photoshoot our latest collection in Saint Petersburg
-				a(href="stories.html").btn-outline.btn-outline--light
-					span View more
-		.join-us
-			.join-us__content
-				h2 JOIN OUR NEWsLETTER
-				form
-					.join-us-form
-						input(type="text" placeholder="email" class="inp-subscribe")
-						input(type="submit" class="submit-subscribe" value="")
-						.join-us-form__info.d-none
-							span Thanks for subscribing!
-							//span.error Enter your correct email
+					a(href="stories.html").btn-outline.btn-outline--light
+						span View more

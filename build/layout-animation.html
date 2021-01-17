@@ -9,6 +9,8 @@
     <meta name="keywords" content="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
     <script src="js/lib/locomotive-scroll.min.js"></script>
     <script src="js/lib/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
@@ -17,40 +19,27 @@
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
   <body>
+    <div class="loading-screen">
+      <div class="loading-screen__svg">
+        <div class="loading-overlay"></div><img src="images/loading.svg">
+      </div>
+    </div>
     <div data-scroll-container>
       <div data-scroll-section>
-        <header class="header">
-          <div class="header__content">
-            <div class="header__top">
-              <div class="header__logo"><a href="/"><img src="images/raduga-grez.svg" alt=""></a></div>
-              <div class="header__menu">
-                <div class="menu-btn"></div>
-                <nav>
-                  <ul class="menu">
-                    <li><a class="has-submenu js-submenu" href="catalogue.html">Catalogue</a>
-                    </li>
-                    <li><a href="about-us.html">About us</a>
-                    </li>
-                    <li><a href="stories.html">Stories</a>
-                    </li>
-                    <li><a href="stockist.html">Stockist</a>
-                    </li>
-                    <li><a class="contact-us" href="contact-us.html">Contact us</a>
-                    </li>
-                    <li><a class="menu-search" href="search.html">Search</a>
-                    </li>
-                  </ul>
-                </nav>
+        <div class="join-us">
+          <div class="join-us__content">
+            <h2>Join our newsletter</h2>
+            <form>
+              <div class="join-us-form">
+                <input class="inp-subscribe" type="text" placeholder="email">
+                <input class="submit-subscribe" type="submit" value="">
+                <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
+                  <!--span.error Enter your correct email-->
+                </div>
               </div>
-            </div>
-            <div class="header__cart"></div>
+            </form>
           </div>
-          <div class="header__info">
-            <h1>Toys as art</h1>
-            <div class="header-video"></div>
-            <div class="header__btn"><a class="btn btn--light" href="#"><span>Find your toy</span></a></div>
-          </div>
-        </header>
+        </div>
         <footer class="footer">
           <div class="footer__content">
             <div class="footer__mail">
@@ -59,53 +48,56 @@
             <div class="footer__menu">
               <nav>
                 <ul class="footer-menu">
-                  <li>About</li>
-                  <li><a href="">About us</a>
-                  </li>
-                  <li><a href="">Stories</a>
-                  </li>
-                </ul>
-                <ul class="footer-menu">
-                  <li>Customer Service</li>
-                  <li><a href="">Shipping</a>
-                  </li>
-                  <li><a href="">Wholesale</a>
-                  </li>
-                  <li><a href="">Terms &amp; Conditions</a>
-                  </li>
-                  <li><a href="">FAQ</a>
+                  <li>About
+                    <li><a href="">About us</a>
+                    </li>
+                    <li><a href="">Stories</a>
+                    </li>
                   </li>
                 </ul>
                 <ul class="footer-menu">
-                  <li>Contact</li>
-                  <li><a href="">Contact us</a>
-                  </li>
-                  <li><a href="">Stockist</a>
+                  <li>Customer Service
+                    <li><a href="">Shipping</a>
+                    </li>
+                    <li><a href="">Wholesale</a>
+                    </li>
+                    <li><a href="">Terms &amp; Conditions</a>
+                    </li>
+                    <li><a href="">FAQ</a>
+                    </li>
                   </li>
                 </ul>
                 <ul class="footer-menu">
-                  <li>Social media</li>
-                  <li><a href="" target="_blank">Instagram</a>
+                  <li>Contact
+                    <li><a href="">Contact us</a>
+                    </li>
+                    <li><a href="">Stockist</a>
+                    </li>
                   </li>
-                  <li><a href="" target="_blank">Facebook</a>
-                  </li>
-                  <li><a href="" target="_blank">Pinterest</a>
+                </ul>
+                <ul class="footer-menu">
+                  <li>Social media
+                    <li><a href="" target="_blank">Instagram</a>
+                    </li>
+                    <li><a href="" target="_blank">Facebook</a>
+                    </li>
+                    <li><a href="" target="_blank">Pinterest</a>
+                    </li>
                   </li>
                 </ul>
               </nav>
             </div>
-            <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
           </div>
+          <div class="footer__top"><span class="js-top" id="button-top">Back to Top</span></div>
+          <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
           <div class="cookies-info d-none">
             <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
             <button type="button">Accept</button>
           </div>
         </footer>
+        <div class="overlay"></div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
     <script src="js/raduga-grez.js"></script>
   </body>
 </html>

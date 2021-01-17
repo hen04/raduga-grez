@@ -13,60 +13,56 @@ html(lang="en")
 		script(src="js/lib/swiper-bundle.min.js")
 		script(src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js")
 		script(src="https://unpkg.com/current-device/umd/current-device.min.js")
+		script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
 		link(rel="stylesheet" href="css/lib/swiper-bundle.min.css")
 		//link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css")
 		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css")
+		link(rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css")
 		link(rel="stylesheet" href="css/raduga-grez.css")
 
-	body.loading1
-		.loading-screen.hidden
-			.loading-screen__svg
-				img(src="images/loading.svg")
+	body
 
-		.loading-content.hidden1
-			block header
-			block content
-			.join-us
-				.join-us__content
-					h2 JOIN OUR NEWsLETTER
-					form
-						.join-us-form
-							input(type="text" placeholder="email" class="inp-subscribe")
-							input(type="submit" class="submit-subscribe" value="")
-							.join-us-form__info.d-none
-								span Thanks for subscribing!
-								//span.error Enter your correct email
-			footer(class="footer")
-				.footer__content
-					.footer__mail
-						p Interested in a Raduga Grëz?
-						a(href="mailto:hello@raduga-grez.ru") hello@raduga-grez.ru
+		block header
+		block content
+		.join-us
+			.join-us__content
+				h2(data-aos="fade" data-aos-duration="800") Join our newsletter
+				form
+					.join-us-form(data-aos="fade" data-aos-duration="1000" data-aos-delay="400")
+						input(type="text" placeholder="email" class="inp-subscribe")
+						input(type="submit" class="submit-subscribe" value="")
+						.join-us-form__info.d-none
+							span Thanks for subscribing!
+							//span.error Enter your correct email
+		footer(class="footer")
+			.footer__content
+				.footer__mail(data-aos="fade" data-aos-duration="800")
+					p Interested in a Raduga Grëz?
+					a(href="mailto:hello@raduga-grez.ru") hello@raduga-grez.ru
 
-					.footer__menu
-						nav
-							each item in footerMenu
-								ul.footer-menu
-									li= item.header
-									each subitem in item.links
-										li
-											if item.outside === true
-												a(href="" target="_blank")= subitem.title
-											else
-												a(href="")= subitem.title
+				.footer__menu
+					nav
+						each item in footerMenu
+							ul.footer-menu(data-aos="fade" data-aos-duration= item.duration data-aos-delay=item.delay)
+								li= item.header
+								each subitem in item.links
+									li
+										if item.outside === true
+											a(href="" target="_blank")= subitem.title
+										else
+											a(href="")= subitem.title
 
-					.footer__top
-						span#button-top.js-top Back to Top
+				.footer__top
+					span#button-top.js-top(data-aos="fade" data-aos-duration="600" data-aos-delay="400") Back to Top
 
-					.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
+				.footer__copyright(data-aos="fade" data-aos-duration="600" data-aos-delay="400") &copy; 2020 All rights reserved RADUGA GRËZ
 
-				.cookies-info.d-none
-					p This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.
-					button(type="button") Accept
+			.cookies-info
+				p This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.
+				button(type="button" class="js-accept") Accept
 
-		.overlay
+	.overlay
 
-		script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js")
-		script(src="https://yastatic.net/share2/share.js")
-		script(src="js/raduga-grez.js")
+	script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js")
+	script(src="https://yastatic.net/share2/share.js")
+	script(src="js/raduga-grez.js")

@@ -13,324 +13,319 @@
     <script src="js/lib/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js"></script>
     <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
     <!--link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css")-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
-  <body class="loading1">
-    <div class="loading-screen hidden">
-      <div class="loading-screen__svg"><img src="images/loading.svg"></div>
-    </div>
-    <div class="loading-content hidden1">
-      <div class="header-wrapper">
-        <header class="header">
-          <div class="header__logo"><a href="index.html"></a></div>
-          <div class="header__cart"><span class="js-cart-sm">99</span></div>
-          <div class="menu-btn js-menu"></div>
-        </header>
-        <div class="menu-content">
-          <div class="close-btn js-menu-close"></div>
-          <div class="menu-content__main">
-            <ul class="menu">
-              <li class="has-submenu js-submenu"><a href="catalogue.html">Catalogue</a></li>
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="stories.html">Stories</a></li>
-              <li><a href="stockist.html">Stockist</a></li>
-              <li class="contact-us"><a href="contact-us.html">Contact us</a></li>
-              <li class="menu-search"><a href="search.html">Search</a></li>
-            </ul><img class="mobile-menu-img" src="images/mobile-menu-img.jpg" alt=""><a class="mobile-link" href="/"><img class="mobile-menu-logo" src="images/raduga-grez-dark.svg" alt=""></a>
+  <body>
+    <div class="header-wrapper">
+      <header class="header">
+        <div class="header__logo"><a href="index.html"></a></div>
+        <div class="header__cart"><span class="js-cart-sm">99</span></div>
+        <div class="menu-btn js-menu"></div>
+      </header>
+      <div class="menu-content">
+        <div class="close-btn js-menu-close"></div>
+        <div class="menu-content__main">
+          <ul class="menu">
+            <li class="has-submenu js-submenu"><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="stockist.html">Stockist</a></li>
+            <li class="contact-us"><a href="contact-us.html">Contact us</a></li>
+            <li class="menu-search"><a href="search.html">Search</a></li>
+          </ul><img class="mobile-menu-img" src="images/mobile-menu-img.jpg" alt=""><a class="mobile-link" href="/"><img class="mobile-menu-logo" src="images/raduga-grez-dark.svg" alt=""></a>
+        </div>
+        <div class="menu-content__catalog">
+          <div class="menu-back js-menu-back"></div>
+          <ul class="menu-catalog">
+            <li>Category</li>
+            <li><a href="catalogue.html">All</a></li>
+            <li><a href="catalogue.html">Arch stackers</a></li>
+            <li><a href="catalogue.html">Building blocks</a></li>
+            <li><a href="catalogue.html">Cubes</a></li>
+            <li><a href="catalogue.html">Imaginative play</a></li>
+            <li><a href="catalogue.html">Stacking towers</a></li>
+            <li><a href="catalogue.html">Rolling toys</a></li>
+          </ul>
+          <ul class="menu-catalog">
+            <li>Collection</li>
+            <li><a href="catalogue.html">All</a></li>
+            <li><a href="catalogue.html">Flowers</a></li>
+            <li><a href="catalogue.html">Diversity</a></li>
+          </ul>
+          <ul class="menu-catalog">
+            <li>Shop All</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cart-sm cart-sm--mini">
+        <div class="cart-sm__header">
+          <h4>Your Cart (4)</h4>
+          <div class="close-btn js-cart-sm-close"></div>
+        </div>
+        <div class="cart-sm__list js-simple-scroll">
+          <div class="cart-sm__item">
+            <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
+            <div class="cart-sm__content">
+              <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
+                <div class="cart-sm__price">$50.00</div>
+              </div>
+              <div class="cart-sm__quantity"><span>Qty:</span>
+                <div class="quantity quantity--sm">
+                  <button class="quantity__minus"></button>
+                  <input class="quantity__count" type="text" placeholder="1" value="1">
+                  <button class="quantity__plus"></button>
+                </div>
+              </div>
+              <div class="cart-sm__remove">
+                <button>Remove</button>
+              </div>
+            </div>
           </div>
-          <div class="menu-content__catalog">
-            <div class="menu-back js-menu-back"></div>
+          <div class="cart-sm__item">
+            <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-2.jpg" alt=""></a></div>
+            <div class="cart-sm__content">
+              <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment building blocks set colored</a>
+                <div class="cart-sm__price">$45.00</div>
+              </div>
+              <div class="cart-sm__quantity"><span>Qty:</span>
+                <div class="quantity quantity--sm">
+                  <button class="quantity__minus"></button>
+                  <input class="quantity__count" type="text" placeholder="1" value="1">
+                  <button class="quantity__plus"></button>
+                </div>
+              </div>
+              <div class="cart-sm__remove">
+                <button>Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="cart-sm__item">
+            <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-3.jpg" alt=""></a></div>
+            <div class="cart-sm__content">
+              <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment</a>
+                <div class="cart-sm__price">$45.00</div>
+              </div>
+              <div class="cart-sm__quantity"><span>Qty:</span>
+                <div class="quantity quantity--sm">
+                  <button class="quantity__minus"></button>
+                  <input class="quantity__count" type="text" placeholder="1" value="1">
+                  <button class="quantity__plus"></button>
+                </div>
+              </div>
+              <div class="cart-sm__remove">
+                <button>Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="cart-sm__item">
+            <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
+            <div class="cart-sm__content">
+              <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
+                <div class="cart-sm__price">$50.00</div>
+              </div>
+              <div class="cart-sm__quantity"><span>Qty:</span>
+                <div class="quantity quantity--sm">
+                  <button class="quantity__minus"></button>
+                  <input class="quantity__count" type="text" placeholder="1" value="1">
+                  <button class="quantity__plus"></button>
+                </div>
+              </div>
+              <div class="cart-sm__remove">
+                <button>Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-sm__total">
+          <div class="cart-sm__total-price"><span>Subtotal</span><span>$95.00</span></div><a class="btn" href="checkout.html">Proceed to checkout</a>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="container">
+        <div class="catalog-page">
+          <div class="catalog-page__menu-mobile js-catalog-menu">Back to catalogue menu</div>
+          <div class="catalog-page__menu">
             <ul class="menu-catalog">
               <li>Category</li>
-              <li><a href="catalogue.html">All</a></li>
-              <li><a href="catalogue.html">Arch stackers</a></li>
-              <li><a href="catalogue.html">Building blocks</a></li>
-              <li><a href="catalogue.html">Cubes</a></li>
-              <li><a href="catalogue.html">Imaginative play</a></li>
-              <li><a href="catalogue.html">Stacking towers</a></li>
-              <li><a href="catalogue.html">Rolling toys</a></li>
+              <li><a href="">All</a></li>
+              <li class="active"><a href="">Arch stackers</a></li>
+              <li><a href="">Building blocks</a></li>
+              <li><a href="">Cubes</a></li>
+              <li><a href="">Imaginative play</a></li>
+              <li><a href="">Stacking towers</a></li>
+              <li><a href="">Rolling toys</a></li>
             </ul>
             <ul class="menu-catalog">
               <li>Collection</li>
-              <li><a href="catalogue.html">All</a></li>
-              <li><a href="catalogue.html">Flowers</a></li>
-              <li><a href="catalogue.html">Diversity</a></li>
+              <li><a href="">All</a></li>
+              <li><a href="">Flowers</a></li>
+              <li><a href="">Diversity</a></li>
             </ul>
             <ul class="menu-catalog">
               <li>Shop All</li>
             </ul>
           </div>
-        </div>
-        <div class="cart-sm cart-sm--mini">
-          <div class="cart-sm__header">
-            <h4>Your Cart (4)</h4>
-            <div class="close-btn js-cart-sm-close"></div>
-          </div>
-          <div class="cart-sm__list js-simple-scroll">
-            <div class="cart-sm__item">
-              <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
-              <div class="cart-sm__content">
-                <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
-                  <div class="cart-sm__price">$50.00</div>
-                </div>
-                <div class="cart-sm__quantity"><span>Qty:</span>
-                  <div class="quantity quantity--sm">
-                    <button class="quantity__minus"></button>
-                    <input class="quantity__count" type="text" placeholder="1" value="1">
-                    <button class="quantity__plus"></button>
-                  </div>
-                </div>
-                <div class="cart-sm__remove">
-                  <button>Remove</button>
+          <div class="catalog-page__content">
+            <div class="catalog-page__title">
+              <h1>Arch stackers</h1>
+            </div>
+            <div class="catalog">
+              <div class="catalog__list">
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Toy car beige</div>
+                        <div class="catalog__price">$50.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$55.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$40.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$150.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-5.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$80.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Toy car beige</div>
+                        <div class="catalog__price">$50.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$55.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$40.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="catalog__item"><a href="catalogue-item.html">
+                    <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
+                    <div class="catalog__content">
+                      <div class="catalog__info">
+                        <div class="catalog__name">Earth stacking tower</div>
+                        <div class="catalog__price">$150.00</div>
+                      </div>
+                    </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
+                <div class="spinner">
+                  <div class="spinner-animate"></div>
                 </div>
               </div>
             </div>
-            <div class="cart-sm__item">
-              <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-2.jpg" alt=""></a></div>
-              <div class="cart-sm__content">
-                <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment building blocks set colored</a>
-                  <div class="cart-sm__price">$45.00</div>
-                </div>
-                <div class="cart-sm__quantity"><span>Qty:</span>
-                  <div class="quantity quantity--sm">
-                    <button class="quantity__minus"></button>
-                    <input class="quantity__count" type="text" placeholder="1" value="1">
-                    <button class="quantity__plus"></button>
-                  </div>
-                </div>
-                <div class="cart-sm__remove">
-                  <button>Remove</button>
-                </div>
-              </div>
-            </div>
-            <div class="cart-sm__item">
-              <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-3.jpg" alt=""></a></div>
-              <div class="cart-sm__content">
-                <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment</a>
-                  <div class="cart-sm__price">$45.00</div>
-                </div>
-                <div class="cart-sm__quantity"><span>Qty:</span>
-                  <div class="quantity quantity--sm">
-                    <button class="quantity__minus"></button>
-                    <input class="quantity__count" type="text" placeholder="1" value="1">
-                    <button class="quantity__plus"></button>
-                  </div>
-                </div>
-                <div class="cart-sm__remove">
-                  <button>Remove</button>
-                </div>
-              </div>
-            </div>
-            <div class="cart-sm__item">
-              <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
-              <div class="cart-sm__content">
-                <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
-                  <div class="cart-sm__price">$50.00</div>
-                </div>
-                <div class="cart-sm__quantity"><span>Qty:</span>
-                  <div class="quantity quantity--sm">
-                    <button class="quantity__minus"></button>
-                    <input class="quantity__count" type="text" placeholder="1" value="1">
-                    <button class="quantity__plus"></button>
-                  </div>
-                </div>
-                <div class="cart-sm__remove">
-                  <button>Remove</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cart-sm__total">
-            <div class="cart-sm__total-price"><span>Subtotal</span><span>$95.00</span></div><a class="btn" href="checkout.html">Proceed to checkout</a>
           </div>
         </div>
       </div>
-      <main>
-        <div class="container">
-          <div class="catalog-page">
-            <div class="catalog-page__menu-mobile js-catalog-menu">Back to catalogue menu</div>
-            <div class="catalog-page__menu">
-              <ul class="menu-catalog">
-                <li>Category</li>
-                <li><a href="">All</a></li>
-                <li class="active"><a href="">Arch stackers</a></li>
-                <li><a href="">Building blocks</a></li>
-                <li><a href="">Cubes</a></li>
-                <li><a href="">Imaginative play</a></li>
-                <li><a href="">Stacking towers</a></li>
-                <li><a href="">Rolling toys</a></li>
-              </ul>
-              <ul class="menu-catalog">
-                <li>Collection</li>
-                <li><a href="">All</a></li>
-                <li><a href="">Flowers</a></li>
-                <li><a href="">Diversity</a></li>
-              </ul>
-              <ul class="menu-catalog">
-                <li>Shop All</li>
-              </ul>
-            </div>
-            <div class="catalog-page__content">
-              <div class="catalog-page__title">
-                <h1>Arch stackers</h1>
-              </div>
-              <div class="catalog">
-                <div class="catalog__list">
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Toy car beige</div>
-                          <div class="catalog__price">$50.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Earth stacking tower</div>
-                          <div class="catalog__price">$55.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Earth stacking tower</div>
-                          <div class="catalog__price">$40.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Earth stacking tower</div>
-                          <div class="catalog__price">$150.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-5.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Earth stacking tower</div>
-                          <div class="catalog__price">$80.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-1.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Toy car beige</div>
-                          <div class="catalog__price">$50.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-2.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Earth stacking tower</div>
-                          <div class="catalog__price">$55.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-3.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Earth stacking tower</div>
-                          <div class="catalog__price">$40.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="catalog__item"><a href="catalogue-item.html">
-                      <div class="catalog__image"><img alt="" src="images/content/catalog-4.jpg"></div>
-                      <div class="catalog__content">
-                        <div class="catalog__info">
-                          <div class="catalog__name">Earth stacking tower</div>
-                          <div class="catalog__price">$150.00</div>
-                        </div>
-                      </div></a><a class="add-to-cart" href="#">Add to cart</a></div>
-                  <div class="spinner">
-                    <div class="spinner-animate"></div>
-                  </div>
-                </div>
-              </div>
+    </main>
+    <div class="join-us">
+      <div class="join-us__content">
+        <h2 data-aos="fade" data-aos-duration="800">Join our newsletter</h2>
+        <form>
+          <div class="join-us-form" data-aos="fade" data-aos-duration="1000" data-aos-delay="400">
+            <input class="inp-subscribe" type="text" placeholder="email">
+            <input class="submit-subscribe" type="submit" value="">
+            <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
+              <!--span.error Enter your correct email-->
             </div>
           </div>
-        </div>
-      </main>
-      <div class="join-us">
-        <div class="join-us__content">
-          <h2>JOIN OUR NEWsLETTER</h2>
-          <form>
-            <div class="join-us-form">
-              <input class="inp-subscribe" type="text" placeholder="email">
-              <input class="submit-subscribe" type="submit" value="">
-              <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
-                <!--span.error Enter your correct email-->
-              </div>
-            </div>
-          </form>
-        </div>
+        </form>
       </div>
-      <footer class="footer">
-        <div class="footer__content">
-          <div class="footer__mail">
-            <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
-          </div>
-          <div class="footer__menu">
-            <nav>
-              <ul class="footer-menu">
-                <li>About</li>
-                <li><a href="">About us</a>
-                </li>
-                <li><a href="">Stories</a>
-                </li>
-              </ul>
-              <ul class="footer-menu">
-                <li>Customer Service</li>
-                <li><a href="">Shipping</a>
-                </li>
-                <li><a href="">Wholesale</a>
-                </li>
-                <li><a href="">Terms &amp; Conditions</a>
-                </li>
-                <li><a href="">FAQ</a>
-                </li>
-              </ul>
-              <ul class="footer-menu">
-                <li>Contact</li>
-                <li><a href="">Contact us</a>
-                </li>
-                <li><a href="">Stockist</a>
-                </li>
-              </ul>
-              <ul class="footer-menu">
-                <li>Social media</li>
-                <li><a href="" target="_blank">Instagram</a>
-                </li>
-                <li><a href="" target="_blank">Facebook</a>
-                </li>
-                <li><a href="" target="_blank">Pinterest</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer__top"><span class="js-top" id="button-top">Back to Top</span></div>
-          <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
-        </div>
-        <div class="cookies-info d-none">
-          <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
-          <button type="button">Accept</button>
-        </div>
-      </footer>
     </div>
-    <div class="overlay"></div>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
-    <script src="https://yastatic.net/share2/share.js"></script>
-    <script src="js/raduga-grez.js"></script>
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__mail" data-aos="fade" data-aos-duration="800">
+          <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
+        </div>
+        <div class="footer__menu">
+          <nav>
+            <ul class="footer-menu" data-aos="fade" data-aos-duration="600" data-aos-delay="50">
+              <li>About</li>
+              <li><a href="">About us</a>
+              </li>
+              <li><a href="">Stories</a>
+              </li>
+            </ul>
+            <ul class="footer-menu" data-aos="fade" data-aos-duration="700" data-aos-delay="100">
+              <li>Customer Service</li>
+              <li><a href="">Shipping</a>
+              </li>
+              <li><a href="">Wholesale</a>
+              </li>
+              <li><a href="">Terms &amp; Conditions</a>
+              </li>
+              <li><a href="">FAQ</a>
+              </li>
+            </ul>
+            <ul class="footer-menu" data-aos="fade" data-aos-duration="800" data-aos-delay="150">
+              <li>Contact</li>
+              <li><a href="">Contact us</a>
+              </li>
+              <li><a href="">Stockist</a>
+              </li>
+            </ul>
+            <ul class="footer-menu" data-aos="fade" data-aos-duration="900" data-aos-delay="200">
+              <li>Social media</li>
+              <li><a href="" target="_blank">Instagram</a>
+              </li>
+              <li><a href="" target="_blank">Facebook</a>
+              </li>
+              <li><a href="" target="_blank">Pinterest</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__top"><span class="js-top" id="button-top" data-aos="fade" data-aos-duration="600" data-aos-delay="400">Back to Top</span></div>
+        <div class="footer__copyright" data-aos="fade" data-aos-duration="600" data-aos-delay="400">&copy; 2020 All rights reserved RADUGA GRËZ</div>
+      </div>
+      <div class="cookies-info">
+        <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
+        <button class="js-accept" type="button">Accept</button>
+      </div>
+    </footer>
   </body>
+  <div class="overlay"></div>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+  <script src="https://yastatic.net/share2/share.js"></script>
+  <script src="js/raduga-grez.js"></script>
 </html>

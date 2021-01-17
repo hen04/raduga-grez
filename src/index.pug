@@ -1,5 +1,11 @@
 extends layout
+
 block header
+	.loading-screen
+		.loading-screen__svg
+			.loading-overlay
+			img(src="images/loading.svg")
+
 	.header-wrapper.header-wrapper--index
 		include include/incl-header
 
@@ -7,40 +13,45 @@ block content
 
 	main
 		.main-index
-			.header__info
+			.header__info(data-aos="fade" data-aos-duration="800")
 				h1 Toys<br> as art
-				.header-video
+				.header-video(data-aos="fade" data-aos-duration="1600")
 					video(autoplay="" loop="" muted="" playsinline="")
 						source(src="./images/main.mp4")
-				.header__btn
+				.header__btn(data-aos="fade" data-aos-duration="2000")
 					a(href="#" class="btn-outline btn-outline--light")
 						span Find your toy
 
 		.main-about-us
 			.container
 				.main-modern
-					.title-small about us
+					.title-small(data-aos="fade" data-aos-duration="800") about us
 					.main-modern__title
-						h2 Toys for modern families
+						div(data-aos="fade" data-aos-duration="900")
+							h2 Toys for modern families
 					.main-modern__content
 						.main-modern__text
-							p We create toys for mothers, who want to play with their children in an aesthetically way and not to feel bored about play.
+							div(data-aos="fade" data-aos-duration="1000" data-aos-delay="50")
+								p We create toys for mothers, who want to play with their children in an aesthetically way and not to feel bored about play.
 						.main-modern__img
-							img(src="images/content/about-3.jpg" alt="" class="main-about-bottom")
-							img(src="images/content/about-1.jpg" alt="" class="main-about-content")
-							img(src="images/content/about-2.jpg" alt="" class="main-about-top")
+							.main-about-bottom
+								img(src="images/content/about-3.jpg" alt="" data-aos="fade" data-aos-duration="1100" data-aos-delay="50")
+							.main-about-top
+								img(src="images/content/about-2.jpg" alt="" data-aos="fade" data-aos-duration="1200" data-aos-delay="100")
+							.main-about-content
+								img(src="images/content/about-1.jpg" alt="" data-aos="fade" data-aos-duration="1300" data-aos-delay="150")
 						.main-modern__text
-							.main-modern__text-floating
+							.main-modern__text-floating(data-aos="fade" data-aos-duration="1100")
 								p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
 								a(href="" class="btn-outline btn-outline--dark")
 									span Read more
 
 				.catalog.catalog--main
-					.catalog__title
+					.catalog__title(data-aos="fade" data-aos-duration="800")
 						h3 toys to spend time together
 					.catalog__list
 						each item in catalog.slice(0, 5)
-							.catalog__item
+							.catalog__item(data-aos="fade" data-aos-duration=item.duration data-aos-delay=item.delay)
 								a(href="catalogue-item.html")
 									.catalog__image
 										img(alt="" src= item.img)
@@ -58,29 +69,34 @@ block content
 						.swiper-wrapper
 							.swiper-slide
 								.swiper-slide__text
-									.title-small categories
-									h3 Building blocks
-									p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
-									a(href="" class="btn-outline btn-outline--dark")
-										span Shop
+									.title-small(data-aos="fade" data-aos-duration="800" data-aos-delay="100") categories
+									h3(data-aos="fade" data-aos-duration="1000" data-aos-delay="200") Building blocks
+									p(data-aos="fade" data-aos-duration="1200" data-aos-delay="300") We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+									div(data-aos="fade" data-aos-duration="1400" data-aos-delay="400")
+										a(href="" class="btn-outline btn-outline--dark")
+											span Shop
+								.swiper-slide__img
+									div(data-aos-duration="800" data-aos-delay="100")
+										img(src="images/content/slider-1.jpg" alt="")
+							.swiper-slide
+								.swiper-slide__text
+									.title-small(data-aos="fade" data-aos-duration="800" data-aos-delay="100") categories
+									h3(data-aos="fade" data-aos-duration="1000" data-aos-delay="200") Building blocks
+									p(data-aos="fade" data-aos-duration="1200" data-aos-delay="300") We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+									p(data-aos="fade" data-aos-duration="1200" data-aos-delay="300") We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+									div(data-aos="fade" data-aos-duration="1400" data-aos-delay="400")
+										a(href="" class="btn-outline btn-outline--dark")
+											span Shop
 								.swiper-slide__img
 									img(src="images/content/slider-1.jpg" alt="")
 							.swiper-slide
 								.swiper-slide__text
-									.title-small categories
-									h3 Building blocks
-									p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
-									a(href="" class="btn-outline btn-outline--dark")
-										span Shop
-								.swiper-slide__img
-									img(src="images/content/slider-1.jpg" alt="")
-							.swiper-slide
-								.swiper-slide__text
-									.title-small categories
-									h3 Building blocks
-									p We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
-									a(href="" class="btn-outline btn-outline--dark")
-										span Shop
+									.title-small(data-aos="fade" data-aos-duration="800" data-aos-delay="100") categories
+									h3(data-aos="fade" data-aos-duration="1000" data-aos-delay="200") Building blocks
+									p(data-aos="fade" data-aos-duration="1200" data-aos-delay="300") We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier.
+									div(data-aos="fade" data-aos-duration="1400" data-aos-delay="400")
+										a(href="" class="btn-outline btn-outline--dark")
+											span Shop
 								.swiper-slide__img
 									img(src="images/content/slider-1.jpg" alt="")
 						.swiper-slide__buttons
@@ -90,11 +106,11 @@ block content
 
 		.main-likes
 			.container
-				.main-likes__title
+				.main-likes__title(data-aos="fade" data-aos-duration="800")
 					h2 For what do you like RADUGA GRËZ TOYS?
 				.main-likes__list
 					each item in likes
-						.main-likes__item
+						.main-likes__item(data-aos="fade" data-aos-duration=item.duration data-aos-delay=item.delay)
 							.main-likes__text= item.text
 							.main-likes__author
 								.main-likes__author-img
@@ -103,17 +119,22 @@ block content
 									.main-likes__name= item.name
 									.main-likes__place= item.place
 
-				img(src="images/content/stories-2.jpg" alt="" class="main-likes-top")
-				img(src="images/content/stories-4.jpg" alt="" class="main-likes-content")
-				img(src="images/content/stories-3.jpg" alt="" class="main-likes-bottom")
+				.main-likes-top
+					img(src="images/content/stories-2.jpg" alt="" data-aos="fade" data-aos-duration="800" data-aos-delay="100")
+				.main-likes-content
+					img(src="images/content/stories-4.jpg" alt="" data-aos="fade" data-aos-duration="800" data-aos-delay="100")
+				.main-likes-bottom
+					img(src="images/content/stories-3.jpg" alt="" data-aos="fade" data-aos-duration="800" data-aos-delay="100")
 
 		.main-stories
 			.main-stories__content
-				.title-small Stories
-				h3 DASHA & UNA
-				img(src="images/content/stories-1.jpg" alt="")
-				.main-stories__info
+				.title-small(data-aos="fade" data-aos-duration="800") Stories
+				h3(data-aos="fade" data-aos-duration="900" data-aos-delay="50") DASHA & UNA
+				div(data-aos="fade" data-aos-duration="1000" data-aos-delay="100")
+					img(src="images/content/stories-1.jpg" alt="")
+				.main-stories__info(data-aos="fade" data-aos-duration="1000" data-aos-delay="150")
 					p Behind the scene of photoshoot our latest collection in Saint Petersburg
-				a(href="stories.html").btn-outline.btn-outline--light
-					span View more
+				div(data-aos="fade" data-aos-duration="1000" data-aos-delay="200")
+					a(href="stories.html").btn-outline.btn-outline--light
+						span View more
 

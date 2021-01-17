@@ -9,6 +9,8 @@ html(lang="en")
 		meta(name="keywords" content="")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js")
+		script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js")
 		script(src="js/lib/locomotive-scroll.min.js")
 		script(src="js/lib/swiper-bundle.min.js")
 		script(src="https://unpkg.com/current-device/umd/current-device.min.js")
@@ -17,37 +19,25 @@ html(lang="en")
 		link(rel="stylesheet" href="css/raduga-grez.css")
 
 	body
+		.loading-screen
+			.loading-screen__svg
+				.loading-overlay
+				img(src="images/loading.svg")
+
 		div(data-scroll-container)
 			div(data-scroll-section)
-				header(class="header")
-					.header__content
-						.header__top
-							.header__logo
-								a(href="/")
-									img(src="images/raduga-grez.svg" alt="")
-							.header__menu
-								.menu-btn
-								nav
-									ul.menu
-										each item in menu
-											li
-												if item.class === ""
-													a(href= item.url)= item.name
-												else
-													a(href= item.url class=item.class)= item.name
-						.header__cart
-					.header__info
-						h1 Toys as art
-						.header-video
-						.header__btn
-							a(href="#" class="btn btn--light")
-								span Find your toy
-
-
+				block header
 				block content
-
-
-
+				.join-us
+					.join-us__content
+						h2 Join our newsletter
+						form
+							.join-us-form
+								input(type="text" placeholder="email" class="inp-subscribe")
+								input(type="submit" class="submit-subscribe" value="")
+								.join-us-form__info.d-none
+									span Thanks for subscribing!
+									//span.error Enter your correct email
 				footer(class="footer")
 					.footer__content
 						.footer__mail
@@ -59,22 +49,22 @@ html(lang="en")
 								each item in footerMenu
 									ul.footer-menu
 										li= item.header
-										each subitem in item.links
-											li
-												if item.outside === true
-													a(href="" target="_blank")= subitem.title
-												else
-													a(href="")= subitem.title
+											each subitem in item.links
+												li
+													if item.outside === true
+														a(href="" target="_blank")= subitem.title
+													else
+														a(href="")= subitem.title
 
-						.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
+					.footer__top
+						span#button-top.js-top Back to Top
+
+					.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
 
 					.cookies-info.d-none
 						p This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.
 						button(type="button") Accept
 
+				.overlay
 
-
-		script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js")
 		script(src="js/raduga-grez.js")
