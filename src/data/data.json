@@ -112,7 +112,9 @@
 					"url": "",
 					"title": "Stories"
 				}
-			]
+			],
+			"duration": "600",
+			"delay": "50"
 		},
 		{
 			"header": "Customer Service",
@@ -133,7 +135,9 @@
 					"url": "",
 					"title": "FAQ"
 				}
-			]
+			],
+			"duration": "700",
+			"delay": "100"
 		},
 		{
 			"header": "Contact",
@@ -146,7 +150,9 @@
 					"url": "",
 					"title": "Stockist"
 				}
-			]
+			],
+			"duration": "800",
+			"delay": "150"
 		},
 		{
 			"header": "Social media",
@@ -164,7 +170,9 @@
 					"url": "",
 					"title": "Pinterest"
 				}
-			]
+			],
+			"duration": "900",
+			"delay": "200"
 		}
 	],
 	"likes": [
@@ -172,19 +180,25 @@
 			"text": "“How have you found this lockdown as a new mother? My son was born in January, so it feels like I have been in a bubble for a while now.”",
 			"img": "images/content/like-1.jpg",
 			"name": "Debra P.",
-			"place": "Tokyo, Japan"
+			"place": "Tokyo, Japan",
+			"duration": "800",
+			"delay": "200"
 		},
 		{
-			"text": "“After having a baby I found that simple moments with family and friends was the best medicine, especially when feeling tired and adjusting to a new rhythm.”",
+			"text": "“After having a baby I found that simple moments with family and friends was the best medicine, especially when feeling tired and adjusting to a new rhythm. “After having a baby I found that simple moments with family and friends was the best medicine, especially when feeling tired and adjusting to a new rhythm.”",
 			"img": "images/content/like-2.jpg",
 			"name": "Natalia N.",
-			"place": "Moscow, Russia"
+			"place": "Moscow, Russia",
+			"duration": "1000",
+			"delay": "300"
 		},
 		{
 			"text": "“Having their company or watching your child be loved and cared for by the people who are most important to you is a beautiful.”",
 			"img": "images/content/like-3.jpg",
 			"name": "Jenna K.",
-			"place": "Vienna, Austria"
+			"place": "Vienna, Austria",
+			"duration": "1200",
+			"delay": "400"
 		}
 	],
 	"catalog": [
@@ -192,55 +206,73 @@
 			"category": "Rolling toys",
 			"name": "Toy car beige",
 			"price": "$50.00",
-			"img": "images/content/catalog-1.jpg"
+			"img": "images/content/catalog-1.jpg",
+			"duration": "800",
+			"delay": "500"
 		},
 		{
 			"category": "Stacking towers",
 			"name": "Earth stacking tower",
 			"price": "$55.00",
-			"img": "images/content/catalog-2.jpg"
+			"img": "images/content/catalog-2.jpg",
+			"duration": "900",
+			"delay": "600"
 		},
 		{
 			"category": "Magic wand butterfly",
 			"name": "Earth stacking tower",
 			"price": "$40.00",
-			"img": "images/content/catalog-3.jpg"
+			"img": "images/content/catalog-3.jpg",
+			"duration": "1000",
+			"delay": "700"
 		},
 		{
 			"category": "Imaginative play",
 			"name": "Earth stacking tower",
 			"price": "$150.00",
-			"img": "images/content/catalog-4.jpg"
+			"img": "images/content/catalog-4.jpg",
+			"duration": "1100",
+			"delay": "800"
 		},
 		{
 			"category": "Arch stackers",
 			"name": "Earth stacking tower",
 			"price": "$80.00",
-			"img": "images/content/catalog-5.jpg"
+			"img": "images/content/catalog-5.jpg",
+			"duration": "1200",
+			"delay": "900"
 		},
 		{
 			"category": "Rolling toys",
 			"name": "Toy car beige",
 			"price": "$50.00",
-			"img": "images/content/catalog-1.jpg"
+			"img": "images/content/catalog-1.jpg",
+			"duration": "1300",
+			"delay": ""
 		},
 		{
 			"category": "Stacking towers",
 			"name": "Earth stacking tower",
 			"price": "$55.00",
-			"img": "images/content/catalog-2.jpg"
+			"img": "images/content/catalog-2.jpg",
+			"duration": "1400",
+			"delay": ""
 		},
 		{
 			"category": "Magic wand butterfly",
 			"name": "Earth stacking tower",
 			"price": "$40.00",
-			"img": "images/content/catalog-3.jpg"
+			"img": "images/content/catalog-3.jpg",
+			"duration": "1500",
+			"delay": ""
 		},
 		{
 			"category": "Imaginative play",
 			"name": "Earth stacking tower",
 			"price": "$150.00",
-			"img": "images/content/catalog-4.jpg"
+			"img": "images/content/catalog-4.jpg",
+			"duration": "1600",
+			"delay": ""
 		}
 	],
 	"accordion": [
