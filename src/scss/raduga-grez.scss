@@ -3210,3 +3210,258 @@ footer,
 		}
 	}
 }
+
+
+.about {
+	display: grid;
+	
+	@include responsive(device) {
+		padding-top: 140px;
+		grid-template-areas:
+		"header"
+		"contentSm"
+		"contentBig"
+		"fotoMd"
+		"fotoSm";
+		grid-template-columns: 100%;
+	}
+	
+	@include responsive(desktop) {
+		padding-top: 250px;
+		grid-template-areas:
+		"header contentSm"
+		"contentBig contentSm"
+		"contentBig fotoMd"
+		"fotoSm fotoSm";
+		//grid-template-rows: 80px 60px auto 1fr 75px;
+		grid-template-columns: 55% 45%;
+	}
+	
+	&__header {
+		grid-area: header;
+		
+		@include responsive(device) {
+			padding: 0 26px;
+			margin-bottom: 35px;
+		}
+		
+		@include responsive(desktop) {
+			max-width: 720px;
+			margin: 0 auto 180px;
+		}
+		
+		h1 {
+			letter-spacing: 7px;
+			
+			@include responsive(device) {
+				font-size: 36px;
+				line-height: 145%;
+				margin-bottom: 25px;
+			}
+
+			@include responsive(desktop) {
+				font-size: 75px;
+				line-height: 140%;
+				max-width: 620px;
+				margin-bottom: 40px;
+			}
+		}
+
+		p {
+			max-width: 330px;
+			margin-left: auto;
+			color: $medium-grey;
+		}
+	}
+	
+	&__content-sm {
+		grid-area: contentSm;
+		position: relative;
+		overflow: hidden;
+		
+		@include responsive(device) {
+			margin-bottom: 60px;
+		}
+		
+		@include responsive(desktop) {
+			padding-top: 100px;
+		}
+	}
+	
+	&__content-sm-img-sm {
+		@include responsive(device) {
+			margin-bottom: 150px;
+			transform: translateX(50%);
+		}
+
+		@include responsive(desktop) {
+			display: flex;
+			justify-content: flex-end;
+			max-width: 640px;
+			text-align: center;
+			margin-bottom: 320px;
+		}
+
+		img {
+			@include responsive(device) {
+				max-width: 130px !important;
+			}
+		}
+	}
+	
+	&__content-sm-img-big {
+		position: absolute;
+		z-index: -1;
+
+		@include responsive(device) {
+			top: 70px;
+			transform: translateX(70px);
+		}
+
+		@include responsive(desktop) {
+			right: 0;
+			top: 250px;
+		}
+	}
+	
+	&__content-sm-text {
+		@include responsive(device) {
+			padding: 0 26px;
+		}
+		
+		@include responsive(desktop) {
+			padding-left: 60px;
+		}
+
+		h2 {
+			@include responsive(device) {
+				margin-bottom: 25px;
+			}
+
+			@include responsive(desktop) {
+				max-width: 620px;
+				margin-bottom: 50px;
+			}
+		}
+		
+		p {
+			max-width: 330px;
+			color: $medium-grey;
+		}
+	}
+	
+	&__content-col {
+		grid-area: contentBig;
+		position: relative;
+		
+		
+		h2 {
+			@include responsive(device) {
+				padding: 0 26px;
+				margin: -80px 0 25px;
+			}
+			@include responsive(desktop) {
+				max-width: 850px;
+				margin: -100px 0 40px 15%;
+			}
+		}
+		
+		.about-col {
+			@include responsive(device) {
+				padding: 0 26px;
+			}
+
+			@include responsive(desktop) {
+				column-count: 2;
+				margin-left: 15%;
+			}
+			
+			p {
+				color: $medium-grey;
+				
+				@include responsive(device) {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
+	
+	&__content-col-img-big {
+		@include responsive(device) {
+			max-width: 260px;
+		}
+	}
+	
+	&__content-col-img-sm {
+		position: absolute;
+		
+		@include responsive(device) {
+			transform: translate(160%, -170%);
+			max-width: 120px;
+		}
+		
+		@include responsive(desktop) {
+			right: 10%;
+			top: 25%;
+		}
+	}
+	
+	&__foto-md {
+		grid-area: fotoMd;
+		
+		@include responsive(device) {
+			display: flex;
+		}
+		
+		@include responsive(desktop) {
+			display: flex;
+			justify-content: center;
+			padding-bottom: 130px;
+		}
+		
+		img {
+			@include responsive(device) {
+				max-width: 160px !important;
+				transform: translateX(75%);
+			}
+		}
+	}
+	
+	&__foto-sm {
+		grid-area: fotoSm;
+		
+		@include responsive(device) {
+		
+		}
+		
+		@include responsive(desktop) {
+			padding-top: 270px;
+			display: flex;
+			transform: translate(60%, 25%);
+		}
+		
+		img {
+			@include responsive(device) {
+				max-width: 110px !important;
+				transform: translate(26px, 50%);
+			}
+		}
+	}
+	
+	h2 {
+		@include responsive(device) {
+			font-size: 36px;
+			line-height: 145%;
+		}
+
+		@include responsive(desktop) {
+			font-size: 75px;
+			letter-spacing: 7px;
+			line-height: 140%;
+		}
+	}
+	
+	img {
+		max-width: 100%;
+	}
+}
