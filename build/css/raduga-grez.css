@@ -2479,15 +2479,21 @@ footer,
 
 .about {
   display: grid; }
-  @media only screen and (max-width: 1279px) {
+  @media only screen and (max-width: 767px) {
     .about {
       padding-top: 140px;
       grid-template-areas: "header" "contentSm" "contentBig" "fotoMd" "fotoSm";
       grid-template-columns: 100%; } }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .about {
+      padding-top: 140px;
+      grid-template-areas: "header contentSm" "header contentSm" "contentBig contentBig" "fotoSm fotoMd";
+      grid-template-columns: 50% 50%; } }
   @media only screen and (min-width: 1280px) {
     .about {
       padding-top: 250px;
       grid-template-areas: "header contentSm" "contentBig contentSm" "contentBig fotoMd" "fotoSm fotoSm";
+      grid-column-gap: 30px;
       grid-template-columns: 55% 45%; } }
   .about__header {
     grid-area: header; }
@@ -2501,11 +2507,17 @@ footer,
         margin: 0 auto 180px; } }
     .about__header h1 {
       letter-spacing: 7px; }
-      @media only screen and (max-width: 1279px) {
+      @media only screen and (max-width: 767px) {
         .about__header h1 {
           font-size: 36px;
           line-height: 145%;
           margin-bottom: 25px; } }
+      @media only screen and (min-width: 768px) and (max-width: 1279px) {
+        .about__header h1 {
+          font-size: 50px;
+          line-height: 138%;
+          letter-spacing: 7px;
+          margin-bottom: 20px; } }
       @media only screen and (min-width: 1280px) {
         .about__header h1 {
           font-size: 75px;
@@ -2514,8 +2526,13 @@ footer,
           margin-bottom: 40px; } }
     .about__header p {
       max-width: 330px;
-      margin-left: auto;
       color: #535353; }
+      @media only screen and (min-width: 768px) and (max-width: 1279px) {
+        .about__header p {
+          max-width: 280px; } }
+      @media only screen and (min-width: 1280px) {
+        .about__header p {
+          margin-left: auto; } }
   .about__content-sm {
     grid-area: contentSm;
     position: relative;
@@ -2540,17 +2557,20 @@ footer,
   @media only screen and (max-width: 1279px) {
     .about__content-sm-img-sm img {
       max-width: 130px !important; } }
-  .about__content-sm-img-big {
+  .about__content-sm-img-lg {
     position: absolute;
     z-index: -1; }
     @media only screen and (max-width: 1279px) {
-      .about__content-sm-img-big {
+      .about__content-sm-img-lg {
         top: 70px;
-        transform: translateX(70px); } }
+        right: 0; } }
     @media only screen and (min-width: 1280px) {
-      .about__content-sm-img-big {
+      .about__content-sm-img-lg {
         right: 0;
         top: 250px; } }
+    @media only screen and (max-width: 767px) {
+      .about__content-sm-img-lg img {
+        max-width: 320px !important; } }
   @media only screen and (max-width: 1279px) {
     .about__content-sm-text {
       padding: 0 26px; } }
@@ -2570,6 +2590,9 @@ footer,
   .about__content-col {
     grid-area: contentBig;
     position: relative; }
+    @media only screen and (min-width: 768px) and (max-width: 1279px) {
+      .about__content-col {
+        transform: translateY(-15%); } }
     @media only screen and (max-width: 1279px) {
       .about__content-col h2 {
         padding: 0 26px;
@@ -2581,7 +2604,7 @@ footer,
     @media only screen and (max-width: 1279px) {
       .about__content-col .about-col {
         padding: 0 26px; } }
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (min-width: 768px) {
       .about__content-col .about-col {
         column-count: 2;
         margin-left: 15%; } }
@@ -2590,19 +2613,23 @@ footer,
       @media only screen and (max-width: 1279px) {
         .about__content-col .about-col p {
           margin-bottom: 1rem; } }
-  @media only screen and (max-width: 1279px) {
-    .about__content-col-img-big {
+  @media only screen and (max-width: 767px) {
+    .about__content-col-img-lg {
       max-width: 260px; } }
-  .about__content-col-img-sm {
-    position: absolute; }
-    @media only screen and (max-width: 1279px) {
-      .about__content-col-img-sm {
-        transform: translate(160%, -170%);
-        max-width: 120px; } }
-    @media only screen and (min-width: 1280px) {
-      .about__content-col-img-sm {
-        right: 10%;
-        top: 25%; } }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .about__content-col-img-lg {
+      max-width: 46%; } }
+  @media only screen and (max-width: 767px) {
+    .about__content-col-img-sm {
+      transform: translate(160%, -170%);
+      max-width: 120px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .about__content-col-img-sm {
+      max-width: 180px;
+      transform: translate(150%, -130%); } }
+  @media only screen and (min-width: 1280px) {
+    .about__content-col-img-sm {
+      transform: translate(80%, -240%); } }
   .about__foto-md {
     grid-area: fotoMd; }
     @media only screen and (max-width: 1279px) {
@@ -2613,10 +2640,14 @@ footer,
         display: flex;
         justify-content: center;
         padding-bottom: 130px; } }
-    @media only screen and (max-width: 1279px) {
+    @media only screen and (max-width: 767px) {
       .about__foto-md img {
         max-width: 160px !important;
         transform: translateX(75%); } }
+    @media only screen and (min-width: 768px) and (max-width: 1279px) {
+      .about__foto-md img {
+        max-width: 240px !important;
+        transform: translate(25%, -25%); } }
   .about__foto-sm {
     grid-area: fotoSm; }
     @media only screen and (min-width: 1280px) {
@@ -2624,14 +2655,23 @@ footer,
         padding-top: 270px;
         display: flex;
         transform: translate(60%, 25%); } }
-    @media only screen and (max-width: 1279px) {
+    @media only screen and (max-width: 767px) {
       .about__foto-sm img {
         max-width: 110px !important;
         transform: translate(26px, 50%); } }
-  @media only screen and (max-width: 1279px) {
+    @media only screen and (min-width: 768px) and (max-width: 1279px) {
+      .about__foto-sm img {
+        max-width: 180px !important;
+        transform: translate(40%, 80%); } }
+  @media only screen and (max-width: 767px) {
     .about h2 {
       font-size: 36px;
       line-height: 145%; } }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .about h2 {
+      font-size: 50px;
+      line-height: 138%;
+      letter-spacing: 7px; } }
   @media only screen and (min-width: 1280px) {
     .about h2 {
       font-size: 75px;
