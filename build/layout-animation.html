@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
-  <body>
+  <body id="top" data-scroll-target="#top">
     <div class="loading-screen">
       <div class="loading-screen__svg">
         <div class="loading-overlay"></div><img src="images/loading.svg">
@@ -88,7 +88,9 @@
               </nav>
             </div>
           </div>
-          <div class="footer__top"><span class="js-top" id="button-top">Back to Top</span></div>
+          <div class="footer__top"><a href="#top" data-scroll-to>Back to Top1</a>
+            <!--span#button-top.js-top Back to Top-->
+          </div>
           <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
           <div class="cookies-info d-none">
             <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
