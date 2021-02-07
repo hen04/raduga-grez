@@ -18,7 +18,7 @@ html(lang="en")
 		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css")
 		link(rel="stylesheet" href="css/raduga-grez.css")
 
-	body
+	body(id="top" data-scroll-target="#top")
 		.loading-screen
 			.loading-screen__svg
 				.loading-overlay
@@ -57,7 +57,8 @@ html(lang="en")
 														a(href="")= subitem.title
 
 					.footer__top
-						span#button-top.js-top Back to Top
+						a(href="#top" data-scroll-to) Back to Top1
+						//span#button-top.js-top Back to Top
 
 					.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
 

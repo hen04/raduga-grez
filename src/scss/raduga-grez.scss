@@ -1464,20 +1464,20 @@ footer,
 }
 
 .footer {
+	max-width: 1610px;
+	margin: 0 auto;
+	box-sizing: border-box;
+
 	@include responsive(device) {
-		padding: 110px 0 60px;
+		padding: 110px 26px 60px;
 	}
 
 	@include responsive(desktop) {
-		padding: 210px 0 60px;
+		padding: 210px 26px 60px;
 	}
 
 	&__content {
 		width: 100%;
-		max-width: 1610px;
-		margin: 0 auto;
-		padding: 0 26px;
-		box-sizing: border-box;
 		display: flex;
 		flex-flow: wrap;
 		justify-content: space-between;
