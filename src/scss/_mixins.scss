@@ -2,6 +2,7 @@ $mobile: 375px;
 $portrait: 768px;
 $landscape: 1024px;
 $desktop: 1280px;
+$xd: 1440px;
 
 
 @mixin responsive($media) {
@@ -22,6 +23,11 @@ $desktop: 1280px;
 	}
 	@else if $media == desktop {
 		@media only screen and (min-width: $desktop) {
+			@content;
+		}
+	}
+	@else if $media == xd {
+		@media only screen and (min-width: $xd) {
 			@content;
 		}
 	}

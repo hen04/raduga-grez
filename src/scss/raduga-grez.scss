@@ -79,6 +79,7 @@ body {
 	background-color: $beige1;
 	font: 16px/170% 'Pangram', sans-serif;
 	letter-spacing: .01rem;
+	scroll-behavior: smooth;
 
 	&.cart-sm-opened {
 		position: relative;
@@ -3243,8 +3244,8 @@ footer,
 		"contentBig contentSm"
 		"contentBig fotoMd"
 		"fotoSm fotoSm";
-		grid-column-gap: 30px;
-		grid-template-columns: 55% 45%;
+		grid-column-gap: 5%;
+		grid-template-columns: 50% 45%;
 	}
 	
 	&__header {
@@ -3258,6 +3259,7 @@ footer,
 		@include responsive(desktop) {
 			max-width: 720px;
 			margin: 0 auto 180px;
+			padding: 0 26px;
 		}
 		
 		h1 {
@@ -3275,8 +3277,15 @@ footer,
 				letter-spacing: 7px;
 				margin-bottom: 20px;
 			}
-
+			
 			@include responsive(desktop) {
+				font-size: 65px;
+				line-height: 140%;
+				max-width: 620px;
+				margin-bottom: 40px;
+			}
+
+			@include responsive(xd) {
 				font-size: 75px;
 				line-height: 140%;
 				max-width: 620px;
@@ -3301,34 +3310,40 @@ footer,
 	&__content-sm {
 		grid-area: contentSm;
 		position: relative;
-		overflow: hidden;
-		
+		//overflow: hidden;
+
 		@include responsive(device) {
 			margin-bottom: 60px;
 		}
-		
+
 		@include responsive(desktop) {
 			padding-top: 100px;
 		}
 	}
-	
+
 	&__content-sm-img-sm {
 		@include responsive(device) {
 			margin-bottom: 150px;
-			transform: translateX(50%);
+			//transform: translateX(50%);
 		}
 
 		@include responsive(desktop) {
 			display: flex;
 			justify-content: flex-end;
-			max-width: 640px;
+			max-width: 440px;
 			text-align: center;
 			margin-bottom: 320px;
+		}
+
+		@include responsive(xd) {
+			max-width: 640px;
 		}
 
 		img {
 			@include responsive(device) {
 				max-width: 130px !important;
+				display: block;
+				margin: 0 auto;
 			}
 		}
 	}
@@ -3359,8 +3374,17 @@ footer,
 			padding: 0 26px;
 		}
 		
+		@include responsive(tablet) {
+			padding-top: 120px;
+		}
+
 		@include responsive(desktop) {
+			margin: -40px 0 0 -40px;
+		}
+
+		@include responsive(xd) {
 			padding-left: 60px;
+			margin: 0;
 		}
 
 		h2 {
@@ -3391,10 +3415,15 @@ footer,
 		h2 {
 			@include responsive(device) {
 				padding: 0 26px;
-				margin: -80px 0 25px;
+				margin: -250px 0 25px;
 			}
+
 			@include responsive(desktop) {
 				max-width: 850px;
+				margin: -280px 0 40px 15%;
+			}
+
+			@include responsive(xd) {
 				margin: -100px 0 40px 15%;
 			}
 		}
@@ -3427,6 +3456,14 @@ footer,
 		@include responsive(tablet) {
 			max-width: 46%;
 		}
+		
+		@include responsive(desktop) {
+			max-width: 80%;
+		}
+		
+		@include responsive(xd) {
+			max-width: 100%;
+		}
 	}
 	
 	&__content-col-img-sm {
@@ -3437,11 +3474,15 @@ footer,
 		
 		@include responsive(tablet) {
 			max-width: 180px;
-			transform: translate(150%, -130%);
+			transform: translate(140%, -160%);
 		}
-		
+
 		@include responsive(desktop) {
-			transform: translate(80%, -240%);
+			transform: translate(65%, -200%);
+		}
+
+		@include responsive(xd) {
+			transform: translate(70%, -280%);
 		}
 	}
 	
@@ -3473,19 +3514,23 @@ footer,
 	
 	&__foto-sm {
 		grid-area: fotoSm;
-		
+
 		@include responsive(desktop) {
-			padding-top: 270px;
+			padding-top: 100px;
 			display: flex;
 			transform: translate(60%, 25%);
 		}
-		
+
+		@include responsive(xd) {
+			padding-top: 270px;
+		}
+
 		img {
 			@include responsive(mobile) {
 				max-width: 110px !important;
 				transform: translate(26px, 50%);
 			}
-			
+
 			@include responsive(tablet) {
 				max-width: 180px !important;
 				transform: translate(40%, 80%);
@@ -3506,9 +3551,13 @@ footer,
 		}
 
 		@include responsive(desktop) {
-			font-size: 75px;
+			font-size: 65px;
 			letter-spacing: 7px;
 			line-height: 140%;
+		}
+
+		@include responsive(xd) {
+			font-size: 75px;
 		}
 	}
 	
