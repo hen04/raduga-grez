@@ -171,8 +171,8 @@ $(function() {
 	});
 
 	const cartWidth = $('.cart-sm').outerWidth();
-
-	$('.js-cart-sm-close, .overlay').on('click', function (){
+	
+	$('body').on('click', '.js-cart-sm-close, .overlay', function (){
 		$('.cart-sm').animate({
 			opacity: 1,
 			right: '-' + cartWidth
