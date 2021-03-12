@@ -1794,6 +1794,12 @@ footer,
     .faq {
       flex-flow: column; } }
   @media only screen and (max-width: 1279px) {
+    .faq__image {
+      display: none; } }
+  @media only screen and (min-width: 1280px) {
+    .faq__image {
+      transform: translate(-20%, 0); } }
+  @media only screen and (max-width: 1279px) {
     .faq__title {
       width: 100%; } }
   @media only screen and (min-width: 1280px) {
@@ -1938,18 +1944,14 @@ footer,
         background: url(../images/minus.svg) 50% 50% no-repeat; }
 
 .section-title {
-  padding: 28px 0;
+  padding: 28px 30px 28px 0;
   display: block;
   text-decoration: none;
   color: #292929;
   position: relative; }
   @media only screen and (max-width: 767px) {
     .section-title {
-      font-size: 18px;
-      padding-right: 50px; } }
-  @media only screen and (min-width: 768px) and (max-width: 1279px) {
-    .section-title {
-      padding-right: 50px; } }
+      font-size: 18px; } }
   @media only screen and (min-width: 768px) {
     .section-title {
       font-size: 21px; } }
@@ -2704,5 +2706,112 @@ footer,
       font-size: 75px; } }
   .about img {
     max-width: 100%; }
+
+.faq-page {
+  display: flex;
+  flex-flow: column wrap; }
+  @media only screen and (max-width: 1279px) {
+    .faq-page {
+      padding-top: 175px; } }
+  @media only screen and (min-width: 1280px) {
+    .faq-page {
+      padding-top: 225px; } }
+
+.footer-img {
+  display: flex; }
+  @media only screen and (max-width: 1279px) {
+    .footer-img {
+      padding-top: 150px;
+      transform: translate(0, 20%);
+      justify-content: center; } }
+  @media only screen and (min-width: 1280px) {
+    .footer-img {
+      justify-content: flex-end;
+      margin-top: 300px;
+      transform: translate(0, 50%); } }
+  @media only screen and (max-width: 1279px) {
+    .footer-img img {
+      max-width: 230px; } }
+
+.wholesale {
+  display: flex;
+  flex-flow: wrap; }
+  @media only screen and (max-width: 767px) {
+    .wholesale {
+      flex-flow: column;
+      padding-top: 100px;
+      padding-bottom: 120px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .wholesale {
+      padding-top: 170px;
+      padding-bottom: 250px; } }
+  @media only screen and (min-width: 1280px) {
+    .wholesale {
+      padding-top: 255px;
+      padding-bottom: 375px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .wholesale__img {
+      width: 40%; } }
+  @media only screen and (min-width: 1280px) {
+    .wholesale__img {
+      width: 50%; } }
+  .wholesale__img img {
+    max-width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .wholesale__info {
+      width: 100%;
+      padding-top: 40px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .wholesale__info {
+      width: 60%;
+      box-sizing: border-box;
+      padding: 0 0 0 40px; } }
+  @media only screen and (min-width: 1280px) {
+    .wholesale__info {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 100px 0 0 100px;
+      max-width: 600px; } }
+  .wholesale__info p {
+    margin-bottom: 40px; }
+  .wholesale__info a {
+    font-size: 24px;
+    color: #292929; }
+  .wholesale__img-center {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px; }
+    @media only screen and (max-width: 1279px) {
+      .wholesale__img-center {
+        padding-top: 60px; } }
+    @media only screen and (min-width: 1280px) {
+      .wholesale__img-center {
+        margin-top: -80px; } }
+    @media only screen and (max-width: 767px) {
+      .wholesale__img-center img {
+        max-width: 160px; } }
+    @media only screen and (min-width: 768px) and (max-width: 1279px) {
+      .wholesale__img-center img {
+        max-width: 210px; } }
+  .wholesale__img-footer {
+    width: 100%;
+    display: flex; }
+    @media only screen and (max-width: 1279px) {
+      .wholesale__img-footer {
+        padding-top: 60px; } }
+    @media only screen and (min-width: 768px) and (max-width: 1279px) {
+      .wholesale__img-footer {
+        padding-left: 10%; } }
+    @media only screen and (min-width: 1280px) {
+      .wholesale__img-footer {
+        margin-top: -80px;
+        padding-left: 20%; } }
+    @media only screen and (max-width: 767px) {
+      .wholesale__img-footer img {
+        max-width: 150px; } }
+    @media only screen and (min-width: 768px) and (max-width: 1279px) {
+      .wholesale__img-footer img {
+        max-width: 210px; } }
 
 /*# sourceMappingURL=maps/raduga-grez.css.map */

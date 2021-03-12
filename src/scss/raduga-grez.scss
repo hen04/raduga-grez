@@ -2201,9 +2201,17 @@ footer,
 	@include responsive(device) {
 		flex-flow: column;
 	}
+	
+	&__image {
+		@include responsive(device) {
+			display: none;
+		}
+		@include responsive(desktop) {
+			transform: translate(-20%, 0);
+		}
+	}
 
 	&__title {
-
 		@include responsive(device) {
 			width: 100%;
 		}
@@ -2421,7 +2429,7 @@ footer,
 }
 
 .section-title {
-	padding: 28px 0;
+	padding: 28px 30px 28px 0;
 	display: block;
 	text-decoration: none;
 	color: $black;
@@ -2429,11 +2437,6 @@ footer,
 
 	@include responsive(mobile) {
 		font-size: 18px;
-		padding-right: 50px;
-	}
-
-	@include responsive(tablet) {
-		padding-right: 50px;
 	}
 
 	@include responsive(portdesktop) {
@@ -3565,3 +3568,157 @@ footer,
 		max-width: 100%;
 	}
 }
+
+.faq-page {
+	display: flex;
+	flex-flow: column wrap;
+
+	@include responsive(device) {
+		padding-top: 175px;
+	}
+	@include responsive(desktop) {
+		padding-top: 225px;
+	}
+}
+
+.footer-img {
+	display: flex;
+
+	@include responsive(device) {
+		padding-top: 150px;
+		transform: translate(0, 20%);
+		justify-content: center;
+	}
+
+	@include responsive(desktop) {
+		justify-content: flex-end;
+		margin-top: 300px;
+		transform: translate(0, 50%);
+	}
+	
+	img {
+		@include responsive(device) {
+			max-width: 230px;
+		}
+	}
+}
+
+.wholesale {
+	display: flex;
+	flex-flow: wrap;
+	
+	@include responsive(mobile) {
+		flex-flow: column;
+		padding-top: 100px;
+		padding-bottom: 120px;
+	}
+	
+	@include responsive(tablet) {
+		padding-top: 170px;
+		padding-bottom: 250px;
+	}
+	
+	@include responsive(desktop) {
+		padding-top: 255px;
+		padding-bottom: 375px;
+	}
+	
+	&__img {
+		
+		@include responsive(tablet) {
+			width: 40%;
+		}
+		
+		@include responsive(desktop) {
+			width: 50%;
+		}
+		
+		img {
+			max-width: 100%;
+		}
+	}
+	
+	&__info {
+		@include responsive(mobile) {
+			width: 100%;
+			padding-top: 40px;
+		}
+		
+		@include responsive(tablet) {
+			width: 60%;
+			box-sizing: border-box;
+			padding: 0 0 0 40px;
+		}
+
+		@include responsive(desktop) {
+			width: 50%;
+			box-sizing: border-box;
+			padding: 100px 0 0 100px;
+			max-width: 600px;
+		}
+		
+		p {
+			margin-bottom: 40px;
+		}
+		
+		a {
+			font-size: 24px;
+			color: $black;
+		}
+	}
+	
+	&__img-center {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		padding-right: 40px;
+
+		@include responsive(device) {
+			padding-top: 60px;
+		}
+		
+		@include responsive(desktop) {
+			margin-top: -80px;
+		}
+
+		img {
+			@include responsive(mobile) {
+				max-width: 160px;
+			}
+			
+			@include responsive(tablet) {
+				max-width: 210px;
+			}
+		}
+	}
+	
+	&__img-footer {
+		width: 100%;
+		display: flex;
+		
+		
+		@include responsive(device) {
+			padding-top: 60px;
+		}
+		
+		@include responsive(tablet) {
+			padding-left: 10%;
+		}
+		
+		@include responsive(desktop) {
+			margin-top: -80px;
+			padding-left: 20%;
+		}
+		
+		img {
+			@include responsive(mobile) {
+				max-width: 150px;
+			}
+			
+			@include responsive(tablet) {
+				max-width: 210px;
+			}
+		}
+	}
+}
+
