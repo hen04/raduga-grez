@@ -49,3 +49,9 @@ h2 {
 	margin-bottom: 24px;
 	letter-spacing: .01rem;
 }
+
+h4 {
+	font-family: "Pangram", sans-serif;
+	letter-spacing: 1px;
+	@include title(27px, 164%)
+}

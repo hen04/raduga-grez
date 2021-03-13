@@ -79,6 +79,7 @@ body {
 	background-color: $beige1;
 	font: 16px/170% 'Pangram', sans-serif;
 	letter-spacing: .01rem;
+	scroll-behavior: smooth;
 
 	&.cart-sm-opened {
 		position: relative;
@@ -136,20 +137,23 @@ body {
 }
 
 .header-wrapper {
-	transition: transform .3s ease-in-out;
+	height: 110px;
+	background-color: $beige1;
 
 	&.out {
 		.header,
 		.menu-content {
-			transform: translateY(-100%);
+			top: -110px
 		}
 	}
 	
 	&--index {
+		background-color: $dark-green;
+
 		.header {
 			background-color: $dark-green;
 
-			.header__logo {
+			&__logo {
 				a {
 					background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
 				}
@@ -187,11 +191,13 @@ body {
 	display: flex;
 	position: fixed;
 	top: 0;
-	left: 0;
-	right: 0;
 	z-index: 99;
+	left: 50%;
+	transform: translateX(-50%);
+	max-width: 1610px;
+	width: 100%;
 	background-color: $beige1;
-	transition: transform .3s ease-in-out;
+	transition: top .3s ease-in-out;
 
 	@include responsive(device) {
 		padding: 30px 26px;
@@ -327,6 +333,7 @@ body {
 	height: 26px;
 	background: url(../images/close-dark.svg) 0 0 no-repeat;
 	cursor: pointer;
+	position: absolute;
 }
 
 
@@ -362,7 +369,7 @@ body {
 .menu-content {
 	position: fixed;
 	z-index: 100;
-	transition: transform .3s ease-in-out;
+	transition: top .3s ease-in-out;
 
 	@include responsive(device) {
 		display: flex;
@@ -379,9 +386,10 @@ body {
 		top: 0;
 		height: 110px;
 		display: flex;
-		justify-content: center;
-		width: 50%;
-		margin: 0 25%;
+		max-width: 1610px;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	
 	.close-btn {
@@ -411,6 +419,7 @@ body {
 			display: flex;
 			align-items: center;
 			height: 100%;
+			margin-left: 30%;
 		}
 
 		li {
@@ -487,7 +496,7 @@ body {
 
 	li {
 		@include responsive(desktop) {
-			margin: 0 33px;
+			margin-right: 66px;
 		}
 		
 		&.contact-us {
@@ -2200,9 +2209,17 @@ footer,
 	@include responsive(device) {
 		flex-flow: column;
 	}
+	
+	&__image {
+		@include responsive(device) {
+			display: none;
+		}
+		@include responsive(desktop) {
+			transform: translate(-20%, 0);
+		}
+	}
 
 	&__title {
-
 		@include responsive(device) {
 			width: 100%;
 		}
@@ -2420,7 +2437,7 @@ footer,
 }
 
 .section-title {
-	padding: 28px 0;
+	padding: 28px 30px 28px 0;
 	display: block;
 	text-decoration: none;
 	color: $black;
@@ -2428,11 +2445,6 @@ footer,
 
 	@include responsive(mobile) {
 		font-size: 18px;
-		padding-right: 50px;
-	}
-
-	@include responsive(tablet) {
-		padding-right: 50px;
 	}
 
 	@include responsive(portdesktop) {
@@ -2977,7 +2989,7 @@ footer,
 		padding-bottom: 0;
 	}
 	
-	.inp-text {
+	.input-text {
 		height: 50px;
 		width: 100%;
 		background-color: $beige1;
@@ -3243,8 +3255,8 @@ footer,
 		"contentBig contentSm"
 		"contentBig fotoMd"
 		"fotoSm fotoSm";
-		grid-column-gap: 30px;
-		grid-template-columns: 55% 45%;
+		grid-column-gap: 5%;
+		grid-template-columns: 50% 45%;
 	}
 	
 	&__header {
@@ -3258,6 +3270,7 @@ footer,
 		@include responsive(desktop) {
 			max-width: 720px;
 			margin: 0 auto 180px;
+			padding: 0 26px;
 		}
 		
 		h1 {
@@ -3275,8 +3288,15 @@ footer,
 				letter-spacing: 7px;
 				margin-bottom: 20px;
 			}
-
+			
 			@include responsive(desktop) {
+				font-size: 65px;
+				line-height: 140%;
+				max-width: 620px;
+				margin-bottom: 40px;
+			}
+
+			@include responsive(xd) {
 				font-size: 75px;
 				line-height: 140%;
 				max-width: 620px;
@@ -3301,34 +3321,40 @@ footer,
 	&__content-sm {
 		grid-area: contentSm;
 		position: relative;
-		overflow: hidden;
-		
+		//overflow: hidden;
+
 		@include responsive(device) {
 			margin-bottom: 60px;
 		}
-		
+
 		@include responsive(desktop) {
 			padding-top: 100px;
 		}
 	}
-	
+
 	&__content-sm-img-sm {
 		@include responsive(device) {
 			margin-bottom: 150px;
-			transform: translateX(50%);
+			//transform: translateX(50%);
 		}
 
 		@include responsive(desktop) {
 			display: flex;
 			justify-content: flex-end;
-			max-width: 640px;
+			max-width: 440px;
 			text-align: center;
 			margin-bottom: 320px;
+		}
+
+		@include responsive(xd) {
+			max-width: 640px;
 		}
 
 		img {
 			@include responsive(device) {
 				max-width: 130px !important;
+				display: block;
+				margin: 0 auto;
 			}
 		}
 	}
@@ -3359,8 +3385,17 @@ footer,
 			padding: 0 26px;
 		}
 		
+		@include responsive(tablet) {
+			padding-top: 120px;
+		}
+
 		@include responsive(desktop) {
+			margin: -40px 0 0 -40px;
+		}
+
+		@include responsive(xd) {
 			padding-left: 60px;
+			margin: 0;
 		}
 
 		h2 {
@@ -3391,10 +3426,15 @@ footer,
 		h2 {
 			@include responsive(device) {
 				padding: 0 26px;
-				margin: -80px 0 25px;
+				margin: -250px 0 25px;
 			}
+
 			@include responsive(desktop) {
 				max-width: 850px;
+				margin: -280px 0 40px 15%;
+			}
+
+			@include responsive(xd) {
 				margin: -100px 0 40px 15%;
 			}
 		}
@@ -3427,6 +3467,14 @@ footer,
 		@include responsive(tablet) {
 			max-width: 46%;
 		}
+		
+		@include responsive(desktop) {
+			max-width: 80%;
+		}
+		
+		@include responsive(xd) {
+			max-width: 100%;
+		}
 	}
 	
 	&__content-col-img-sm {
@@ -3437,11 +3485,15 @@ footer,
 		
 		@include responsive(tablet) {
 			max-width: 180px;
-			transform: translate(150%, -130%);
+			transform: translate(140%, -160%);
 		}
-		
+
 		@include responsive(desktop) {
-			transform: translate(80%, -240%);
+			transform: translate(65%, -200%);
+		}
+
+		@include responsive(xd) {
+			transform: translate(70%, -280%);
 		}
 	}
 	
@@ -3473,19 +3525,23 @@ footer,
 	
 	&__foto-sm {
 		grid-area: fotoSm;
-		
+
 		@include responsive(desktop) {
-			padding-top: 270px;
+			padding-top: 100px;
 			display: flex;
 			transform: translate(60%, 25%);
 		}
-		
+
+		@include responsive(xd) {
+			padding-top: 270px;
+		}
+
 		img {
 			@include responsive(mobile) {
 				max-width: 110px !important;
 				transform: translate(26px, 50%);
 			}
-			
+
 			@include responsive(tablet) {
 				max-width: 180px !important;
 				transform: translate(40%, 80%);
@@ -3506,13 +3562,460 @@ footer,
 		}
 
 		@include responsive(desktop) {
-			font-size: 75px;
+			font-size: 65px;
 			letter-spacing: 7px;
 			line-height: 140%;
+		}
+
+		@include responsive(xd) {
+			font-size: 75px;
 		}
 	}
 	
 	img {
 		max-width: 100%;
 	}
+}
+
+.faq-page {
+	display: flex;
+	flex-flow: column wrap;
+
+	@include responsive(device) {
+		padding-top: 175px;
+	}
+	@include responsive(desktop) {
+		padding-top: 225px;
+	}
+}
+
+.footer-img {
+	display: flex;
+
+	@include responsive(device) {
+		padding-top: 150px;
+		transform: translate(0, 20%);
+		justify-content: center;
+	}
+
+	@include responsive(desktop) {
+		justify-content: flex-end;
+		margin-top: 300px;
+		transform: translate(0, 50%);
+	}
+	
+	img {
+		@include responsive(device) {
+			max-width: 230px;
+		}
+	}
+}
+
+.wholesale {
+	display: flex;
+	flex-flow: wrap;
+
+	@include responsive(mobile) {
+		flex-flow: column;
+		padding-top: 100px;
+		padding-bottom: 120px;
+	}
+	
+	@include responsive(tablet) {
+		padding-top: 170px;
+		padding-bottom: 250px;
+	}
+	
+	@include responsive(desktop) {
+		padding-top: 255px;
+		padding-bottom: 375px;
+	}
+	
+	&__img {
+		
+		@include responsive(tablet) {
+			width: 40%;
+		}
+		
+		@include responsive(desktop) {
+			width: 50%;
+		}
+		
+		img {
+			max-width: 100%;
+		}
+	}
+	
+	&__info {
+		@include responsive(mobile) {
+			width: 100%;
+			padding-top: 40px;
+		}
+		
+		@include responsive(tablet) {
+			width: 60%;
+			box-sizing: border-box;
+			padding: 0 0 0 40px;
+		}
+
+		@include responsive(desktop) {
+			width: 50%;
+			box-sizing: border-box;
+			padding: 100px 0 0 100px;
+			max-width: 600px;
+		}
+		
+		p {
+			margin-bottom: 40px;
+		}
+		
+		a {
+			font-size: 24px;
+			color: $black;
+		}
+	}
+	
+	&__img-center {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		padding-right: 40px;
+
+		@include responsive(device) {
+			padding-top: 60px;
+		}
+		
+		@include responsive(desktop) {
+			margin-top: -80px;
+		}
+
+		img {
+			@include responsive(mobile) {
+				max-width: 160px;
+			}
+			
+			@include responsive(tablet) {
+				max-width: 210px;
+			}
+		}
+	}
+	
+	&__img-footer {
+		width: 100%;
+		display: flex;
+		
+		
+		@include responsive(device) {
+			padding-top: 60px;
+		}
+		
+		@include responsive(tablet) {
+			padding-left: 10%;
+		}
+		
+		@include responsive(desktop) {
+			margin-top: -80px;
+			padding-left: 20%;
+		}
+		
+		img {
+			@include responsive(mobile) {
+				max-width: 150px;
+			}
+			
+			@include responsive(tablet) {
+				max-width: 210px;
+			}
+		}
+	}
+}
+
+.shipping {
+	display: flex;
+	flex-flow: wrap;
+
+	@include responsive(mobile) {
+		padding-bottom: 120px;
+	}
+
+	@include responsive(tablet) {
+		padding-top: 70px;
+		padding-bottom: 200px;
+	}
+	
+	@include responsive(desktop) {
+		padding-top: 270px;
+		padding-bottom: 370px;
+	}
+	
+	&__title {
+		
+		@include responsive(mobile) {
+			margin-bottom: 35px;
+		}
+
+		@include responsive(tablet) {
+			margin-bottom: 70px;
+		}
+
+		@include responsive(desktop) {
+			width: calc(30% - 13px);
+		}
+	}
+	
+	&__content {
+		display: flex;
+		flex-flow: wrap;
+
+		@include responsive(desktop) {
+			width: 70%;
+		}
+	}
+
+	&__item {
+		position: relative;
+		
+		@include responsive(mobile) {
+			padding-top: 30px;
+			margin-bottom: 30px;
+		}
+		
+		@include responsive(portdesktop) {
+			width: 50%;
+			padding-top: 45px;
+			margin-bottom: 45px;
+		}
+
+		@include responsive(tablet) {
+			padding-right: 70px;
+		}
+
+		@include responsive(desktop) {
+			padding-right: 100px;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			height: 1px;
+			background-color: rgba($light-gray, .3);
+			left: 0;
+			right: 0;
+
+			@include responsive(tablet) {
+				right: 70px;
+			}
+
+			@include responsive(desktop) {
+				right: 100px;
+			}
+		}
+		
+		&:nth-child(1),
+		&:nth-child(2) {
+			@include responsive(portdesktop) {
+				padding-top: 0;
+			}
+
+			&:after {
+				@include responsive(portdesktop) {
+					content: none;
+				}
+			}
+		}
+		
+		&:first-child {
+			@include responsive(mobile) {
+				padding-top: 0;
+			}
+			
+			&:after {
+				@include responsive(mobile) {
+					content: none;
+				}
+			}
+		}
+		
+		p {
+			margin-top: 20px;
+			color: $medium-grey;
+		}
+	}
+}
+
+.stockist {
+	display: flex;
+	flex-flow: wrap;
+	
+	@include responsive(tablet) {
+		padding-top: 50px;
+		padding-bottom: 250px;
+		flex-flow: column;
+	}
+	
+	@include responsive(desktop) {
+		padding-top: 250px;
+		padding-bottom: 370px;
+	}
+
+	&__title {
+		
+		@include responsive(desktop) {
+			width: calc(30% - 10px);
+		}
+	}
+	
+	&__info {
+		
+		@include responsive(device) {
+			margin: 50px 0;
+		}
+
+		@include responsive(desktop) {
+			width: 70%;
+		}
+		
+		p {
+			color: $medium-grey;
+			max-width: 500px;
+		}
+	}
+	
+	&__list {
+		width: 100%;
+		display: flex;
+		
+		@include responsive(mobile) {
+			margin-bottom: 120px;
+		}
+		
+		@include responsive(desktop) {
+			margin-top: 150px;
+		}
+	}
+	
+	&__countries {
+		
+		@include responsive(mobile) {
+			width: 100%;
+		}
+		
+		@include responsive(portdesktop) {
+			width: calc(30% - 10px);
+		}
+		
+		li {
+			color: $light-gray;
+			cursor: pointer;
+			margin-bottom: 10px;
+			
+			@include responsive(mobile) {
+				color: $black;
+			}
+			
+			&.active {
+				@include responsive(portdesktop) {
+					color: $black;
+				}
+			}
+		}
+	}
+	
+	&__shops {
+		@include responsive(mobile) {
+			display: none;
+			position: relative;
+			opacity: 0;
+		}
+
+		@include responsive(portdesktop) {
+			width: 70%;
+			position: relative;
+		}
+		
+		&.mobile-active {
+			@include responsive(mobile) {
+				display: block;
+			}
+		}
+	}
+	
+	&__shop-item {
+		position: absolute;
+		top: 0;
+		display: none;
+		
+		&.active {
+			position: relative;
+			display: block;
+		}
+		
+		ul {
+
+			@include responsive(tablet) {
+				columns: 2;
+			}
+
+			@include responsive(desktop) {
+				columns: 3;
+			}
+		}
+		
+		li {
+			@include title(26px, 150%);
+			
+			@include responsive(mobile) {
+				margin-bottom: 18px;
+			}
+
+			@include responsive(portdesktop) {
+				margin-bottom: 20px;
+				padding-right: 20px;
+			}
+		}
+		
+		a {
+			color: $black;
+			text-decoration: none;
+			
+			&:hover {
+				color: $light-gray-hover;
+			}
+		}
+	}
+	
+	&__back {
+		@include responsive(mobile) {
+			color: $black;
+			position: relative;
+			margin-bottom: 50px;
+			padding-left: 30px;
+		}
+
+		@include responsive(portdesktop) {
+			display: none;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			background: url(../images/arrow-dark.svg) 0 50%/contain no-repeat;
+			transform: rotate(180deg);
+			width: 21px;
+			height: 26px;
+		}
+	}
+
+	.mobile-hidden {
+		display: none;
+	}
+
+	&__region {
+		font-size: 14px;
+		color: $light-gray;
+		margin-bottom: 20px;
+	}
+
 }

@@ -46,9 +46,9 @@ html(lang="en")
 								each subitem in item.links
 									li
 										if item.outside === true
-											a(href="" target="_blank")= subitem.title
+											a(href= subitem.url target="_blank")= subitem.title
 										else
-											a(href="")= subitem.title
+											a(href= subitem.url)= subitem.title
 
 				.footer__top
 					span#button-top.js-top(data-aos="fade" data-aos-duration="600" data-aos-delay="400") Back to Top
@@ -59,6 +59,6 @@ html(lang="en")
 				p This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.
 				button(type="button" class="js-accept") Accept
 
-	.overlay
+		.overlay
 
-	script(src="js/raduga-grez.js")
+		script(src="js/raduga-grez.js")
