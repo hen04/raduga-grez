@@ -137,20 +137,23 @@ body {
 }
 
 .header-wrapper {
-	transition: transform .3s ease-in-out;
+	height: 110px;
+	background-color: $beige1;
 
 	&.out {
 		.header,
 		.menu-content {
-			transform: translateY(-100%);
+			top: -110px
 		}
 	}
 	
 	&--index {
+		background-color: $dark-green;
+
 		.header {
 			background-color: $dark-green;
 
-			.header__logo {
+			&__logo {
 				a {
 					background: url(../images/raduga-grez.svg) 0 0/contain no-repeat;
 				}
@@ -188,11 +191,13 @@ body {
 	display: flex;
 	position: fixed;
 	top: 0;
-	left: 0;
-	right: 0;
 	z-index: 99;
+	left: 50%;
+	transform: translateX(-50%);
+	max-width: 1610px;
+	width: 100%;
 	background-color: $beige1;
-	transition: transform .3s ease-in-out;
+	transition: top .3s ease-in-out;
 
 	@include responsive(device) {
 		padding: 30px 26px;
@@ -328,6 +333,7 @@ body {
 	height: 26px;
 	background: url(../images/close-dark.svg) 0 0 no-repeat;
 	cursor: pointer;
+	position: absolute;
 }
 
 
@@ -363,7 +369,7 @@ body {
 .menu-content {
 	position: fixed;
 	z-index: 100;
-	transition: transform .3s ease-in-out;
+	transition: top .3s ease-in-out;
 
 	@include responsive(device) {
 		display: flex;
@@ -380,9 +386,10 @@ body {
 		top: 0;
 		height: 110px;
 		display: flex;
-		justify-content: center;
-		width: 50%;
-		margin: 0 25%;
+		max-width: 1610px;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	
 	.close-btn {
@@ -412,6 +419,7 @@ body {
 			display: flex;
 			align-items: center;
 			height: 100%;
+			margin-left: 30%;
 		}
 
 		li {
@@ -488,7 +496,7 @@ body {
 
 	li {
 		@include responsive(desktop) {
-			margin: 0 33px;
+			margin-right: 66px;
 		}
 		
 		&.contact-us {
@@ -2981,7 +2989,7 @@ footer,
 		padding-bottom: 0;
 	}
 	
-	.inp-text {
+	.input-text {
 		height: 50px;
 		width: 100%;
 		background-color: $beige1;
@@ -3606,7 +3614,7 @@ footer,
 .wholesale {
 	display: flex;
 	flex-flow: wrap;
-	
+
 	@include responsive(mobile) {
 		flex-flow: column;
 		padding-top: 100px;
@@ -3722,3 +3730,292 @@ footer,
 	}
 }
 
+.shipping {
+	display: flex;
+	flex-flow: wrap;
+
+	@include responsive(mobile) {
+		padding-bottom: 120px;
+	}
+
+	@include responsive(tablet) {
+		padding-top: 70px;
+		padding-bottom: 200px;
+	}
+	
+	@include responsive(desktop) {
+		padding-top: 270px;
+		padding-bottom: 370px;
+	}
+	
+	&__title {
+		
+		@include responsive(mobile) {
+			margin-bottom: 35px;
+		}
+
+		@include responsive(tablet) {
+			margin-bottom: 70px;
+		}
+
+		@include responsive(desktop) {
+			width: calc(30% - 13px);
+		}
+	}
+	
+	&__content {
+		display: flex;
+		flex-flow: wrap;
+
+		@include responsive(desktop) {
+			width: 70%;
+		}
+	}
+
+	&__item {
+		position: relative;
+		
+		@include responsive(mobile) {
+			padding-top: 30px;
+			margin-bottom: 30px;
+		}
+		
+		@include responsive(portdesktop) {
+			width: 50%;
+			padding-top: 45px;
+			margin-bottom: 45px;
+		}
+
+		@include responsive(tablet) {
+			padding-right: 70px;
+		}
+
+		@include responsive(desktop) {
+			padding-right: 100px;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			height: 1px;
+			background-color: rgba($light-gray, .3);
+			left: 0;
+			right: 0;
+
+			@include responsive(tablet) {
+				right: 70px;
+			}
+
+			@include responsive(desktop) {
+				right: 100px;
+			}
+		}
+		
+		&:nth-child(1),
+		&:nth-child(2) {
+			@include responsive(portdesktop) {
+				padding-top: 0;
+			}
+
+			&:after {
+				@include responsive(portdesktop) {
+					content: none;
+				}
+			}
+		}
+		
+		&:first-child {
+			@include responsive(mobile) {
+				padding-top: 0;
+			}
+			
+			&:after {
+				@include responsive(mobile) {
+					content: none;
+				}
+			}
+		}
+		
+		p {
+			margin-top: 20px;
+			color: $medium-grey;
+		}
+	}
+}
+
+.stockist {
+	display: flex;
+	flex-flow: wrap;
+	
+	@include responsive(tablet) {
+		padding-top: 50px;
+		padding-bottom: 250px;
+		flex-flow: column;
+	}
+	
+	@include responsive(desktop) {
+		padding-top: 250px;
+		padding-bottom: 370px;
+	}
+
+	&__title {
+		
+		@include responsive(desktop) {
+			width: calc(30% - 10px);
+		}
+	}
+	
+	&__info {
+		
+		@include responsive(device) {
+			margin: 50px 0;
+		}
+
+		@include responsive(desktop) {
+			width: 70%;
+		}
+		
+		p {
+			color: $medium-grey;
+			max-width: 500px;
+		}
+	}
+	
+	&__list {
+		width: 100%;
+		display: flex;
+		
+		@include responsive(mobile) {
+			margin-bottom: 120px;
+		}
+		
+		@include responsive(desktop) {
+			margin-top: 150px;
+		}
+	}
+	
+	&__countries {
+		
+		@include responsive(mobile) {
+			width: 100%;
+		}
+		
+		@include responsive(portdesktop) {
+			width: calc(30% - 10px);
+		}
+		
+		li {
+			color: $light-gray;
+			cursor: pointer;
+			margin-bottom: 10px;
+			
+			@include responsive(mobile) {
+				color: $black;
+			}
+			
+			&.active {
+				@include responsive(portdesktop) {
+					color: $black;
+				}
+			}
+		}
+	}
+	
+	&__shops {
+		@include responsive(mobile) {
+			display: none;
+			position: relative;
+			opacity: 0;
+		}
+
+		@include responsive(portdesktop) {
+			width: 70%;
+			position: relative;
+		}
+		
+		&.mobile-active {
+			@include responsive(mobile) {
+				display: block;
+			}
+		}
+	}
+	
+	&__shop-item {
+		position: absolute;
+		top: 0;
+		display: none;
+		
+		&.active {
+			position: relative;
+			display: block;
+		}
+		
+		ul {
+
+			@include responsive(tablet) {
+				columns: 2;
+			}
+
+			@include responsive(desktop) {
+				columns: 3;
+			}
+		}
+		
+		li {
+			@include title(26px, 150%);
+			
+			@include responsive(mobile) {
+				margin-bottom: 18px;
+			}
+
+			@include responsive(portdesktop) {
+				margin-bottom: 20px;
+				padding-right: 20px;
+			}
+		}
+		
+		a {
+			color: $black;
+			text-decoration: none;
+			
+			&:hover {
+				color: $light-gray-hover;
+			}
+		}
+	}
+	
+	&__back {
+		@include responsive(mobile) {
+			color: $black;
+			position: relative;
+			margin-bottom: 50px;
+			padding-left: 30px;
+		}
+
+		@include responsive(portdesktop) {
+			display: none;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			background: url(../images/arrow-dark.svg) 0 50%/contain no-repeat;
+			transform: rotate(180deg);
+			width: 21px;
+			height: 26px;
+		}
+	}
+
+	.mobile-hidden {
+		display: none;
+	}
+
+	&__region {
+		font-size: 14px;
+		color: $light-gray;
+		margin-bottom: 20px;
+	}
+
+}

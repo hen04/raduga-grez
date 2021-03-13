@@ -253,5 +253,39 @@ $(function() {
 	$('.js-accept').on('click', function (){
 		$('.cookies-info').addClass('d-none');
 	});
+
+
+
+	$('.js-shops-tabs li').first().addClass('active');
+	$('.stockist__shop-item').first().addClass('active');
+
+	$('.stockist').on('click', '.js-shops-tabs li', function (){
+		let id = $(this).data('id');
+
+		$('.js-shops-tabs li').removeClass('active');
+		$(this).addClass('active');
+
+		$('.stockist__shop-item').removeClass('active');
+		$('#' + id).addClass('active');
+
+		$('.stockist__shops').addClass('mobile-active');
+		$('.stockist__shops').animate({
+			opacity: 1
+		}, 500);
+
+		$('.stockist__countries, .stockist__info, .stockist__title').addClass('mobile-hidden');
+		$('.stockist__countries, .stockist__info, .stockist__title').animate({
+			opacity: 0,
+		}, 500);
+	});
+
+	$('.js-stockist-back').on('click', function (){
+		$('.stockist__shops').removeClass('mobile-active');
+		$('.stockist__countries, .stockist__info, .stockist__title').removeClass('mobile-hidden');
+		$('.stockist__countries, .stockist__info, .stockist__title').animate({
+			opacity: 1,
+		}, 500);
+	})
+
 });
 

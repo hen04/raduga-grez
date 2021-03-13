@@ -109,7 +109,7 @@
 					"title": "About us"
 				},
 				{
-					"url": "",
+					"url": "stories.html",
 					"title": "Stories"
 				}
 			],
@@ -120,11 +120,11 @@
 			"header": "Customer Service",
 			"links": [
 				{
-					"url": "",
+					"url": "shipping.html",
 					"title": "Shipping"
 				},
 				{
-					"url": "",
+					"url": "wholesale.html",
 					"title": "Wholesale"
 				},
 				{
@@ -132,7 +132,7 @@
 					"title": "Terms & Conditions"
 				},
 				{
-					"url": "",
+					"url": "faq.html",
 					"title": "FAQ"
 				}
 			],
@@ -143,11 +143,11 @@
 			"header": "Contact",
 			"links": [
 				{
-					"url": "",
+					"url": "contact-us.html",
 					"title": "Contact us"
 				},
 				{
-					"url": "",
+					"url": "stockist.html",
 					"title": "Stockist"
 				}
 			],
@@ -326,5 +326,180 @@
 			"name": "Sand small",
 			"price": "$50.00"
 		}
+	],
+	"shipping": [
+		{
+			"heading": "Order",
+			"info": "We know that usually you make order while watching kids and doing extra 100 different things at the same time. So, please make sure that you put into the basket exactly the toys you wanted, and filled in address, name, telephone number and a ZIP-code correctly. All these things are essential for order to come as soon as possible."
+		},
+		{
+			"heading": "Shipping",
+			"info": "We ship all orders by airmail from our workshop located in Russia. International airmail delivery takes from 2 to 8 weeks. Speed depends on how quickly it goes through customs and how efficient mail services work. We ship everywhere worldwide except for South Korea. In this country you can buy out toys at Lanasoly."
+		},
+		{
+			"heading": "Express delivery ",
+			"info": "For urgent orders we can offer UPS delivery. Send the list of the toys you want and your address to hello@raduga-grez.ru. We will calculate the cost of shipment and provide you with further details."
+		},
+		{
+			"heading": "Tracking",
+			"info": "In 3 or 4 days after the shipment we will send you the tracking number, so you can have an eye on delivery status."
+		},
+		{
+			"heading": "Return",
+			"info": "You can return toys during 14 days after delivery. Please send them back unused and in undamaged packaging. We will check toys and will return you the cost of toys. The condition of toys and the return shipment expense are the customer’s responsibility."
+		},
+		{
+			"heading": "Duties and taxes",
+			"info": "There may be taxes and duties in your country when your order arrives. All duties and taxes in the receiving country paid by the customer."
+		}
+
+	],
+	"countries": [
+		{
+			"country": "Australia"
+		},
+		{
+			"country": "Austria"
+		},
+		{
+			"country": "Belgium"
+		},
+		{
+			"country": "Canada"
+		},
+		{
+			"country": "Denmark"
+		},
+		{
+			"country": "France"
+		},
+		{
+			"country": "Germany"
+		},
+		{
+			"country": "Greece"
+		},
+		{
+			"country": "Iceland"
+		},
+		{
+			"country": "Ireland"
+		},
+		{
+			"country": "Japan"
+		},
+		{
+			"country": "Kazakhstan"
+		},
+		{
+			"country": "Kuwait"
+		},
+		{
+			"country": "Lithuania"
+		},
+		{
+			"country": "Netherlands"
+		},
+		{
+			"country": "New Zealand"
+		},
+		{
+			"country": "Norway"
+		},
+		{
+			"country": "Poland"
+		},
+		{
+			"country": "Portugal"
+		},
+		{
+			"country": "Singapore"
+		},
+		{
+			"country": "South Korea"
+		},
+		{
+			"country": "Spain"
+		},
+		{
+			"country": "Sweden"
+		},
+		{
+			"country": "Switherland"
+		},
+		{
+			"country": "United Kingdom"
+		},
+		{
+			"country": "USA"
+		}
+	],
+	"shops": [
+		{
+			"shop": "Big Little Noise"
+		},
+		{
+			"shop": "BigLittleThings"
+		},
+		{
+			"shop": "Cruisekids"
+		},
+		{
+			"shop": "Eve of Indigo"
+		},
+		{
+			"shop": "Growing Kind"
+		},
+		{
+			"shop": "Leo & Bella"
+		},
+		{
+			"shop": "Liberty Fox"
+		},
+		{
+			"shop": "Little Love of Mine"
+		},
+		{
+			"shop": "Milka Interiors"
+		},
+		{
+			"shop": "Mini Village"
+		},
+		{
+			"shop": "Monkeynmoo"
+		},
+		{
+			"shop": "Monkey Puzzle"
+		},
+		{
+			"shop": "My Darling Valentine"
+		},
+		{
+			"shop": "Play To Learn"
+		},
+		{
+			"shop": "Reverie Craft"
+		},
+		{
+			"shop": "Sweet Elm"
+		},
+		{
+			"shop": "Zarlak Kids"
+		},
+		{
+			"shop": "Play To Learn"
+		}
+	],
+	"shops1": [
+		{
+			"shop": "Big Little Noise1"
+		},
+		{
+			"shop": "BigLittleThings2"
+		},
+		{
+			"shop": "Cruisekids3"
+		}
+
 	]
 }

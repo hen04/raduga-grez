@@ -1,0 +1,40 @@
+extends layout
+block header
+	.header-wrapper
+		include include/incl-header
+
+block content
+
+	main
+		.container
+			.stockist
+				.stockist__title
+					h1 Stockist
+				.stockist__info
+					p You don’t need to wait for the delivery from Russia, you can buy our toys in the shops of your own country. We regularly update this list, so check and look through it from time to time. If you’re interested in wholesale, you can find the information here.
+
+				.stockist__list
+					.stockist__countries
+						.stockist__region Select your region
+						ul.js-shops-tabs
+							each item, i in countries
+								li(data-id="shop-"+i)= item.country
+					.stockist__shops
+						.stockist__back.js-stockist-back Back to regions
+						.stockist__shop-item(id="shop-0")
+							ul
+								each item in shops
+									li
+										a(href="" target="_blank")= item.shop
+						.stockist__shop-item(id="shop-1")
+							ul
+								each item in shops1
+									li
+										a(href="" target="_blank")= item.shop
+						.stockist__shop-item(id="shop-12")
+							ul
+								each item in shops
+									li
+										a(href="" target="_blank")= item.shop
+
+
