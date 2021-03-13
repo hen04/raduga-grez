@@ -259,6 +259,9 @@ $(function() {
 	$('.js-shops-tabs li').first().addClass('active');
 	$('.stockist__shop-item').first().addClass('active');
 
+	let shops = $('.stockist__shops');
+	let stockistContent = $('.stockist__countries, .stockist__info, .stockist__title');
+
 	$('.stockist').on('click', '.js-shops-tabs li', function (){
 		let id = $(this).data('id');
 
@@ -268,23 +271,33 @@ $(function() {
 		$('.stockist__shop-item').removeClass('active');
 		$('#' + id).addClass('active');
 
-		$('.stockist__shops').addClass('mobile-active');
-		$('.stockist__shops').animate({
+		shops.addClass('mobile-active');
+		shops.animate({
 			opacity: 1
 		}, 500);
 
-		$('.stockist__countries, .stockist__info, .stockist__title').addClass('mobile-hidden');
-		$('.stockist__countries, .stockist__info, .stockist__title').animate({
-			opacity: 0,
-		}, 500);
+
+		if ($(window).width() < 767) {
+			stockistContent.addClass('mobile-hidden');
+			stockistContent.animate({
+				opacity: 0,
+			}, 500);
+
+			$('body,html').animate({scrollTop: 0}, 500);
+		}
+
 	});
 
 	$('.js-stockist-back').on('click', function (){
-		$('.stockist__shops').removeClass('mobile-active');
-		$('.stockist__countries, .stockist__info, .stockist__title').removeClass('mobile-hidden');
-		$('.stockist__countries, .stockist__info, .stockist__title').animate({
-			opacity: 1,
-		}, 500);
+		shops.removeClass('mobile-active');
+
+		if ($(window).width() < 767) {
+			stockistContent.removeClass('mobile-hidden');
+			stockistContent.animate({
+				opacity: 1,
+			}, 500);
+		}
+
 	})
 
 });
