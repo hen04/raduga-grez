@@ -2919,12 +2919,18 @@ footer,
     .stockist {
       padding-top: 250px;
       padding-bottom: 370px; } }
+  @media only screen and (min-width: 768px) {
+    .stockist__title {
+      opacity: 1 !important; } }
   @media only screen and (min-width: 1280px) {
     .stockist__title {
       width: calc(30% - 10px); } }
   @media only screen and (max-width: 1279px) {
     .stockist__info {
       margin: 50px 0; } }
+  @media only screen and (min-width: 768px) {
+    .stockist__info {
+      opacity: 1 !important; } }
   @media only screen and (min-width: 1280px) {
     .stockist__info {
       width: 70%; } }
@@ -2945,7 +2951,9 @@ footer,
       width: 100%; } }
   @media only screen and (min-width: 768px) {
     .stockist__countries {
-      width: calc(30% - 10px); } }
+      width: calc(30% - 10px);
+      opacity: 1 !important;
+      display: block !important; } }
   .stockist__countries li {
     color: #838383;
     cursor: pointer;
@@ -3016,11 +3024,16 @@ footer,
     transform: rotate(180deg);
     width: 21px;
     height: 26px; }
-  .stockist .mobile-hidden {
-    display: none; }
-  .stockist__region {
-    font-size: 14px;
-    color: #838383;
-    margin-bottom: 20px; }
+  @media only screen and (max-width: 767px) {
+    .stockist .mobile-hidden {
+      display: none; } }
+  @media only screen and (max-width: 767px) {
+    .stockist__region {
+      font-size: 14px;
+      color: #838383;
+      margin-bottom: 20px; } }
+  @media only screen and (min-width: 768px) {
+    .stockist__region {
+      display: none; } }
 
 /*# sourceMappingURL=maps/raduga-grez.css.map */
