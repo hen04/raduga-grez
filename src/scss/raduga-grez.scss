@@ -3861,6 +3861,10 @@ footer,
 
 	&__title {
 		
+		@include responsive(portdesktop) {
+			opacity: 1 !important;
+		}
+		
 		@include responsive(desktop) {
 			width: calc(30% - 10px);
 		}
@@ -3870,6 +3874,10 @@ footer,
 		
 		@include responsive(device) {
 			margin: 50px 0;
+		}
+
+		@include responsive(portdesktop) {
+			opacity: 1 !important;
 		}
 
 		@include responsive(desktop) {
@@ -3903,6 +3911,8 @@ footer,
 		
 		@include responsive(portdesktop) {
 			width: calc(30% - 10px);
+			opacity: 1 !important;
+			display: block !important;
 		}
 		
 		li {
@@ -4009,13 +4019,22 @@ footer,
 	}
 
 	.mobile-hidden {
-		display: none;
+		@include responsive(mobile) {
+			display: none;
+		}
 	}
 
 	&__region {
-		font-size: 14px;
-		color: $light-gray;
-		margin-bottom: 20px;
+		
+		@include responsive(mobile) {
+			font-size: 14px;
+			color: $light-gray;
+			margin-bottom: 20px;
+		}
+		
+		@include responsive(portdesktop) {
+			display: none;
+		}
 	}
 
 }
