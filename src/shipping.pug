@@ -1,0 +1,17 @@
+extends layout
+block header
+	.header-wrapper
+		include include/incl-header
+
+block content
+
+	main
+		.container
+			.shipping
+				.shipping__title
+					h1 Shipping
+				.shipping__content
+					each item in shipping
+						.shipping__item(data-aos="fade" data-aos-duration="400")
+							h4= item.heading
+							p= item.info
