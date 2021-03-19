@@ -4,7 +4,7 @@
 			"url": "catalogue.html",
 			"isActive": true,
 			"hasSubmenu": true,
-			"class": "has-submenu js-submenu",
+			"classMobile": "has-submenu js-submenu",
 			"name": "Catalogue"
 		},
 		{
@@ -32,14 +32,14 @@
 			"url": "contact-us.html",
 			"isActive": true,
 			"hasSubmenu": false,
-			"class": "contact-us",
+			"class": "",
 			"name": "Contact us"
 		},
 		{
 			"url": "search.html",
 			"isActive": true,
 			"hasSubmenu": false,
-			"class": "menu-search",
+			"classDesktop": "menu-search",
 			"name": "Search"
 		}
 	],

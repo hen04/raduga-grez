@@ -163,8 +163,9 @@ body {
 			}
 		}
 
-		.menu-desktop li a {
+		.header__menu-desktop li a {
 			text-decoration: none;
+
 			@include responsive(desktop) {
 				color: $beige1;
 			}
@@ -206,21 +207,6 @@ body {
 		max-width: 1610px;
 		margin: 0 auto;
 	}
-	
-	&__content {
-		display: flex;
-		width: 100%;
-
-		@include responsive(device) {
-			align-items: center;
-		}
-
-		@include responsive(desktop) {
-			max-width: 1610px;
-			margin: 0 auto;
-			align-items: center;
-		}
-	}
 
 	&__logo {
 		width: 140px;
@@ -255,6 +241,29 @@ body {
 			color: $beige1;
 			background-color: $black;
 			cursor: pointer;
+		}
+	}
+	
+	&__menu-desktop {
+		display: none;
+		
+		@include responsive(desktop) {
+			margin-left: calc(30% - 140px);
+			display: flex;
+		}
+		
+		li {
+			margin-right: 66px;
+			
+			a {
+				white-space: nowrap;
+				color: $black;
+				text-decoration: none;
+				
+				@include responsive(desktop) {
+					font-family: 'Pangram', sans-serif;
+				}
+			}
 		}
 	}
 
@@ -501,29 +510,6 @@ body {
 
 			@include responsive(device) {
 				white-space: nowrap;
-			}
-		}
-	}
-}
-
-.menu-desktop {
-	display: none;
-
-	@include responsive(desktop) {
-		margin-left: calc(30% - 140px);
-		display: flex;
-	}
-
-	li {
-		margin-right: 66px;
-
-		a {
-			white-space: nowrap;
-			color: $black;
-			text-decoration: none;
-
-			@include responsive(desktop) {
-				font-family: 'Pangram', sans-serif;
 			}
 		}
 	}

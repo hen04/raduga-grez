@@ -3,9 +3,9 @@ header(class="header")
 	.header__logo
 		a(href="index.html")
 
-	ul.menu-desktop
+	ul.header__menu-desktop
 		each item in menu
-				li
+				li(class= item.classDesktop)
 					a(href= item.url)= item.name
 	.header__cart
 		span.js-cart-sm 99
@@ -18,7 +18,7 @@ header(class="header")
 	.menu-content__main
 		ul.menu
 			each item in menu
-				li(class= item.class)
+				li(class= item.classMobile)
 					a(href= item.url)= item.name
 		img(src="images/mobile-menu-img.jpg" alt="" class="mobile-menu-img")
 		a(href="/" class="mobile-link")
