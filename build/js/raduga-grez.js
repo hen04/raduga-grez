@@ -171,7 +171,7 @@ $(function() {
 	});
 
 	const cartWidth = $('.cart-sm').outerWidth();
-	
+
 	$('body').on('click', '.js-cart-sm-close, .overlay', function (){
 		$('.cart-sm').animate({
 			opacity: 1,
@@ -209,10 +209,10 @@ $(function() {
 		}
 	});
 
-	// if ($('.js-simple-scroll').length) {
-	// 	var el = document.querySelector('.js-simple-scroll');
-	// 	SimpleScrollbar.initEl(el);
-	// }
+	if ($('.js-simple-scroll').length) {
+		var el = document.querySelector('.js-simple-scroll');
+		SimpleScrollbar.initEl(el);
+	}
 
 
 
@@ -301,4 +301,3 @@ $(function() {
 	})
 
 });
-
