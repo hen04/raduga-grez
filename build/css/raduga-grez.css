@@ -296,10 +296,10 @@ body {
       background: url(../images/raduga-grez.svg) 0 0/contain no-repeat; }
     .header-wrapper--index .header .menu-btn {
       background: url(../images/menu-light.svg) 50% 50% no-repeat; }
-    .header-wrapper--index .menu-desktop li a {
+    .header-wrapper--index .header__menu-desktop li a {
       text-decoration: none; }
       @media only screen and (min-width: 1280px) {
-        .header-wrapper--index .menu-desktop li a {
+        .header-wrapper--index .header__menu-desktop li a {
           color: #E1DFD3; } }
     .header-wrapper--index .menu-search a:after {
       background: url(../images/icon-search.svg) 50% 50% no-repeat; }
@@ -324,17 +324,6 @@ body {
       box-sizing: border-box;
       max-width: 1610px;
       margin: 0 auto; } }
-  .header__content {
-    display: flex;
-    width: 100%; }
-    @media only screen and (max-width: 1279px) {
-      .header__content {
-        align-items: center; } }
-    @media only screen and (min-width: 1280px) {
-      .header__content {
-        max-width: 1610px;
-        margin: 0 auto;
-        align-items: center; } }
   .header__logo {
     width: 140px;
     display: flex;
@@ -362,6 +351,21 @@ body {
       color: #E1DFD3;
       background-color: #292929;
       cursor: pointer; }
+  .header__menu-desktop {
+    display: none; }
+    @media only screen and (min-width: 1280px) {
+      .header__menu-desktop {
+        margin-left: calc(30% - 140px);
+        display: flex; } }
+    .header__menu-desktop li {
+      margin-right: 66px; }
+      .header__menu-desktop li a {
+        white-space: nowrap;
+        color: #292929;
+        text-decoration: none; }
+        @media only screen and (min-width: 1280px) {
+          .header__menu-desktop li a {
+            font-family: 'Pangram', sans-serif; } }
   @media only screen and (max-width: 1279px) {
     .header__menu {
       margin-left: auto; } }
@@ -541,22 +545,6 @@ body {
     @media only screen and (max-width: 1279px) {
       .menu li a {
         white-space: nowrap; } }
-
-.menu-desktop {
-  display: none; }
-  @media only screen and (min-width: 1280px) {
-    .menu-desktop {
-      margin-left: calc(30% - 140px);
-      display: flex; } }
-  .menu-desktop li {
-    margin-right: 66px; }
-    .menu-desktop li a {
-      white-space: nowrap;
-      color: #292929;
-      text-decoration: none; }
-      @media only screen and (min-width: 1280px) {
-        .menu-desktop li a {
-          font-family: 'Pangram', sans-serif; } }
 
 .menu-search a {
   padding-right: 24px;
