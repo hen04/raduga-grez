@@ -231,7 +231,7 @@ html {
 
 .overlay {
   position: fixed;
-  z-index: 100;
+  z-index: 98;
   top: 0;
   right: 0;
   bottom: 0;
@@ -282,22 +282,25 @@ body {
   visibility: hidden; }
 
 .header-wrapper {
+  transition: transform .3s ease-in-out;
+  background-color: #E1DFD3;
+  position: fixed;
   height: 110px;
-  background-color: #E1DFD3; }
-  .header-wrapper.out .header,
-  .header-wrapper.out .menu-content {
-    top: -110px; }
+  width: 100%;
+  z-index: 99; }
+  .header-wrapper.out {
+    transform: translateY(-100%); }
   .header-wrapper--index {
     background-color: #464B3E; }
-    .header-wrapper--index .header {
-      background-color: #464B3E; }
-      .header-wrapper--index .header__logo a {
-        background: url(../images/raduga-grez.svg) 0 0/contain no-repeat; }
-      .header-wrapper--index .header .menu-btn {
-        background: url(../images/menu-light.svg) 50% 50% no-repeat; }
-    @media only screen and (min-width: 1280px) {
-      .header-wrapper--index .menu li a {
-        color: #E1DFD3; } }
+    .header-wrapper--index .header .header__logo a {
+      background: url(../images/raduga-grez.svg) 0 0/contain no-repeat; }
+    .header-wrapper--index .header .menu-btn {
+      background: url(../images/menu-light.svg) 50% 50% no-repeat; }
+    .header-wrapper--index .menu-desktop li a {
+      text-decoration: none; }
+      @media only screen and (min-width: 1280px) {
+        .header-wrapper--index .menu-desktop li a {
+          color: #E1DFD3; } }
     .header-wrapper--index .menu-search a:after {
       background: url(../images/icon-search.svg) 50% 50% no-repeat; }
     .header-wrapper--index .header__cart span {
@@ -308,20 +311,19 @@ body {
   display: flex;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 99;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 1610px;
-  width: 100%;
-  background-color: #E1DFD3;
-  transition: top .3s ease-in-out; }
+  transition: transform .3s ease-in-out; }
   @media only screen and (max-width: 1279px) {
     .header {
       padding: 30px 26px; } }
   @media only screen and (min-width: 1280px) {
     .header {
       padding: 40px 26px;
-      box-sizing: border-box; } }
+      box-sizing: border-box;
+      max-width: 1610px;
+      margin: 0 auto; } }
   .header__content {
     display: flex;
     width: 100%; }
@@ -419,8 +421,7 @@ body {
   width: 27px;
   height: 26px;
   background: url(../images/close-dark.svg) 0 0 no-repeat;
-  cursor: pointer;
-  position: absolute; }
+  cursor: pointer; }
 
 @media only screen and (max-width: 1279px) {
   .menu-back {
@@ -447,7 +448,7 @@ body {
 .menu-content {
   position: fixed;
   z-index: 100;
-  transition: top .3s ease-in-out; }
+  transition: transform .3s ease-in-out; }
   @media only screen and (max-width: 1279px) {
     .menu-content {
       display: flex;
@@ -460,19 +461,14 @@ body {
       padding: 30px 26px 40px; } }
   @media only screen and (min-width: 1280px) {
     .menu-content {
-      top: 0;
-      height: 110px;
-      display: flex;
-      max-width: 1610px;
-      width: 100%;
-      left: 50%;
-      transform: translateX(-50%); } }
+      display: none; } }
   @media only screen and (max-width: 1279px) {
     .menu-content .close-btn {
       z-index: 3;
       right: 26px;
       top: 30px;
-      margin-left: auto; } }
+      margin-left: auto;
+      position: absolute; } }
   @media only screen and (min-width: 1280px) {
     .menu-content .close-btn {
       display: none; } }
@@ -488,8 +484,7 @@ body {
     .menu-content__main {
       display: flex;
       align-items: center;
-      height: 100%;
-      margin-left: 30%; } }
+      height: 100%; } }
   @media only screen and (max-width: 1279px) {
     .menu-content__main li {
       margin-top: 20px; } }
@@ -536,7 +531,7 @@ body {
       margin-top: 10px; } }
   @media only screen and (min-width: 1280px) {
     .menu li {
-      margin-right: 66px; } }
+      margin: 0 33px; } }
   @media only screen and (min-width: 1280px) {
     .menu li.contact-us {
       display: none; } }
@@ -546,6 +541,22 @@ body {
     @media only screen and (max-width: 1279px) {
       .menu li a {
         white-space: nowrap; } }
+
+.menu-desktop {
+  display: none; }
+  @media only screen and (min-width: 1280px) {
+    .menu-desktop {
+      margin-left: calc(30% - 140px);
+      display: flex; } }
+  .menu-desktop li {
+    margin-right: 66px; }
+    .menu-desktop li a {
+      white-space: nowrap;
+      color: #292929;
+      text-decoration: none; }
+      @media only screen and (min-width: 1280px) {
+        .menu-desktop li a {
+          font-family: 'Pangram', sans-serif; } }
 
 .menu-search a {
   padding-right: 24px;
@@ -2337,7 +2348,7 @@ footer,
       max-width: 755px; } }
   .input-field:last-child {
     padding-bottom: 0; }
-  .input-field .input-text {
+  .input-field .inp-text {
     height: 50px;
     width: 100%;
     background-color: #E1DFD3;
@@ -2346,7 +2357,7 @@ footer,
     font-family: 'Pangram', sans-serif;
     padding: 20px 20px 8px 20px;
     font-size: .875rem; }
-    .input-field .input-text:focus {
+    .input-field .inp-text:focus {
       outline: none; }
   .input-field .label-text {
     position: absolute;
@@ -2853,7 +2864,7 @@ footer,
       margin-bottom: 70px; } }
   @media only screen and (min-width: 1280px) {
     .shipping__title {
-      width: calc(30% - 13px); } }
+      width: 30%; } }
   .shipping__content {
     display: flex;
     flex-flow: wrap; }
@@ -2924,7 +2935,7 @@ footer,
       opacity: 1 !important; } }
   @media only screen and (min-width: 1280px) {
     .stockist__title {
-      width: calc(30% - 10px); } }
+      width: 30%; } }
   @media only screen and (max-width: 1279px) {
     .stockist__info {
       margin: 50px 0; } }
@@ -2951,7 +2962,7 @@ footer,
       width: 100%; } }
   @media only screen and (min-width: 768px) {
     .stockist__countries {
-      width: calc(30% - 10px);
+      width: 30%;
       opacity: 1 !important;
       display: block !important; } }
   .stockist__countries li {
@@ -2968,7 +2979,9 @@ footer,
     .stockist__shops {
       display: none;
       position: relative;
-      opacity: 0; } }
+      opacity: 0;
+      padding-top: 100px;
+      width: 100%; } }
   @media only screen and (min-width: 768px) {
     .stockist__shops {
       width: 70%;

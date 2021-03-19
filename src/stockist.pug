@@ -18,7 +18,7 @@ block content
 						.stockist__region Select your region
 						ul.js-shops-tabs
 							each item, i in countries
-								li(data-id="shop-"+i)= item.country
+								li(data-id="shop-" + i)= item.country
 					.stockist__shops
 						.stockist__back.js-stockist-back Back to regions
 						.stockist__shop-item(id="shop-0")
@@ -36,5 +36,4 @@ block content
 								each item in shops
 									li
 										a(href="" target="_blank")= item.shop
-
 
