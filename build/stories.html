@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raduga Grez</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/lib/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js"></script>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script src="https://yastatic.net/share2/share.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/raduga-grez.css">
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <header class="header">
+        <div class="header__logo"><a href="index.html"></a></div>
+        <ul class="header__menu-desktop">
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="about-us.html">About us</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="stockist.html">Stockist</a></li>
+          <li><a href="contact-us.html">Contact us</a></li>
+          <li class="menu-search"><a href="search.html">Search</a></li>
+        </ul>
+        <div class="header__cart"><span class="js-cart-sm">99</span></div>
+        <div class="menu-btn js-menu"></div>
+      </header>
+      <div class="menu-content">
+        <div class="close-btn js-menu-close"></div>
+        <div class="menu-content__main">
+          <ul class="menu">
+            <li class="has-submenu js-submenu"><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="stockist.html">Stockist</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+            <li><a href="search.html">Search</a></li>
+          </ul><img class="mobile-menu-img" src="images/mobile-menu-img.jpg" alt=""><a class="mobile-link" href="/"><img class="mobile-menu-logo" src="images/raduga-grez-dark.svg" alt=""></a>
+        </div>
+        <div class="menu-content__catalog">
+          <div class="menu-back js-menu-back"></div>
+          <ul class="menu-catalog">
+            <li>Category</li>
+            <li><a href="catalogue.html">All</a></li>
+            <li><a href="catalogue.html">Arch stackers</a></li>
+            <li><a href="catalogue.html">Building blocks</a></li>
+            <li><a href="catalogue.html">Cubes</a></li>
+            <li><a href="catalogue.html">Imaginative play</a></li>
+            <li><a href="catalogue.html">Stacking towers</a></li>
+            <li><a href="catalogue.html">Rolling toys</a></li>
+          </ul>
+          <ul class="menu-catalog">
+            <li>Collection</li>
+            <li><a href="catalogue.html">All</a></li>
+            <li><a href="catalogue.html">Flowers</a></li>
+            <li><a href="catalogue.html">Diversity</a></li>
+          </ul>
+          <ul class="menu-catalog">
+            <li>Shop All</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cart-sm cart-sm--mini">
+        <div class="cart-sm__header">
+          <h4>Your Cart (4)</h4>
+          <div class="close-btn js-cart-sm-close"></div>
+        </div>
+        <div class="cart-sm__list js-simple-scroll">
+          <div class="cart-sm__item">
+            <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
+            <div class="cart-sm__content">
+              <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
+                <div class="cart-sm__price">$50.00</div>
+              </div>
+              <div class="cart-sm__quantity"><span>Qty:</span>
+                <div class="quantity quantity--sm">
+                  <button class="quantity__minus"></button>
+                  <input class="quantity__count" type="text" placeholder="1" value="1">
+                  <button class="quantity__plus"></button>
+                </div>
+              </div>
+              <div class="cart-sm__remove">
+                <button>Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="cart-sm__item">
+            <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-2.jpg" alt=""></a></div>
+            <div class="cart-sm__content">
+              <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment building blocks set colored</a>
+                <div class="cart-sm__price">$45.00</div>
+              </div>
+              <div class="cart-sm__quantity"><span>Qty:</span>
+                <div class="quantity quantity--sm">
+                  <button class="quantity__minus"></button>
+                  <input class="quantity__count" type="text" placeholder="1" value="1">
+                  <button class="quantity__plus"></button>
+                </div>
+              </div>
+              <div class="cart-sm__remove">
+                <button>Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="cart-sm__item">
+            <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-3.jpg" alt=""></a></div>
+            <div class="cart-sm__content">
+              <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Apartment</a>
+                <div class="cart-sm__price">$45.00</div>
+              </div>
+              <div class="cart-sm__quantity"><span>Qty:</span>
+                <div class="quantity quantity--sm">
+                  <button class="quantity__minus"></button>
+                  <input class="quantity__count" type="text" placeholder="1" value="1">
+                  <button class="quantity__plus"></button>
+                </div>
+              </div>
+              <div class="cart-sm__remove">
+                <button>Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="cart-sm__item">
+            <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
+            <div class="cart-sm__content">
+              <div class="cart-sm__name-price"><a class="cart-sm__name" href="catalogue-item.html">Sand small</a>
+                <div class="cart-sm__price">$50.00</div>
+              </div>
+              <div class="cart-sm__quantity"><span>Qty:</span>
+                <div class="quantity quantity--sm">
+                  <button class="quantity__minus"></button>
+                  <input class="quantity__count" type="text" placeholder="1" value="1">
+                  <button class="quantity__plus"></button>
+                </div>
+              </div>
+              <div class="cart-sm__remove">
+                <button>Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-sm__total">
+          <div class="cart-sm__total-price"><span>Subtotal</span><span>$95.00</span></div><a class="btn" href="checkout.html">Proceed to checkout</a>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="container">
+        <div class="stories">
+          <div class="stories__title">
+            <h1>Stories</h1>
+          </div>
+          <div class="stories__list"><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-1.jpg" alt="/images/content/stories-1.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer Mother's Day with Natalia Emeschajmer</p></a><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-2.jpg" alt="/images/content/stories-2.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer</p></a><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-3.jpg" alt="/images/content/stories-3.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer</p></a><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-4.jpg" alt="/images/content/stories-4.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer</p></a><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-5.jpg" alt="/images/content/stories-5.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer</p></a><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-6.jpg" alt="/images/content/stories-6.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer</p></a><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-7.jpg" alt="/images/content/stories-7.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer</p></a><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-8.jpg" alt="/images/content/stories-8.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer</p></a><a class="stories__item" href="stories-item.html">
+              <div class="stories__img"><img src="/images/content/stories-9.jpg" alt="/images/content/stories-9.jpg"></div><span class="date">24.07.2020</span>
+              <p>Mother's Day with Natalia Emeschajmer</p></a>
+          </div>
+          <div class="pagination">
+            <div class="pagination__list">Сюда пагинация</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="join-us">
+      <div class="join-us__content">
+        <h2 data-aos="fade" data-aos-duration="800">Join our newsletter</h2>
+        <form>
+          <div class="join-us-form" data-aos="fade" data-aos-duration="1000" data-aos-delay="400">
+            <input class="inp-subscribe" type="text" placeholder="email">
+            <input class="submit-subscribe" type="submit" value="">
+            <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
+              <!--span.error Enter your correct email-->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__mail" data-aos="fade" data-aos-duration="800">
+          <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
+        </div>
+        <div class="footer__menu">
+          <nav>
+            <ul class="footer-menu" data-aos="fade" data-aos-duration="600" data-aos-delay="50">
+              <li>About</li>
+              <li><a href="about-us.html">About us</a>
+              </li>
+              <li><a href="stories.html">Stories</a>
+              </li>
+            </ul>
+            <ul class="footer-menu" data-aos="fade" data-aos-duration="700" data-aos-delay="100">
+              <li>Customer Service</li>
+              <li><a href="shipping.html">Shipping</a>
+              </li>
+              <li><a href="wholesale.html">Wholesale</a>
+              </li>
+              <li><a href="">Terms &amp; Conditions</a>
+              </li>
+              <li><a href="faq.html">FAQ</a>
+              </li>
+            </ul>
+            <ul class="footer-menu" data-aos="fade" data-aos-duration="800" data-aos-delay="150">
+              <li>Contact</li>
+              <li><a href="contact-us.html">Contact us</a>
+              </li>
+              <li><a href="stockist.html">Stockist</a>
+              </li>
+            </ul>
+            <ul class="footer-menu" data-aos="fade" data-aos-duration="900" data-aos-delay="200">
+              <li>Social media</li>
+              <li><a href="" target="_blank">Instagram</a>
+              </li>
+              <li><a href="" target="_blank">Facebook</a>
+              </li>
+              <li><a href="" target="_blank">Pinterest</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__top"><span class="js-top" id="button-top" data-aos="fade" data-aos-duration="600" data-aos-delay="400">Back to Top</span></div>
+        <div class="footer__copyright" data-aos="fade" data-aos-duration="600" data-aos-delay="400">&copy; 2020 All rights reserved RADUGA GRËZ</div>
+      </div>
+      <div class="cookies-info">
+        <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
+        <button class="js-accept" type="button">Accept</button>
+      </div>
+    </footer>
+    <div class="overlay"></div>
+    <script src="js/raduga-grez.js"></script>
+  </body>
+</html>

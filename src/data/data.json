@@ -501,5 +501,52 @@
 			"shop": "Cruisekids3"
 		}
 
+	],
+	"stories": [
+		{
+			"title": "Mother's Day with Natalia Emeschajmer Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-1.jpg"
+		},
+		{
+			"title": "Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-2.jpg"
+		},
+		{
+			"title": "Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-3.jpg"
+		},
+		{
+			"title": "Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-4.jpg"
+		},
+		{
+			"title": "Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-5.jpg"
+		},
+		{
+			"title": "Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-6.jpg"
+		},
+		{
+			"title": "Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-7.jpg"
+		},
+		{
+			"title": "Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-8.jpg"
+		},
+		{
+			"title": "Mother's Day with Natalia Emeschajmer",
+			"date": "24.07.2020",
+			"img": "/images/content/stories-9.jpg"
+		}
 	]
 }
