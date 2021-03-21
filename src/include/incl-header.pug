@@ -5,8 +5,9 @@ header(class="header")
 
 	ul.header__menu-desktop
 		each item in menu
-				li(class= item.classDesktop)
-					a(href= item.url)= item.name
+			li(class= item.classDesktop)
+				a(href= item.url)= item.name
+		li.menu-search.js-search Search
 	.header__cart
 		span.js-cart-sm 99
 
@@ -20,6 +21,7 @@ header(class="header")
 			each item in menu
 				li(class= item.classMobile)
 					a(href= item.url)= item.name
+			li.menu-search.js-search Search
 		img(src="images/mobile-menu-img.jpg" alt="" class="mobile-menu-img")
 		a(href="/" class="mobile-link")
 			img(src="images/raduga-grez-dark.svg" alt="" class="mobile-menu-logo")
@@ -32,6 +34,3 @@ header(class="header")
 					li
 						a(href="catalogue.html")= subitem.title
 
-.cart-sm.cart-sm--mini
-	block cart
-		include incl-cart-sm

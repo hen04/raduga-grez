@@ -34,13 +34,6 @@
 			"hasSubmenu": false,
 			"class": "",
 			"name": "Contact us"
-		},
-		{
-			"url": "search.html",
-			"isActive": true,
-			"hasSubmenu": false,
-			"classDesktop": "menu-search",
-			"name": "Search"
 		}
 	],
 	"menuCatalog": [

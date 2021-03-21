@@ -1,0 +1,20 @@
+extends layout
+block header
+	.header-wrapper
+		include include/incl-header
+
+block content
+
+	main
+		.container
+			.service-page
+				.service-page__content
+					.service-page__title
+						h1 404
+					.service-page__text
+						p This page not found.
+						p Maybe you want to be inspired by our&nbsp;
+							a(href="") homepage
+							| ?
+				.service-page__img
+					img(src="images/error.jpg" alt="")

@@ -1,0 +1,46 @@
+extends layout
+block header
+	.header-wrapper
+		include include/incl-header
+
+block search
+	.search-block
+		.container
+			.search-block__content
+				.search-block__close
+					.close-btn.js-close-search
+				form(action="")
+					label.label-search
+						input(type="submit" value="").icon-search
+						input(type="text" class="input-text-search" placeholder="Search")
+
+				.search-block__suggested
+					span.title Suggested
+					p
+						a(href="#") Sun small arch stacker
+					p
+						a(href="#") Vegetables set
+					p
+						a(href="#") Sand stacking tower
+block content
+
+	main
+		.container
+			.search-result
+				.search-result__form
+					form(action="")
+						label.label-search
+							input(type="submit" value="").icon-search.close-btn
+							input(type="text" class="input-text-search" placeholder="Search" value="Building")
+				.catalog
+					.catalog__list
+						each item in catalog.slice(0, 4)
+							.catalog__item
+								a(href="catalogue-item.html")
+									.catalog__image
+										img(alt="" src= item.img)
+									.catalog__content
+										.catalog__info
+											.catalog__name= item.name
+											.catalog__price= item.price
+								a(href="#" class="add-to-cart") Add to cart

@@ -1,0 +1,63 @@
+extends layout
+block header
+	.header-wrapper
+		include include/incl-header
+
+block content
+
+	main
+		.container
+			.contact-us
+				.contact-us__form
+					h1 Nice to meet you!
+					p Feel free to send us message
+
+					form(action="/contact/#wpcf7-f110-p69-o1" method="post" class="wpcf7-form init contact-form" novalidate="novalidate" data-status="init")
+						p
+							label Your name*<br>
+								span(class="wpcf7-form-control-wrap your-name")
+									input(type="text" name="your-name" value="" size="40" class="input-text-contacts wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false")
+						p
+							label Your email*<br>
+								span(class="wpcf7-form-control-wrap your-email")
+									input(type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false")
+									span(class="wpcf7-not-valid-tip" aria-hidden="true") Поле обязательно для заполнения.
+						p
+							label Your message (optional)<br>
+								span(class="wpcf7-form-control-wrap your-message")
+									textarea(name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false")
+						p
+							input(type="submit" value="Submit" class="wpcf7-form-control wpcf7-submit")
+							span(class="ajax-loader")
+						div(class="wpcf7-response-output" aria-hidden="true")
+
+					// вот этот див можно зафигачить вместо всей формы
+					.form-result
+						p Thank you, we will contact you as soon as possible!
+
+				.contact-us__img
+					img(src="images/contact-us.jpg" alt="")
+
+				.contact-us__info
+					.contact-us__info-img
+						img(src="images/contact-us-sm.jpg" alt="")
+					.contact-us__info-text
+						p We love to create toys for you.
+						p Please email us if you have any questions
+						a(href="mailto:hello@raduga-grez.ru" class="email") hello@raduga-grez.ru
+
+						.contact-us__info-additional
+							.contact-us__info-time
+								span Working time
+								p Monday - Friday
+								p 9:00 p.m. - 17:00 p.m
+
+							.contact-us__info-media
+								span We are on social media
+								p
+									a(href="" target="_blank") Facebook
+								p
+									a(href="" target="_blank") Instagram
+								p
+									a(href="" target="_blank") Pinterest
+

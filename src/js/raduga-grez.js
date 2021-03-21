@@ -301,4 +301,14 @@ $(function() {
 
 	})
 
+	$('.js-search').on('click', function (){
+		$('.search-block').addClass('opened');
+		$('body').addClass('search-opened');
+	});
+
+	$('.js-close-search').on('click', function (){
+		$('.search-block').removeClass('opened');
+		$('body').removeClass('search-opened');
+	});
+
 });
