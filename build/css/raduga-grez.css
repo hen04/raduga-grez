@@ -445,8 +445,6 @@ body {
     body.menu-opened .mobile-menu-img,
     body.menu-opened .mobile-menu-logo {
       opacity: 1; } }
-  body.menu-opened .out {
-    transform: translateY(0); }
   @media only screen and (max-width: 1279px) {
     body.menu-opened .close-btn {
       display: block; } }
@@ -478,14 +476,15 @@ body {
   height: 110px;
   width: 100%;
   z-index: 99; }
-  .header-wrapper.out {
-    transform: translateY(-100%); }
   .header-wrapper--index {
     background-color: #464B3E; }
     .header-wrapper--index .header .header__logo a {
       background: url(../images/raduga-grez.svg) 0 0/contain no-repeat; }
     .header-wrapper--index .header .menu-btn {
       background: url(../images/menu-light.svg) 50% 50% no-repeat; }
+    @media only screen and (min-width: 1280px) {
+      .header-wrapper--index .header__menu-desktop li {
+        color: #E1DFD3; } }
     .header-wrapper--index .header__menu-desktop li a {
       text-decoration: none; }
       @media only screen and (min-width: 1280px) {
@@ -1849,20 +1848,26 @@ footer,
     width: 50%;
     float: left; } }
 
+@media only screen and (min-width: 1280px) {
+  .about-goods__slider .swiper-container {
+    padding-bottom: 40px; } }
+
 .about-goods__slider img {
   max-width: 100%;
   width: 100%; }
 
-@media only screen and (max-width: 1279px) {
-  .about-goods__slider .swiper-button-next,
-  .about-goods__slider .swiper-button-prev {
-    margin-top: auto;
-    bottom: 20px; } }
-
-@media only screen and (max-width: 1279px) {
-  .about-goods__slider .swiper-button-next:after,
-  .about-goods__slider .swiper-button-prev:after {
-    background-image: url(../images/arrow-light.svg); } }
+.about-goods__slider .swiper-button-next,
+.about-goods__slider .swiper-button-prev {
+  margin-top: auto;
+  bottom: 20px; }
+  @media only screen and (min-width: 1280px) {
+    .about-goods__slider .swiper-button-next,
+    .about-goods__slider .swiper-button-prev {
+      bottom: 0; } }
+  @media only screen and (max-width: 1279px) {
+    .about-goods__slider .swiper-button-next:after,
+    .about-goods__slider .swiper-button-prev:after {
+      background-image: url(../images/arrow-light.svg); } }
 
 @media only screen and (max-width: 1279px) {
   .about-goods__slider .swiper-button-next {
@@ -1919,11 +1924,6 @@ footer,
 
 .about-goods__add-info {
   display: flex; }
-
-@media only screen and (min-width: 1280px) {
-  .about-goods .swiper-button-next,
-  .about-goods .swiper-button-prev {
-    display: none; } }
 
 .share {
   position: relative; }
@@ -3200,6 +3200,23 @@ footer,
 .pagination {
   display: flex;
   justify-content: flex-end; }
+  @media only screen and (min-width: 1280px) {
+    .pagination {
+      margin-top: 100px; } }
+  .pagination .nav-links a,
+  .pagination .nav-links span {
+    margin: 0 12px; }
+  .pagination .nav-links a {
+    color: #838383;
+    text-decoration: none; }
+    .pagination .nav-links a:hover {
+      color: #292929; }
+    .pagination .nav-links a.next {
+      margin-left: 24px; }
+    .pagination .nav-links a.prev {
+      margin-right: 24px; }
+  .pagination .nav-links span {
+    color: #292929; }
 
 .stories-item {
   padding-top: 110px;
