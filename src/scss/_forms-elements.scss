@@ -214,7 +214,7 @@ button {
 			background-color: $red-error;
 		}
 		
-		span {
+		.error-text {
 			display: block;
 		}
 	}
@@ -225,7 +225,7 @@ button {
 		}
 	}
 	
-	span {
+	.error-text {
 		display: none;
 	}
 	

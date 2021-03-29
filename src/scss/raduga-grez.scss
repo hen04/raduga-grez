@@ -3098,6 +3098,54 @@ footer,
 	}
 }
 
+.woocommerce-billing-fields__field-wrapper {
+	label {
+		display: block;
+	}
+	
+	.select2-container--default .select2-selection--single {
+		border: 0;
+		border-radius: 0;
+		background-color: $beige1;
+		height: 50px;
+	}
+	
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+		height: 50px;
+		
+		&:focus {
+			outline: none;
+		}
+	}
+	
+	.select2-container--default .select2-selection--single .select2-selection__arrow {
+		height: 50px;
+		width: 40px;
+	}
+}
+
+.select2-container--open .select2-dropdown--above {
+	background-color: $beige1;
+	border-radius: 0;
+	
+	.select2-dropdown {
+		background-color: $beige1;
+	}
+	
+	.select2-search__field {
+		background-color: $beige1;
+		height: 32px;
+	}
+	
+	.select2-results__option {
+		color: $black;
+	}
+	
+	.select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[data-selected] {
+		background-color: $dark-green;
+		color: #F1F1ED;
+	}
+}
 
 .about {
 	display: grid;

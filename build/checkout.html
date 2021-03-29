@@ -17,7 +17,7 @@
     <div class="loading-screen hidden">
       <div class="loading-screen__svg"><img src="images/loading.svg"></div>
     </div>
-    <div class="loading-content hidden1">
+    <div class="loading-content hidden">
       <div class="checkout">
         <div class="checkout__logo"><a href="index.html"><img src="images/raduga-grez-dark.svg" alt=""></a></div>
         <div class="checkout__summary-wrapper">
@@ -114,7 +114,7 @@
                       <label class="label-text">Email or mobile number</label>
                       <input class="input-text" type="text"><span class="error-text">Invalid email format</span>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field input-field--checkout">
                       <input class="inp-checkbox" type="checkbox" id="offers">
                       <label class="label-checkbox" for="offers">Keep me up to date on news and exclusive offers</label>
                     </div>
@@ -149,7 +149,7 @@
                     </div>
                   </div>
                   <div class="form-buttons"><a class="back">Back</a>
-                    <button class="btn" disabled>Continue to Payment</button>
+                    <button class="btn js-tabs-btn">Continue to Payment</button>
                   </div>
                 </form>
               </div>
@@ -175,7 +175,7 @@
                   <div class="user-info">
                     <div class="user-info__item">
                       <div class="user-info__result">
-                        <div class="input-field">
+                        <div class="input-field input-field--checkout">
                           <input class="inp-checkbox" type="radio" name="post" id="dhl">
                           <label class="label-checkbox" for="dhl">DHL Express</label>
                         </div>
@@ -184,7 +184,7 @@
                     </div>
                     <div class="user-info__item">
                       <div class="user-info__result">
-                        <div class="input-field">
+                        <div class="input-field input-field--checkout">
                           <input class="inp-checkbox" type="radio" name="post" id="post">
                           <label class="label-checkbox" for="post">Post of Russia</label>
                         </div>
@@ -199,11 +199,11 @@
                 </div>
                 <div class="tabs__section">
                   <h4>Remember me</h4>
-                  <div class="input-field">
+                  <div class="input-field input-field--checkout">
                     <input class="inp-checkbox" type="checkbox" id="save-info">
                     <label class="label-checkbox" for="save-info">Save this information for next time</label>
                   </div>
-                  <div class="form-buttons"><a class="back">Back</a>
+                  <div class="form-buttons"><a class="back js-tabs-btn">Back</a>
                     <button class="btn">Pay now</button>
                   </div>
                 </div>

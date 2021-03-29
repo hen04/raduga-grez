@@ -180,6 +180,26 @@ $(function() {
 		$(this).parents().find('.tabs__item').toggleClass('active');
 	});
 
+	$('.js-tabs-btn').on('click', function (){
+		$('.tabs__menu li').toggleClass('active');
+		$('.tabs__item').toggleClass('active');
+	});
+
+	$('.label-text').on('click', function () {
+		$(this).parent().addClass('filled');
+		$(this).next().focus();
+	});
+
+	$('.input-text').on('focus', function (){
+		$(this).parent().addClass('filled');
+	});
+
+	$('.input-text').on('blur', function() {
+		if( $(this).val().length === 0 ) {
+			$(this).parent().removeClass('filled');
+		}
+	});
+
 
 
 	// https://codepen.io/pablopo/pen/KrBmad
