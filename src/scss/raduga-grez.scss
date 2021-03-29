@@ -2805,7 +2805,7 @@ footer,
 	&__summary-wrapper {
 		@include responsive(desktop) {
 			grid-area: summary;
-			background-color: #E5E3D9;
+			background-color: $beige1;
 			min-height: 100vh;
 		}
 	}
@@ -2820,6 +2820,7 @@ footer,
 		
 		@include responsive(desktop) {
 			padding: 40px 150px 0;
+			margin-bottom: 40px;
 		}
 	}
 	
@@ -2867,6 +2868,27 @@ footer,
 		&:first-child {
 			margin-top: 0;
 		}
+		
+		.input-field {
+			width: 100%;
+			background-color: $beige1;
+			border: 0;
+			box-sizing: border-box;
+			font-family: 'Pangram', sans-serif;
+			padding: 6px 20px;
+			margin-bottom: 20px;
+			
+			input {
+				margin-top: 16px;
+				background-color: $beige1;
+			}
+			
+			&--checkout {
+				background-color: transparent;
+				padding-left: 0;
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&__item {
@@ -2894,6 +2916,7 @@ footer,
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
+		max-width: 755px;
 
 		@include responsive(device) {
 			margin-top: 15px;
@@ -2906,6 +2929,8 @@ footer,
 		
 		.back {
 			cursor: pointer;
+			color: $black;
+			text-decoration: none;
 			
 			@include responsive(device) {
 				display: none;
@@ -3014,7 +3039,6 @@ footer,
 
 .fancybox-content {
 	width: 480px;
-	height: 350px;
 	background-color: $beige1;
 	
 	h4 {

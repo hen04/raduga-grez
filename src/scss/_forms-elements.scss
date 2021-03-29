@@ -140,7 +140,7 @@ button {
 	}
 	
 	.input-field {
-		width: 48%;
+		width: 48% !important;
 	}
 }
 
@@ -157,13 +157,21 @@ button {
 		padding-bottom: 0;
 	}
 	
+	&.filled {
+		.label-text {
+			top: 6px;
+			font-size: 12px;
+			line-height: 1.4;
+		}
+	}
+	
 	
 	.label-text {
 		position: absolute;
 		left: 20px;
-		top: 13px;
+		top: 12px;
 		font-size: .875rem;
-		transition: transform .3s ease-in-out;
+		transition: all .2s ease-in-out;
 		color: rgba($black, .35);
 		
 		&.focused {
@@ -186,6 +194,7 @@ button {
 		position: absolute;
 		width: 100%;
 		left: 0;
+		bottom: -16px;
 	}
 	
 	&.error,
@@ -194,6 +203,7 @@ button {
 			content: '';
 			position: absolute;
 			right: 0;
+			top: 0;
 			height: 50px;
 			width: 2px;
 		}
@@ -264,14 +274,9 @@ button {
 }
 
 .input-text {
-	height: 50px;
-	width: 100%;
-	background-color: $beige1;
-	border: 0;
-	box-sizing: border-box;
-	font-family: 'Pangram', sans-serif;
-	padding: 20px 20px 8px 20px;
 	font-size: .875rem;
+	width: 100%;
+	border: 0;
 	
 	&:focus {
 		outline: none;
