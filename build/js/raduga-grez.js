@@ -200,34 +200,19 @@ $(function() {
 		}
 	});
 
-
-
-	// https://codepen.io/pablopo/pen/KrBmad
-	let input = $(".input-field .inp-text");
-
-	input.val("");
-	input.focus(function() {
-		$(this).closest('form').find(".input-field.focused").removeClass("focused");
-		$(this).closest('.input-field').addClass('focused').removeClass('error');
-	});
-	input.blur(function() {
-		var val = $(this).val(),
-			ig = $(this).closest('.input-field'),
-			label = ig.find('label');
-		ig.removeClass('focused');
-		if (val !== "") {
-			label.addClass('focused');
-		} else {
-			label.removeClass('focused');
+	$('.input-field .input-text').each(function(index, value) {
+		var info = $(value).val();
+		if (info.length !== 0) {
+			$(value).parent().addClass('filled');
 		}
 	});
+
+
 
 	if ($('.js-simple-scroll').length) {
 		var el = document.querySelector('.js-simple-scroll');
 		SimpleScrollbar.initEl(el);
 	}
-
-
 
 	if ($('.js-fancybox').length) {
 		$(".js-fancybox").fancybox();
