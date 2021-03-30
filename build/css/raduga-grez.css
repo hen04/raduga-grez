@@ -2231,15 +2231,14 @@ footer,
         height: calc(100% - 208px); } }
   .cart-sm__item {
     display: flex;
+    padding-right: 20px;
     border-bottom: 1px solid rgba(41, 41, 41, 0.5); }
     @media only screen and (max-width: 1279px) {
       .cart-sm__item {
         padding-bottom: 20px;
-        margin-bottom: 20px;
-        padding-right: 18px; } }
+        margin-bottom: 20px; } }
     @media only screen and (min-width: 1280px) {
       .cart-sm__item {
-        padding-right: 16px;
         padding-bottom: 30px;
         margin-bottom: 30px; } }
     .cart-sm__item:last-child {
@@ -2605,6 +2604,9 @@ footer,
   font-size: .875rem;
   color: rgba(41, 41, 41, 0.35); }
 
+.select2-container {
+  margin: 0 -8px; }
+
 .select2-container--default .select2-selection--single {
   border: 0;
   border-radius: 0;
@@ -2613,21 +2615,32 @@ footer,
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   height: 50px;
-  display: flex;
+  display: flex !important;
   align-items: center; }
   .select2-container--default .select2-selection--single .select2-selection__rendered:focus {
     outline: none; }
 
-.select2-container .select2-selection--single .select2-selection__rendered {
-  padding-left: 0; }
+.select2 *:focus {
+  outline: none !important; }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
+.select2-container--open .select2-dropdown.select2-container--default .select2-selection--single .select2-selection__arrow {
   height: 50px;
   width: 40px; }
+
+.select2-container--default .select2-results__option[aria-selected=true], .select2-container--default .select2-results__option[data-selected=true] {
+  background-color: #D4D2C3; }
 
 .select2-container--open .select2-dropdown--above {
   background-color: #E1DFD3;
   border-radius: 0; }
+
+.select2-container--open .select2-dropdown {
+  left: 8px !important; }
+
+.select2.select2-container.select2-container--default.select2-container--below.select2-container--open {
+  border: 1px solid #aaa !important;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden; }
 
 .select2-dropdown {
   background-color: #E1DFD3; }
