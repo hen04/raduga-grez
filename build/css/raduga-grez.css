@@ -242,7 +242,7 @@ button {
     position: absolute;
     right: 0;
     top: 0;
-    height: 50px;
+    height: 100%;
     width: 2px; }
   .input-field.error:after {
     background-color: #DB7662; }
@@ -2601,36 +2601,47 @@ footer,
     display: none; }
 
 .woocommerce-billing-fields__field-wrapper label {
-  display: block; }
+  display: block;
+  font-size: .875rem;
+  color: rgba(41, 41, 41, 0.35); }
 
-.woocommerce-billing-fields__field-wrapper .select2-container--default .select2-selection--single {
+.select2-container--default .select2-selection--single {
   border: 0;
   border-radius: 0;
   background-color: #E1DFD3;
   height: 50px; }
 
-.woocommerce-billing-fields__field-wrapper .select2-container--default .select2-selection--single .select2-selection__rendered {
-  height: 50px; }
-  .woocommerce-billing-fields__field-wrapper .select2-container--default .select2-selection--single .select2-selection__rendered:focus {
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  height: 50px;
+  display: flex;
+  align-items: center; }
+  .select2-container--default .select2-selection--single .select2-selection__rendered:focus {
     outline: none; }
 
-.woocommerce-billing-fields__field-wrapper .select2-container--default .select2-selection--single .select2-selection__arrow {
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 0; }
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
   height: 50px;
   width: 40px; }
 
 .select2-container--open .select2-dropdown--above {
   background-color: #E1DFD3;
   border-radius: 0; }
-  .select2-container--open .select2-dropdown--above .select2-dropdown {
-    background-color: #E1DFD3; }
-  .select2-container--open .select2-dropdown--above .select2-search__field {
-    background-color: #E1DFD3;
-    height: 32px; }
-  .select2-container--open .select2-dropdown--above .select2-results__option {
-    color: #292929; }
-  .select2-container--open .select2-dropdown--above .select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--open .select2-dropdown--above .select2-container--default .select2-results__option--highlighted[data-selected] {
-    background-color: #464B3E;
-    color: #F1F1ED; }
+
+.select2-dropdown {
+  background-color: #E1DFD3; }
+
+.select2-search__field {
+  background-color: #E1DFD3;
+  height: 32px; }
+
+.select2-results__option {
+  color: #292929; }
+
+.select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[data-selected] {
+  background-color: #464B3E;
+  color: #F1F1ED; }
 
 .about {
   display: grid; }
@@ -3755,5 +3766,8 @@ footer,
     height: 20px;
     margin-top: -5px;
     background: url(../images/close-dark.svg) 0 0/contain; }
+
+.woocommerce form .form-row .required {
+  text-decoration: none; }
 
 /*# sourceMappingURL=maps/raduga-grez.css.map */
