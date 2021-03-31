@@ -3109,10 +3109,10 @@ footer,
 }
 
 .select2-container--default .select2-selection--single {
-	border: 0;
-	border-radius: 0;
-	background-color: $beige1;
-	height: 50px;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background-color: $beige1 !important;
+	height: 50px !important;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
