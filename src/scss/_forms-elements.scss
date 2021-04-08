@@ -9,6 +9,7 @@ button {
 	border: 1px solid;
 	padding: 6px 20px;
 	border-radius: 50%;
+	font-family: Pangram, sans-serif !important;
 	
 	span {
 		display: block;
@@ -128,4 +129,270 @@ button {
 	&:focus {
 		outline: none;
 	}
+}
+
+.input-field-wrapper {
+	display: flex;
+	justify-content: space-between;
+	
+	@include responsive(desktop) {
+		max-width: 755px;
+	}
+	
+	.input-field {
+		width: 48% !important;
+	}
+}
+
+.input-field {
+	position: relative;
+	width: 100%;
+	padding-bottom: 20px;
+	
+	@include responsive(desktop) {
+		max-width: 755px;
+	}
+	
+	&:last-child {
+		padding-bottom: 0;
+	}
+	
+	&.filled {
+		.label-text {
+			top: 6px;
+			font-size: 12px;
+			line-height: 1.4;
+		}
+	}
+	
+	
+	.label-text {
+		position: absolute;
+		left: 20px;
+		top: 12px;
+		font-size: .875rem;
+		transition: all .2s ease-in-out;
+		color: rgba($black, .35);
+		
+		&.focused {
+			font-size: 12px;
+			transform: translateY(-50%);
+		}
+	}
+	
+	&.focused {
+		.label-text {
+			font-size: 12px;
+			transform: translateY(-50%);
+		}
+	}
+	
+	.error-text {
+		color: $red-error;
+		font-size: 12px;
+		line-height: 1.3;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: -16px;
+	}
+	
+	&.error,
+	&.success {
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 2px;
+		}
+	}
+	
+	&.error {
+		&:after {
+			background-color: $red-error;
+		}
+		
+		.error-text {
+			display: block;
+		}
+	}
+	
+	&.success {
+		&:after {
+			background-color: $success;
+		}
+	}
+	
+	.error-text {
+		display: none;
+	}
+	
+}
+
+.inp-checkbox {
+	display: none;
+	
+	&:checked {
+		+ .label-checkbox {
+			&:before {
+				background-image: url(../images/inp-checkbox-active.svg);
+			}
+		}
+	}
+}
+
+.label-checkbox {
+	cursor: pointer;
+	position: relative;
+	color: $black !important;
+	padding-left: 20px;
+	display: block;
+	
+	@include responsive(device) {
+		font-size: .875rem;
+		line-height: 1.3;
+	}
+	
+	&:before {
+		content: '';
+		position: absolute;
+		width: 11px;
+		height: 11px;
+		background: url(../images/inp-checkbox.svg) 0 0 no-repeat;
+		left: 0;
+		
+		@include responsive(device) {
+			top: 4px;
+		}
+		
+		@include responsive(desktop) {
+			top: 8px;
+		}
+	}
+}
+
+.input-text {
+	font-size: .875rem;
+	width: 100%;
+	border: 0;
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+.contact-form {
+	padding-top: 30px;
+	
+	@include responsive(portdesktop) {
+		margin-top: 75px;
+	}
+	
+	@include responsive(tablet) {
+		max-width: 400px;
+	}
+	
+	@include responsive(desktop) {
+		max-width: 660px;
+	}
+
+	p {
+		margin-bottom: 40px;
+	}
+	
+	label {
+		color: $light-gray;
+		font-size: 12px;
+		line-height: 164%;
+		display: block;
+		margin-bottom: 3px;
+		font-family: Pangram, sans-serif;
+
+		span {
+			display: block;
+			font-family: Pangram, sans-serif;
+
+			span {
+				display: block;
+				margin-top: 3px;
+				font-family: Pangram, sans-serif;
+			}
+
+			input {
+				border: 0;
+				border-bottom: 1px solid $black;
+				display: block;
+				width: 100%;
+				background-color: transparent;
+				height: 40px;
+				font-size: 16px;
+				font-family: Pangram, sans-serif;
+				outline: none;
+			}
+		}
+		
+		textarea {
+			background-color: transparent;
+			width: 100%;
+			border: 0;
+			border-bottom: 1px solid $black;
+			resize: none;
+			outline: none;
+			font-size: 16px;
+			font-family: Pangram, sans-serif;
+			min-height: 80px;
+			
+			@include responsive(portdesktop) {
+				min-height: 100px;
+			}
+			
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+	
+	input[type="submit"] {
+		@extend .btn;
+		float: right;
+	}
+}
+
+
+.form-result {
+	clear: both;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	color: $light-gray;
+	font-size: 26px;
+	line-height: 150%;
+	padding: 60px 0;
+	
+	@include responsive(portdesktop) {
+		text-align: center;
+		padding: 140px 100px;
+	}
+	
+	@include responsive(tablet) {
+		max-width: 400px;
+	}
+	
+	@include responsive(desktop) {
+		max-width: 660px;
+	}
+}
+
+.input-text-search {
+	border: 0;
+	border-bottom: 1px solid $black;
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	height: 40px;
+	font-size: 16px;
+	font-family: Pangram, sans-serif;
+	outline: none;
 }

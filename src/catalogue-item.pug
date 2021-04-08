@@ -88,16 +88,10 @@ block content
 						.faq__questions
 							.accordion
 								each item, index in accordion
-									if index === 0
-										.section.active
-											a(class="section-title" href="#accordion-" + index)= item.question
-											div(id="accordion-" + index class="section-content opened")
-												p= item.answer
-									else
-										.section
-											a(class="section-title" href="#accordion-"+index )= item.question
-											div(id="accordion-"+index class="section-content")
-												p= item.answer
+									.section
+										a(class="section-title" href="#accordion-"+index )= item.question
+										div(id="accordion-"+index class="section-content")
+											p= item.answer
 
 
 			.catalog-item__other-toys

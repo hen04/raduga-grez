@@ -18,7 +18,7 @@ html(lang="en")
 			.loading-screen__svg
 				img(src="images/loading.svg")
 
-		.loading-content.hidden1
+		.loading-content.hidden
 			.checkout
 				.checkout__logo
 					a(href="index.html")
@@ -45,9 +45,9 @@ html(lang="en")
 										h4 Contact information
 										.input-field.error
 											label.label-text Email or mobile number
-											input(type="text" class="input-text")
+											input(type="text" class="input-text" value="adsfasdf")
 											span.error-text Invalid email format
-										.input-field
+										.input-field.input-field--checkout
 											input(type="checkbox" id="offers" class="inp-checkbox")
 											label(for="offers" class="label-checkbox") Keep me up to date on news and exclusive offers
 									.tabs__section
@@ -58,7 +58,7 @@ html(lang="en")
 											span.error-text This field is required
 										.input-field.error
 											label.label-text Address*
-											input(type="text" class="input-text" required)
+											input(type="text" class="input-text" value="Test address" required)
 											span.error-text This field is required
 										.input-field
 											label.label-text Appartament, suit, etc. (optional)
@@ -78,7 +78,7 @@ html(lang="en")
 												span.error-text This field is required
 									.form-buttons
 										a(class="back") Back
-										button(class="btn" disabled) Continue to Payment
+										button(class="btn js-tabs-btn") Continue to Payment
 							.tabs__item.tabs__item--payment
 								.user-info
 									.user-info__item
@@ -96,13 +96,13 @@ html(lang="en")
 									.user-info
 										.user-info__item
 											.user-info__result
-												.input-field
+												.input-field.input-field--checkout
 													input(type="radio" name="post" id="dhl" class="inp-checkbox")
 													label(for="dhl" class="label-checkbox") DHL Express
 											.user-info__price $70.00
 										.user-info__item
 											.user-info__result
-												.input-field
+												.input-field.input-field--checkout
 													input(type="radio" name="post" id="post" class="inp-checkbox")
 													label(for="post" class="label-checkbox") Post of Russia
 											.user-info__price $15.00
@@ -111,11 +111,11 @@ html(lang="en")
 									p Пока не понятно, как будет происходить оплата
 								.tabs__section
 									h4 Remember me
-									.input-field
+									.input-field.input-field--checkout
 										input(type="checkbox" id="save-info" class="inp-checkbox")
 										label(for="save-info" class="label-checkbox") Save this information for next time
 									.form-buttons
-										a(class="back") Back
+										a(class="back js-tabs-btn") Back
 										button(class="btn") Pay now
 				.checkout__footer
 					nav

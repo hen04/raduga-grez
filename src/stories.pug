@@ -1,0 +1,26 @@
+extends layout
+block header
+	.header-wrapper
+		include include/incl-header
+
+block content
+
+	main
+		.container
+			.stories
+				.stories__title
+					h1 Stories
+				.stories__list
+					each item in stories
+						a(href="stories-item.html").stories__item
+							.stories__img
+								img(src= item.img alt= item.title)
+							span.date= item.date
+							p= item.title
+				.pagination
+					.nav-links
+						a(class="prev page-numbers" href="https://raduga.cudnt.tk/stories/page/2") Prev
+						span(aria-current="page" class="page-numbers current") 1
+						a(class="page-numbers" href="https://raduga.cudnt.tk/stories/page/2") 2
+						a(class="page-numbers" href="https://raduga.cudnt.tk/stories/page/3") 3
+						a(class="next page-numbers" href="https://raduga.cudnt.tk/stories/page/2") Next

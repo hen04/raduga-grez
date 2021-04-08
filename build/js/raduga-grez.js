@@ -53,6 +53,10 @@ $(function() {
 			spaceBetween: 0,
 			loop: true,
 			loopFillGroupWithBlank: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
 			breakpoints: {
 				1024: {
 					autoplay: {
@@ -125,32 +129,20 @@ $(function() {
 		return false;
 	});
 
-	$(window).scroll(
-		{
-			previousTop: 0
-		},
-		function () {
-			var currentTop = $(window).scrollTop();
-
-			if (currentTop < this.previousTop) {
-				$('.header-wrapper').removeClass('out');
-			} else {
-				$('.header-wrapper').addClass('out');
-			}
-			this.previousTop = currentTop;
-		});
 
 	$('.section-title').on('click', function(e) {
 		e.preventDefault();
-		var currentLink = $(this).attr('href');
+		var currentUnswer = $(this).next();
 		if ($(e.target).parent().is('.active')) {
 			close_section();
 		} else {
 			close_section();
 			$(this).parent().addClass('active');
-			$('.accordion ' + currentLink).slideDown(350).addClass('open');
+			currentUnswer.slideDown(350).addClass('open');
 		}
 	});
+
+	$('.accordion .section').first().addClass('active');
 
 	function close_section() {
 		$('.accordion .section').removeClass('active');
@@ -188,34 +180,39 @@ $(function() {
 		$(this).parents().find('.tabs__item').toggleClass('active');
 	});
 
-
-
-	// https://codepen.io/pablopo/pen/KrBmad
-	let input = $(".input-field .inp-text");
-
-	input.val("");
-	input.focus(function() {
-		$(this).closest('form').find(".input-field.focused").removeClass("focused");
-		$(this).closest('.input-field').addClass('focused').removeClass('error');
+	$('.js-tabs-btn').on('click', function (){
+		$('.tabs__menu li').toggleClass('active');
+		$('.tabs__item').toggleClass('active');
 	});
-	input.blur(function() {
-		var val = $(this).val(),
-			ig = $(this).closest('.input-field'),
-			label = ig.find('label');
-		ig.removeClass('focused');
-		if (val !== "") {
-			label.addClass('focused');
-		} else {
-			label.removeClass('focused');
+
+	$('.label-text').on('click', function () {
+		$(this).parent().addClass('filled');
+		$(this).next().focus();
+	});
+
+	$('.input-text').on('focus', function (){
+		$(this).parent().addClass('filled');
+	});
+
+	$('.input-text').on('blur', function() {
+		if( $(this).val().length === 0 ) {
+			$(this).parent().removeClass('filled');
 		}
 	});
+
+	$('.input-field .input-text').each(function(index, value) {
+		var info = $(value).val();
+		if (info.length !== 0) {
+			$(value).parent().addClass('filled');
+		}
+	});
+
+
 
 	if ($('.js-simple-scroll').length) {
 		var el = document.querySelector('.js-simple-scroll');
 		SimpleScrollbar.initEl(el);
 	}
-
-
 
 	if ($('.js-fancybox').length) {
 		$(".js-fancybox").fancybox();
@@ -300,5 +297,15 @@ $(function() {
 		}
 
 	})
+
+	$('.js-search').on('click', function (){
+		$('.search-block').addClass('opened');
+		$('body').addClass('search-opened');
+	});
+
+	$('.js-close-search').on('click', function (){
+		$('.search-block').removeClass('opened');
+		$('body').removeClass('search-opened');
+	});
 
 });

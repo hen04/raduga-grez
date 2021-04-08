@@ -53,5 +53,13 @@ h2 {
 h4 {
 	font-family: "Pangram", sans-serif;
 	letter-spacing: 1px;
-	@include title(27px, 164%)
+	@include title(27px, 164%);
+}
+
+h5 {
+	font-family: "Pangram", sans-serif;
+	letter-spacing: 1px;
+	font-size: 21px;
+	line-height: 164%;
+	margin-bottom: 25px;
 }
