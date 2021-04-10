@@ -1473,64 +1473,71 @@ footer,
 	max-width: 1610px;
 	margin: 0 auto;
 	box-sizing: border-box;
-
+	
 	@include responsive(device) {
 		padding: 110px 26px 60px;
 	}
-
+	
 	@include responsive(desktop) {
 		padding: 210px 26px 60px;
 	}
-
+	
 	&__content {
 		width: 100%;
 		display: flex;
 		flex-flow: wrap;
 		justify-content: space-between;
 	}
-
+	
 	&__mail {
 		p {
 			color: $light-gray;
 			font-size: .875rem;
 			margin-bottom: 1.6rem;
 		}
-
+		
 		a {
 			text-decoration: none;
-			position: relative;
 			color: $black;
+			position: relative;
+			
+			&:after {
+				content: '';
+				transition: .4s;
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 100%;
+				height: 1px;
+				background-color: #292929;
+			}
 
+			&:hover {
+				&:after {
+					transform: scale(0);
+				}
+			}
+			
 			@include responsive(device) {
 				font-size: 21px;
 			}
-
+			
 			@include responsive(desktop) {
 				font-size: 24px;
 			}
-
-			&:after {
-				content: '';
-				left: 0;
-				right: 0;
-				position: absolute;
-				bottom: -5px;
-				height: 1px;
-				background-color: $black;
-			}
 		}
 	}
-
+	
 	&__menu {
 		@include responsive(mobile) {
 			width: 100%;
 			margin-top: 30px;
 		}
-
+		
 		@include responsive(portdesktop) {
 			width: 49%;
 		}
-
+		
 		nav {
 			display: flex;
 			flex-flow: wrap;
@@ -1544,43 +1551,43 @@ footer,
 				width: 50%;
 			}
 		}
-
+		
 		li {
 			color: $light-gray;
 			font-size: .875rem;
 			margin-bottom: .05rem;
-
+			
 			&:first-child {
 				margin-bottom: 1rem;
 			}
-
+			
 			a {
 				color: $black;
 				text-decoration: none;
 			}
 		}
 	}
-
+	
 	&__top {
 		color: $black;
 		font-size: .875rem;
 		width: 100%;
-
+		
 		@include responsive(device) {
 			margin-top: 100px;
 		}
-
+		
 		@include responsive(desktop) {
 			margin-top: 180px;
 		}
-
+		
 		span {
 			@include responsive(desktop) {
 				cursor: pointer;
 			}
 		}
 	}
-
+	
 	&__copyright {
 		width: 100%;
 		font-size: .875rem;
@@ -2089,6 +2096,52 @@ footer,
 	&__add-info {
 		display: flex;
 	}
+	
+	&__email {
+		margin-top: 50px;
+
+		p {
+			font-size: 14px;
+			margin-bottom: 18px;
+		}
+	}
+	
+	&__email-form {
+		position: relative;
+		max-width: 325px;
+		border-bottom: 1px solid $black;
+		display: flex;
+		align-items: center;
+		margin-bottom: 5px;
+
+		.inp-subscribe {
+			width: 100%;
+			color: $black;
+			font-size: 14px;
+			height: 24px;
+			padding: 0 40px 0 0;
+			font-family: 'Pangram', sans-serif;
+			
+			&::placeholder {
+				color: rgba($black, .35);
+			}
+		}
+
+		.submit-subscribe {
+			width: 25px;
+			height: 13px;
+			background: url(../images/arrow-dark.svg) 0 0/contain no-repeat;
+		}
+		
+	}
+	.form-message {
+		font-size: 14px;
+	}
+	
+	.error {
+		font-size: 14px;
+		color: #DB7662;
+	}
 }
 
 .share {
@@ -2375,6 +2428,9 @@ footer,
 
 .other-toys {
 	&__slider {
+		margin-left: -15px;
+		margin-right: -15px;
+
 		@include responsive(device) {
 			margin-top: 40px;
 		}
@@ -2538,7 +2594,8 @@ footer,
 		}
 
 		@include responsive(desktop) {
-			height: calc(100% - 208px);
+			height: calc(100vh - 208px);
+			overflow: hidden;
 		}
 	}
 	
@@ -3620,6 +3677,25 @@ footer,
 		a {
 			font-size: 24px;
 			color: $black;
+			text-decoration: none;
+			position: relative;
+			
+			&:after {
+				content: '';
+				transition: .4s;
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 100%;
+				height: 1px;
+				background-color: #292929;
+			}
+
+			&:hover {
+				&:after {
+					transform: scale(0);
+				}
+			}
 		}
 	}
 	
@@ -4640,6 +4716,13 @@ footer,
 					bottom: 0;
 					height: 2px;
 					background-color: $black;
+					transition: .4s;
+				}
+				
+				&:hover {
+					&:after {
+						transform: scale(0);
+					}
 				}
 			}
 		}
@@ -4748,7 +4831,7 @@ footer,
 }
 
 .search-block {
-	position: absolute;
+	position: fixed;
 	z-index: 100;
 	width: 100%;
 	left: 0;
