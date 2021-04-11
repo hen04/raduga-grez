@@ -540,7 +540,10 @@ body {
       font-size: 13px;
       color: #E1DFD3;
       background-color: #292929;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: .4s ease-in-out; }
+      .header__cart span:hover {
+        transform: scale(1.05); }
   .header__menu-desktop {
     display: none; }
     @media only screen and (min-width: 1280px) {
@@ -1432,7 +1435,8 @@ footer,
       min-height: 890px; } }
   @media only screen and (min-width: 1280px) {
     .join-us {
-      min-height: 1050px; } }
+      min-height: 1050px;
+      margin-top: -200px; } }
   .join-us__content {
     margin: auto auto 115px; }
     @media only screen and (max-width: 767px) {
@@ -1585,6 +1589,10 @@ footer,
     display: flex;
     padding-top: 250px;
     margin-bottom: 430px; } }
+
+.catalog-page__sticky {
+  position: sticky;
+  top: 0; }
 
 @media only screen and (max-width: 1279px) {
   .catalog-page__menu-mobile {
@@ -2893,7 +2901,8 @@ footer,
         max-width: 240px !important;
         transform: translate(25%, -25%); } }
   .about__foto-sm {
-    grid-area: fotoSm; }
+    grid-area: fotoSm;
+    z-index: 9; }
     @media only screen and (min-width: 1280px) {
       .about__foto-sm {
         padding-top: 100px;
@@ -3834,5 +3843,64 @@ footer,
 
 .woocommerce form .form-row .required {
   text-decoration: none; }
+
+#like-0,
+#like-1,
+#like-2 {
+  opacity: 0;
+  transition: opacity .4s .4s; }
+
+#like-1 {
+  transition: opacity .4s .8s; }
+
+#like-2 {
+  transition: opacity .4s 1.2s; }
+
+.main-likes__item.is-inview {
+  opacity: 1 !important; }
+
+#shipping-item-0,
+#shipping-item-1,
+#shipping-item-2,
+#shipping-item-3,
+#shipping-item-4,
+#shipping-item-5 {
+  opacity: 0;
+  transition: opacity .4s .4s; }
+
+#shipping-item-1 {
+  transition: opacity .4s .8s; }
+
+#shipping-item-2 {
+  transition: opacity .4s 1.2s; }
+
+#shipping-item-3 {
+  transition: opacity .4s 1.6s; }
+
+#shipping-item-4 {
+  transition: opacity .4s 2s; }
+
+#shipping-item-5 {
+  transition: opacity .4s 2.4s; }
+
+.shipping__item.is-inview {
+  opacity: 1 !important; }
+
+.catalog__item {
+  opacity: 0; }
+  .catalog__item.is-inview {
+    opacity: 1 !important; }
+
+#catalog-item-i {
+  border: 1px solid #000;
+  transition: opacity 0.4s i + 0.4s; }
+
+#catalog-item-i {
+  border: 1px solid #000;
+  transition: opacity 0.4s i + 0.4s; }
+
+#catalog-item-i {
+  border: 1px solid #000;
+  transition: opacity 0.4s i + 0.4s; }
 
 /*# sourceMappingURL=maps/raduga-grez.css.map */

@@ -1,8 +1,8 @@
 "use strict";
 
 $(window).on('load', function () {
-	$('.loading-screen').delay(4500).fadeOut('slow');
-	$('.loading-content').delay(4500).removeClass('hidden');
+	$('.loading-screen').delay(800).fadeOut('slow');
+	$('.loading-content').delay(800).removeClass('hidden');
 });
 
 
@@ -309,3 +309,5 @@ $(function() {
 	});
 
 });
+
+

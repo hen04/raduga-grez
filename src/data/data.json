@@ -175,7 +175,7 @@
 			"name": "Debra P.",
 			"place": "Tokyo, Japan",
 			"duration": "800",
-			"delay": "200"
+			"delay": "0.04"
 		},
 		{
 			"text": "“After having a baby I found that simple moments with family and friends was the best medicine, especially when feeling tired and adjusting to a new rhythm. “After having a baby I found that simple moments with family and friends was the best medicine, especially when feeling tired and adjusting to a new rhythm.”",
@@ -183,7 +183,7 @@
 			"name": "Natalia N.",
 			"place": "Moscow, Russia",
 			"duration": "1000",
-			"delay": "300"
+			"delay": "0.06"
 		},
 		{
 			"text": "“Having their company or watching your child be loved and cared for by the people who are most important to you is a beautiful.”",
@@ -191,7 +191,7 @@
 			"name": "Jenna K.",
 			"place": "Vienna, Austria",
 			"duration": "1200",
-			"delay": "400"
+			"delay": "0.08"
 		}
 	],
 	"catalog": [

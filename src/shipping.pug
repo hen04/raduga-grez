@@ -11,7 +11,7 @@ block content
 				.shipping__title
 					h1 Shipping
 				.shipping__content
-					each item in shipping
-						.shipping__item(data-aos="fade" data-aos-duration="400")
+					each item, i in shipping
+						.shipping__item(id="shipping-item-"+ i data-scroll data-scroll-repeat)
 							h4= item.heading
 							p= item.info
