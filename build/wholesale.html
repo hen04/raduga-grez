@@ -12,10 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js"></script>
     <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
     <script src="https://yastatic.net/share2/share.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
   <body>
@@ -152,89 +152,92 @@
         <div class="cart-sm__total-price"><span>Subtotal</span><span>$95.00</span></div><a class="btn" href="checkout.html">Proceed to checkout</a>
       </div>
     </div>
-    <main>
-      <div class="container">
-        <div class="wholesale">
-          <div class="wholesale__img"><img src="images/content/wholesale-1.jpg" alt=""></div>
-          <div class="wholesale__info">
-            <p>We make toys by hand and in small batches. At the moment our workshop is full with our current clients’ orders and we hardly take new wholesale customers. The exception can be made to the countries where we are not or quite little represented, or if we dream of having our toys in your shop.</p>
-            <p>If you want to work wholesale with us please send an email with some information about you and your shop</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
-          </div>
-          <div class="wholesale__img-center">
-            <div data-aos="fade" data-aos-duration="400"><img src="images/content/wholesale-2.jpg" alt=""></div>
-          </div>
-          <div class="wholesale__img-footer">
-            <div data-aos="fade" data-aos-duration="400"><img src="images/content/wholesale-3.jpg" alt=""></div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <div class="join-us">
-      <div class="join-us__content">
-        <h2 data-aos="fade" data-aos-duration="800">Join our newsletter</h2>
-        <form>
-          <div class="join-us-form" data-aos="fade" data-aos-duration="1000" data-aos-delay="400">
-            <input class="inp-subscribe" type="text" placeholder="email">
-            <input class="submit-subscribe" type="submit" value="">
-            <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
-              <!--span.error Enter your correct email-->
+    <div class="container-animation" data-scroll-container="">
+      <main>
+        <div class="container">
+          <div class="wholesale">
+            <div class="wholesale__img"><img src="images/content/wholesale-1.jpg" alt=""></div>
+            <div class="wholesale__info">
+              <p>We make toys by hand and in small batches. At the moment our workshop is full with our current clients’ orders and we hardly take new wholesale customers. The exception can be made to the countries where we are not or quite little represented, or if we dream of having our toys in your shop.</p>
+              <p>If you want to work wholesale with us please send an email with some information about you and your shop</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
             </div>
+            <div class="wholesale__img-center"><img src="images/content/wholesale-2.jpg" alt=""></div>
+            <div class="wholesale__img-footer"><img src="images/content/wholesale-3.jpg" alt=""></div>
           </div>
-        </form>
+        </div>
+      </main>
+      <div class="join-us" data-scroll="" data-scroll-speed="2">
+        <div class="join-us__content" data-scroll="" data-scroll-speed="1">
+          <h2>Join our newsletter</h2>
+          <form>
+            <div class="join-us-form">
+              <input class="inp-subscribe" type="text" placeholder="email">
+              <input class="submit-subscribe" type="submit" value="">
+              <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
+                <!--span.error Enter your correct email-->
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__mail">
+            <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
+          </div>
+          <div class="footer__menu">
+            <nav>
+              <ul class="footer-menu">
+                <li>About</li>
+                <li><a href="about-us.html">About us</a>
+                </li>
+                <li><a href="stories.html">Stories</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Customer Service</li>
+                <li><a href="shipping.html">Shipping</a>
+                </li>
+                <li><a href="wholesale.html">Wholesale</a>
+                </li>
+                <li><a href="">Terms &amp; Conditions</a>
+                </li>
+                <li><a href="faq.html">FAQ</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Contact</li>
+                <li><a href="contact-us.html">Contact us</a>
+                </li>
+                <li><a href="stockist.html">Stockist</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Social media</li>
+                <li><a href="" target="_blank">Instagram</a>
+                </li>
+                <li><a href="" target="_blank">Facebook</a>
+                </li>
+                <li><a href="" target="_blank">Pinterest</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__top"><span class="js-top" id="button-top">Back to Top</span></div>
+          <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
+        </div>
+        <div class="cookies-info">
+          <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
+          <button class="js-accept" type="button">Accept</button>
+        </div>
+      </footer>
+      <div class="overlay"></div>
     </div>
-    <footer class="footer">
-      <div class="footer__content">
-        <div class="footer__mail" data-aos="fade" data-aos-duration="800">
-          <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
-        </div>
-        <div class="footer__menu">
-          <nav>
-            <ul class="footer-menu" data-aos="fade" data-aos-duration="600" data-aos-delay="50">
-              <li>About</li>
-              <li><a href="about-us.html">About us</a>
-              </li>
-              <li><a href="stories.html">Stories</a>
-              </li>
-            </ul>
-            <ul class="footer-menu" data-aos="fade" data-aos-duration="700" data-aos-delay="100">
-              <li>Customer Service</li>
-              <li><a href="shipping.html">Shipping</a>
-              </li>
-              <li><a href="wholesale.html">Wholesale</a>
-              </li>
-              <li><a href="">Terms &amp; Conditions</a>
-              </li>
-              <li><a href="faq.html">FAQ</a>
-              </li>
-            </ul>
-            <ul class="footer-menu" data-aos="fade" data-aos-duration="800" data-aos-delay="150">
-              <li>Contact</li>
-              <li><a href="contact-us.html">Contact us</a>
-              </li>
-              <li><a href="stockist.html">Stockist</a>
-              </li>
-            </ul>
-            <ul class="footer-menu" data-aos="fade" data-aos-duration="900" data-aos-delay="200">
-              <li>Social media</li>
-              <li><a href="" target="_blank">Instagram</a>
-              </li>
-              <li><a href="" target="_blank">Facebook</a>
-              </li>
-              <li><a href="" target="_blank">Pinterest</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="footer__top"><span class="js-top" id="button-top" data-aos="fade" data-aos-duration="600" data-aos-delay="400">Back to Top</span></div>
-        <div class="footer__copyright" data-aos="fade" data-aos-duration="600" data-aos-delay="400">&copy; 2020 All rights reserved RADUGA GRËZ</div>
-      </div>
-      <div class="cookies-info">
-        <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
-        <button class="js-accept" type="button">Accept</button>
-      </div>
-    </footer>
-    <div class="overlay"></div>
     <script src="js/raduga-grez.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="js/animation.js"></script>
   </body>
 </html>

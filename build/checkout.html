@@ -9,8 +9,10 @@
     <meta name="keywords" content="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js"></script>
     <script src="js/lib/jquery.fancybox.min.js"></script>
     <link rel="stylesheet" href="css/lib/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css">
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
   <body class="loading1">
@@ -27,7 +29,7 @@
               <div class="cart-sm__header">
                 <h4>Your Cart (4)</h4>
               </div>
-              <div class="cart-sm__list">
+              <div class="cart-sm__list js-simple-scroll">
                 <div class="cart-sm__item">
                   <div class="cart-sm__img"><a href="catalogue-item.html"><img src="images/content/cart-1.jpg" alt=""></a></div>
                   <div class="cart-sm__content">
@@ -223,8 +225,9 @@
       <div class="apply-promocode" style="display: none;" id="hidden-content">
         <h4>Apply a promocode</h4>
         <form action="#">
-          <div class="input-field error">
-            <input class="inp-promocode" type="text" value="128734628763" placeholder="Promocode"><span class="error-text">Your promo code is invalid, please check and try again.</span>
+          <div class="input-field error1">
+            <input class="inp-promocode" type="text" value="128734628763" placeholder="Promocode">
+            <!--span.error-text Your promo code is invalid, please check and try again.-->
           </div>
           <button class="btn" type="submit">Apply</button>
         </form>

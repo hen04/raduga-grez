@@ -12,10 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js"></script>
     <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
     <script src="https://yastatic.net/share2/share.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
   <body>
@@ -152,115 +152,112 @@
         <div class="cart-sm__total-price"><span>Subtotal</span><span>$95.00</span></div><a class="btn" href="checkout.html">Proceed to checkout</a>
       </div>
     </div>
-    <main>
-      <div class="about">
-        <div class="about__header" data-aos="fade" data-aos-duration="600">
-          <h1>Toys for modern families</h1>
-          <p>We create toys for mothers, who want to play with their children in an aesthetically way and not to feel bored about play</p>
-        </div>
-        <div class="about__content-sm">
-          <div class="about__content-sm-img-lg">
-            <div data-aos="fade" data-aos-duration="600"><img src="images/content/about-6.jpg" alt=""></div>
+    <div class="container-animation" data-scroll-container="">
+      <main>
+        <div class="about">
+          <div class="about__header">
+            <h1>Toys for modern families</h1>
+            <p>We create toys for mothers, who want to play with their children in an aesthetically way and not to feel bored about play</p>
           </div>
-          <div class="about__content-sm-img-sm">
-            <div data-aos="fade" data-aos-duration="600"><img src="images/content/about-4.jpg" alt=""></div>
-          </div>
-          <div class="about__content-sm-text">
-            <div data-aos="fade" data-aos-duration="600">
+          <div class="about__content-sm">
+            <div class="about__content-sm-img-lg"><img src="images/content/about-6.jpg" alt=""></div>
+            <div class="about__content-sm-img-sm" data-scroll="" data-scroll-speed="1"><img src="images/content/about-4.jpg" alt=""></div>
+            <div class="about__content-sm-text" data-scroll="" data-scroll-speed="2">
               <h2>Meant<br> to bring together</h2>
               <p>We will help to play with joy, to make the days of motherhood more diverse and peaceful, and to develop creativity in your children.</p>
             </div>
           </div>
-        </div>
-        <div class="about__content-col">
-          <div data-aos="fade" data-aos-duration="400">
+          <div class="about__content-col">
             <div class="about__content-col-img-lg"><img src="images/content/about-5.jpg" alt=""></div>
-          </div>
-          <div data-aos="fade" data-aos-duration="200">
-            <div class="about__content-col-img-sm"><img src="images/content/about-7.jpg" alt=""></div>
-          </div>
-          <div data-aos="fade" data-aos-duration="400">
-            <h2>Made of true wood with it’s natural patterns</h2>
-          </div>
-          <div class="about-col" data-aos="fade" data-aos-duration="400">
-            <p>Our toys are made in Russia, by hand and in small batches. We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier. We are strongly against wood wasting and we use the wood with marks on it.</p>
-            <p>We think they look so natural, like moles, freckles or stretch marks which people have. Our toys are coated with water based varnish which keeps the natural pattern of the wood and preserves its tactility. All our toys are so pleasant to touch.</p>
-          </div>
-        </div>
-        <div data-aos="fade" data-aos-duration="400">
-          <div class="about__foto-md"><img src="images/content/about-8.jpg" alt=""></div>
-        </div>
-        <div data-aos="fade" data-aos-duration="400">
-          <div class="about__foto-sm"><img src="images/content/about-9.jpg" alt=""></div>
-        </div>
-      </div>
-    </main>
-    <div class="join-us">
-      <div class="join-us__content">
-        <h2 data-aos="fade" data-aos-duration="800">Join our newsletter</h2>
-        <form>
-          <div class="join-us-form" data-aos="fade" data-aos-duration="1000" data-aos-delay="400">
-            <input class="inp-subscribe" type="text" placeholder="email">
-            <input class="submit-subscribe" type="submit" value="">
-            <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
-              <!--span.error Enter your correct email-->
+            <div data-scroll="" data-scroll-speed="1">
+              <div class="about__content-col-img-sm"><img src="images/content/about-7.jpg" alt=""></div>
+            </div>
+            <div data-scroll="" data-scroll-speed="1">
+              <h2>Made of true wood with it’s natural patterns</h2>
+            </div>
+            <div class="about-col">
+              <p>Our toys are made in Russia, by hand and in small batches. We produce ethical toys that will never serve a bad example for your children. We use only solid wood grown in our region and we buy it from a responsible supplier. We are strongly against wood wasting and we use the wood with marks on it.</p>
+              <p>We think they look so natural, like moles, freckles or stretch marks which people have. Our toys are coated with water based varnish which keeps the natural pattern of the wood and preserves its tactility. All our toys are so pleasant to touch.</p>
             </div>
           </div>
-        </form>
+          <div data-scroll="" data-scroll-speed="1">
+            <div class="about__foto-md"><img src="images/content/about-8.jpg" alt=""></div>
+          </div>
+          <div class="about__foto-sm"><img src="images/content/about-9.jpg" alt=""></div>
+        </div>
+      </main>
+      <div class="join-us" data-scroll="" data-scroll-speed="2">
+        <div class="join-us__content" data-scroll="" data-scroll-speed="1">
+          <h2>Join our newsletter</h2>
+          <form>
+            <div class="join-us-form">
+              <input class="inp-subscribe" type="text" placeholder="email">
+              <input class="submit-subscribe" type="submit" value="">
+              <div class="join-us-form__info d-none"><span>Thanks for subscribing!</span>
+                <!--span.error Enter your correct email-->
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__mail">
+            <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
+          </div>
+          <div class="footer__menu">
+            <nav>
+              <ul class="footer-menu">
+                <li>About</li>
+                <li><a href="about-us.html">About us</a>
+                </li>
+                <li><a href="stories.html">Stories</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Customer Service</li>
+                <li><a href="shipping.html">Shipping</a>
+                </li>
+                <li><a href="wholesale.html">Wholesale</a>
+                </li>
+                <li><a href="">Terms &amp; Conditions</a>
+                </li>
+                <li><a href="faq.html">FAQ</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Contact</li>
+                <li><a href="contact-us.html">Contact us</a>
+                </li>
+                <li><a href="stockist.html">Stockist</a>
+                </li>
+              </ul>
+              <ul class="footer-menu">
+                <li>Social media</li>
+                <li><a href="" target="_blank">Instagram</a>
+                </li>
+                <li><a href="" target="_blank">Facebook</a>
+                </li>
+                <li><a href="" target="_blank">Pinterest</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__top"><span class="js-top" id="button-top">Back to Top</span></div>
+          <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
+        </div>
+        <div class="cookies-info">
+          <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
+          <button class="js-accept" type="button">Accept</button>
+        </div>
+      </footer>
+      <div class="overlay"></div>
     </div>
-    <footer class="footer">
-      <div class="footer__content">
-        <div class="footer__mail" data-aos="fade" data-aos-duration="800">
-          <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
-        </div>
-        <div class="footer__menu">
-          <nav>
-            <ul class="footer-menu" data-aos="fade" data-aos-duration="600" data-aos-delay="50">
-              <li>About</li>
-              <li><a href="about-us.html">About us</a>
-              </li>
-              <li><a href="stories.html">Stories</a>
-              </li>
-            </ul>
-            <ul class="footer-menu" data-aos="fade" data-aos-duration="700" data-aos-delay="100">
-              <li>Customer Service</li>
-              <li><a href="shipping.html">Shipping</a>
-              </li>
-              <li><a href="wholesale.html">Wholesale</a>
-              </li>
-              <li><a href="">Terms &amp; Conditions</a>
-              </li>
-              <li><a href="faq.html">FAQ</a>
-              </li>
-            </ul>
-            <ul class="footer-menu" data-aos="fade" data-aos-duration="800" data-aos-delay="150">
-              <li>Contact</li>
-              <li><a href="contact-us.html">Contact us</a>
-              </li>
-              <li><a href="stockist.html">Stockist</a>
-              </li>
-            </ul>
-            <ul class="footer-menu" data-aos="fade" data-aos-duration="900" data-aos-delay="200">
-              <li>Social media</li>
-              <li><a href="" target="_blank">Instagram</a>
-              </li>
-              <li><a href="" target="_blank">Facebook</a>
-              </li>
-              <li><a href="" target="_blank">Pinterest</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="footer__top"><span class="js-top" id="button-top" data-aos="fade" data-aos-duration="600" data-aos-delay="400">Back to Top</span></div>
-        <div class="footer__copyright" data-aos="fade" data-aos-duration="600" data-aos-delay="400">&copy; 2020 All rights reserved RADUGA GRËZ</div>
-      </div>
-      <div class="cookies-info">
-        <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
-        <button class="js-accept" type="button">Accept</button>
-      </div>
-    </footer>
-    <div class="overlay"></div>
     <script src="js/raduga-grez.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="js/animation.js"></script>
   </body>
 </html>

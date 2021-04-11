@@ -9,8 +9,10 @@ html(lang="en")
 		meta(name="keywords" content="")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
 		script(src="https://unpkg.com/current-device/umd/current-device.min.js")
+		script(src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js")
 		script(src="js/lib/jquery.fancybox.min.js")
 		link(rel="stylesheet" href="css/lib/jquery.fancybox.min.css")
+		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css")
 		link(rel="stylesheet" href="css/raduga-grez.css")
 
 	body.loading1
@@ -130,9 +132,9 @@ html(lang="en")
 			div(style="display: none;" id="hidden-content" class="apply-promocode")
 				h4 Apply a promocode
 				form(action="#")
-					.input-field.error
+					.input-field.error1
 						input(type="text" class="inp-promocode" value="128734628763" placeholder="Promocode")
-						span.error-text Your promo code is invalid, please check and try again.
+						//span.error-text Your promo code is invalid, please check and try again.
 					button(type="submit" class="btn") Apply
 
 

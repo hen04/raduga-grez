@@ -245,6 +245,11 @@ body {
 			color: $beige1;
 			background-color: $black;
 			cursor: pointer;
+			transition: .4s ease-in-out;
+
+			&:hover {
+				transform: scale(1.05);
+			}
 		}
 	}
 	
@@ -1419,6 +1424,7 @@ footer,
 
 	@include responsive(desktop) {
 		min-height: 1050px;
+		margin-top: -200px;
 	}
 
 	&__content {
@@ -1473,64 +1479,71 @@ footer,
 	max-width: 1610px;
 	margin: 0 auto;
 	box-sizing: border-box;
-
+	
 	@include responsive(device) {
 		padding: 110px 26px 60px;
 	}
-
+	
 	@include responsive(desktop) {
 		padding: 210px 26px 60px;
 	}
-
+	
 	&__content {
 		width: 100%;
 		display: flex;
 		flex-flow: wrap;
 		justify-content: space-between;
 	}
-
+	
 	&__mail {
 		p {
 			color: $light-gray;
 			font-size: .875rem;
 			margin-bottom: 1.6rem;
 		}
-
+		
 		a {
 			text-decoration: none;
-			position: relative;
 			color: $black;
+			position: relative;
+			
+			&:after {
+				content: '';
+				transition: .4s;
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 100%;
+				height: 1px;
+				background-color: #292929;
+			}
 
+			&:hover {
+				&:after {
+					transform: scale(0);
+				}
+			}
+			
 			@include responsive(device) {
 				font-size: 21px;
 			}
-
+			
 			@include responsive(desktop) {
 				font-size: 24px;
 			}
-
-			&:after {
-				content: '';
-				left: 0;
-				right: 0;
-				position: absolute;
-				bottom: -5px;
-				height: 1px;
-				background-color: $black;
-			}
 		}
 	}
-
+	
 	&__menu {
 		@include responsive(mobile) {
 			width: 100%;
 			margin-top: 30px;
 		}
-
+		
 		@include responsive(portdesktop) {
 			width: 49%;
 		}
-
+		
 		nav {
 			display: flex;
 			flex-flow: wrap;
@@ -1544,43 +1557,43 @@ footer,
 				width: 50%;
 			}
 		}
-
+		
 		li {
 			color: $light-gray;
 			font-size: .875rem;
 			margin-bottom: .05rem;
-
+			
 			&:first-child {
 				margin-bottom: 1rem;
 			}
-
+			
 			a {
 				color: $black;
 				text-decoration: none;
 			}
 		}
 	}
-
+	
 	&__top {
 		color: $black;
 		font-size: .875rem;
 		width: 100%;
-
+		
 		@include responsive(device) {
 			margin-top: 100px;
 		}
-
+		
 		@include responsive(desktop) {
 			margin-top: 180px;
 		}
-
+		
 		span {
 			@include responsive(desktop) {
 				cursor: pointer;
 			}
 		}
 	}
-
+	
 	&__copyright {
 		width: 100%;
 		font-size: .875rem;
@@ -1634,6 +1647,11 @@ footer,
 		margin-bottom: 430px;
 	}
 
+	&__sticky {
+		position: sticky;
+		top: 0;
+	}
+	
 	&__menu-mobile {
 		@include responsive(device) {
 			position: relative;
@@ -2089,6 +2107,52 @@ footer,
 	&__add-info {
 		display: flex;
 	}
+	
+	&__email {
+		margin-top: 50px;
+
+		p {
+			font-size: 14px;
+			margin-bottom: 18px;
+		}
+	}
+	
+	&__email-form {
+		position: relative;
+		max-width: 325px;
+		border-bottom: 1px solid $black;
+		display: flex;
+		align-items: center;
+		margin-bottom: 5px;
+
+		.inp-subscribe {
+			width: 100%;
+			color: $black;
+			font-size: 14px;
+			height: 24px;
+			padding: 0 40px 0 0;
+			font-family: 'Pangram', sans-serif;
+			
+			&::placeholder {
+				color: rgba($black, .35);
+			}
+		}
+
+		.submit-subscribe {
+			width: 25px;
+			height: 13px;
+			background: url(../images/arrow-dark.svg) 0 0/contain no-repeat;
+		}
+		
+	}
+	.form-message {
+		font-size: 14px;
+	}
+	
+	.error {
+		font-size: 14px;
+		color: #DB7662;
+	}
 }
 
 .share {
@@ -2375,6 +2439,9 @@ footer,
 
 .other-toys {
 	&__slider {
+		margin-left: -15px;
+		margin-right: -15px;
+
 		@include responsive(device) {
 			margin-top: 40px;
 		}
@@ -2538,7 +2605,8 @@ footer,
 		}
 
 		@include responsive(desktop) {
-			height: calc(100% - 208px);
+			height: calc(100vh - 208px);
+			overflow: hidden;
 		}
 	}
 	
@@ -3473,6 +3541,7 @@ footer,
 	
 	&__foto-sm {
 		grid-area: fotoSm;
+		z-index: 9;
 
 		@include responsive(desktop) {
 			padding-top: 100px;
@@ -3620,6 +3689,25 @@ footer,
 		a {
 			font-size: 24px;
 			color: $black;
+			text-decoration: none;
+			position: relative;
+			
+			&:after {
+				content: '';
+				transition: .4s;
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 100%;
+				height: 1px;
+				background-color: #292929;
+			}
+
+			&:hover {
+				&:after {
+					transform: scale(0);
+				}
+			}
 		}
 	}
 	
@@ -4640,6 +4728,13 @@ footer,
 					bottom: 0;
 					height: 2px;
 					background-color: $black;
+					transition: .4s;
+				}
+				
+				&:hover {
+					&:after {
+						transform: scale(0);
+					}
 				}
 			}
 		}
@@ -4748,7 +4843,7 @@ footer,
 }
 
 .search-block {
-	position: absolute;
+	position: fixed;
 	z-index: 100;
 	width: 100%;
 	left: 0;
@@ -4856,4 +4951,79 @@ footer,
 
 .woocommerce form .form-row .required {
 	text-decoration: none;
+}
+
+#like-0,
+#like-1,
+#like-2 {
+	opacity: 0;
+	transition: opacity .4s .4s;
+}
+#like-1 {
+	transition: opacity .4s .8s;
+}
+#like-2 {
+	transition: opacity .4s 1.2s;
+}
+.main-likes__item {
+	&.is-inview {
+		opacity: 1 !important;
+	}
+}
+
+#shipping-item-0,
+#shipping-item-1,
+#shipping-item-2,
+#shipping-item-3,
+#shipping-item-4,
+#shipping-item-5{
+	opacity: 0;
+	transition: opacity .4s .4s;
+}
+#shipping-item-1 {
+	transition: opacity .4s .8s;
+}
+#shipping-item-2 {
+	transition: opacity .4s 1.2s;
+}
+#shipping-item-3 {
+	transition: opacity .4s 1.6s;
+}
+#shipping-item-4 {
+	transition: opacity .4s 2s;
+}
+#shipping-item-5 {
+	transition: opacity .4s 2.4s;
+}
+
+.shipping__item {
+	&.is-inview {
+		opacity: 1 !important;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.catalog__item {
+	opacity: 0;
+
+	&.is-inview {
+		opacity: 1 !important;
+	}
+}
+
+@for $i from 1 through 3 {
+	#catalog-item-#{i} {
+		border: 1px solid #000;
+		transition: opacity .4s #{i} + .4s;
+	}
 }

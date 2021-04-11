@@ -7,9 +7,9 @@ block content
 
 	main
 		.container
-			.catalog-page
+			.catalog-page#fixed-target
 				.catalog-page__menu-mobile.js-catalog-menu Back to catalogue menu
-				.catalog-page__menu
+				.catalog-page__menu(data-scroll data-scroll-sticky)
 					each item in menuCatalog
 						ul.menu-catalog
 							li= item.header
@@ -25,8 +25,8 @@ block content
 						h1 Arch stackers
 					.catalog
 						.catalog__list
-							each item in catalog
-								.catalog__item
+							each item, i in catalog
+								.catalog__item(id="catalog-item-"+ i data-scroll data-scroll-repeat)
 									a(href="catalogue-item.html")
 										.catalog__image
 											img(alt="" src= item.img)

@@ -1,0 +1,124 @@
+extends layout
+block header
+	.header-wrapper
+		include include/incl-header
+
+block content
+
+	main
+		.catalog-item
+			.catalog-item__about
+				.about-goods
+					.about-goods__top
+						ul.breadcrumbs
+							li
+								a(href="") All
+							li
+								a(href="") Building blocks
+						.about-goods__title
+							h1 Apartment building blocks set colored
+
+							.share.share--desktop.js-share Share
+								span.icon
+								.share__buttons
+									.ya-share2(data-curtain data-lang="en" data-direction="vertical" data-color-scheme="whiteblack" data-services="facebook,twitter")
+						.about-goods__price $50.00
+					.about-goods__slider
+						.swiper-container.js-slider-about
+							.swiper-wrapper
+								.swiper-slide
+									img(src="images/content/slider-2.jpg")
+								.swiper-slide
+									img(src="images/content/slider-3.jpg")
+								.swiper-slide
+									img(src="images/content/slider-4.jpg")
+							.swiper-button-next
+							.swiper-button-prev
+
+					.about-goods__info
+						.about-goods__description
+							p Toys as art. Each game will be aesthetic. Do not limit imagination. Timeless toy. Modern block inspired by art and architecture. Made in colors which perfect to kids rooms. Terracota, clay, olive, mustard, pink and white.
+
+						.about-goods__add-info
+							button(class="btn" disabled) Out of stock
+
+						.about-goods__email
+							p Email me when this item is back in stock!
+							form
+								.about-goods__email-form
+									input(type="text" placeholder="Email" class="inp-subscribe")
+									input(type="submit" class="submit-subscribe" value="")
+								.d-none
+									span.form-message We will be in touch when this item arrives!
+									//span.error Enter your correct email
+
+						.share.share--mobile.js-share Share
+							span.icon
+							.share__buttons
+								.ya-share2(data-curtain data-lang="en" data-direction="vertical" data-color-scheme="whiteblack" data-services="facebook,twitter")
+			.catalog-item__details
+				.container
+					.catalog-details
+						.catalog-details__heading
+							h2 Product<br> details
+						.catalog-details__content
+							h5 Materials
+							p Made in Russia manually by third-generation carpenters. Made from solid wood and non toxic waterbased paint. Wood purchased from a responsible supplier.
+							h5 Dimensions
+							p The blocks are packed in a cotton pouch for storage. The bag is sewn in our studio by hand from Belarusian flax.
+							h5 Production
+							p The shades may differ from the shades on the screen. Tree-specific spots or streaks of wood are possible. Details and size may vary slightly as this is handmade.
+							h5 Features
+							p I made these blocks because women's bodies are full of beauty and power as much as all treasures made by nature.
+
+			.catalog-item__description
+				.goods-description
+					.goods-description__img
+						img(src="images/content/catalog-item.jpg" alt="")
+					.goods-description__info
+						.goods-description__info-floating
+							h2 How to use?
+							p After a year, your baby's imaginative thinking is connected - what if you use discs as building material? And if you insert it into the holes of Rainbow Dwarfs - what does it look like? Maybe the Dwarves have sailed somewhere on fairytale boats... Here the creativity is already turned on, and imagination.
+							p - And also disks-hearts can be used as a stencil while drawing
+							p - To string them on a ribbon or a lanyard
+							p - To try to put them on each other, to sort them according to the sizes with closed eyes
+							p In general, the toy is simple in appearance, and the potential for the development of the child inexhaustible.
+
+
+			.catalog-item__faq
+				.container
+					.faq
+						.faq__title
+							h2 faq
+						.faq__questions
+							.accordion
+								each item, index in accordion
+									.section
+										a(class="section-title" href="#accordion-"+index )= item.question
+										div(id="accordion-"+index class="section-content")
+											p= item.answer
+
+
+			.catalog-item__other-toys
+				.container
+					.other-toys
+						h2 Other<br> fine toys
+						.other-toys__slider
+							.swiper-container.swiper-slider
+								.swiper-wrapper
+									each item in catalog
+										.swiper-slide.catalog
+											.catalog__item
+												a(href="catalogue-item.html")
+													.catalog__image
+														img(alt="" src= item.img)
+													.catalog__content
+														.catalog__category= item.category
+														.catalog__info
+															.catalog__name= item.name
+															.catalog__price= item.price
+												a(href="#" class="add-to-cart") Add to cart
+								.swiper-pagination
+
+
+
