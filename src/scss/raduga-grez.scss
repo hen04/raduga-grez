@@ -5001,29 +5001,3 @@ footer,
 		opacity: 1 !important;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.catalog__item {
-	opacity: 0;
-
-	&.is-inview {
-		opacity: 1 !important;
-	}
-}
-
-@for $i from 1 through 3 {
-	#catalog-item-#{i} {
-		border: 1px solid #000;
-		transition: opacity .4s #{i} + .4s;
-	}
-}

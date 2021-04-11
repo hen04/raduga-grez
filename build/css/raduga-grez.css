@@ -3886,21 +3886,4 @@ footer,
 .shipping__item.is-inview {
   opacity: 1 !important; }
 
-.catalog__item {
-  opacity: 0; }
-  .catalog__item.is-inview {
-    opacity: 1 !important; }
-
-#catalog-item-i {
-  border: 1px solid #000;
-  transition: opacity 0.4s i + 0.4s; }
-
-#catalog-item-i {
-  border: 1px solid #000;
-  transition: opacity 0.4s i + 0.4s; }
-
-#catalog-item-i {
-  border: 1px solid #000;
-  transition: opacity 0.4s i + 0.4s; }
-
 /*# sourceMappingURL=maps/raduga-grez.css.map */
