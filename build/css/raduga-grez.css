@@ -406,7 +406,7 @@ html {
     top: 0;
     bottom: 0;
     width: 100%;
-    animation: loading 5s .5s forwards; }
+    animation: loading 5s .5s 10 forwards; }
 
 @keyframes loading {
   0% {
@@ -3885,5 +3885,8 @@ footer,
 
 .shipping__item.is-inview {
   opacity: 1 !important; }
+
+.c-scrollbar {
+  z-index: 999; }
 
 /*# sourceMappingURL=maps/raduga-grez.css.map */

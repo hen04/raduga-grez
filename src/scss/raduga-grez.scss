@@ -41,7 +41,7 @@ html {
 		top: 0;
 		bottom: 0;
 		width: 100%;
-		animation: loading 5s .5s forwards;
+		animation: loading 5s .5s 10 forwards;
 	}
 }
 
@@ -5000,4 +5000,8 @@ footer,
 	&.is-inview {
 		opacity: 1 !important;
 	}
+}
+
+.c-scrollbar {
+	z-index: 999;
 }
