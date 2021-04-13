@@ -2146,12 +2146,17 @@ footer,
 		
 	}
 	.form-message {
-		font-size: 14px;
+		font-size: 14px !important;
 	}
 	
-	.error {
-		font-size: 14px;
-		color: #DB7662;
+	.error,
+	.cwginstockerror {
+		font-size: 14px !important;
+		color: #DB7662 !important;
+	}
+	
+	.blockUI.blockOverlay {
+		display: none !important;
 	}
 }
 

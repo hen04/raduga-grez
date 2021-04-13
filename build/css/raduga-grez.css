@@ -1965,11 +1965,15 @@ footer,
     background: url(../images/arrow-dark.svg) 0 0/contain no-repeat; }
 
 .about-goods .form-message {
-  font-size: 14px; }
+  font-size: 14px !important; }
 
-.about-goods .error {
-  font-size: 14px;
-  color: #DB7662; }
+.about-goods .error,
+.about-goods .cwginstockerror {
+  font-size: 14px !important;
+  color: #DB7662 !important; }
+
+.about-goods .blockUI.blockOverlay {
+  display: none !important; }
 
 .share {
   position: relative; }
