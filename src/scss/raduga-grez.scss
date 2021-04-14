@@ -583,7 +583,31 @@ body {
 
 .main-index {
 	min-height: 100vh;
-	background: #5C6240 url(../images/main-bg.jpg) 50% 0/cover no-repeat;
+	position: relative;
+
+	&__img {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: #5C6240 url(../images/main-bg.jpg) 50% 0/cover no-repeat;
+		transform: scale(1.12694);
+		
+		&.animate {
+			animation: img 2s forwards 1s;
+		}
+	}
+}
+
+@keyframes img {
+	0% {
+		transform: scale(1.12694);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 
@@ -1421,7 +1445,19 @@ footer,
 
 .join-us {
 	display: flex;
-	background: url(../images/join-us-bg.jpg) 50% 0/cover no-repeat;
+	transition: all .8s;
+	position: relative;
+
+	&__img {
+		transform: scale(1.12694);
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: url(../images/join-us-bg.jpg) 50% 0/cover no-repeat;
+	}
 
 	@include responsive(mobile) {
 		background-position: 50% 100%;
@@ -1454,6 +1490,10 @@ footer,
 			text-align: center;
 			margin-bottom: 50px;
 		}
+	}
+	
+	&.is-inview {
+		animation: img 2s forwards;
 	}
 }
 
@@ -1506,7 +1546,7 @@ footer,
 	}
 	
 	&__mail {
-		transition: opacity 1s;
+		transition: opacity 1s 1s;
 		opacity: 0;
 		
 		&.is-inview {
@@ -1582,16 +1622,16 @@ footer,
 			}
 			
 			&[delay='0'] {
-				transition: opacity 1s 1s;
-			}
-			&[delay='1'] {
 				transition: opacity 1s 2s;
 			}
-			&[delay='2'] {
+			&[delay='1'] {
 				transition: opacity 1s 3s;
 			}
-			&[delay='3'] {
+			&[delay='2'] {
 				transition: opacity 1s 4s;
+			}
+			&[delay='3'] {
+				transition: opacity 1s 5s;
 			}
 		}
 
@@ -1607,6 +1647,11 @@ footer,
 			a {
 				color: $black;
 				text-decoration: none;
+				transition: 1s linear;
+				
+				&:hover {
+					color: $light-gray-hover;
+				}
 			}
 		}
 	}
@@ -1615,13 +1660,19 @@ footer,
 		color: $black;
 		font-size: .875rem;
 		width: 100%;
-		
+		opacity: 0;
+		transition: opacity 1s 6s;
+
 		@include responsive(device) {
 			margin-top: 100px;
 		}
 		
 		@include responsive(desktop) {
 			margin-top: 180px;
+		}
+
+		&.is-inview {
+			opacity: 1;
 		}
 		
 		span {
@@ -1635,7 +1686,8 @@ footer,
 		width: 100%;
 		font-size: .875rem;
 		color: $black;
-		opacity: 1 !important;
+		opacity: 0;
+		transition: opacity 1s 7s;
 		
 		@include responsive(device) {
 			margin-top: 100px;
@@ -1643,6 +1695,10 @@ footer,
 		
 		@include responsive(desktop) {
 			margin-top: 130px;
+		}
+		
+		&.is-inview {
+			opacity: 1;
 		}
 	}
 }
@@ -3089,6 +3145,11 @@ footer,
 			
 			&.disabled {
 				color: $light-gray;
+			}
+			
+			&:not(.disabled),
+			&:not(.js-active) {
+				cursor: pointer;
 			}
 		}
 	}
