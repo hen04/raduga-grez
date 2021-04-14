@@ -308,6 +308,10 @@ $(function() {
 		$('body').removeClass('search-opened');
 	});
 
+
+	$('.shipping__item').each(function(i, e){
+		setTimeout(function(){
+			$(e).addClass('animate')
+		}, i * 800)
+	});
 });
-
-
