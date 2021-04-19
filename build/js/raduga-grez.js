@@ -4,7 +4,23 @@ $(window).on('load', function () {
 	$('.loading-screen').delay(800).fadeOut('slow');
 	$('.loading-content').delay(800).removeClass('hidden');
 	$('.main-index__img').delay(800).addClass('animate');
+
+	$('html').addClass('is-ready');
 });
+
+$(window).scroll(
+	{
+		previousTop: 0
+	},
+	function () {
+		var currentTop = $(window).scrollTop();
+		if (currentTop < this.previousTop) {
+			$('.header-wrapper').removeClass('out');
+		} else {
+			$('.header-wrapper').addClass('out');
+		}
+		this.previousTop = currentTop;
+	});
 
 
 $(function() {
@@ -71,7 +87,7 @@ $(function() {
 
 	function menuMobile() {
 		$('.js-menu').on('click', function(){
-			$('.header').removeClass('out');
+			$('.header-wrapper').removeClass('out');
 			$('html').css('overflow-y', 'hidden');
 			$('.menu-content').animate({
 				opacity: 1,
@@ -255,8 +271,8 @@ $(function() {
 
 
 
-	$('.js-shops-tabs li').first().addClass('active');
-	$('.stockist__shop-item').first().addClass('active');
+	$('.js-shops-tabs li').first().delay(1000).addClass('active');
+	$('.stockist__shop-item').first().delay(1000).addClass('active');
 
 	let shops = $('.stockist__shops');
 	let stockistContent = $('.stockist__countries, .stockist__info, .stockist__title');
@@ -310,9 +326,16 @@ $(function() {
 	});
 
 
-	$('.shipping__item').each(function(i, e){
-		setTimeout(function(){
-			$(e).addClass('animate')
-		}, i * 800)
-	});
+	function blockAnimate(select) {
+		$(select).each(function(i, e){
+			setTimeout(function(){
+				$(e).addClass('animate')
+			}, i * 800)
+		});
+	}
+
+	blockAnimate('.shipping__item');
+
+	blockAnimate('.catalog__item');
+
 });

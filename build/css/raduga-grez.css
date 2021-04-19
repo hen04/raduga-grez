@@ -147,7 +147,10 @@ button {
   border: 0;
   font-size: 0;
   cursor: pointer;
-  padding: 0; }
+  padding: 0;
+  transition: transform .35s linear; }
+  .submit-subscribe:hover {
+    transform: translateX(3px); }
   @media only screen and (max-width: 767px) {
     .submit-subscribe {
       width: 40px;
@@ -383,6 +386,11 @@ section {
 
 html {
   overflow-x: hidden; }
+  html.is-ready .stockist {
+    opacity: 1;
+    padding-top: 140px; }
+    html.is-ready .stockist__shop-item {
+      top: 0; }
 
 .loading-screen {
   position: fixed;
@@ -1047,7 +1055,10 @@ footer,
 .catalog__item {
   position: relative;
   float: left;
-  transition: opacity .3s ease-in-out; }
+  transition: opacity .3s linear;
+  opacity: 0; }
+  .catalog__item.animate {
+    opacity: 1; }
   @media only screen and (max-width: 1279px) {
     .catalog__item {
       width: 50%;
@@ -1452,13 +1463,17 @@ footer,
   position: relative; }
   .join-us__img {
     transform: scale(1.12694);
+    transition: 2s linear;
     position: absolute;
     z-index: 0;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    overflow: hidden;
     background: url(../images/join-us-bg.jpg) 50% 0/cover no-repeat; }
+    .join-us__img:hover {
+      transform: scale(1); }
   @media only screen and (max-width: 767px) {
     .join-us {
       background-position: 50% 100%;
@@ -1575,13 +1590,13 @@ footer,
     .footer__menu ul.is-inview {
       opacity: 1; }
     .footer__menu ul[delay='0'] {
-      transition: opacity 1s 2s; }
+      transition: opacity 1s 1.2s; }
     .footer__menu ul[delay='1'] {
-      transition: opacity 1s 3s; }
+      transition: opacity 1s 2s; }
     .footer__menu ul[delay='2'] {
-      transition: opacity 1s 4s; }
+      transition: opacity 1s 2.8s; }
     .footer__menu ul[delay='3'] {
-      transition: opacity 1s 5s; }
+      transition: opacity 1s 3.6s; }
   .footer__menu li {
     color: #838383;
     font-size: .875rem;
@@ -1599,7 +1614,7 @@ footer,
     font-size: .875rem;
     width: 100%;
     opacity: 0;
-    transition: opacity 1s 6s; }
+    transition: opacity 1s 4.2s; }
     @media only screen and (max-width: 1279px) {
       .footer__top {
         margin-top: 100px; } }
@@ -1616,7 +1631,7 @@ footer,
     font-size: .875rem;
     color: #292929;
     opacity: 0;
-    transition: opacity 1s 7s; }
+    transition: opacity 1s 5s; }
     @media only screen and (max-width: 1279px) {
       .footer__copyright {
         margin-top: 100px; } }
@@ -3207,6 +3222,8 @@ footer,
       opacity: 1; }
 
 .stockist {
+  opacity: 0;
+  transition: opacity .6s;
   display: flex;
   flex-flow: wrap;
   padding-top: 140px;
@@ -3280,10 +3297,15 @@ footer,
   .stockist__shop-item {
     position: absolute;
     top: 0;
-    display: none; }
+    padding-top: 40px;
+    opacity: 0;
+    transition: opacity, padding 1s;
+    height: 0; }
     .stockist__shop-item.active {
+      padding: 0;
       position: relative;
-      display: block; }
+      opacity: 1;
+      height: auto; }
     @media only screen and (min-width: 768px) and (max-width: 1279px) {
       .stockist__shop-item ul {
         columns: 2; } }

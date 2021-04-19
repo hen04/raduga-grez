@@ -28,25 +28,3 @@ ScrollTrigger.addEventListener('refresh', () => scroller.update())
 
 ScrollTrigger.refresh()
 
-gsap.to('.main-index', {
-	scrollTrigger: {
-		trigger: '.main-index',
-		start: 'top top+=50',
-		end: '+=100',
-		backgroundSize: '120%',
-		scrub: true,
-		//markers: true,
-	}
-});
-
-gsap.to('.main-index', {
-	scrollTrigger: {
-		trigger: '.main-index',
-		start: 'top top+=50',
-		end: '+=100',
-		backgroundSize: '120%',
-		scrub: true,
-		//markers: true,
-	}
-});
-

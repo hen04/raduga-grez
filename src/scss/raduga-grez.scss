@@ -14,6 +14,17 @@ section {
 
 html {
 	overflow-x: hidden;
+	
+	&.is-ready {
+		.stockist {
+			opacity: 1;
+			padding-top: 140px;
+			
+			&__shop-item {
+				top: 0;
+			}
+		}
+	}
 }
 
 .loading-screen {
@@ -925,8 +936,13 @@ footer,
 	&__item {
 		position: relative;
 		float: left;
-		transition: opacity .3s ease-in-out;
+		transition: opacity .3s linear;
+		opacity: 0;
 		
+		&.animate {
+			opacity: 1;
+		}
+	
 		@include responsive(device) {
 			width: 50%;
 			padding-top: 50%;
@@ -1450,13 +1466,19 @@ footer,
 
 	&__img {
 		transform: scale(1.12694);
+		transition: 2s linear;
 		position: absolute;
 		z-index: 0;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
+		overflow: hidden;
 		background: url(../images/join-us-bg.jpg) 50% 0/cover no-repeat;
+		
+		&:hover {
+			transform: scale(1);
+		}
 	}
 
 	@include responsive(mobile) {
@@ -1622,16 +1644,16 @@ footer,
 			}
 			
 			&[delay='0'] {
-				transition: opacity 1s 2s;
+				transition: opacity 1s 1.2s;
 			}
 			&[delay='1'] {
-				transition: opacity 1s 3s;
+				transition: opacity 1s 2s;
 			}
 			&[delay='2'] {
-				transition: opacity 1s 4s;
+				transition: opacity 1s 2.8s;
 			}
 			&[delay='3'] {
-				transition: opacity 1s 5s;
+				transition: opacity 1s 3.6s;
 			}
 		}
 
@@ -1661,7 +1683,7 @@ footer,
 		font-size: .875rem;
 		width: 100%;
 		opacity: 0;
-		transition: opacity 1s 6s;
+		transition: opacity 1s 4.2s;
 
 		@include responsive(device) {
 			margin-top: 100px;
@@ -1687,7 +1709,7 @@ footer,
 		font-size: .875rem;
 		color: $black;
 		opacity: 0;
-		transition: opacity 1s 7s;
+		transition: opacity 1s 5s;
 		
 		@include responsive(device) {
 			margin-top: 100px;
@@ -3988,6 +4010,8 @@ footer,
 }
 
 .stockist {
+	opacity: 0;
+	transition: opacity .6s;
 	display: flex;
 	flex-flow: wrap;
 	padding-top: 140px;
@@ -4100,11 +4124,16 @@ footer,
 	&__shop-item {
 		position: absolute;
 		top: 0;
-		display: none;
-		
+		padding-top: 40px;
+		opacity: 0;
+		transition: opacity, padding 1s;
+		height: 0;
+
 		&.active {
+			padding: 0;
 			position: relative;
-			display: block;
+			opacity: 1;
+			height: auto;
 		}
 		
 		ul {
