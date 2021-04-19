@@ -3,6 +3,7 @@
 $(window).on('load', function () {
 	$('.loading-screen').delay(800).fadeOut('slow');
 	$('.loading-content').delay(800).removeClass('hidden');
+	$('.main-index__img').delay(800).addClass('animate');
 });
 
 
