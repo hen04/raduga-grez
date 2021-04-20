@@ -8,20 +8,6 @@ $(window).on('load', function () {
 	$('html').addClass('is-ready');
 });
 
-$(window).scroll(
-	{
-		previousTop: 0
-	},
-	function () {
-		var currentTop = $(window).scrollTop();
-		if (currentTop < this.previousTop) {
-			$('.header-wrapper').removeClass('out');
-		} else {
-			$('.header-wrapper').addClass('out');
-		}
-		this.previousTop = currentTop;
-	});
-
 
 $(function() {
 

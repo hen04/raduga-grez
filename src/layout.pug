@@ -16,7 +16,6 @@ html(lang="en")
 		link(rel="stylesheet" href="css/lib/swiper-bundle.min.css")
 		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css")
 		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css")
-		link(rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css")
 		link(rel="stylesheet" href="css/raduga-grez.css")
 
 	body
@@ -25,7 +24,7 @@ html(lang="en")
 			block cart
 				include include/incl-cart-sm
 		block search
-		.container-animation(data-scroll-container='')
+		div(data-scroll-container)
 			block content
 			.join-us(data-scroll='' data-scroll-speed='2')
 				.join-us__img
@@ -71,6 +70,4 @@ html(lang="en")
 		script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js")
-		script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
 		script(src="js/animation.js")
