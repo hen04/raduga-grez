@@ -504,6 +504,8 @@ body {
     .header-wrapper--index .header__cart span {
       background-color: #E1DFD3;
       color: #292929; }
+  .header-wrapper.hidden {
+    transform: translateY(-110px); }
 
 .header {
   display: flex;
