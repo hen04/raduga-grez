@@ -1,25 +1,26 @@
 extends layout
 block header
-	.header-wrapper
+	#header.header-wrapper
 		include include/incl-header
 
 block content
 
 	main
 		.container
-			.catalog-page#fixed-target
+			.catalog-page
 				.catalog-page__menu-mobile.js-catalog-menu Back to catalogue menu
-				.catalog-page__menu(data-scroll data-scroll-sticky)
-					each item in menuCatalog
-						ul.menu-catalog
-							li= item.header
-							each subitem in item.links
-								if subitem.active === true
-									li.active
-										a(href="")= subitem.title
-								else
-									li
-										a(href="")= subitem.title
+				.catalog-page__menu#fixed-target
+					div(data-scroll data-scroll-sticky data-scroll-target="#fixed-target")
+						each item in menuCatalog
+							ul.menu-catalog
+								li= item.header
+								each subitem in item.links
+									if subitem.active === true
+										li.active
+											a(href="")= subitem.title
+									else
+										li
+											a(href="")= subitem.title
 				.catalog-page__content
 					.catalog-page__title
 						h1 Arch stackers

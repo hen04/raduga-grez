@@ -1,13 +1,13 @@
 extends layout
 block header
-	.header-wrapper
+	#header.header-wrapper
 		include include/incl-header
 
 block content
 
 	main
 		.container
-			.stockist
+			.stockist(data-scroll data-scroll-position="top" data-scroll-speed="3")
 				.stockist__title
 					h1 Stockist
 				.stockist__info

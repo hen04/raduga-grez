@@ -24,9 +24,10 @@ html(lang="en")
 			block cart
 				include include/incl-cart-sm
 		block search
-		.container-animation(data-scroll-container='')
+		div(data-scroll-container)
 			block content
 			.join-us(data-scroll='' data-scroll-speed='2')
+				.join-us__img
 				.join-us__content(data-scroll='' data-scroll-speed='1')
 					h2 Join our newsletter
 					form
@@ -38,14 +39,14 @@ html(lang="en")
 								//span.error Enter your correct email
 			footer(class="footer")
 				.footer__content
-					.footer__mail
+					.footer__mail(data-scroll data-scroll-repeat)
 						p Interested in a Raduga Grëz?
 						a(href="mailto:hello@raduga-grez.ru") hello@raduga-grez.ru
 
 					.footer__menu
 						nav
-							each item in footerMenu
-								ul.footer-menu
+							each item, i in footerMenu
+								ul.footer-menu(data-scroll data-scroll-repeat delay= i)
 									li= item.header
 									each subitem in item.links
 										li
@@ -54,10 +55,10 @@ html(lang="en")
 											else
 												a(href= subitem.url)= subitem.title
 
-					.footer__top
+					.footer__top(data-scroll data-scroll-repeat)
 						span#button-top.js-top Back to Top
 
-					.footer__copyright &copy; 2020 All rights reserved RADUGA GRËZ
+					.footer__copyright(data-scroll data-scroll-repeat) &copy; 2020 All rights reserved RADUGA GRËZ
 
 				.cookies-info
 					p This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.
@@ -69,5 +70,4 @@ html(lang="en")
 		script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js")
 		script(src="js/animation.js")

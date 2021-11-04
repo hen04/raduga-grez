@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/raduga-grez.css">
   </head>
   <body>
-    <div class="header-wrapper">
+    <div class="header-wrapper" id="header">
       <header class="header">
         <div class="header__logo"><a href="index.html"></a></div>
         <ul class="header__menu-desktop">
@@ -151,31 +151,33 @@
         <div class="cart-sm__total-price"><span>Subtotal</span><span>$95.00</span></div><a class="btn" href="checkout.html">Proceed to checkout</a>
       </div>
     </div>
-    <div class="container-animation" data-scroll-container="">
+    <div data-scroll-container>
       <main>
         <div class="container">
-          <div class="catalog-page" id="fixed-target">
+          <div class="catalog-page">
             <div class="catalog-page__menu-mobile js-catalog-menu">Back to catalogue menu</div>
-            <div class="catalog-page__menu" data-scroll data-scroll-sticky>
-              <ul class="menu-catalog">
-                <li>Category</li>
-                <li><a href="">All</a></li>
-                <li class="active"><a href="">Arch stackers</a></li>
-                <li><a href="">Building blocks</a></li>
-                <li><a href="">Cubes</a></li>
-                <li><a href="">Imaginative play</a></li>
-                <li><a href="">Stacking towers</a></li>
-                <li><a href="">Rolling toys</a></li>
-              </ul>
-              <ul class="menu-catalog">
-                <li>Collection</li>
-                <li><a href="">All</a></li>
-                <li><a href="">Flowers</a></li>
-                <li><a href="">Diversity</a></li>
-              </ul>
-              <ul class="menu-catalog">
-                <li>Shop All</li>
-              </ul>
+            <div class="catalog-page__menu" id="fixed-target">
+              <div data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
+                <ul class="menu-catalog">
+                  <li>Category</li>
+                  <li><a href="">All</a></li>
+                  <li class="active"><a href="">Arch stackers</a></li>
+                  <li><a href="">Building blocks</a></li>
+                  <li><a href="">Cubes</a></li>
+                  <li><a href="">Imaginative play</a></li>
+                  <li><a href="">Stacking towers</a></li>
+                  <li><a href="">Rolling toys</a></li>
+                </ul>
+                <ul class="menu-catalog">
+                  <li>Collection</li>
+                  <li><a href="">All</a></li>
+                  <li><a href="">Flowers</a></li>
+                  <li><a href="">Diversity</a></li>
+                </ul>
+                <ul class="menu-catalog">
+                  <li>Shop All</li>
+                </ul>
+              </div>
             </div>
             <div class="catalog-page__content">
               <div class="catalog-page__title">
@@ -265,6 +267,7 @@
         </div>
       </main>
       <div class="join-us" data-scroll="" data-scroll-speed="2">
+        <div class="join-us__img"></div>
         <div class="join-us__content" data-scroll="" data-scroll-speed="1">
           <h2>Join our newsletter</h2>
           <form>
@@ -280,19 +283,19 @@
       </div>
       <footer class="footer">
         <div class="footer__content">
-          <div class="footer__mail">
+          <div class="footer__mail" data-scroll data-scroll-repeat>
             <p>Interested in a Raduga Grëz?</p><a href="mailto:hello@raduga-grez.ru">hello@raduga-grez.ru</a>
           </div>
           <div class="footer__menu">
             <nav>
-              <ul class="footer-menu">
+              <ul class="footer-menu" data-scroll data-scroll-repeat delay="0">
                 <li>About</li>
                 <li><a href="about-us.html">About us</a>
                 </li>
                 <li><a href="stories.html">Stories</a>
                 </li>
               </ul>
-              <ul class="footer-menu">
+              <ul class="footer-menu" data-scroll data-scroll-repeat delay="1">
                 <li>Customer Service</li>
                 <li><a href="shipping.html">Shipping</a>
                 </li>
@@ -303,14 +306,14 @@
                 <li><a href="faq.html">FAQ</a>
                 </li>
               </ul>
-              <ul class="footer-menu">
+              <ul class="footer-menu" data-scroll data-scroll-repeat delay="2">
                 <li>Contact</li>
                 <li><a href="contact-us.html">Contact us</a>
                 </li>
                 <li><a href="stockist.html">Stockist</a>
                 </li>
               </ul>
-              <ul class="footer-menu">
+              <ul class="footer-menu" data-scroll data-scroll-repeat delay="3">
                 <li>Social media</li>
                 <li><a href="" target="_blank">Instagram</a>
                 </li>
@@ -321,8 +324,8 @@
               </ul>
             </nav>
           </div>
-          <div class="footer__top"><span class="js-top" id="button-top">Back to Top</span></div>
-          <div class="footer__copyright">&copy; 2020 All rights reserved RADUGA GRËZ</div>
+          <div class="footer__top" data-scroll data-scroll-repeat><span class="js-top" id="button-top">Back to Top</span></div>
+          <div class="footer__copyright" data-scroll data-scroll-repeat>&copy; 2020 All rights reserved RADUGA GRËZ</div>
         </div>
         <div class="cookies-info">
           <p>This website uses cookies to give you the best shopping experience. By continuing to browse the website we assume that you agree to the use of such cookies.</p>
@@ -335,7 +338,6 @@
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     <script src="js/animation.js"></script>
   </body>
 </html>

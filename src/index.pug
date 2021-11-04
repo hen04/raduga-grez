@@ -6,13 +6,14 @@ block header
 			.loading-overlay
 			img(src="images/loading.svg")
 
-	.header-wrapper.header-wrapper--index
+	#header.header-wrapper.header-wrapper--index
 		include include/incl-header
 
 block content
 
 	main
 		.main-index
+			.main-index__img
 			.header__info(data-scroll='' data-scroll-speed='1')
 				h1 Toys<br> as art
 				.header-video(data-scroll='' data-scroll-speed='1')

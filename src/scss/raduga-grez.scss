@@ -14,6 +14,17 @@ section {
 
 html {
 	overflow-x: hidden;
+	
+	&.is-ready {
+		.stockist {
+			opacity: 1;
+			padding-top: 140px;
+			
+			&__shop-item {
+				top: 0;
+			}
+		}
+	}
 }
 
 .loading-screen {
@@ -41,7 +52,7 @@ html {
 		top: 0;
 		bottom: 0;
 		width: 100%;
-		animation: loading 5s .5s forwards;
+		animation: loading 5s .5s 10 forwards;
 	}
 }
 
@@ -190,6 +201,11 @@ body {
 			}
 		}
 	}
+	
+	&.hidden {
+		transform: translateY(-110px);
+		
+	}
 }
 
 .header {
@@ -257,12 +273,18 @@ body {
 		display: none;
 		
 		@include responsive(desktop) {
-			margin-left: calc(30% - 140px);
 			display: flex;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 		
 		li {
 			margin-right: 66px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
 			
 			a {
 				white-space: nowrap;
@@ -577,7 +599,31 @@ body {
 
 .main-index {
 	min-height: 100vh;
-	background: #5C6240 url(../images/main-bg.jpg) 50% 0/cover no-repeat;
+	position: relative;
+
+	&__img {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: #5C6240 url(../images/main-bg.jpg) 50% 0/cover no-repeat;
+		transform: scale(1.12694);
+		
+		&.animate {
+			animation: img 2s forwards 1s;
+		}
+	}
+}
+
+@keyframes img {
+	0% {
+		transform: scale(1.12694);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 
@@ -895,8 +941,13 @@ footer,
 	&__item {
 		position: relative;
 		float: left;
-		transition: opacity .3s ease-in-out;
+		transition: opacity .3s linear;
+		opacity: 0;
 		
+		&.animate {
+			opacity: 1;
+		}
+	
 		@include responsive(device) {
 			width: 50%;
 			padding-top: 50%;
@@ -910,6 +961,10 @@ footer,
 		&:hover {
 			&:before {
 				content: '';
+			}
+			
+			img {
+				filter: saturate(0%);
 			}
 
 			.catalog__category,
@@ -1411,7 +1466,25 @@ footer,
 
 .join-us {
 	display: flex;
-	background: url(../images/join-us-bg.jpg) 50% 0/cover no-repeat;
+	transition: all .8s;
+	position: relative;
+
+	&__img {
+		transform: scale(1.12694);
+		transition: 2s linear;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		background: url(../images/join-us-bg.jpg) 50% 0/cover no-repeat;
+		
+		&:hover {
+			transform: scale(1);
+		}
+	}
 
 	@include responsive(mobile) {
 		background-position: 50% 100%;
@@ -1444,6 +1517,10 @@ footer,
 			text-align: center;
 			margin-bottom: 50px;
 		}
+	}
+	
+	&.is-inview {
+		animation: img 2s forwards;
 	}
 }
 
@@ -1496,6 +1573,13 @@ footer,
 	}
 	
 	&__mail {
+		transition: opacity 1s 1s;
+		opacity: 0;
+		
+		&.is-inview {
+			opacity: 1;
+		}
+
 		p {
 			color: $light-gray;
 			font-size: .875rem;
@@ -1535,6 +1619,7 @@ footer,
 	}
 	
 	&__menu {
+		
 		@include responsive(mobile) {
 			width: 100%;
 			margin-top: 30px;
@@ -1551,13 +1636,32 @@ footer,
 		}
 		
 		ul {
-			
+			opacity: 0;
+			transition: opacity 1s;
+
 			@include responsive(device) {
 				margin-top: 60px;
 				width: 50%;
 			}
+
+			&.is-inview {
+				opacity: 1;
+			}
+			
+			&[delay='0'] {
+				transition: opacity 1s 1.2s;
+			}
+			&[delay='1'] {
+				transition: opacity 1s 2s;
+			}
+			&[delay='2'] {
+				transition: opacity 1s 2.8s;
+			}
+			&[delay='3'] {
+				transition: opacity 1s 3.6s;
+			}
 		}
-		
+
 		li {
 			color: $light-gray;
 			font-size: .875rem;
@@ -1570,6 +1674,11 @@ footer,
 			a {
 				color: $black;
 				text-decoration: none;
+				transition: 1s linear;
+				
+				&:hover {
+					color: $light-gray-hover;
+				}
 			}
 		}
 	}
@@ -1578,13 +1687,19 @@ footer,
 		color: $black;
 		font-size: .875rem;
 		width: 100%;
-		
+		opacity: 0;
+		transition: opacity 1s 4.2s;
+
 		@include responsive(device) {
 			margin-top: 100px;
 		}
 		
 		@include responsive(desktop) {
 			margin-top: 180px;
+		}
+
+		&.is-inview {
+			opacity: 1;
 		}
 		
 		span {
@@ -1598,7 +1713,8 @@ footer,
 		width: 100%;
 		font-size: .875rem;
 		color: $black;
-		opacity: 1 !important;
+		opacity: 0;
+		transition: opacity 1s 5s;
 		
 		@include responsive(device) {
 			margin-top: 100px;
@@ -1606,6 +1722,10 @@ footer,
 		
 		@include responsive(desktop) {
 			margin-top: 130px;
+		}
+		
+		&.is-inview {
+			opacity: 1;
 		}
 	}
 }
@@ -2080,6 +2200,7 @@ footer,
 	h1 {
 		@include title(36px, 164%);
 		max-width: 500px;
+		padding-right: 50px;
 	}
 
 	&__info {
@@ -2146,12 +2267,17 @@ footer,
 		
 	}
 	.form-message {
-		font-size: 14px;
+		font-size: 14px !important;
 	}
 	
-	.error {
-		font-size: 14px;
-		color: #DB7662;
+	.error,
+	.cwginstockerror {
+		font-size: 14px !important;
+		color: #DB7662 !important;
+	}
+	
+	.blockUI.blockOverlay {
+		display: none !important;
 	}
 }
 
@@ -3023,6 +3149,7 @@ footer,
 		
 		li {
 			font-size: .875rem;
+			color: $black;
 			
 			&:not(:first-child) {
 				position: relative;
@@ -3043,8 +3170,12 @@ footer,
 				}
 			}
 			
-			&:not(.active) {
+			&.disabled {
 				color: $light-gray;
+			}
+			
+			&:not(.disabled),
+			&:not(.js-active) {
 				cursor: pointer;
 			}
 		}
@@ -3810,7 +3941,9 @@ footer,
 	
 	&__item {
 		position: relative;
-		
+		opacity: 0;
+		transition: opacity 1s;
+
 		@include responsive(mobile) {
 			padding-top: 30px;
 			margin-bottom: 30px;
@@ -3833,7 +3966,7 @@ footer,
 		&:after {
 			content: '';
 			position: absolute;
-			top: 0;
+			bottom: -45px;
 			height: 1px;
 			background-color: rgba($light-gray, .3);
 			left: 0;
@@ -3848,12 +3981,9 @@ footer,
 			}
 		}
 		
-		&:nth-child(1),
-		&:nth-child(2) {
-			@include responsive(portdesktop) {
-				padding-top: 0;
-			}
-			
+		&:nth-child(5),
+		&:nth-child(6) {
+
 			&:after {
 				@include responsive(portdesktop) {
 					content: none;
@@ -3877,10 +4007,16 @@ footer,
 			margin-top: 20px;
 			color: $medium-grey;
 		}
+
+		&.animate {
+			opacity: 1;
+		}
 	}
 }
 
 .stockist {
+	opacity: 0;
+	transition: opacity .6s;
 	display: flex;
 	flex-flow: wrap;
 	padding-top: 140px;
@@ -3993,11 +4129,16 @@ footer,
 	&__shop-item {
 		position: absolute;
 		top: 0;
-		display: none;
-		
+		padding-top: 40px;
+		opacity: 0;
+		transition: opacity, padding 1s;
+		height: 0;
+
 		&.active {
+			padding: 0;
 			position: relative;
-			display: block;
+			opacity: 1;
+			height: auto;
 		}
 		
 		ul {
@@ -4996,8 +5137,6 @@ footer,
 	transition: opacity .4s 2.4s;
 }
 
-.shipping__item {
-	&.is-inview {
-		opacity: 1 !important;
-	}
+.c-scrollbar {
+	z-index: 999;
 }
